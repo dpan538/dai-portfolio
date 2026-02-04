@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const email = "dpan53853@gmail.com";
+const instagram = "https://instagram.com/jumpingchick666";
+const github = "https://github.com/dpan538";
+---
+
+<BaseLayout title="About">
+<section>
+    <h1>About</h1>
+    <p>
+    Dai Pan is a visual artist and designer working across
+    photography, lithography, and conceptual design.
+    </p>
+</section>
+
+<section>
+    <h2>Contact</h2>
+    <ul>
+    <li>Email: <a href={`mailto:${email}`}>{email}</a></li>
+    <li>Instagram: <a href={instagram} target="_blank">Instagram</a></li>
+    <li>GitHub: <a href={github} target="_blank">GitHub</a></li>
+    </ul>
+</section>
+</BaseLayout>
