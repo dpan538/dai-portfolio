@@ -1,0 +1,286 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const base = "/projects/monolith_for_light";
+const title = "Monolith for Light";
+const meta = "Concept Design · Architecture / Spatial Study";
+---
+
+<BaseLayout title={`${title} — Dai Pan`}>
+    <article class="project">
+        <header class="header">
+            <h1 class="title">{title}</h1>
+            <p class="meta">{meta}</p>
+        </header>
+
+        <div class="section_note">
+            <p>
+                Monolith for Light is an early experimental proposal for a
+                gallery/museum placed in a barren landscape. The building is
+                conceived as a single, heavy mass—concrete and limestone,
+                without glass—so that light is treated as the primary material
+                rather than a secondary effect. Openings are reduced to narrow
+                cuts and controlled voids, allowing daylight to enter as
+                geometry: a measured sequence of slices, reflections, and
+                compression.
+            </p>
+        </div>
+
+        <!-- Section 1 -->
+        <section class="block">
+            <figure class="figure">
+                <img
+                    src={`${base}/gallery_01.jpg`}
+                    alt="Monolith for Light — atmosphere and massing (01)"
+                    loading="eager"
+                />
+            </figure>
+        </section>
+
+        <!-- Section 2 -->
+        <section class="block">
+            <p class="section_note">
+                Inspired by <em>In Praise of Shadows</em>, the project explores
+                how atmosphere can be built through restraint. Instead of
+                maximizing brightness, it stages thresholds: glare and dimness,
+                slow adaptation of the eye, and the moment when a surface
+                becomes readable only because a shadow exists. The design
+                studies light as structure—how it frames movement, sets tempo,
+                and produces “rooms” that are defined by time rather than by
+                decoration.
+            </p>
+
+            <p class="section_note">
+                Plan, elevation, and section establish the controlled cuts and
+                the internal sequence as a spatial narrative rather than a
+                transparent container.
+            </p>
+
+            <figure class="figure">
+                <img
+                    src={`${base}/gallery_02.jpg`}
+                    alt="Plan / elevation / section (02)"
+                    loading="lazy"
+                />
+            </figure>
+
+            <figure class="figure">
+                <img
+                    src={`${base}/gallery_03.jpg`}
+                    alt="Sectional study (03)"
+                    loading="lazy"
+                />
+            </figure>
+        </section>
+
+    <!-- Section 3 -->
+    <section class="block">
+        <div class="stack">
+        <p class="section_note">
+            The project frames the landscape as part of the gallery
+            experience—orientation, horizon lines, and the way wind and sun set
+            up a “reading” of the building before entry.
+        </p>
+        <p class="section_note">
+            At night, concealed lighting returns the same cuts and edges as a
+            new structure. The mass remains unchanged, but its hierarchy is
+            rewritten by illumination.
+        </p>
+
+        <figure class="figure">
+            <img
+                src={`${base}/gallery_05.jpg`}
+                alt="Site / horizon study (05)"
+                loading="lazy"
+            />
+        </figure>
+
+
+        <figure class="figure">
+            <img
+                src={`${base}/gallery_06.jpg`}
+                alt="Night exterior (06)"
+                loading="lazy"
+            />
+        </figure>
+    </section>
+
+    <figure class="figure">
+        <img
+            src={`${base}/gallery_09.jpg`}
+            alt="Exploded axonometric (07)"
+            loading="lazy"
+        />
+    </figure>
+</div>
+</section>
+
+<!-- Section 5 -->
+<section class="block">
+    <div class="stack">
+    <p class="section_note">
+        A corridor becomes a measuring device: thin slits and angled surfaces
+        turn light into direction, duration, and pressure—guiding how long the
+        visitor lingers and what becomes visible.
+    </p>
+
+    <figure class="figure">
+        <img
+            src={`${base}/gallery_07.jpg`}
+            alt="Interior gallery (07)"
+            loading="lazy"
+        />
+    </figure>
+
+    <figure class="figure">
+        <img
+            src={`${base}/gallery_08.jpg`}
+            alt="Interior corridor (08)"
+            loading="lazy"
+        />
+    </figure>
+    </div>
+</section>
+
+<!-- Section 6 -->
+<section class="block">
+    <div class="stack">
+    <p class="section_note">
+        A sectional view clarifies how the interior voids are carved and how the
+        building holds darkness as a deliberate spatial condition. The final
+        diagram summarizes circulation and service logic, separating visitor
+        movement from staff access and maintenance routes.
+    </p>
+
+    <div class="grid2">
+        <figure class="tile">
+            <img
+                src={`${base}/gallery_11.jpg`}
+                alt="Section perspective (11)"
+                loading="lazy"
+            />
+        </figure>
+        <figure class="tile">
+            <img
+                src={`${base}/gallery_10.jpg`}
+                alt="Material / detail study (09)"
+                loading="lazy"
+            />
+        </figure>
+    </div>
+
+    <figure class="figure">
+        <img
+            src={`${base}/gallery_04.jpg`}
+            alt="Flow / access diagram (04)"
+            loading="lazy"
+        />
+    </figure>
+    </div>
+</section>
+    </article>
+
+<style>
+    .project {
+        --space-1: clamp(8px, 1.2vw, 14px);
+        --space-2: clamp(14px, 2vw, 22px);
+        --space-3: clamp(22px, 3vw, 36px);
+    }
+
+        .block {
+        margin-top: 0;
+    }
+    .block + .block {
+        margin-top: var(--space-3);
+    }
+
+    .block > * + * {
+        margin-top: var(--space-2);
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+    }
+
+    .header {
+        margin-bottom: clamp(22px, 3vw, 40px);
+    }
+
+    .title {
+        margin: 0 0 10px 0;
+        line-height: 1.05;
+    }
+
+    .meta {
+        margin: 0 0 18px 0;
+        opacity: 0.75;
+    }
+
+    .intro p {
+        margin: 0 0 14px 0;
+        max-width: 72ch; /* 让文本别太宽，读起来更像艺术家网站 */
+    }
+
+
+    .section_title {
+        margin: 0 0 10px 0;
+        letter-spacing: 0.02em;
+    }
+
+    .section_note {
+        margin: 0 0 16px 0;
+        max-width: 78ch;
+        opacity: 0.9;
+    }
+
+    /* 单图：更大一些，但仍然保持节制 */
+    .figure {
+        margin: 0;
+    }
+
+    .figure img {
+        display: block;
+        width: 100%;
+        max-width: 1040px;
+        margin-inline: auto;
+        height: auto;
+    }
+
+    /* 双图：同高、对齐、更大 */
+    .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-2);
+    }
+
+    .tile {
+        margin: 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.03);
+    }
+
+    .tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 关键：保证同高不参差 */
+        display: block;
+    }
+
+    .figure,
+    .tile {
+        margin: 0;
+    }
+
+    @media (max-width: 900px) {
+        .grid2 {
+            grid-template-columns: 1fr;
+        }
+        .tile {
+            aspect-ratio: 16 / 9;
+        }
+    }
+</style>
