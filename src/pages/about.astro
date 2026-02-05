@@ -1,26 +1,173 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
 
-const email = "dpan53853@gmail.com";
-const instagram = "https://instagram.com/jumpingchick666";
+const email_work = "dpan53853@gmail.com";
+const email_personal = "dpan3@sva.edu";
 const github = "https://github.com/dpan538";
 ---
 
-<BaseLayout title="About">
-<section>
-    <h1>About</h1>
-    <p>
-    Dai Pan is a visual artist and designer working across
-    photography, lithography, and conceptual design.
-    </p>
-</section>
+<BaseLayout
+    title="About — Dai Pan"
+    description="About Dai Pan — image-based work across photography, printmaking, and conceptual design."
+    canonical="https://daiportfolio.com/about"
+    active="about">
+    <section class="block">
+        <p>
+            Dai Pan is a visual artist and designer working across
+            photography, printmaking, and conceptual design. His
+            practice explores how images construct spatial perception through
+            framing, repetition, and visual structure, treating photography and
+            design as interconnected systems of visual thinking.
+        </p>
 
-<section>
-    <h2>Contact</h2>
-    <ul>
-    <li>Email: <a href={`mailto:${email}`}>{email}</a></li>
-    <li>Instagram: <a href={instagram} target="_blank">Instagram</a></li>
-    <li>GitHub: <a href={github} target="_blank">GitHub</a></li>
-    </ul>
-</section>
+        <p>
+            His work focuses on translating everyday environments into visual
+            sequences where clarity and distortion coexist. Images are
+            approached as structures rather than documents — shaped by invisible rhythm,
+            colour, and compositional constraints that guide attention and
+            emotional response. Dai Pan develops visual systems that invite slow
+            looking and open interpretation, inviting meaning to emerge
+            gradually through form and perception.
+        </p>
+    </section>
+
+    <section class="block">
+        <h2>Education</h2>
+        <ul class="cv">
+            <li>
+                <span class="cv_key">Current</span>
+                <span class="cv_val"
+                    >University of Queensland, Brisbane, Australia — Master of
+                    Information Technology (in progress)</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">BFA</span>
+                <span class="cv_val"
+                    >School of Visual Arts (SVA), New York, USA — Bachelor of
+                    Fine Arts in Design (2021-2025)</span
+                >
+            </li>
+        </ul>
+    </section>
+
+    <section class="block">
+        <h2>Group Exhibitions</h2>
+        <ul class="cv">
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >Colour, The Glasgow Gallery of Photography, Glasgow, UK</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >Cityscapes, Blank Wall Gallery, Athens, Greece</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >POLAROID: The Instant Image, Praxis Gallery, Minneapolis,
+                    MN, USA</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >City Lights, Virtual Photography Exhibition, Carlotta
+                    Gallery</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >Horizons, Allora Gallery, London, UK</span
+                >
+            </li>
+        </ul>
+    </section>
+
+    <section class="block">
+        <h2>Awards &amp; Recognition</h2>
+        <ul class="cv">
+            <li>
+                <span class="cv_key">2026</span><span class="cv_val"
+                    >Black &amp; White Art Competition, Merit Award, Art Room
+                    Gallery</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2025</span><span class="cv_val"
+                    >Winter Open Theme, Group Exhibition (Finalist), Art-Collide
+                    (Online/Virtual)</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2025</span><span class="cv_val"
+                    >Honorable Mention in Culture (Professional), Chromatic
+                    Awards</span
+                >
+            </li>
+            <li>
+                <span class="cv_key">2024</span><span class="cv_val"
+                    >2nd Bold Colors, Online Juried Exhibition (Finalist), Blue
+                    Koi Gallery</span
+                >
+            </li>
+        </ul>
+    </section>
+
+    <section class="block">
+        <h2>Contact</h2>
+        <ul class="cv">
+            <li>
+                <span class="cv_key">Work</span><span class="cv_val"
+                    ><a href={`mailto:${email_work}`}>{email_work}</a></span
+                >
+            </li>
+            <li>
+                <span class="cv_key">Personal</span><span class="cv_val"
+                    ><a href={`mailto:${email_personal}`}>{email_personal}</a
+                    ></span
+                >
+            </li>
+            <li>
+                <span class="cv_key">GitHub</span><span class="cv_val"
+                    ><a href={github} target="_blank" rel="noopener noreferrer"
+                        >dpan538</a
+                    ></span
+                >
+            </li>
+        </ul>
+    </section>
+
+    <style>
+        .block {
+            margin-top: 6px;
+        }
+
+        .cv {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .cv li {
+            display: grid;
+            grid-template-columns: 92px 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .cv_key {
+            font-size: 13px;
+            color: var(--muted);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .cv_val {
+            font-size: 15px;
+        }
+
+    </style>
 </BaseLayout>
