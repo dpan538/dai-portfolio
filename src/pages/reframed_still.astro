@@ -1,0 +1,248 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const page_title = "Reframed Still";
+const page_description =
+    "A photographic sequence that reframes stillness through a curated strip of images, slowing the gaze across cities and time.";
+
+const images = Array.from({ length: 8 }, (_, i) => {
+    const n = String(i + 1).padStart(2, "0");
+    return `/projects/reframed_still/reframed${n}.jpg`;
+});
+
+const meta = {
+    title: page_title,
+    description: page_description,
+    og_image: images[0], // optional: first frame as preview
+};
+
+const project = {
+    title: "Reframed Still",
+    medium: "Gelatin Silver Print",
+    locations: ["New York", "Guangzhou", "Shanghai", "Nantong"],
+    years: "2021 -- 2025",
+    note: "Reframed Still is a photographic sequence that reframes stillness through a curated strip of images, slowing the gaze across cities and time. The project explores how moments of quiet and pause can be found within the flow of urban life, inviting viewers to linger on the subtle details and rhythms that often go unnoticed. Each frame captures a unique interplay of light, shadow, and composition, creating a visual narrative that unfolds gradually as one scrolls through the strip.",
+};
+---
+
+<!-- Basic SEO -->
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<meta name="robots" content="index,follow" />
+<link rel="canonical" href="/reframed_still" />
+
+<!-- Open Graph -->
+<meta property="og:title" content={meta.title} />
+<meta property="og:description" content={meta.description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/reframed_still" />
+<meta property="og:image" content={meta.og_image} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={meta.title} />
+<meta name="twitter:description" content={meta.description} />
+<meta name="twitter:image" content={meta.og_image} />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+    :root {
+        --bg: #ffffff;
+        --fg: #111111;
+        --muted: rgba(0, 0, 0, 0.62);
+        --muted2: rgba(0, 0, 0, 0.52);
+        --line: #e9e9e9;
+
+        --gap: 56px;
+        --strip_h: 72vh;
+        --side_pad: 10vw;
+    }
+
+    body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        overflow-x: hidden;
+    }
+
+    /* Main gallery strip */
+    .strip {
+        height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        padding-top: 120px;
+        padding-bottom: 120px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding-left: clamp(24px, 6vw, 72px);
+        padding-right: clamp(24px, 6vw, 72px);
+        gap: var(--gap);
+    }
+
+    /* Hide scrollbar gently (optional) */
+    .strip::-webkit-scrollbar {
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .strip::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.12);
+        border-radius: 999px;
+    }
+
+    figure.frame {
+        margin: 0;
+        height: var(--strip_h);
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+    figure.frame img {
+        height: 100%;
+        width: auto;
+
+        border: 1px solid transparent; /* default */
+        box-sizing: border-box;
+    }
+
+    figure.frame img:hover {
+        border-color: var(--line);
+    }
+
+    /* Description section at the end (vertical normal) */
+    .desc {
+        padding: 64px var(--side_pad) 96px;
+        max-width: 980px;
+    }
+
+    .desc h1 {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 0 14px;
+        letter-spacing: 0.2px;
+    }
+
+    .meta {
+        ont-size: 15px; /* 从 13 提到 15 */
+        line-height: 1.7;
+        margin-bottom: 18px;
+    }
+
+    .meta strong {
+        color: var(--fg);
+        font-weight: 600;
+    }
+
+    .desc p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: var(--muted2);
+        margin: 0;
+    }
+
+    :global(main.content) {
+        padding: 0 !important;
+        max-width: none !important;
+        margin-inline: 0 !important;
+        height: 100vh;
+        overflow: hidden; /* kill vertical scroll */
+    }
+
+    :global(main.content > *) {
+        max-width: none !important;
+    }
+
+    .strip {
+        width: 100%;
+        height: 100vh; /* already have */
+    }
+
+    .desc_panel {
+        flex: 0 0 auto; /* ⭐ 非常重要 */
+        height: 72vh; 
+        width: min(560px, 78vw);
+        position: relative;
+        background: transparent;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .frame {
+        height: 86vh; /* 推荐先 82vh */
+    }
+
+    .desc_panel::before {
+        content: "";
+        position: absolute;
+        inset: -14px; /* 让蒙版比内容大一圈 */
+        pointer-events: none;
+
+        /* 这个是关键：用渐变做“边缘淡化”的 mask 感 */
+        background: radial-gradient(
+            closest-side,
+            rgba(0, 0, 0, 0.06),
+            rgba(0, 0, 0, 0) 70%
+        );
+        border-radius: 18px;
+    }
+
+    .strip::after {
+        content: "";
+        flex: 0 0 clamp(24px, 6vw, 96px); /* right breathing space */
+    }
+
+    /* Mobile: reduce height + padding */
+    @media (max-width: 720px) {
+        :root {
+            --strip_h: 64vh;
+            --gap: 34px;
+            --side_pad: 6vw;
+        }
+        .desc {
+            padding: 40px var(--side_pad) 72px;
+        }
+    }
+</style>
+
+<BaseLayout
+    title={page_title}
+    description={page_description}
+    canonical="https://daiportfolio.com/reframed_still"
+    active="reframed_still">
+    <!-- Horizontal strip first -->
+    <section class="strip">
+        {
+            images.map((src, idx) => (
+                <figure class="frame">
+                    <img
+                        src={src}
+                        alt={`Reframed Still — frame ${idx + 1}`}
+                        loading={idx < 2 ? "eager" : "lazy"}
+                        decoding="async"
+                    />
+                </figure>
+            ))
+        }
+
+        <!-- ⭐ 把 description 放这里 -->
+        <article class="desc_panel">
+            <h3>{project.title}</h3>
+
+            <div class="meta">
+                <div><strong>Medium:</strong> {project.medium}</div>
+                <div>
+                    <strong>Location:</strong>
+                    {project.locations.join(", ")}
+                </div>
+                <div><strong>Year:</strong> {project.years}</div>
+            </div>
+
+            <p>{project.note}</p>
+        </article>
+    </section>
+</BaseLayout>
