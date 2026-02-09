@@ -164,7 +164,7 @@ const project = {
 
     .desc_panel {
         flex: 0 0 auto; /* ⭐ 非常重要 */
-        height: 72vh; 
+        height: 72vh;
         width: min(560px, 78vw);
         position: relative;
         background: transparent;
@@ -196,6 +196,83 @@ const project = {
         flex: 0 0 clamp(24px, 6vw, 96px); /* right breathing space */
     }
 
+    /* Lightbox */
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        display: none;
+        z-index: 999;
+    }
+
+    .lightbox.is_open {
+        display: block;
+    }
+
+    .lb_backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.82);
+    }
+
+    .lb_stage {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 64px 1fr 64px;
+        align-items: center;
+    }
+
+    .lb_figure {
+        margin: 0;
+        display: grid;
+        place-items: center;
+        height: 100%;
+    }
+
+    .lb_view {
+        max-width: min(92vw, 1200px);
+        max-height: 86vh;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Buttons */
+    .lb_btn {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 42px;
+        line-height: 1;
+        cursor: pointer;
+        height: 64px;
+        width: 64px;
+        display: grid;
+        place-items: center;
+        user-select: none;
+    }
+
+    .lb_btn:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .lb_close {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        font-size: 34px;
+        width: 44px;
+        height: 44px;
+    }
+
+    /* Make thumbnails feel clickable (subtle) */
+    .lb_img {
+        cursor: zoom-in;
+    }
+
     /* Mobile: reduce height + padding */
     @media (max-width: 720px) {
         :root {
@@ -220,7 +297,9 @@ const project = {
             images.map((src, idx) => (
                 <figure class="frame">
                     <img
+                        class="lb_img"
                         src={src}
+                        data-index={idx}
                         alt={`Reframed Still — frame ${idx + 1}`}
                         loading={idx < 2 ? "eager" : "lazy"}
                         decoding="async"
@@ -228,6 +307,36 @@ const project = {
                 </figure>
             ))
         }
+
+        <div class="lightbox" aria-hidden="true">
+            <div class="lb_backdrop" data-close="1"></div>
+
+            <div
+                class="lb_stage"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Image preview">
+                <button
+                    class="lb_btn lb_close"
+                    type="button"
+                    aria-label="Close"
+                    data-close="1">×</button
+                >
+                <button
+                    class="lb_btn lb_prev"
+                    type="button"
+                    aria-label="Previous">‹</button
+                >
+
+                <figure class="lb_figure">
+                    <img class="lb_view" src="" alt="" />
+                </figure>
+
+                <button class="lb_btn lb_next" type="button" aria-label="Next"
+                    >›</button
+                >
+            </div>
+        </div>
 
         <!-- ⭐ 把 description 放这里 -->
         <article class="desc_panel">
@@ -241,6 +350,69 @@ const project = {
                 </div>
                 <div><strong>Year:</strong> {project.years}</div>
             </div>
+
+            <script is:inline>
+                (() => {
+                    const imgs = Array.from(
+                        document.querySelectorAll(".lb_img"),
+                    );
+                    const lb = document.querySelector(".lightbox");
+                    const view = document.querySelector(".lb_view");
+                    const prev = document.querySelector(".lb_prev");
+                    const next = document.querySelector(".lb_next");
+                    const closers = Array.from(
+                        document.querySelectorAll("[data-close='1']"),
+                    );
+
+                    if (!imgs.length || !lb || !view || !prev || !next) return;
+
+                    let index = 0;
+
+                    const sources = imgs.map((img) => img.getAttribute("src"));
+
+                    function openAt(i) {
+                        index = (i + sources.length) % sources.length;
+                        view.src = sources[index];
+                        view.alt = `Reframed Still — frame ${index + 1}`;
+
+                        lb.classList.add("is_open");
+                        lb.setAttribute("aria-hidden", "false");
+                        document.documentElement.style.overflow = "hidden"; // lock scroll
+                    }
+
+                    function close() {
+                        lb.classList.remove("is_open");
+                        lb.setAttribute("aria-hidden", "true");
+                        view.src = "";
+                        document.documentElement.style.overflow = "";
+                    }
+
+                    function step(dir) {
+                        openAt(index + dir);
+                    }
+
+                    imgs.forEach((img) => {
+                        img.addEventListener("click", () => {
+                            const i = Number(img.dataset.index || 0);
+                            openAt(i);
+                        });
+                    });
+
+                    prev.addEventListener("click", () => step(-1));
+                    next.addEventListener("click", () => step(1));
+                    closers.forEach((el) =>
+                        el.addEventListener("click", close),
+                    );
+
+                    window.addEventListener("keydown", (e) => {
+                        if (!lb.classList.contains("is_open")) return;
+
+                        if (e.key === "Escape") close();
+                        if (e.key === "ArrowLeft") step(-1);
+                        if (e.key === "ArrowRight") step(1);
+                    });
+                })();
+            </script>
 
             <p>{project.note}</p>
         </article>
