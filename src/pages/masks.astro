@@ -3,82 +3,338 @@ import BaseLayout from "../layouts/base_layout.astro";
 
 const works = [
     {
+        id: "01",
         image: "/projects/masks/masks01.jpg",
         medium: "Limestone Lithography",
+        size: "14x18 inches",
         year: "2025",
-        text: `This print begins as a study of movement held in suspension...`,
+        align: "center", // 01 居中展示（但仍是左图右文结构）
+        text: `Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958). Rather than depicting recognizable identities, the works approach the face as a fluid structure — something that forms and dissolves within social relationships. Gesture replaces representation; surfaces fold into one another, suggesting expressions that never fully stabilize.`,
     },
     {
+        id: "02",
         image: "/projects/masks/masks02.jpg",
         medium: "Limestone Lithography",
+        size: "7x10 inches",
         year: "2024",
-        text: `The image explores compression and expansion through layered textures...`,
+        align: "left",
+        text: `The mask here is not a disguise but a condition. It exists in the tension between concealment and revelation, between the desire to remain unseen and the urge to be understood. Eyes emerge and disappear, fragments gather and disperse, and abstraction becomes a language for something inherently ungraspable.`,
     },
     {
+        id: "03",
         image: "/projects/masks/masks03.jpg",
         medium: "Limestone Lithography",
+        size: "8.5x13.5 inches",
         year: "2024",
-        text: `This work examines enclosure and concealment...`,
+        align: "left",
+        text: `Curiosity here becomes a form of pressure — an invisible force that bends perception and reshapes the self. The desire to look and the resistance to being seen collide, compressing the interior until something formless escapes. What emerges is neither body nor gesture but a drifting presence, slipping through dense structures of relation like vapor through sealed surfaces. Twisted, enclosed, and endlessly folding back onto itself, the form recalls a fragile Möbius continuity — an unstable infinity sustained by tension rather than stability.`,
     },
     {
+        id: "04",
         image: "/projects/masks/masks04.jpg",
         medium: "Limestone Lithography",
+        size: "7x9 inches",
         year: "2025",
-        text: `The composition develops from earlier experiments with distortion...`,
+        align: "right", // 04 图片在右侧，文字在左侧
+        text: `Repetition becomes a process of reduction. Language loses weight as actions remain, stripped of narrative and left nearly bare. Attraction, obsession, and projection dissolve into a single directional movement toward inevitability. Like a solitary structure placed in open terrain, detached from the surrounding city yet still governed by its internal logic, the work persists through function rather than explanation, allowing meaning to arise through sustained encounter rather than declaration.`,
     },
 ];
 ---
 
 <style>
-    .project-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        min-height: 100vh;
-        align-items: center;
-        gap: 3rem;
+    /* 关键：把 BaseLayout 默认的 content 容器限制干掉，否则内容永远“缩”在中间 */
+    :global(main.content) {
+        padding: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
     }
 
-    .image-container img {
+    :global(main.content > *) {
+        max-width: none !important;
+    }
+
+    .project {
         width: 100%;
-        max-height: 85vh;
+    }
+
+    /* 一屏一页 */
+    .row {
+        min-height: auto;
+        display: grid;
+        align-items: start;
+        margin: 72px 0;
+        --img-h: min(92vh, 980px);
+        box-sizing: border-box;
+
+        /* 用 12 栅格控制“偏向视觉中心”，而不是贴边 */
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        column-gap: clamp(24px, 4vw, 56px);
+    }
+
+    /* 图片通用：大、可控、不裁切 */
+    .image {
+        height: var(--img-h);
+        cursor: zoom-in;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image img {
+        height: 100%;
+        width: auto;
+        cursor: zoom-in;
+        max-width: 100%;
         object-fit: contain;
-        transition: border 0.2s ease;
     }
 
-    .image-container img:hover {
-        border: 1px solid black;
-    }
-
-    .text-container {
-        max-width: 420px;
+    .text {
+        padding-top: calc(var(--img-h) * 0.42);
+        max-width: 440px;
     }
 
     .meta {
-        font-size: 0.9rem;
-        margin-bottom: 1rem;
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 0 0 16px;
+    }
+
+    .desc {
+        font-size: 15px;
+        line-height: 1.85;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.62);
+    }
+
+    /* ——对齐策略——
+     left/right 都不是贴边，而是“靠近视觉中心的左/右”：
+     通过栅格列起止控制位置。
+  */
+
+    /* 02/03：图片在左，靠近视觉中心（从第2列开始到第8列） */
+    .row--left .image {
+        grid-column: 2 / 8;
+    }
+    .row--left .text {
+        grid-column: 8 / 12;
+    }
+
+    /* 04：图片在右（从第6列到第12列），文字在左（第2到第6列） */
+    .row--right .image {
+        grid-column: 6 / 12 !important;
+        grid-row: 1;
+    }
+    .row--right .text {
+        grid-column: 2 / 6 !important;
+        grid-row: 1;
+    }
+
+    /* 01：居中展示（图片更居中一些：第3到第9列），文字仍在右侧（第9到第12列） */
+    .row--center .image {
+        grid-column: 3 / 9;
+    }
+    .row--center .text {
+        grid-column: 9 / 12;
+    }
+
+    .image {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .lightbox {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.92);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999;
+    }
+
+    .lightbox img {
+        max-height: 90vh;
+        max-width: 90vw;
+    }
+
+    .lightbox.hidden {
+        display: none;
+    }
+
+    .lightbox button {
+        position: absolute;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    .prev {
+        left: 30px;
+    }
+    .next {
+        right: 30px;
+    }
+
+    /* 默认隐藏文字 */
+    .text {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 180ms ease;
+    }
+
+    /* 触发显示（由 JS 控制） */
+    :global(body.show-text) .text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 小屏降级 */
+    @media (max-width: 900px) {
+        .row {
+            grid-template-columns: 1fr;
+            padding: 96px 24px;
+            row-gap: 28px;
+        }
+        .row--left .image,
+        .row--left .text,
+        .row--right .image,
+        .row--right .text,
+        .row--center .image,
+        .row--center .text {
+            grid-column: auto;
+        }
+        .image {
+            height: 70vh;
+        }
+        .text {
+            padding-top: 0;
+        }
     }
 </style>
 
 <BaseLayout title="Masks">
     <section class="project">
         {
-            works.map((work) => (
-                <div class="project-row">
-                    <div class="image-container">
-                        <img src={work.image} alt="Masks print" />
+            works.map((work, index) => (
+                <div class={`row row--${work.align}`}>
+                    <div class="image" data-index={index}>
+                        <img src={work.image} />
                     </div>
 
-                    <div class="text-container">
+                    <div class="text">
                         <p class="meta">
                             Medium: {work.medium}
                             <br />
+                            Size: {work.size}
+                            <br />
                             Year: {work.year}
                         </p>
-
-                        <p>{work.text}</p>
+                        <p class="desc">{work.text}</p>
                     </div>
                 </div>
             ))
         }
     </section>
+
+    <div id="lightbox" class="lightbox hidden">
+        <button class="prev">←</button>
+        <img id="lightbox-image" />
+        <button class="next">→</button>
+    </div>
+
+    <script>
+        const images = [...document.querySelectorAll(".image")];
+        const lightbox = document.getElementById("lightbox")!;
+        const lightboxImage = document.getElementById(
+            "lightbox-image",
+        ) as HTMLImageElement;
+
+        const prevBtn = lightbox.querySelector(".prev")!;
+        const nextBtn = lightbox.querySelector(".next")!;
+
+        const sources = images.map((el) => el.querySelector("img")!.src);
+
+        let current = 0;
+
+        function openLightbox(index: number) {
+            current = index;
+            lightboxImage.src = sources[current];
+            lightbox.classList.remove("hidden");
+        }
+
+        images.forEach((el, index) => {
+            el.addEventListener("click", () => openLightbox(index));
+        });
+
+        prevBtn.addEventListener("click", () => {
+            current = (current - 1 + sources.length) % sources.length;
+            lightboxImage.src = sources[current];
+        });
+
+        nextBtn.addEventListener("click", () => {
+            current = (current + 1) % sources.length;
+            lightboxImage.src = sources[current];
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add("hidden");
+            }
+        });
+    </script>
+
+    <script type="module">
+        const body = document.body;
+        const content = document.querySelector("main.content");
+        const sidebar = document.querySelector("aside.sidebar");
+
+        function isInside(el, x, y) {
+            if (!el) return false;
+            const r = el.getBoundingClientRect();
+            return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+        }
+
+        function isOnAny(selector, x, y) {
+            const els = document.querySelectorAll(selector);
+            for (const el of els) {
+                const r = el.getBoundingClientRect();
+                if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom)
+                    return true;
+            }
+            return false;
+        }
+
+        function update(e) {
+            const x = e.clientX;
+            const y = e.clientY;
+
+            // 只在 content 区域内才可能显示
+            if (!isInside(content, x, y)) {
+                body.classList.remove("show-text");
+                return;
+            }
+
+            // 在 sidebar 上不显示
+            if (isInside(sidebar, x, y)) {
+                body.classList.remove("show-text");
+                return;
+            }
+
+            // 在任意图片区域上不显示
+            if (isOnAny(".row .image", x, y)) {
+                body.classList.remove("show-text");
+                return;
+            }
+
+            // 其它（空白区域）显示
+            body.classList.add("show-text");
+        }
+
+        window.addEventListener("mousemove", update, { passive: true });
+        window.addEventListener("mouseleave", () =>
+            body.classList.remove("show-text"),
+        );
+    </script>
 </BaseLayout>
