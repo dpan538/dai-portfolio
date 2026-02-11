@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const works = [
+    {
+        image: "/projects/masks/masks01.jpg",
+        medium: "Limestone Lithography",
+        year: "2025",
+        text: `This print begins as a study of movement held in suspension...`,
+    },
+    {
+        image: "/projects/masks/masks02.jpg",
+        medium: "Limestone Lithography",
+        year: "2024",
+        text: `The image explores compression and expansion through layered textures...`,
+    },
+    {
+        image: "/projects/masks/masks03.jpg",
+        medium: "Limestone Lithography",
+        year: "2024",
+        text: `This work examines enclosure and concealment...`,
+    },
+    {
+        image: "/projects/masks/masks04.jpg",
+        medium: "Limestone Lithography",
+        year: "2025",
+        text: `The composition develops from earlier experiments with distortion...`,
+    },
+];
+---
+
+<style>
+    .project-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 100vh;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-height: 85vh;
+        object-fit: contain;
+        transition: border 0.2s ease;
+    }
+
+    .image-container img:hover {
+        border: 1px solid black;
+    }
+
+    .text-container {
+        max-width: 420px;
+    }
+
+    .meta {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<BaseLayout title="Masks">
+    <section class="project">
+        {
+            works.map((work) => (
+                <div class="project-row">
+                    <div class="image-container">
+                        <img src={work.image} alt="Masks print" />
+                    </div>
+
+                    <div class="text-container">
+                        <p class="meta">
+                            Medium: {work.medium}
+                            <br />
+                            Year: {work.year}
+                        </p>
+
+                        <p>{work.text}</p>
+                    </div>
+                </div>
+            ))
+        }
+    </section>
+</BaseLayout>
