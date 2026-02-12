@@ -1,0 +1,809 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const total = 22;
+
+// Flow 图片：threes_01.png ~ threes_22.png
+const spreads = Array.from({ length: total }, (_, i) => {
+    const num = String(i + 1).padStart(2, "0");
+    return `/projects/the_threes/threes_${num}.png`;
+});
+
+// 封面 / 收尾
+const coverImg = `/projects/the_threes/threes_23.jpg`;
+const endImg = `/projects/the_threes/threes_24.jpg`;
+
+const pageTitle = "The Threes";
+const pageDescription =
+    "The Threes — a quiet book-object of poetry, image, and story, sequenced as a single continuous experience.";
+---
+
+<BaseLayout title={pageTitle}>
+    <Fragment slot="head">
+        <meta name="description" content={pageDescription} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:image" content={coverImg} />
+    </Fragment>
+
+    <!-- 1) INTRO / HERO -->
+    <section class="threes threes__intro" id="top">
+        <div class="threes__intro-grid">
+            <div class="threes__intro-text">
+                <h1 class="threes__title">The Threes</h1>
+                <p class="threes__lead">
+                    Poetry, image, and story collected into a single, hand-built book-object — meant to be moved
+                    through slowly, more like weather than a statement.
+                </p>
+
+                <div class="threes__cta-row">
+                    <button class="threes__cta" type="button" data-scroll-to="#flow">
+                        Enter
+                    </button>
+                    <span class="threes__hint">Click to begin · Scroll to drift through the spreads</span>
+                </div>
+            </div>
+
+            <figure
+                class="threes__intro-media"
+                aria-label="The Threes cover mockup"
+                data-scroll-to="#flow">
+                <img
+                    src={coverImg}
+                    alt="The Threes cover mockup"
+                    loading="eager"
+                />
+            </figure>
+        </div>
+
+        <div class="threes__scroll-cue" aria-hidden="true">
+            <span class="threes__scroll-dot"></span>
+            <span class="threes__scroll-line"></span>
+        </div>
+    </section>
+
+    <!-- 2) TEXT DESCRIPTION -->
+    <section class="threes threes__text" id="description">
+        <div class="threes__text-wrap">
+            <p>
+                The Threes is a curated collection of literary and visual works, presented in three interconnected
+                sections: Poetry, Image, and Story. This selection brings together a range of creative explorations,
+                showcasing fluid narratives and thoughtful imagery crafted throughout 2025. Designed as an experience
+                rather than a statement, each section offers its own perspective, inviting viewers to explore multiple
+                ways of seeing and feeling the subtle connections between words, visuals, and personal reflection.
+            </p>
+
+            <p>
+                The collection features 18 poems and a short narrative story, each piece drawing inspiration from
+                personal introspection, philosophical inquiry, and fragmented memories. Rooted in reflections on
+                identity, emotional resonance, and subtle encounters in everyday life, these works capture fleeting
+                moments of clarity within an ever-changing reality.
+            </p>
+
+            <p>
+                This project is ultimately an exercise in creative purification — a personal, artistic baptism realized
+                through literature, abstract illustration, and meticulous book design. By writing, designing, and
+                assembling the collection independently, I sought to engage deeply with each aspect of the process,
+                exploring the boundaries between poetic expression, visual abstraction, and crafted narrative.
+            </p>
+        </div>
+    </section>
+
+    <!-- 3) MAIN COVER FLOW -->
+    <section class="threes threes__flow" id="flow">
+        <header class="threes__flow-header">
+            <h2 class="threes__flow-title">Browse the spreads</h2>
+            <p class="threes__flow-sub">
+                Drag, scroll, or use the arrow keys. Press <kbd>Enter</kbd> to focus · <kbd>Esc</kbd> to close.
+            </p>
+        </header>
+
+        <div class="threes__flow-stage" data-flow-stage>
+            {spreads.map((src, i) => (
+                <button
+                    class="threes__card"
+                    type="button"
+                    data-index={i}
+                    aria-label={`Open spread ${i + 1}`}>
+                    <img
+                        src={src}
+                        alt={`The Threes spread ${i + 1}`}
+                        loading={i < 3 ? "eager" : "lazy"}
+                    />
+                </button>
+            ))}
+        </div>
+    </section>
+
+    <!-- Focus viewer（全屏，不引起布局重排） -->
+    <div
+        id="threes-viewer"
+        class="threes-viewer threes-viewer--hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-label="The Threes spread viewer">
+        <div class="threes-viewer__backdrop"></div>
+        <div class="threes-viewer__body">
+            <button
+                type="button"
+                class="threes-viewer__nav threes-viewer__nav--prev"
+                data-viewer-prev
+                aria-label="Previous spread">
+                ←
+            </button>
+
+            <figure class="threes-viewer__frame">
+                <img
+                    class="threes-viewer__img"
+                    data-viewer-img
+                    alt="Selected spread"
+                />
+            </figure>
+
+            <button
+                type="button"
+                class="threes-viewer__nav threes-viewer__nav--next"
+                data-viewer-next
+                aria-label="Next spread">
+                →
+            </button>
+
+            <button
+                type="button"
+                class="threes-viewer__close"
+                data-viewer-close
+                aria-label="Close viewer">
+                ×
+            </button>
+        </div>
+    </div>
+
+    <!-- 4) OUTRO / ENDING -->
+    <section class="threes threes__outro" id="end">
+        <figure class="threes__outro-media" aria-label="The Threes ending mockup">
+            <img
+                src={endImg}
+                alt="The Threes ending mockup"
+                loading="lazy"
+            />
+        </figure>
+
+        <div class="threes__outro-text">
+            <p class="threes__outro-line">
+                what was seen, what was said, what remained.
+            </p>
+        </div>
+    </section>
+
+    <style>
+        .threes {
+            width: 100%;
+        }
+
+        .threes + .threes {
+            margin-top: 56px;
+        }
+
+        /* ==== INTRO / HERO ==== */
+        .threes__intro {
+            padding-top: 8px;
+        }
+
+        .threes__intro-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+            gap: 28px;
+            align-items: center;
+        }
+
+        .threes__title {
+            margin: 0 0 10px;
+            font-size: 1.9rem;
+            letter-spacing: 0.04em;
+        }
+
+        .threes__lead {
+            margin: 0 0 20px;
+            max-width: 46ch;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.95rem;
+        }
+
+        .threes__cta-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 6px;
+        }
+
+        .threes__cta {
+            appearance: none;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #111111;
+            color: #ffffff;
+            padding: 9px 18px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition:
+                background 160ms ease,
+                transform 160ms ease,
+                box-shadow 160ms ease;
+        }
+
+        .threes__cta:hover {
+            background: #000000;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .threes__hint {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .threes__intro-media {
+            margin: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #f8f8f8;
+            cursor: pointer;
+            transition:
+                transform 220ms ease,
+                box-shadow 220ms ease;
+        }
+
+        .threes__intro-media img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .threes__intro-media:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.14);
+        }
+
+        .threes__scroll-cue {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            opacity: 0.7;
+            gap: 10px;
+        }
+
+        .threes__scroll-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #111111;
+        }
+
+        .threes__scroll-line {
+            width: 1px;
+            height: 34px;
+            background: rgba(0, 0, 0, 0.22);
+        }
+
+        /* ==== TEXT BLOCK ==== */
+        .threes__text-wrap {
+            max-width: 70ch;
+            line-height: 1.78;
+            font-size: 0.95rem;
+            color: rgba(0, 0, 0, 0.78);
+        }
+
+        .threes__text-wrap p {
+            margin: 0 0 18px;
+        }
+
+        .threes__text-wrap p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==== FLOW SECTION ==== */
+        .threes__flow-header {
+            margin-bottom: 18px;
+        }
+
+        .threes__flow-title {
+            margin: 0 0 6px;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .threes__flow-sub {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        kbd {
+            font: inherit;
+            font-size: 0.75rem;
+            padding: 1px 6px;
+            border-radius: 6px;
+            border: 1px solid var(--line);
+            background: #f8f8f8;
+        }
+
+        .threes__flow-stage {
+            position: relative;
+            height: 520px;
+            margin-top: 12px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: #fafafa;
+            overflow: visible; /* 避免 transform 被裁剪 */
+            perspective: 1400px;
+        }
+
+        .threes__card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+            border: none;
+            padding: 0;
+            background: transparent;
+            cursor: pointer;
+            will-change: transform, opacity;
+        }
+
+        .threes__card img {
+            width: min(520px, 72vw);
+            height: auto;
+            display: block;
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .threes__card[aria-current="true"] img {
+            box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+        }
+
+        .threes__card--hidden {
+            display: none;
+        }
+
+        /* ==== VIEWER ==== */
+        .threes-viewer {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .threes-viewer--hidden {
+            display: none;
+        }
+
+        .threes-viewer__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.78);
+        }
+
+        .threes-viewer__body {
+            position: relative;
+            z-index: 2;
+            max-width: min(1120px, 92vw);
+            max-height: min(86vh, 900px);
+            padding: 18px 18px 20px;
+            border-radius: 18px;
+            background: rgba(6, 6, 6, 0.96);
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
+            align-items: center;
+            column-gap: 14px;
+        }
+
+        .threes-viewer__frame {
+            margin: 0;
+        }
+
+        .threes-viewer__img {
+            display: block;
+            width: 100%;
+            max-height: min(78vh, 820px);
+            object-fit: contain;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .threes-viewer__nav {
+            appearance: none;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.04);
+            color: #ffffff;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition:
+                background 150ms ease,
+                transform 150ms ease;
+        }
+
+        .threes-viewer__nav:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-1px);
+        }
+
+        .threes-viewer__close {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            appearance: none;
+            border-radius: 999px;
+            border: none;
+            padding: 4px 9px 5px;
+            font-size: 0.95rem;
+            line-height: 1;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .threes-viewer__close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* ==== OUTRO ==== */
+        .threes__outro {
+            margin-top: 64px;
+            padding-bottom: 12px;
+        }
+
+        .threes__outro-media {
+            margin: 0;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: #f7f7f7;
+        }
+
+        .threes__outro-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .threes__outro-text {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .threes__outro-line {
+            font-size: 0.9rem;
+            color: var(--muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ==== RESPONSIVE ==== */
+        @media (max-width: 860px) {
+            .threes + .threes {
+                margin-top: 40px;
+            }
+
+            .threes__intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .threes__intro-media {
+                order: -1;
+            }
+
+            .threes__flow-stage {
+                height: 440px;
+            }
+
+            .threes-viewer__body {
+                grid-template-columns: minmax(0, 1fr);
+                row-gap: 12px;
+                padding-inline: 14px;
+            }
+
+            .threes-viewer__nav--prev,
+            .threes-viewer__nav--next {
+                justify-self: center;
+            }
+        }
+    </style>
+
+    <script type="module">
+        const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+        const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+        const prefersReducedMotion = window.matchMedia?.(
+            "(prefers-reduced-motion: reduce)",
+        )?.matches;
+
+        const FLOW_CONFIG = {
+            spacing: 230,
+            rotationStep: 16,
+            scaleDecay: 0.12,
+            visibleRange: 5,
+            depthStep: 110,
+        };
+
+        // --- smooth scroll from CTA / cover ---
+        $$("[data-scroll-to]").forEach((el) => {
+            el.addEventListener("click", () => {
+                const targetSel = el.getAttribute("data-scroll-to");
+                const target = targetSel
+                    ? document.querySelector(targetSel)
+                    : null;
+                if (!target) return;
+                target.scrollIntoView({
+                    behavior: prefersReducedMotion ? "auto" : "smooth",
+                    block: "start",
+                });
+            });
+        });
+
+        // --- cover flow ---
+        const stage = document.querySelector("[data-flow-stage]");
+        if (!stage) {
+            console.warn("[the_threes] missing flow stage");
+        } else {
+            const cards = $$("[data-index]", stage);
+            if (!cards.length) {
+                console.warn("[the_threes] no cards found");
+            } else {
+                let position = 0; // 可以是小数，表示“当前中心索引”
+                let velocity = 0;
+                let animating = false;
+
+                const maxIndex = cards.length - 1;
+
+                function applyLayout() {
+                    cards.forEach((card, i) => {
+                        const offset = i - position;
+                        const abs = Math.abs(offset);
+
+                        if (abs > FLOW_CONFIG.visibleRange) {
+                            card.classList.add("threes__card--hidden");
+                            return;
+                        }
+
+                        card.classList.remove("threes__card--hidden");
+
+                        const x = offset * FLOW_CONFIG.spacing;
+                        const z = -abs * FLOW_CONFIG.depthStep;
+                        const rot = clamp(
+                            offset * -FLOW_CONFIG.rotationStep,
+                            -55,
+                            55,
+                        );
+                        const scale = Math.max(
+                            0.6,
+                            1 - abs * FLOW_CONFIG.scaleDecay,
+                        );
+                        const opacity = 1 - abs * 0.15;
+
+                        card.style.transform =
+                            `translate(calc(-50% + ${x}px), -50%) rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
+                        card.style.opacity = String(opacity);
+                        card.style.zIndex = String(1000 - Math.round(abs * 10));
+                        card.setAttribute(
+                            "aria-current",
+                            Math.round(position) === i ? "true" : "false",
+                        );
+                    });
+                }
+
+                function ensureAnimating() {
+                    if (animating) return;
+                    animating = true;
+                    const step = () => {
+                        if (!animating) return;
+
+                        const target = clamp(
+                            Math.round(position),
+                            0,
+                            maxIndex,
+                        );
+                        const snap = target - position;
+
+                        position += velocity;
+                        velocity *= 0.9; // 惯性衰减
+                        position += snap * 0.08; // 轻微弹性收束到最近索引
+
+                        if (
+                            Math.abs(velocity) < 0.001 &&
+                            Math.abs(snap) < 0.001
+                        ) {
+                            position = target;
+                            velocity = 0;
+                            animating = false;
+                            applyLayout();
+                            return;
+                        }
+
+                        applyLayout();
+                        requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
+                }
+
+                // 初始布局
+                applyLayout();
+
+                // --- pointer drag with inertia ---
+                let dragging = false;
+                let lastX = 0;
+                let lastTime = 0;
+                let dragMoved = 0;
+
+                stage.addEventListener("pointerdown", (e) => {
+                    dragging = true;
+                    dragMoved = 0;
+                    lastX = e.clientX;
+                    lastTime = performance.now();
+                    stage.setPointerCapture?.(e.pointerId);
+                    velocity = 0;
+                });
+
+                stage.addEventListener("pointermove", (e) => {
+                    if (!dragging) return;
+                    const now = performance.now();
+                    const dx = e.clientX - lastX;
+                    const dt = now - lastTime || 16;
+
+                    dragMoved += Math.abs(dx);
+
+                    // 根据拖动距离更新 position（向右拖 = 看前一页）
+                    position -= dx / FLOW_CONFIG.spacing;
+                    position = clamp(position, 0, maxIndex);
+
+                    // 记录速度（索引/帧）
+                    const vPxPerMs = dx / dt;
+                    velocity = -vPxPerMs * 16 * (1 / FLOW_CONFIG.spacing);
+
+                    lastX = e.clientX;
+                    lastTime = now;
+
+                    applyLayout();
+                });
+
+                function endDrag(e) {
+                    if (!dragging) return;
+                    dragging = false;
+                    if (e.pointerId != null) {
+                        stage.releasePointerCapture?.(e.pointerId);
+                    }
+
+                    // 轻点不进入惯性，而是视为 click（交给 card 自己的 click 事件）
+                    if (dragMoved < 4) {
+                        velocity = 0;
+                        return;
+                    }
+
+                    ensureAnimating();
+                }
+
+                stage.addEventListener("pointerup", endDrag);
+                stage.addEventListener("pointercancel", endDrag);
+
+                // --- wheel / trackpad ---
+                stage.addEventListener(
+                    "wheel",
+                    (e) => {
+                        const mag =
+                            Math.abs(e.deltaX) > Math.abs(e.deltaY)
+                                ? e.deltaX
+                                : e.deltaY;
+                        if (Math.abs(mag) < 4) return;
+
+                        // 使用小步长，让体验更像缓慢推动
+                        position = clamp(
+                            position + (mag > 0 ? 0.3 : -0.3),
+                            0,
+                            maxIndex,
+                        );
+                        velocity += (mag > 0 ? 0.02 : -0.02);
+                        ensureAnimating();
+                    },
+                    { passive: true },
+                );
+
+                // --- viewer state ---
+                const viewer = document.getElementById("threes-viewer");
+                const viewerImg = viewer?.querySelector(
+                    "[data-viewer-img]",
+                );
+                const btnPrev = viewer?.querySelector("[data-viewer-prev]");
+                const btnNext = viewer?.querySelector("[data-viewer-next]");
+                const btnClose = viewer?.querySelector("[data-viewer-close]");
+
+                let viewerIndex = 0;
+                const originalOverflow =
+                    document.documentElement.style.overflow;
+
+                function openViewer(i) {
+                    if (!viewer || !viewerImg) return;
+                    viewerIndex = clamp(i, 0, maxIndex);
+
+                    const imgEl = cards[viewerIndex]?.querySelector("img");
+                    if (!imgEl) return;
+
+                    viewerImg.src = imgEl.currentSrc || imgEl.src;
+                    viewer.classList.remove("threes-viewer--hidden");
+                    document.documentElement.style.overflow = "hidden";
+                }
+
+                function closeViewer() {
+                    if (!viewer) return;
+                    viewer.classList.add("threes-viewer--hidden");
+                    document.documentElement.style.overflow =
+                        originalOverflow || "";
+                }
+
+                // 点击卡片打开 viewer（仅当不是明显拖拽手势时）
+                cards.forEach((card) => {
+                    card.addEventListener("click", () => {
+                        if (dragging || dragMoved > 6) return;
+                        const raw = card.getAttribute("data-index");
+                        const idx = raw ? Number(raw) : NaN;
+                        if (!Number.isFinite(idx)) return;
+                        openViewer(idx);
+                    });
+                });
+
+                btnPrev?.addEventListener("click", () => {
+                    openViewer(viewerIndex - 1);
+                });
+                btnNext?.addEventListener("click", () => {
+                    openViewer(viewerIndex + 1);
+                });
+                btnClose?.addEventListener("click", () => {
+                    closeViewer();
+                });
+
+                viewer?.addEventListener("click", (e) => {
+                    if (e.target === viewer || e.target === viewer.firstElementChild) {
+                        closeViewer();
+                    }
+                });
+
+                // --- keyboard ---
+                window.addEventListener("keydown", (e) => {
+                    const viewerOpen = !viewer?.classList.contains(
+                        "threes-viewer--hidden",
+                    );
+
+                    if (viewerOpen) {
+                        if (e.key === "Escape") closeViewer();
+                        if (e.key === "ArrowLeft") openViewer(viewerIndex - 1);
+                        if (e.key === "ArrowRight") openViewer(viewerIndex + 1);
+                        return;
+                    }
+
+                    if (e.key === "ArrowLeft") {
+                        position = clamp(position - 1, 0, maxIndex);
+                        ensureAnimating();
+                    }
+                    if (e.key === "ArrowRight") {
+                        position = clamp(position + 1, 0, maxIndex);
+                        ensureAnimating();
+                    }
+                    if (e.key === "Enter") {
+                        openViewer(Math.round(position));
+                    }
+                });
+            }
+        }
+    </script>
+</BaseLayout>
+
