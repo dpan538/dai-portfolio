@@ -1,0 +1,537 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+// Images live in public/projects/quite_off/ → URL path /projects/quite_off/
+const images = [
+    "/projects/quite_off/quite_01.jpg",
+    "/projects/quite_off/quite_02.jpg",
+    "/projects/quite_off/quite_03.jpg",
+    "/projects/quite_off/quite_04.jpg",
+    "/projects/quite_off/quite_05.jpg",
+    "/projects/quite_off/quite_06.jpg",
+    "/projects/quite_off/quite_07.jpg",
+    "/projects/quite_off/quite_08.jpg",
+];
+
+const imageSemanticMap: Record<number, string[]> = {
+    0: ["gaze", "eyes", "beginning", "presence"],
+    1: ["distance", "touch", "silence"],
+    2: ["distance", "mother", "closeness"],
+    3: ["red", "bloom", "gravity"],
+    4: ["red", "persistence"],
+    5: ["fracture", "motion", "crossing"],
+    6: ["departure", "instability"],
+    7: ["absence", "afterimage", "memory"],
+};
+
+const seoTitle = "Quite Off — Dai Pan";
+const seoDescription =
+    "Quite Off is an unfinished film fragment shot on Kodak Vision3 5203, 5207, and 5219. A cinema and image study of gaze, motherhood and friendship, separation, and red/green motif. We wrote a script and storyboards; filming became a path toward separation. A film that cannot be finished becomes a way of looking.";
+const canonicalUrl = "https://daiportfolio.com/quite_off";
+const ogImagePath = "/projects/quite_off/quite_01.jpg";
+---
+
+<BaseLayout title="Quite Off" active="quite_off">
+    <Fragment slot="head">
+        <meta
+            name="description"
+            content="Quite Off is a fragment of an unfinished film—shot on Kodak Vision3 5203, 5207, and 5219—where mother-love and friendship drift in and out of reach. Red insists, green endures; the gaze lingers, departure repeats, and what leaves still remains as afterimage."
+        />
+        <meta property="og:title" content="Quite Off — Dai Pan" />
+        <meta
+            property="og:description"
+            content="A fragment of an unfinished film—mother-love, friendship, gaze, distance. Red insists, green endures; departure repeats, and what leaves still remains."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/projects/quite_off/quite_01.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+    </Fragment>
+
+    <div class="qo_page" id="qo_page">
+        <div class="qo_grid">
+            <div class="qo_viewer">
+                <p class="qo_stock_above">Kodak Vision3 5203 / 5207 / 5219</p>
+                <div class="qo_stage" aria-live="polite">
+                    <div class="qo_frame">
+                        <img
+                            class="qo_image"
+                            id="qo-image"
+                            src={images[0]}
+                            alt="Quite Off still 01"
+                            loading="eager"
+                            decoding="async"
+                        />
+                    </div>
+                </div>
+
+                <div class="qo_controls">
+                    <button
+                        type="button"
+                        class="qo_btn qo_prev"
+                        aria-label="Previous image"
+                    >←</button>
+                    <span class="qo_hint"
+                        >Use ←/↑ for previous, →/↓ for next</span
+                    >
+                    <button
+                        type="button"
+                        class="qo_btn qo_next"
+                        aria-label="Next image"
+                    >→</button>
+                </div>
+            </div>
+            <aside class="qo_panel">
+                <div class="qo_text">
+                    <div class="qo_narrative">
+                    <p>
+                        Quite Off unfolds as a film that never reaches
+                        completion. Every image holds a suspended <span class="semantic" data-key="beginning"
+                            >beginning</span
+                        >, where the <span class="semantic" data-key="gaze"
+                            >gaze</span
+                        > lingers before meaning forms. The <span
+                            class="semantic"
+                            data-key="eyes">eyes</span
+                        > remain within the act of watching, tracing a fragile <span
+                            class="semantic"
+                            data-key="presence">presence</span
+                        >.
+                    </p>
+                    <p>
+                        We wrote a script and storyboards; filming became a path
+                        toward separation. A quiet <span
+                            class="semantic"
+                            data-key="distance">distance</span
+                        > — where <span class="semantic" data-key="touch"
+                            >touch</span
+                        > becomes uncertain and <span
+                            class="semantic"
+                            data-key="silence">silence</span
+                        > carries weight. The <span
+                            class="semantic"
+                            data-key="mother">mother</span
+                        > as proximity without merging, a fragile <span
+                            class="semantic"
+                            data-key="closeness">closeness</span
+                        > shaped by restraint.
+                    </p>
+                    <p>
+                        <span class="semantic" data-key="red">Red</span> insists;
+                        green persists. It enters like <span
+                            class="semantic"
+                            data-key="gravity">gravity</span
+                        >, <span class="semantic" data-key="bloom">blooms</span> without
+                        apology. Movement <span class="semantic" data-key="fracture"
+                            >fractures</span
+                        > continuity — <span class="semantic" data-key="motion"
+                            >motion</span
+                        >, <span class="semantic" data-key="crossing"
+                            >crossings</span
+                        >, <span class="semantic" data-key="departure"
+                            >departure</span
+                        >. What remains is not <span
+                            class="semantic"
+                            data-key="absence">absence</span
+                        > but an <span class="semantic" data-key="afterimage"
+                            >afterimage</span
+                        >; <span class="semantic" data-key="memory">memory</span
+                        > circulates beneath every frame.
+                    </p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <style>
+        .qo_page {
+            --qo-green: #2f6f52;
+            --qo-sidew: 320px; /* JS will overwrite to match left sidebar */
+            --qo-top: 44px; /* push both image + text down a bit */
+        }
+
+        :global(main.content:has(.qo_page)) {
+            padding: 0;
+            max-width: none;
+            height: 100dvh;
+            overflow: hidden;
+        }
+
+        .qo_page {
+            height: 100%;
+            min-height: 100dvh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 七栏：左 4 栏 image 用 calc 均分，中间 24px 间隔，右 2 栏 description 各 160px（不用 fr） */
+        .qo_grid {
+            flex: 1;
+            min-height: 0;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, calc((100% - 24px - 320px) / 4))) 24px 160px 160px;
+            gap: 0;
+        }
+
+        .qo_viewer {
+            grid-column: 1 / 5;
+            width: 100%;
+            min-width: 0;
+            height: 100%;
+            min-height: 0;
+            display: flex;
+            flex-direction: column;
+            padding: var(--qo-top) 28px 10px;
+            box-sizing: border-box;
+            justify-content: flex-start;
+            align-items: stretch;
+        }
+
+        .qo_stock_above {
+            margin: 0 0 8px;
+            font-size: 0.8rem;
+            color: var(--muted, #6a6a6a);
+            flex-shrink: 0;
+            text-align: center;
+        }
+
+        .qo_stage {
+            flex: 1;
+            min-height: 0;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qo_frame {
+            width: 100%;
+            height: 100%;
+            min-height: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .qo_image {
+            --qo-image-nudge: 15px; /* 左右视觉不居中时微调：负值向左，正值向右 */
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            display: block;
+            margin-left: var(--qo-image-nudge, 0);
+            transition: opacity 240ms ease-in-out;
+        }
+
+        /* --- 覆盖可能冲突的全局样式，先达成布局效果 --- */
+        .qo_page {
+            max-width: none !important;
+        }
+        :global(main.content:has(.qo_page)) {
+            max-width: none !important;
+            width: 100% !important;
+        }
+        .qo_grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, minmax(0, 1fr)) 24px 160px 160px !important;
+            width: 100% !important;
+            max-width: none !important;
+        }
+        .qo_viewer {
+            grid-column: 1 / 5 !important;
+            width: 100% !important;
+            max-width: none !important;
+            min-width: 0 !important;
+            display: flex !important;
+            align-items: stretch !important;
+        }
+        .qo_stage {
+            min-width: 0 !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .qo_frame {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .qo_panel {
+            grid-column: 6 / 8 !important;
+            width: 100% !important;
+            max-width: none !important;
+            min-width: 0 !important;
+            display: flex !important;
+            align-items: stretch !important;
+        }
+        .qo_text,
+        .qo_narrative {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 0 !important;
+        }
+
+        .qo_image.is-fading-out {
+            opacity: 0;
+            transition: opacity 180ms ease-in-out;
+        }
+
+        .qo_image.is-fading-in {
+            opacity: 1;
+            transition: opacity 240ms ease-in-out;
+        }
+
+        /* 控制条位置：padding-top 越小越靠上，padding-bottom 越大离页面底部越远 */
+        .qo_controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            padding: 12px 0 30px;
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        .qo_btn {
+            background: none;
+            border: none;
+            padding: 8px 12px;
+            font-size: 1rem;
+            color: var(--muted, #6a6a6a);
+            cursor: pointer;
+            transition:
+                opacity 180ms ease,
+                color 180ms ease;
+        }
+
+        .qo_btn:hover {
+            opacity: 0.85;
+            color: var(--text, #111);
+        }
+
+        .qo_btn:focus-visible {
+            outline: 2px solid currentColor;
+            outline-offset: 2px;
+        }
+
+        .qo_hint {
+            font-size: 0.8rem;
+            color: var(--muted, #6a6a6a);
+            letter-spacing: 0.02em;
+            text-align: center;
+        }
+
+        .qo_panel {
+            grid-column: 6 / 8;
+            width: 100%;
+            min-width: 0;
+            margin-left: -10px; /* 描述区整体稍往左 */
+            padding: calc(var(--qo-top) + 10px) 18px 18px;
+            overflow: hidden;
+            border-left: 1px solid var(--line, #ececec);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 0;
+            box-sizing: border-box;
+        }
+
+        /* 描述段落整体下移：改 margin-top 即可，数值越大越靠下 */
+        .qo_text {
+            margin-top: 60px;
+            width: 100%;
+            min-width: 0;
+            flex: 1;
+            overflow: hidden;
+            min-height: 0;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        .qo_narrative {
+            width: 100%;
+            max-width: 100%;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.84);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            min-height: 0;
+            box-sizing: border-box;
+        }
+
+        .qo_narrative p {
+            margin: 0 0 0.9em;
+        }
+        .qo_narrative p:last-child {
+            margin-bottom: 0;
+        }
+
+        .semantic {
+            transition:
+                color 160ms ease,
+                font-weight 160ms ease;
+        }
+        .semantic.semantic-active {
+            color: var(--qo-green);
+            font-weight: 520;
+        }
+
+        @media (max-width: 900px) {
+            :global(main.content:has(.qo_page)) {
+                height: auto;
+                overflow: visible;
+            }
+            .qo_grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto;
+            }
+            .qo_viewer {
+                grid-column: 1;
+            }
+            .qo_panel {
+                grid-column: 1;
+                border-left: none;
+                border-top: 1px solid var(--line, #ececec);
+                padding-top: 18px;
+            }
+        }
+    </style>
+
+    <script>
+        // @ts-check
+        (function () {
+            const pageEl = document.getElementById("qo_page");
+            /** @type {HTMLImageElement | null} */
+            const imageEl = document.getElementById("qo-image");
+            const prevBtn = document.querySelector(".qo_prev");
+            const nextBtn = document.querySelector(".qo_next");
+            const semanticSpans = document.querySelectorAll(".semantic");
+
+            const imageList = [
+                "/projects/quite_off/quite_01.jpg",
+                "/projects/quite_off/quite_02.jpg",
+                "/projects/quite_off/quite_03.jpg",
+                "/projects/quite_off/quite_04.jpg",
+                "/projects/quite_off/quite_05.jpg",
+                "/projects/quite_off/quite_06.jpg",
+                "/projects/quite_off/quite_07.jpg",
+                "/projects/quite_off/quite_08.jpg",
+            ];
+
+            const semanticMap = /** @type {Record<number, string[]>} */ ({
+                0: ["gaze", "eyes", "beginning", "presence"],
+                1: ["distance", "touch", "silence"],
+                2: ["distance", "mother", "closeness"],
+                3: ["red", "bloom", "gravity"],
+                4: ["red", "persistence"],
+                5: ["fracture", "motion", "crossing"],
+                6: ["departure", "instability"],
+                7: ["absence", "afterimage", "memory"],
+            });
+
+            const total = imageList.length;
+            let index = 0;
+            let isTransitioning = false;
+
+            /** @returns {string} */
+            function pad(n = 0) {
+                return String(n).padStart(2, "0");
+            }
+
+            /** @returns {string[]} */
+            function getSemanticKeys(m: Record<number, string[]> = {}, i: number = 0) {
+                const map = /** @type {Record<number, string[]>} */ (m);
+                return map[i] ?? [];
+            }
+
+            function updateSemanticHighlight() {
+                semanticSpans.forEach((span) =>
+                    span.classList.remove("semantic-active"),
+                );
+                const keys = getSemanticKeys(semanticMap, index);
+                if (!keys.length) return;
+                semanticSpans.forEach((span) => {
+                    const key = span.getAttribute("data-key");
+                    if (key !== null && keys.includes(key))
+                        span.classList.add("semantic-active");
+                });
+            }
+
+            function setImageSrc(src = "") {
+                if (!imageEl || !(imageEl instanceof HTMLImageElement)) return;
+                imageEl.src = src;
+                imageEl.alt = "Quite Off still " + pad(index + 1);
+            }
+
+            function fadeSwap(nextIndex = 0) {
+                const img = imageEl;
+                if (!img || isTransitioning) return;
+                isTransitioning = true;
+
+                img.classList.remove("is-fading-in");
+                img.classList.add("is-fading-out");
+
+                window.setTimeout(() => {
+                    index = nextIndex;
+                    setImageSrc(imageList[index]);
+                    updateSemanticHighlight();
+
+                    img.classList.remove("is-fading-out");
+                    img.classList.add("is-fading-in");
+
+                    window.setTimeout(() => {
+                        img.classList.remove("is-fading-in");
+                        isTransitioning = false;
+                    }, 240);
+                }, 180);
+            }
+
+            function goPrev() {
+                const nextIndex = index <= 0 ? total - 1 : index - 1;
+                fadeSwap(nextIndex);
+            }
+
+            function goNext() {
+                const nextIndex = index >= total - 1 ? 0 : index + 1;
+                fadeSwap(nextIndex);
+            }
+
+            function measureSidebar() {
+                if (!pageEl) return;
+                const sidebar = document.querySelector("aside.sidebar");
+                const w = sidebar
+                    ? Math.round(sidebar.getBoundingClientRect().width)
+                    : 0;
+                pageEl.style.setProperty("--qo-sidew", `${w > 0 ? w : 320}px`);
+            }
+
+            if (prevBtn) prevBtn.addEventListener("click", goPrev);
+            if (nextBtn) nextBtn.addEventListener("click", goNext);
+
+            window.addEventListener("keydown", (e) => {
+                if (e.repeat) return;
+                if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+                    e.preventDefault();
+                    goPrev();
+                } else if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+                    e.preventDefault();
+                    goNext();
+                }
+            });
+
+            window.addEventListener("resize", measureSidebar);
+            window.addEventListener("DOMContentLoaded", measureSidebar);
+            measureSidebar();
+            updateSemanticHighlight();
+        })();
+    </script>
+</BaseLayout>
