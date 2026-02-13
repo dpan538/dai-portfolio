@@ -26,40 +26,23 @@ const pageDescription =
         <meta property="og:image" content={coverImg} />
     </Fragment>
 
-    <!-- 1) INTRO / HERO -->
+    <!-- 1) HERO FIRST（单列，首屏即 hero 图） -->
     <section class="threes threes__intro" id="top">
-        <div class="threes__intro-grid">
-            <div class="threes__intro-text">
-                <h1 class="threes__title">The Threes</h1>
-                <p class="threes__lead">
-                    Poetry, image, and story collected into a single, hand-built book-object — meant to be moved
-                    through slowly, more like weather than a statement.
-                </p>
-
-                <div class="threes__cta-row">
-                    <button class="threes__cta" type="button" data-scroll-to="#flow">
-                        Enter
-                    </button>
-                    <span class="threes__hint">Click to begin · Scroll to drift through the spreads</span>
-                </div>
-            </div>
-
-            <figure
-                class="threes__intro-media"
-                aria-label="The Threes cover mockup"
-                data-scroll-to="#flow">
-                <img
-                    src={coverImg}
-                    alt="The Threes cover mockup"
-                    loading="eager"
-                />
-            </figure>
-        </div>
-
-        <div class="threes__scroll-cue" aria-hidden="true">
-            <span class="threes__scroll-dot"></span>
-            <span class="threes__scroll-line"></span>
-        </div>
+        <figure
+            class="threes__hero"
+            aria-label="The Threes cover"
+            data-scroll-to="#flow">
+            <img
+                src={coverImg}
+                alt="The Threes cover"
+                loading="eager"
+            />
+        </figure>
+        <p class="threes__lead">
+            Poetry, image, and story collected into a single, hand-built book-object — meant to be moved
+            through slowly, more like weather than a statement.
+        </p>
+        <span class="threes__hint">Click to begin · Scroll to drift through the spreads</span>
     </section>
 
     <!-- 2) TEXT DESCRIPTION -->
@@ -92,7 +75,7 @@ const pageDescription =
     <!-- 3) MAIN COVER FLOW -->
     <section class="threes threes__flow" id="flow">
         <header class="threes__flow-header">
-            <h2 class="threes__flow-title">Browse the spreads</h2>
+            <h2 class="threes__flow-title">BROWSE THE SPREADS</h2>
             <p class="threes__flow-sub">
                 Drag, scroll, or use the arrow keys. Press <kbd>Enter</kbd> to focus · <kbd>Esc</kbd> to close.
             </p>
@@ -113,49 +96,16 @@ const pageDescription =
                 </button>
             ))}
         </div>
+        <button type="button" class="threes__flow-back" data-flow-back aria-label="Back to first spread">
+            BACK
+        </button>
     </section>
 
-    <!-- Focus viewer（全屏，不引起布局重排） -->
-    <div
-        id="threes-viewer"
-        class="threes-viewer threes-viewer--hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-label="The Threes spread viewer">
-        <div class="threes-viewer__backdrop"></div>
-        <div class="threes-viewer__body">
-            <button
-                type="button"
-                class="threes-viewer__nav threes-viewer__nav--prev"
-                data-viewer-prev
-                aria-label="Previous spread">
-                ←
-            </button>
-
-            <figure class="threes-viewer__frame">
-                <img
-                    class="threes-viewer__img"
-                    data-viewer-img
-                    alt="Selected spread"
-                />
-            </figure>
-
-            <button
-                type="button"
-                class="threes-viewer__nav threes-viewer__nav--next"
-                data-viewer-next
-                aria-label="Next spread">
-                →
-            </button>
-
-            <button
-                type="button"
-                class="threes-viewer__close"
-                data-viewer-close
-                aria-label="Close viewer">
-                ×
-            </button>
-        </div>
+    <!-- Lightbox（与 masks.astro 一致：点击背景关闭、ESC、左右键切换） -->
+    <div id="lightbox" class="lightbox hidden">
+        <button class="prev" type="button">←</button>
+        <img id="lightbox-image" alt="Spread" />
+        <button class="next" type="button">→</button>
     </div>
 
     <!-- 4) OUTRO / ENDING -->
@@ -176,6 +126,26 @@ const pageDescription =
     </section>
 
     <style>
+        /* 主界面不横向滚动（整体不出现横向滚动条） */
+        :global(html),
+        :global(body) {
+            overflow-x: hidden;
+        }
+
+        /* 侧栏固定在视口左侧：向下滚动时只有主内容在动，侧栏始终贴在屏幕左边 */
+        :global(.shell .sidebar) {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 320px;
+            height: 100vh;
+            z-index: 20;
+        }
+        /* 主内容显式放在第二列，避免被 fixed 的侧栏挤出布局 */
+        :global(.shell .content) {
+            grid-column: 2;
+        }
+
         .threes {
             width: 100%;
         }
@@ -184,109 +154,44 @@ const pageDescription =
             margin-top: 56px;
         }
 
-        /* ==== INTRO / HERO ==== */
+        /* ==== INTRO / HERO（首屏即 hero 图，单列，无圆角） ==== */
         .threes__intro {
             padding-top: 8px;
         }
 
-        .threes__intro-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-            gap: 28px;
-            align-items: center;
-        }
-
-        .threes__title {
-            margin: 0 0 10px;
-            font-size: 1.9rem;
-            letter-spacing: 0.04em;
-        }
-
-        .threes__lead {
-            margin: 0 0 20px;
-            max-width: 46ch;
-            color: var(--muted);
-            line-height: 1.65;
-            font-size: 0.95rem;
-        }
-
-        .threes__cta-row {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-top: 6px;
-        }
-
-        .threes__cta {
-            appearance: none;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: #111111;
-            color: #ffffff;
-            padding: 9px 18px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition:
-                background 160ms ease,
-                transform 160ms ease,
-                box-shadow 160ms ease;
-        }
-
-        .threes__cta:hover {
-            background: #000000;
-            transform: translateY(-1px);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
-        }
-
-        .threes__hint {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .threes__intro-media {
-            margin: 0;
-            border-radius: 18px;
+        .threes__hero {
+            margin: 0 0 24px;
             overflow: hidden;
             border: 1px solid var(--line);
             background: #f8f8f8;
             cursor: pointer;
-            transition:
-                transform 220ms ease,
-                box-shadow 220ms ease;
+            transition: transform 220ms ease, box-shadow 220ms ease;
         }
 
-        .threes__intro-media img {
+        .threes__hero img {
             display: block;
             width: 100%;
             height: auto;
         }
 
-        .threes__intro-media:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.14);
+        .threes__hero:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
         }
 
-        .threes__scroll-cue {
-            margin-top: 28px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            opacity: 0.7;
-            gap: 10px;
+        .threes__lead {
+            margin: 0 0 12px;
+            max-width: 70ch;
+            color: var(--muted);
+            line-height: 1.65;
+            font-size: 0.95rem;
         }
 
-        .threes__scroll-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background: #111111;
-        }
-
-        .threes__scroll-line {
-            width: 1px;
-            height: 34px;
-            background: rgba(0, 0, 0, 0.22);
+        .threes__hint {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
         /* ==== TEXT BLOCK ==== */
@@ -305,8 +210,10 @@ const pageDescription =
             margin-bottom: 0;
         }
 
-        /* ==== FLOW SECTION ==== */
+        /* ==== FLOW SECTION（标题与 intro 同宽，flow 舞台占满横向） ==== */
         .threes__flow-header {
+            max-width: var(--max);
+            margin-inline: auto;
             margin-bottom: 18px;
         }
 
@@ -327,19 +234,23 @@ const pageDescription =
             font: inherit;
             font-size: 0.75rem;
             padding: 1px 6px;
-            border-radius: 6px;
             border: 1px solid var(--line);
             background: #f8f8f8;
+        }
+
+        /* flow 占满主内容区横向宽度；舞台本身负责背景和边框 */
+        .threes__flow {
+            position: relative;
+            width: 100%;
         }
 
         .threes__flow-stage {
             position: relative;
             height: 520px;
             margin-top: 12px;
-            border-radius: 18px;
             border: 1px solid var(--line);
             background: #fafafa;
-            overflow: visible; /* 避免 transform 被裁剪 */
+            overflow: visible;
             perspective: 1400px;
         }
 
@@ -359,7 +270,6 @@ const pageDescription =
             width: min(520px, 72vw);
             height: auto;
             display: block;
-            border-radius: 14px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.24);
             user-select: none;
             -webkit-user-drag: none;
@@ -373,89 +283,75 @@ const pageDescription =
             display: none;
         }
 
-        /* ==== VIEWER ==== */
-        .threes-viewer {
+        /* 滑到最右时显示 BACK（圆角框） */
+        .threes__flow-back {
+            position: absolute;
+            right: 24px;
+            bottom: 24px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.2s ease, visibility 0.2s ease;
+            z-index: 30;
+            margin: 0;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            cursor: pointer;
+        }
+        .threes__flow.threes__flow--at-end .threes__flow-back {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .threes__flow-back:hover {
+            color: var(--text);
+            background: #fff;
+        }
+
+        /* ==== LIGHTBOX（全视口固定，不受 content 的 max-width 和页面滚动影响） ==== */
+        .lightbox {
             position: fixed;
-            inset: 0;
-            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            max-width: none !important;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.92);
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 9999;
         }
 
-        .threes-viewer--hidden {
+        .lightbox img {
+            max-height: 90vh;
+            max-width: 90vw;
+            display: block;
+        }
+
+        .lightbox.hidden {
             display: none;
         }
 
-        .threes-viewer__backdrop {
+        .lightbox button {
             position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.78);
-        }
-
-        .threes-viewer__body {
-            position: relative;
-            z-index: 2;
-            max-width: min(1120px, 92vw);
-            max-height: min(86vh, 900px);
-            padding: 18px 18px 20px;
-            border-radius: 18px;
-            background: rgba(6, 6, 6, 0.96);
-            display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
-            align-items: center;
-            column-gap: 14px;
-        }
-
-        .threes-viewer__frame {
-            margin: 0;
-        }
-
-        .threes-viewer__img {
-            display: block;
-            width: 100%;
-            max-height: min(78vh, 820px);
-            object-fit: contain;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-        }
-
-        .threes-viewer__nav {
-            appearance: none;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            background: rgba(255, 255, 255, 0.04);
-            color: #ffffff;
-            padding: 8px 14px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition:
-                background 150ms ease,
-                transform 150ms ease;
-        }
-
-        .threes-viewer__nav:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-1px);
-        }
-
-        .threes-viewer__close {
-            position: absolute;
-            top: 10px;
-            right: 12px;
-            appearance: none;
-            border-radius: 999px;
+            background: none;
             border: none;
-            padding: 4px 9px 5px;
-            font-size: 0.95rem;
-            line-height: 1;
+            color: white;
+            font-size: 28px;
             cursor: pointer;
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
         }
 
-        .threes-viewer__close:hover {
-            background: rgba(255, 255, 255, 0.2);
+        .lightbox .prev {
+            left: 30px;
+        }
+        .lightbox .next {
+            right: 30px;
         }
 
         /* ==== OUTRO ==== */
@@ -466,7 +362,6 @@ const pageDescription =
 
         .threes__outro-media {
             margin: 0;
-            border-radius: 18px;
             overflow: hidden;
             border: 1px solid var(--line);
             background: #f7f7f7;
@@ -491,33 +386,13 @@ const pageDescription =
             text-transform: uppercase;
         }
 
-        /* ==== RESPONSIVE ==== */
         @media (max-width: 860px) {
             .threes + .threes {
                 margin-top: 40px;
             }
 
-            .threes__intro-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .threes__intro-media {
-                order: -1;
-            }
-
             .threes__flow-stage {
                 height: 440px;
-            }
-
-            .threes-viewer__body {
-                grid-template-columns: minmax(0, 1fr);
-                row-gap: 12px;
-                padding-inline: 14px;
-            }
-
-            .threes-viewer__nav--prev,
-            .threes-viewer__nav--next {
-                justify-self: center;
             }
         }
     </style>
@@ -601,6 +476,12 @@ const pageDescription =
                             Math.round(position) === i ? "true" : "false",
                         );
                     });
+
+                    const flowSection = stage.closest(".threes__flow");
+                    if (flowSection) {
+                        const atEnd = position >= maxIndex - 0.3;
+                        flowSection.classList.toggle("threes__flow--at-end", atEnd);
+                    }
                 }
 
                 function ensureAnimating() {
@@ -696,6 +577,15 @@ const pageDescription =
                 stage.addEventListener("pointerup", endDrag);
                 stage.addEventListener("pointercancel", endDrag);
 
+                // --- 滑到最右时点击「返回第一页」平滑回到第一页 ---
+                const backBtn = document.querySelector("[data-flow-back]");
+                if (backBtn) {
+                    backBtn.addEventListener("click", () => {
+                        velocity = -1.2;
+                        ensureAnimating();
+                    });
+                }
+
                 // --- wheel / trackpad ---
                 stage.addEventListener(
                     "wheel",
@@ -718,75 +608,69 @@ const pageDescription =
                     { passive: true },
                 );
 
-                // --- viewer state ---
-                const viewer = document.getElementById("threes-viewer");
-                const viewerImg = viewer?.querySelector(
-                    "[data-viewer-img]",
+                // --- Lightbox（与 masks.astro 一致：点击背景关闭、ESC、左右键切换） ---
+                const lightbox = document.getElementById("lightbox");
+                const lightboxImage = document.getElementById("lightbox-image");
+                const sources = cards.map(
+                    (el) => el.querySelector("img")?.currentSrc || el.querySelector("img")?.src || "",
                 );
-                const btnPrev = viewer?.querySelector("[data-viewer-prev]");
-                const btnNext = viewer?.querySelector("[data-viewer-next]");
-                const btnClose = viewer?.querySelector("[data-viewer-close]");
+                let current = 0;
+                const originalOverflow = document.documentElement.style.overflow;
 
-                let viewerIndex = 0;
-                const originalOverflow =
-                    document.documentElement.style.overflow;
-
-                function openViewer(i) {
-                    if (!viewer || !viewerImg) return;
-                    viewerIndex = clamp(i, 0, maxIndex);
-
-                    const imgEl = cards[viewerIndex]?.querySelector("img");
-                    if (!imgEl) return;
-
-                    viewerImg.src = imgEl.currentSrc || imgEl.src;
-                    viewer.classList.remove("threes-viewer--hidden");
+                function openLightbox(i) {
+                    if (!lightbox || !lightboxImage) return;
+                    current = clamp(i, 0, maxIndex);
+                    lightboxImage.src = sources[current];
+                    lightbox.classList.remove("hidden");
                     document.documentElement.style.overflow = "hidden";
                 }
 
-                function closeViewer() {
-                    if (!viewer) return;
-                    viewer.classList.add("threes-viewer--hidden");
-                    document.documentElement.style.overflow =
-                        originalOverflow || "";
+                function closeLightbox() {
+                    if (!lightbox) return;
+                    lightbox.classList.add("hidden");
+                    document.documentElement.style.overflow = originalOverflow || "";
                 }
 
-                // 点击卡片打开 viewer（仅当不是明显拖拽手势时）
                 cards.forEach((card) => {
                     card.addEventListener("click", () => {
                         if (dragging || dragMoved > 6) return;
                         const raw = card.getAttribute("data-index");
                         const idx = raw ? Number(raw) : NaN;
                         if (!Number.isFinite(idx)) return;
-                        openViewer(idx);
+                        openLightbox(idx);
                     });
                 });
 
-                btnPrev?.addEventListener("click", () => {
-                    openViewer(viewerIndex - 1);
+                lightbox?.querySelector(".prev")?.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    current = (current - 1 + sources.length) % sources.length;
+                    lightboxImage.src = sources[current];
                 });
-                btnNext?.addEventListener("click", () => {
-                    openViewer(viewerIndex + 1);
-                });
-                btnClose?.addEventListener("click", () => {
-                    closeViewer();
-                });
-
-                viewer?.addEventListener("click", (e) => {
-                    if (e.target === viewer || e.target === viewer.firstElementChild) {
-                        closeViewer();
-                    }
+                lightbox?.querySelector(".next")?.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    current = (current + 1) % sources.length;
+                    lightboxImage.src = sources[current];
                 });
 
-                // --- keyboard ---
+                lightbox?.addEventListener("click", (e) => {
+                    if (e.target === lightbox) closeLightbox();
+                });
+
                 window.addEventListener("keydown", (e) => {
-                    const viewerOpen = !viewer?.classList.contains(
-                        "threes-viewer--hidden",
-                    );
+                    const isOpen = lightbox && !lightbox.classList.contains("hidden");
 
-                    if (viewerOpen) {
-                        if (e.key === "Escape") closeViewer();
-                        if (e.key === "ArrowLeft") openViewer(viewerIndex - 1);
-                        if (e.key === "ArrowRight") openViewer(viewerIndex + 1);
+                    if (isOpen) {
+                        if (e.key === "Escape") closeLightbox();
+                        if (e.key === "ArrowLeft") {
+                            e.preventDefault();
+                            current = (current - 1 + sources.length) % sources.length;
+                            lightboxImage.src = sources[current];
+                        }
+                        if (e.key === "ArrowRight") {
+                            e.preventDefault();
+                            current = (current + 1) % sources.length;
+                            lightboxImage.src = sources[current];
+                        }
                         return;
                     }
 
@@ -799,7 +683,7 @@ const pageDescription =
                         ensureAnimating();
                     }
                     if (e.key === "Enter") {
-                        openViewer(Math.round(position));
+                        openLightbox(Math.round(position));
                     }
                 });
             }
