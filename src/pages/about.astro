@@ -11,24 +11,34 @@ const github = "https://github.com/dpan538";
     description="About Dai Pan — image-based work across photography, printmaking, and conceptual design."
     canonical="https://daiportfolio.com/about"
     active="about">
-    <section class="block">
-        <p>
-            Dai Pan is a visual artist and designer working across
-            photography, printmaking, and conceptual design. His
-            practice explores how images construct spatial perception through
-            framing, repetition, and visual structure, treating photography and
-            design as interconnected systems of visual thinking.
-        </p>
+    <section class="block about_intro">
+        <figure class="about_photo" aria-label="Portrait of Dai Pan">
+            <img
+                src="/projects/about/about.jpg"
+                alt="Portrait of Dai Pan"
+                loading="lazy"
+            />
+        </figure>
 
-        <p>
-            His work focuses on translating everyday environments into visual
-            sequences where clarity and distortion coexist. Images are
-            approached as structures rather than documents — shaped by invisible rhythm,
-            colour, and compositional constraints that guide attention and
-            emotional response. Dai Pan develops visual systems that invite slow
-            looking and open interpretation, inviting meaning to emerge
-            gradually through form and perception.
-        </p>
+        <div class="about_text">
+            <p>
+                Dai Pan is a visual artist and designer working across
+                photography, printmaking, and conceptual design. His
+                practice explores how images construct spatial perception through
+                framing, repetition, and visual structure, treating photography and
+                design as interconnected systems of visual thinking.
+            </p>
+
+            <p>
+                His work focuses on translating everyday environments into visual
+                sequences where clarity and distortion coexist. Images are
+                approached as structures rather than documents — shaped by invisible rhythm,
+                colour, and compositional constraints that guide attention and
+                emotional response. Dai Pan develops visual systems that invite slow
+                looking and open interpretation, inviting meaning to emerge
+                gradually through form and perception.
+            </p>
+        </div>
     </section>
 
     <section class="block">
@@ -143,6 +153,31 @@ const github = "https://github.com/dpan538";
             margin-top: 6px;
         }
 
+        .about_intro {
+            display: grid;
+            grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+            gap: 32px;
+            align-items: start;
+        }
+
+        .about_photo {
+            margin: 0;
+            border: 1px solid var(--line);
+            background: #f8f8f8;
+        }
+
+        .about_photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .about_text {
+            font-size: 15px;
+            line-height: 1.7;
+            align-self: end; /* 与照片底部对齐 */
+        }
+
         .cv {
             list-style: none;
             padding: 0;
@@ -167,6 +202,13 @@ const github = "https://github.com/dpan538";
 
         .cv_val {
             font-size: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .about_intro {
+                grid-template-columns: 1fr;
+                row-gap: 20px;
+            }
         }
 
     </style>
