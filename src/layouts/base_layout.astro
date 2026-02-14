@@ -55,7 +55,8 @@ const nav = [
                         nav.map((item) => (
                             <a
                                 class={`menu_link ${active === item.key ? "is_active" : ""}`}
-                                href={item.href}>
+                                href={item.href}
+                                data-project={item.key}>
                                 {item.label}
                             </a>
                         ))

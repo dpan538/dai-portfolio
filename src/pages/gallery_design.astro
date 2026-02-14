@@ -3,61 +3,50 @@ import BaseLayout from "../layouts/base_layout.astro";
 
 const base = "/projects/monolith_for_light";
 const title = "Monolith for Light";
-const meta = "Concept Design · Architecture / Spatial Study";
 ---
 
 <BaseLayout title={`${title} — Dai Pan`} active="gallery_design">
-    <article class="project">
-        <header class="header">
-            <h1 class="title">{title}</h1>
-            <p class="meta">{meta}</p>
-        </header>
-
-        <div class="section_note">
-            <p>
-                Monolith for Light is a study of mass and restraint in an open, barren field.
-The building is held as one dense body—concrete and limestone. No glass, so daylight arrives only through cuts.
-Light is not added. It becomes measure: a line, a depth, a duration.
-What seems like darkness is simply the space waiting to be read.
-            </p>
-        </div>
-
-        <!-- Section 1 -->
-        <section class="block">
-            <figure class="figure">
+    <article class="gallery">
+        <!-- 首段：图左文右 -->
+        <section class="gallery__section gallery__intro-row">
+            <figure class="gallery__figure gallery__intro-figure">
                 <img
                     src={`${base}/gallery_01.jpg`}
                     alt="Monolith for Light — atmosphere and massing (01)"
                     loading="eager"
                 />
             </figure>
+            <div class="gallery__text gallery__intro-text">
+                <p>
+                    Monolith for Light is a study of mass and restraint in an open, barren field.
+                    The building is held as one dense body—concrete and limestone. No glass, so daylight arrives only through cuts.
+                    Light is not added. It becomes measure: a line, a depth, a duration.
+                    What seems like darkness is simply the space waiting to be read.
+                </p>
+                <p>
+                    Inspired by <em>In Praise of Shadows</em>, the project explores
+                    how atmosphere can be built through restraint. Shadows are treated as structure. The design
+                    studies light as structure—how it frames movement, sets tempo,
+                    and produces "rooms" that are defined by time rather than by
+                    decoration.
+                </p>
+            </div>
         </section>
 
-        <!-- Section 2 -->
-        <section class="block">
-            <p class="section_note">
-                Inspired by <em>In Praise of Shadows</em>, the project explores
-                how atmosphere can be built through restraint. Shadows are treated as structure. The design
-                studies light as structure—how it frames movement, sets tempo,
-                and produces “rooms” that are defined by time rather than by
-                decoration.
-            </p>
-
-            <p class="section_note">
+        <section class="gallery__section">
+            <p class="gallery__text">
                 Plan, elevation, and section establish the controlled cuts and
                 the internal sequence as a spatial narrative rather than a
                 transparent container.
             </p>
-
-            <figure class="figure">
+            <figure class="gallery__figure gallery__figure--compact">
                 <img
                     src={`${base}/gallery_02.jpg`}
                     alt="Plan / elevation / section (02)"
                     loading="lazy"
                 />
             </figure>
-
-            <figure class="figure">
+            <figure class="gallery__figure gallery__figure--compact">
                 <img
                     src={`${base}/gallery_03.jpg`}
                     alt="Sectional study (03)"
@@ -66,38 +55,32 @@ What seems like darkness is simply the space waiting to be read.
             </figure>
         </section>
 
-        <!-- Section 3 -->
-        <section class="block">
-            <div class="stack">
-                <p class="section_note">
-                    The project frames the landscape as part of the gallery
-                    experience—orientation, horizon lines, and the way wind and
-                    sun set up a “reading” of the building before entry.
-                </p>
-                <p class="section_note">
-                    At night, concealed lighting returns the same cuts and edges
-                    as a new structure. The mass remains unchanged, but its
-                    hierarchy is rewritten by illumination.
-                </p>
-
-                <figure class="figure">
-                    <img
-                        src={`${base}/gallery_05.jpg`}
-                        alt="Site / horizon study (05)"
-                        loading="lazy"
-                    />
-                </figure>
-
-                <figure class="figure">
-                    <img
-                        src={`${base}/gallery_06.jpg`}
-                        alt="Night exterior (06)"
-                        loading="lazy"
-                    />
-                </figure>
-            </div>
-
-            <figure class="figure">
+        <section class="gallery__section">
+            <p class="gallery__text">
+                The project frames the landscape as part of the gallery
+                experience—orientation, horizon lines, and the way wind and
+                sun set up a "reading" of the building before entry.
+            </p>
+            <p class="gallery__text">
+                At night, concealed lighting returns the same cuts and edges
+                as a new structure. The mass remains unchanged, but its
+                hierarchy is rewritten by illumination.
+            </p>
+            <figure class="gallery__figure gallery__figure--compact">
+                <img
+                    src={`${base}/gallery_05.jpg`}
+                    alt="Site / horizon study (05)"
+                    loading="lazy"
+                />
+            </figure>
+            <figure class="gallery__figure gallery__figure--compact">
+                <img
+                    src={`${base}/gallery_06.jpg`}
+                    alt="Night exterior (06)"
+                    loading="lazy"
+                />
+            </figure>
+            <figure class="gallery__figure">
                 <img
                     src={`${base}/gallery_09.jpg`}
                     alt="Exploded axonometric (07)"
@@ -106,145 +89,172 @@ What seems like darkness is simply the space waiting to be read.
             </figure>
         </section>
 
-        <!-- Section 5 -->
-        <section class="block">
-            <div class="stack">
-                <p class="section_note">
-                    A corridor becomes a measuring device: thin slits and angled
-                    surfaces turn light into direction, duration, and
-                    pressure—guiding how long the visitor lingers and what
-                    becomes visible.
-                </p>
-
-                <figure class="figure">
-                    <img
-                        src={`${base}/gallery_07.jpg`}
-                        alt="Interior gallery (07)"
-                        loading="lazy"
-                    />
-                </figure>
-
-                <figure class="figure">
-                    <img
-                        src={`${base}/gallery_08.jpg`}
-                        alt="Interior corridor (08)"
-                        loading="lazy"
-                    />
-                </figure>
-            </div>
+        <section class="gallery__section">
+            <p class="gallery__text">
+                A corridor becomes a measuring device: thin slits and angled
+                surfaces turn light into direction, duration, and
+                pressure—guiding how long the visitor lingers and what
+                becomes visible.
+            </p>
+            <figure class="gallery__figure gallery__figure--compact">
+                <img
+                    src={`${base}/gallery_07.jpg`}
+                    alt="Interior gallery (07)"
+                    loading="lazy"
+                />
+            </figure>
+            <figure class="gallery__figure gallery__figure--compact">
+                <img
+                    src={`${base}/gallery_08.jpg`}
+                    alt="Interior corridor (08)"
+                    loading="lazy"
+                />
+            </figure>
         </section>
 
-        <!-- Section 6 -->
-        <section class="block">
-            <div class="stack">
-                <p class="section_note">
-                    A sectional view clarifies how the interior voids are carved
-                    and how the building holds darkness as a deliberate spatial
-                    condition. The final diagram summarizes circulation and
-                    service logic, separating visitor movement from staff access
-                    and maintenance routes.
-                </p>
-
-                <div class="grid2">
-                    <figure class="tile">
-                        <img
-                            src={`${base}/gallery_11.jpg`}
-                            alt="Section perspective (11)"
-                            loading="lazy"
-                        />
-                    </figure>
-                    <figure class="tile">
-                        <img
-                            src={`${base}/gallery_10.jpg`}
-                            alt="Material / detail study (09)"
-                            loading="lazy"
-                        />
-                    </figure>
-                </div>
-
-                <figure class="figure">
+        <section class="gallery__section">
+            <p class="gallery__text">
+                A sectional view clarifies how the interior voids are carved
+                and how the building holds darkness as a deliberate spatial
+                condition. The final diagram summarizes circulation and
+                service logic, separating visitor movement from staff access
+                and maintenance routes.
+            </p>
+            <div class="gallery__grid2">
+                <figure class="gallery__tile">
                     <img
-                        src={`${base}/gallery_04.jpg`}
-                        alt="Flow / access diagram (04)"
+                        src={`${base}/gallery_11.jpg`}
+                        alt="Section perspective (11)"
+                        loading="lazy"
+                    />
+                </figure>
+                <figure class="gallery__tile">
+                    <img
+                        src={`${base}/gallery_10.jpg`}
+                        alt="Material / detail study (09)"
                         loading="lazy"
                     />
                 </figure>
             </div>
+            <figure class="gallery__figure">
+                <img
+                    src={`${base}/gallery_04.jpg`}
+                    alt="Flow / access diagram (04)"
+                    loading="lazy"
+                />
+            </figure>
         </section>
     </article>
 </BaseLayout>
 
 <style>
-    .project {
-  --space-1: clamp(8px, 1.2vw, 14px);
-  --space-2: clamp(14px, 2vw, 22px);
-  --space-3: clamp(22px, 3vw, 36px);
-}
-
-.block { margin-top: 0; }
-.block + .block { margin-top: var(--space-3); }
-
-/* 只对“没有 stack 包裹”的 block 生效，避免与 stack gap 叠加 */
-.block > :not(.stack) > * + * { margin-top: var(--space-2); }
-
-.stack { display: flex; flex-direction: column; gap: var(--space-2); }
-
-/* 关键：去掉段落自带的额外 spacing */
-.section_note { margin: 0; max-width: 78ch; opacity: 0.9; }
-
-    .header {
-        margin-bottom: clamp(20px, 3vw, 24px);
+    /* 与 the_threes 一致：section 间距 56px，块内 18px */
+    .gallery {
+        --gallery-max: min(832px, 100%);
+        --gallery-intro-max: min(960px, 100%);
     }
 
-    .title {
-        margin: 0 0 10px 0;
-        line-height: 1.05;
+    .gallery__section + .gallery__section {
+        margin-top: 0;
     }
 
-    .meta {
-        margin: 0 0 16px 0;
-        opacity: 0.75;
+    /* section 底部分割线，空档更自然 */
+    .gallery__section:not(:last-child) {
+        padding-bottom: 40px;
     }
 
-    .intro p {
-        margin: 0 0 14px 0;
-        max-width: 72ch; /* 让文本别太宽，读起来更像艺术家网站 */
+    .gallery__section > * + * {
+        margin-top: 18px;
     }
 
-    .section_title {
-        margin: 0 0 10px 0;
-        letter-spacing: 0.02em;
+    /* 首段：图左文右。调大 gallery_01：改 grid 比例；让文字更贴图：改小 gap */
+    .gallery__intro-row {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 0; /* 图与文字的横向间距，只能填正数（0、8、12…），负值无效 */
+        align-items: start;
+        max-width: var(--gallery-intro-max);
+        margin-inline: auto;
     }
 
-    /* 单图：更大一些，但仍然保持节制 */
-    .figure {
+    .gallery__intro-row .gallery__intro-figure {
         margin: 0;
     }
 
-    .figure img {
+    .gallery__intro-row .gallery__intro-figure img {
+        max-width: 100%;
         display: block;
-        width: 100%;
-        max-width: 1040px;
-        margin-inline: auto;
+    }
+
+    /* 首段右侧描述：负 margin-left 把段落往左拉，更贴图；可改 padding-top 调节与顶部的距离 */
+    .gallery__intro-row .gallery__intro-text {
+        margin: 0 0 0 -48px; /* 负值越大越贴图，不够近可改为 -40px / -48px */
+        padding-top: 42px;
+    }
+
+    @media (max-width: 700px) {
+        .gallery__intro-row {
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+    }
+
+    /* 正文：与 the_threes .threes__text-wrap 一致 */
+    .gallery__text {
+        margin: 0;
+        max-width: 70ch;
+        font-size: 0.95rem;
+        line-height: 1.78;
+        color: rgba(0, 0, 0, 0.78);
+    }
+
+    .gallery__text p {
+        margin: 0 0 18px;
+    }
+
+    .gallery__text p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* 单图 */
+    .gallery__figure {
+        margin: 0;
+    }
+
+    .gallery__figure img {
+        display: block;
+        max-width: var(--gallery-max);
+        max-height: min(68vh, 720px);
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        margin-inline: 0; /* 与上方文字左边缘对齐 */
         filter: brightness(0.96);
         transition: transform 700ms cubic-bezier(0.2, 0.6, 0.2, 1);
         transform: translateZ(0);
-        height: auto;
     }
 
-    .figure:hover img {
+    .gallery__figure:hover img {
         transform: scale(1.03);
         filter: brightness(1);
     }
 
-    /* 双图：同高、对齐、更大 */
-    .grid2 {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--space-2);
+    /* 02、03、05、06、07、08 六张图缩小约 12%，页面更紧凑 */
+    .gallery__figure--compact img {
+        max-width: min(732px, 88%);
+        max-height: min(60vh, 612px);
     }
 
-    .tile {
+    /* 双图网格 */
+    .gallery__grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        max-width: var(--gallery-max);
+        margin-inline: 0; /* 与上方文字左边缘对齐 */
+    }
+
+    .gallery__tile {
         margin: 0;
         width: 100%;
         aspect-ratio: 16 / 9;
@@ -252,47 +262,29 @@ What seems like darkness is simply the space waiting to be read.
         background: rgba(0, 0, 0, 0.03);
     }
 
-    .tile img {
+    .gallery__tile img {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* 关键：保证同高不参差 */
+        object-fit: cover;
         display: block;
     }
 
-    .figure,
-    .tile {
-        margin: 0;
-    }
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: 0.8s ease;
-    }
-
-    .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
     @media (max-width: 900px) {
-        .grid2 {
+        .gallery__grid2 {
             grid-template-columns: 1fr;
-        }
-        .tile {
-            aspect-ratio: 16 / 9;
         }
     }
 
     @media (hover: hover) and (pointer: fine) {
-  .figure,
-  .tile {
-    overflow: hidden;
-  }
+        .gallery__figure,
+        .gallery__tile {
+            overflow: hidden;
+        }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-        .figure img,
-        .tile img {
+        .gallery__figure img,
+        .gallery__tile img {
             transition: none;
         }
     }
