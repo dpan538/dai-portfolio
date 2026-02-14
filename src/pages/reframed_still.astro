@@ -20,9 +20,20 @@ const project = {
     title: "Reframed Still",
     medium: "Gelatin Silver Print",
     locations: ["New York", "Guangzhou", "Shanghai", "Nantong"],
-    years: "2021 -- 2025",
-    note: "Reframed Still is a photographic sequence that reframes stillness through a curated strip of images, slowing the gaze across cities and time. The project explores how moments of quiet and pause can be found within the flow of urban life, inviting viewers to linger on the subtle details and rhythms that often go unnoticed. Each frame captures a unique interplay of light, shadow, and composition, creating a visual narrative that unfolds gradually as one scrolls through the strip.",
+    years: "2021 — 2025",
+    note: "A sequence that reframes stillness through a curated strip of images, slowing the gaze across cities and time. Moments of quiet and pause within the flow of urban life; light, shadow, and composition unfold gradually as one moves through the strip.",
 };
+
+const frameHints = [
+    "A pause in the flow.",
+    "Light through the window.",
+    "Evening.",
+    "Still.",
+    "Between cities.",
+    "A moment held.",
+    "Light and shadow.",
+    "Where the gaze rests.",
+];
 ---
 
 <!-- Basic SEO -->
@@ -66,13 +77,38 @@ const project = {
         overflow-x: hidden;
     }
 
+    /* Page layout: above strip (like Quite Off stock line) | strip | hint bar below (like ← hint →) */
+    .reframed-page {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* 微调：负的 margin-top 使文案上移；后续可改 --strip-intro-nudge（单位 px） */
+    .strip-intro-hint {
+        flex-shrink: 0;
+        margin: 0 0 16px;
+        margin-top: -12px;
+        padding-top: 0;
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-align: center;
+    }
+
+    .strip-wrap {
+        flex: 1;
+        min-height: 0;
+        overflow: hidden;
+    }
+
     /* Main gallery strip */
     .strip {
-        height: 100vh;
+        height: 100%;
         display: flex;
         align-items: flex-start;
-        padding-top: 120px;
-        padding-bottom: 120px;
+        padding-top: 16px;
+        padding-bottom: 16px;
         overflow-x: auto;
         overflow-y: hidden;
         scroll-behavior: smooth;
@@ -99,19 +135,52 @@ const project = {
         height: var(--strip_h);
         flex: 0 0 auto;
         display: flex;
+        flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
     }
 
     figure.frame img {
         height: 100%;
         width: auto;
-
-        border: 1px solid transparent; /* default */
+        max-height: var(--strip_h);
+        border: 1px solid transparent;
         box-sizing: border-box;
     }
 
-    figure.frame img:hover {
+    figure.frame:hover img {
         border-color: var(--line);
+    }
+
+    /* Hint bar 固定在视口底部，与侧栏图标同一水平线，确保始终可见 */
+    .strip-hint-bar {
+        position: fixed;
+        bottom: 48px;
+        left: 320px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        padding: 10px 0;
+        flex-shrink: 0;
+        z-index: 10;
+    }
+
+    .strip-hint-bar span {
+        font-size: 0.8rem;
+        color: var(--muted);
+    }
+
+    #reframed-hint-text {
+        min-width: 12ch;
+    }
+
+    @media (max-width: 820px) {
+        .strip-hint-bar {
+            left: 0;
+            bottom: 24px;
+        }
     }
 
     /* Description section at the end (vertical normal) */
@@ -150,30 +219,56 @@ const project = {
         max-width: none !important;
         margin-inline: 0 !important;
         height: 100vh;
-        overflow: hidden; /* kill vertical scroll */
+        overflow: hidden;
+    }
+
+    :global(main.content:has(.reframed-page)) {
+        padding-top: 88px !important;
+        padding-bottom: 48px !important;
     }
 
     :global(main.content > *) {
         max-width: none !important;
     }
 
-    .strip {
+    .strip-wrap .strip {
         width: 100%;
-        height: 100vh; /* already have */
     }
 
+    /* 右划到底出现的项目说明：调 padding 可控制与上/右/下/左的距离 */
     .desc_panel {
-        flex: 0 0 auto; /* ⭐ 非常重要 */
+        flex: 0 0 auto;
         height: 72vh;
         width: min(560px, 78vw);
         position: relative;
         background: transparent;
-        padding: 40px;
+        padding: 72px 40px 40px 40px; /* 上 右 下 左：想再往下就增大第一个数 */
         box-sizing: border-box;
     }
 
+    .desc_panel h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 12px;
+        letter-spacing: 0.04em;
+    }
+
+    .desc_panel .meta {
+        font-size: 0.85rem;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        color: var(--muted);
+    }
+
+    .desc_panel p {
+        font-size: 0.9rem;
+        line-height: 1.75;
+        color: var(--muted2);
+        margin: 0;
+    }
+
     .frame {
-        height: 86vh; /* 推荐先 82vh */
+        height: 86vh;
     }
 
     .desc_panel::before {
@@ -193,7 +288,16 @@ const project = {
 
     .strip::after {
         content: "";
-        flex: 0 0 clamp(24px, 6vw, 96px); /* right breathing space */
+        flex: 0 0 clamp(24px, 6vw, 96px);
+    }
+
+    .strip:focus {
+        outline: none;
+    }
+
+    .strip:focus-visible {
+        outline: 1px solid var(--line);
+        outline-offset: 2px;
     }
 
     /* Lightbox */
@@ -291,11 +395,13 @@ const project = {
     description={page_description}
     canonical="https://daiportfolio.com/reframed_still"
     active="reframed_still">
-    <!-- Horizontal strip first -->
-    <section class="strip">
+    <div class="reframed-page">
+        <p class="strip-intro-hint" aria-hidden="true">Scroll to drift through the strip · Hover for a note</p>
+        <div class="strip-wrap">
+        <section class="strip" id="reframed-strip" tabindex={0}>
         {
             images.map((src, idx) => (
-                <figure class="frame">
+                <figure class="frame" data-index={idx} data-hint={frameHints[idx] ?? ""}>
                     <img
                         class="lb_img"
                         src={src}
@@ -405,16 +511,75 @@ const project = {
                     );
 
                     window.addEventListener("keydown", (e) => {
-                        if (!lb.classList.contains("is_open")) return;
+                        if (lb.classList.contains("is_open")) {
+                            if (e.key === "Escape") close();
+                            if (e.key === "ArrowLeft") step(-1);
+                            if (e.key === "ArrowRight") step(1);
+                            return;
+                        }
 
-                        if (e.key === "Escape") close();
-                        if (e.key === "ArrowLeft") step(-1);
-                        if (e.key === "ArrowRight") step(1);
+                        const strip = document.getElementById("reframed-strip");
+                        if (strip && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+                            const step = 280;
+                            const smooth = !window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+                            strip.scrollBy({
+                                left: e.key === "ArrowLeft" ? -step : step,
+                                behavior: smooth ? "smooth" : "auto",
+                            });
+                        }
                     });
+
                 })();
             </script>
 
             <p>{project.note}</p>
         </article>
-    </section>
+        </section>
+        <div class="strip-hint-bar" aria-live="polite">
+            <span aria-hidden="true">←</span>
+            <span id="reframed-hint-text">Use ←/→ to scroll · Hover for a note</span>
+            <span aria-hidden="true">→</span>
+        </div>
+        </div>
+    </div>
+
+    <script is:inline>
+        (function reframedHintBar() {
+            var hintEl = document.getElementById("reframed-hint-text");
+            var strip = document.getElementById("reframed-strip");
+            var defaultHint = "Use \u2190/\u2192 to scroll \u00b7 Hover for a note";
+            if (!hintEl || !strip) {
+                if (typeof console !== "undefined" && console.warn) {
+                    console.warn("[Reframed Still] Hint bar init: hintEl=" + !!hintEl + ", strip=" + !!strip);
+                }
+                return;
+            }
+            function getFrameHint(node) {
+                if (!node || !node.closest) return null;
+                var frame = node.closest(".frame");
+                return frame && frame.hasAttribute("data-hint") ? (frame.getAttribute("data-hint") || defaultHint) : null;
+            }
+            function setHint(hint) {
+                var text = hint || defaultHint;
+                hintEl.textContent = text;
+                if (typeof console !== "undefined" && console.log) console.log("[Reframed Still] hint:", text);
+            }
+            document.addEventListener("mouseover", function (e) {
+                if (!strip.contains(e.target)) return;
+                var hint = getFrameHint(e.target);
+                if (hint) setHint(hint);
+            });
+            document.addEventListener("mouseout", function (e) {
+                if (!strip.contains(e.relatedTarget)) setHint(null);
+                else {
+                    var hint = getFrameHint(e.relatedTarget);
+                    if (hint) setHint(hint);
+                    else setHint(null);
+                }
+            });
+            if (typeof console !== "undefined" && console.log) {
+                console.log("[Reframed Still] Hint bar ready (document delegation). Hover an image and watch console for 'hint: ...'");
+            }
+        })();
+    </script>
 </BaseLayout>
