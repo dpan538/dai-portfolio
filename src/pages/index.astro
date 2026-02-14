@@ -1,7 +1,127 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
+import { TAG_ACCENTS } from "../scripts/home-interaction";
 ---
 
-<BaseLayout title="Home">
-    <h1>Home</h1>
+<BaseLayout title="Dai Pan" active="" homePage={true}>
+  <div class="home">
+    <div class="home-inner">
+      <p class="home-para">
+        I am Dai Pan, born in China and currently living in Brisbane, Australia. My practice moves between materials, systems, and photographic thinking—often grounded in print process and the book as object. I work as a{" "}
+        <span
+          class="id-tag"
+          data-tag="web_developer"
+          style={`--tag-accent: ${TAG_ACCENTS.web_developer}`}>Web Developer</span>,{" "}
+        <span
+          class="id-tag"
+          data-tag="conceptual_designer"
+          style={`--tag-accent: ${TAG_ACCENTS.conceptual_designer}`}>Conceptual Designer</span>,{" "}
+        <span
+          class="id-tag"
+          data-tag="visual_artist"
+          style={`--tag-accent: ${TAG_ACCENTS.visual_artist}`}>Visual Artist</span>,{" "}
+        <span
+          class="id-tag"
+          data-tag="printmaker"
+          style={`--tag-accent: ${TAG_ACCENTS.printmaker}`}>Printmaker</span>,{" "}
+        <span
+          class="id-tag"
+          data-tag="photographer"
+          style={`--tag-accent: ${TAG_ACCENTS.photographer}`}>Photographer</span>, and{" "}
+        <span
+          class="id-tag"
+          data-tag="writer"
+          style={`--tag-accent: ${TAG_ACCENTS.writer}`}>Writer</span>. Here is what I have made so far.
+      </p>
+    </div>
+  </div>
+
+  <svg
+    id="home-lines"
+    class="home-lines"
+    aria-hidden="true"
+    viewBox="0 0 1 1"
+    preserveAspectRatio="none">
+    <defs />
+    <g />
+  </svg>
 </BaseLayout>
+
+<script>
+  import "../scripts/home-interaction";
+</script>
+
+<style>
+  .home {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(32px, 5vw, 64px);
+    box-sizing: border-box;
+  }
+
+  .home-inner {
+    max-width: 580px;
+  }
+
+  .home-para {
+    margin: 0;
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.72;
+    letter-spacing: 0.02em;
+    color: var(--text, #111);
+  }
+
+  .id-tag {
+    font-family: var(--display);
+    background: none;
+    padding: 0;
+    border-radius: 0.2em;
+    cursor: default;
+    color: inherit;
+    font-weight: inherit;
+    user-select: none;
+    transition:
+      background-color 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+      color 0.22s ease,
+      padding 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+      font-weight 0.2s ease,
+      clip-path 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+    clip-path: inset(0 round 0);
+  }
+
+  .id-tag.is-active {
+    background: var(--tag-accent);
+    color: #fff;
+    font-weight: 700;
+    padding: 0.22em 0.56em;
+    border-radius: 999px;
+    clip-path: inset(0 round 999px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .id-tag,
+    .id-tag.is-active {
+      transition: none;
+    }
+  }
+
+  .home-lines {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  :global(.menu_link.is-highlight) {
+    color: var(--text, #111) !important;
+    font-weight: 600;
+  }
+</style>

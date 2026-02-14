@@ -4,6 +4,7 @@ const {
     description = "Dai Pan — image-based work across photography, printmaking, and conceptual design.",
     canonical = "https://daiportfolio.com",
     active = "", // "works" | "about"
+    homePage = false,
 } = Astro.props;
 
 const nav = [
@@ -105,7 +106,7 @@ const nav = [
                 </div>
             </aside>
 
-            <main class="content">
+            <main class:list={["content", { "content--home": homePage }]}>
                 <slot />
             </main>
         </div>
@@ -273,6 +274,14 @@ const nav = [
                 margin-inline: auto;
                 padding-inline: clamp(28px, 4vw, 64px);
                 padding-block: clamp(32px, 4vw, 72px);
+            }
+
+            .content--home {
+                overflow: hidden;
+                max-width: none;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
             }
         </style>
     </body>
