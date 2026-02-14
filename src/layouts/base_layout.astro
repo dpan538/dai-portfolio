@@ -9,8 +9,8 @@ const {
 
 const nav = [
     { href: "/masks", label: "Masks", key: "masks"},
-    { href: "/the_threes", label: "The Threes", key: "the_threes"},
     { href: "/quite_off", label: "Quite Off", key: "quite_off"},
+    { href: "/the_threes", label: "The Threes", key: "the_threes"},
     { href: "/closing_time", label: "Closing Time", key: "closing_time"},
     { href: "/gallery_design", label: "Monolith for Light", key: "gallery_design"},
     { href: "/reframed_still", label: "Reframed Still", key: "reframed_still"},
@@ -185,6 +185,7 @@ const nav = [
                 font-size: 18px;
                 color: var(--muted);
                 width: fit-content;
+                transition: color 0.44s cubic-bezier(0.25, 0.1, 0.25, 1), font-weight 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
             }
 
             .menu_link.is_active {

@@ -1,0 +1,94 @@
+=== 已删除的连线功能代码 (removed connection line code) ===
+
+--- 1. home-interaction.ts 中删除的部分 ---
+
+- 常量:
+const LINE_Y_OFFSET_STEP = 6;
+const BEZIER_DX = 140;
+
+- 锚点与坐标函数:
+/** Project anchor: right edge + 10px, visual midline 0.55 */
+function projectAnchor(rect: DOMRect): { x: number; y: number } {
+  return { x: rect.right + 10, y: rect.top + rect.height * 0.55 };
+}
+
+/** Tag anchor: center of pill (0.5), visual midline 0.55 */
+function tagAnchor(rect: DOMRect): { x: number; y: number } {
+  return { x: rect.left + rect.width * 0.5, y: rect.top + rect.height * 0.55 };
+}
+
+- init() 内:
+  const svgOverlay = document.querySelector("#home-lines") as SVGElement | null;
+  if (!tags.length || !svgOverlay) return;
+  ...
+  const svgNS = "http://www.w3.org/2000/svg";
+  const viewport = () => ({ w: window.innerWidth, h: window.innerHeight });
+
+  function updateSvgViewBox() {
+    const { w, h } = viewport();
+    svgOverlay.setAttribute("viewBox", `0 0 ${w} ${h}`);
+  }
+
+  function clearActive() {
+    ...
+    clearLines();   // 删除此行
+  }
+
+  function clearLines() {
+    const defs = svgOverlay.querySelector("defs");
+    const g = svgOverlay.querySelector("g");
+    if (defs) defs.innerHTML = "";
+    if (g) g.innerHTML = "";
+  }
+
+  function lineOpacity(tagKey: string): number {
+    if (tagKey === "visual_artist") return 0.22;
+    if (tagKey === "dai_pan") return 0.4;
+    return 0.48;
+  }
+
+  function drawLines() {
+    updateSvgViewBox();
+    clearLines();
+    const defs = svgOverlay.querySelector("defs");
+    const g = svgOverlay.querySelector("g");
+    if (!defs || !g) return;
+    const gradId = () => `g-${Math.random().toString(36).slice(2, 10)}`;
+    // ... 整个 drawLines 函数体（单 tag 多 project 与单 project 多 tag 的 path/linearGradient 创建逻辑）
+  }
+
+  function runFlip(activate: () => void) {
+    if (reducedMotion) {
+      activate();
+      requestAnimationFrame(() => requestAnimationFrame(() => drawLines()));  // 删除
+      return;
+    }
+    ...
+        setTimeout(() => {
+          ...
+          requestAnimationFrame(() => requestAnimationFrame(() => drawLines()));  // 删除
+        }, FLIP_DURATION);
+  }
+
+  window.addEventListener("resize", () => {
+    updateSvgViewBox();
+    if (activeTagKeys.length > 0 || activeProjectKey) drawLines();
+  });
+  updateSvgViewBox();
+}
+
+--- 2. index.astro 中删除的部分 ---
+
+  <svg id="home-lines" class="home-lines" aria-hidden="true" viewBox="0 0 1 1" preserveAspectRatio="none">
+    <defs />
+    <g />
+  </svg>
+
+  .home-lines {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+  }
