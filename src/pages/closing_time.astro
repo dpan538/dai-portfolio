@@ -8,21 +8,7 @@ const description =
 const imagePath = "/projects/closing_time/closing_time.jpg";
 ---
 
-<BaseLayout title={title} active="closing_time">
-    <!-- ===== SEO 基础 ===== -->
-    <Fragment slot="head">
-        <!-- 基础 SEO -->
-        <meta name="description" content={description} />
-
-        <!-- Open Graph -->
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={imagePath} />
-        <meta property="og:type" content="article" />
-
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-    </Fragment>
+<BaseLayout title={title} description={description} canonical="https://daipan.art/closing_time" ogImage={imagePath} ogType="article" active="closing_time" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Closing Time", url: "https://daipan.art/closing_time" }]}>
 
     <!-- ===== 页面主体（右侧内容区）===== -->
     <section class="ct">

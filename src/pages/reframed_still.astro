@@ -10,11 +10,14 @@ const images = Array.from({ length: 8 }, (_, i) => {
     return `/projects/reframed_still/reframed${n}.jpg`;
 });
 
+const SITE_URL = "https://daipan.art";
 const meta = {
     title: page_title,
     description: page_description,
-    og_image: images[0], // optional: first frame as preview
+    og_image: images[0],
+    canonical: `${SITE_URL}/reframed_still`,
 };
+const breadcrumbs = [{ name: "Home", url: SITE_URL }, { name: "Reframed Still", url: `${SITE_URL}/reframed_still` }];
 
 const project = {
     title: "Reframed Still",
@@ -35,27 +38,6 @@ const frameHints = [
     "Where the gaze rests.",
 ];
 ---
-
-<!-- Basic SEO -->
-<title>{meta.title}</title>
-<meta name="description" content={meta.description} />
-<meta name="robots" content="index,follow" />
-<link rel="canonical" href="/reframed_still" />
-
-<!-- Open Graph -->
-<meta property="og:title" content={meta.title} />
-<meta property="og:description" content={meta.description} />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/reframed_still" />
-<meta property="og:image" content={meta.og_image} />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={meta.title} />
-<meta name="twitter:description" content={meta.description} />
-<meta name="twitter:image" content={meta.og_image} />
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <style>
     :root {
@@ -390,11 +372,14 @@ const frameHints = [
     }
 </style>
 
-<BaseLayout
+    <BaseLayout
     title={page_title}
     description={page_description}
-    canonical="https://daiportfolio.com/reframed_still"
-    active="reframed_still">
+    canonical={meta.canonical}
+    ogImage={meta.og_image}
+    ogType="article"
+    active="reframed_still"
+    breadcrumbs={breadcrumbs}>
     <div class="reframed-page">
         <p class="strip-intro-hint" aria-hidden="true">Scroll to drift through the strip · Hover for a note</p>
         <div class="strip-wrap">
@@ -548,21 +533,14 @@ const frameHints = [
             var hintEl = document.getElementById("reframed-hint-text");
             var strip = document.getElementById("reframed-strip");
             var defaultHint = "Use \u2190/\u2192 to scroll \u00b7 Hover for a note";
-            if (!hintEl || !strip) {
-                if (typeof console !== "undefined" && console.warn) {
-                    console.warn("[Reframed Still] Hint bar init: hintEl=" + !!hintEl + ", strip=" + !!strip);
-                }
-                return;
-            }
+            if (!hintEl || !strip) return;
             function getFrameHint(node) {
                 if (!node || !node.closest) return null;
                 var frame = node.closest(".frame");
                 return frame && frame.hasAttribute("data-hint") ? (frame.getAttribute("data-hint") || defaultHint) : null;
             }
             function setHint(hint) {
-                var text = hint || defaultHint;
-                hintEl.textContent = text;
-                if (typeof console !== "undefined" && console.log) console.log("[Reframed Still] hint:", text);
+                hintEl.textContent = hint || defaultHint;
             }
             document.addEventListener("mouseover", function (e) {
                 if (!strip.contains(e.target)) return;
@@ -577,9 +555,6 @@ const frameHints = [
                     else setHint(null);
                 }
             });
-            if (typeof console !== "undefined" && console.log) {
-                console.log("[Reframed Still] Hint bar ready (document delegation). Hover an image and watch console for 'hint: ...'");
-            }
         })();
     </script>
 </BaseLayout>

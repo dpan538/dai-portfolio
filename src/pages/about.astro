@@ -1,16 +1,51 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
 
-const email_work = "dpan53853@gmail.com";
-const email_personal = "dpan3@sva.edu";
-const github = "https://github.com/dpan538";
+// 展览与奖项的官方链接（用于 SEO 与结构化数据）
+const exhibitionLinks: Record<string, string> = {
+    "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)": "https://www.glasgowgalleryofphotography.com/",
+    "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)": "https://www.blankwallgallery.com/",
+    "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA (upcoming)": "https://www.praxisphotocenter.org/",
+    "Horizons, Allora Gallery, London, UK": "https://alloragallery.com/horizons",
+};
+const awardLinks: Record<string, string> = {
+    "Black & White Art Competition, Merit Award, Art Room Gallery": "https://www.artroomgalleryonline.com/",
+    "Winter Open Theme, Group Exhibition (Finalist), Art-Collide": "https://art-collide.com/open-theme-winter-2024-2025",
+    "Honorable Mention in Culture (Professional), Chromatic Awards": "https://chromaticawards.com/",
+    "2nd Bold Colors, Online Juried Exhibition (Finalist), Blue Koi Gallery": "https://koisartistaward.com/2nd-bold-colors-art-exhibition/",
+};
+
+const exhibitionSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dai Pan — Group Exhibitions",
+    "itemListElement": [
+        { "@type": "Event", "name": "Colour", "organizer": { "@type": "Organization", "name": "The Glasgow Gallery of Photography", "url": "https://www.glasgowgalleryofphotography.com/" }, "url": "https://www.glasgowgalleryofphotography.com/", "startDate": "2026-05" },
+        { "@type": "Event", "name": "Cityscapes", "organizer": { "@type": "Organization", "name": "Blank Wall Gallery", "url": "https://www.blankwallgallery.com/" }, "url": "https://www.blankwallgallery.com/", "startDate": "2026" },
+        { "@type": "Event", "name": "POLAROID: The Instant Image", "organizer": { "@type": "Organization", "name": "Praxis Gallery", "url": "https://www.praxisphotocenter.org/" }, "url": "https://www.praxisphotocenter.org/", "startDate": "2026" },
+        { "@type": "Event", "name": "City Lights, Virtual Photography Exhibition", "organizer": { "@type": "Organization", "name": "Carlotta Gallery" } },
+        { "@type": "Event", "name": "Horizons", "organizer": { "@type": "Organization", "name": "Allora Gallery", "url": "https://alloragallery.com/" }, "url": "https://alloragallery.com/horizons", "startDate": "2026-02" },
+    ],
+};
+const awardSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Dai Pan — Awards & Recognition",
+    "itemListElement": [
+        { "@type": "Award", "name": "Black & White Art Competition, Merit Award", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2026", "url": "https://www.artroomgalleryonline.com/" },
+        { "@type": "Award", "name": "Winter Open Theme, Finalist", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2025", "url": "https://art-collide.com/open-theme-winter-2024-2025" },
+        { "@type": "Award", "name": "Honorable Mention in Culture (Professional), Chromatic Awards", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2025", "url": "https://chromaticawards.com/" },
+        { "@type": "Award", "name": "2nd Bold Colors, Finalist", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2024", "url": "https://koisartistaward.com/2nd-bold-colors-art-exhibition/" },
+    ],
+};
 ---
 
 <BaseLayout
     title="About — Dai Pan"
     description="About Dai Pan — image-based work across photography, printmaking, and conceptual design."
-    canonical="https://daiportfolio.com/about"
-    active="about">
+    canonical="https://daipan.art/about"
+    active="about"
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "About", url: "https://daipan.art/about" }]}>
     <section class="block about_intro">
         <figure class="about_photo" aria-label="Portrait of Dai Pan">
             <img
@@ -64,89 +99,59 @@ const github = "https://github.com/dpan538";
     <section class="block">
         <h2>Group Exhibitions</h2>
         <ul class="cv">
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >Colour, The Glasgow Gallery of Photography, Glasgow, UK</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >Cityscapes, Blank Wall Gallery, Athens, Greece</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >POLAROID: The Instant Image, Praxis Gallery, Minneapolis,
-                    MN, USA</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >City Lights, Virtual Photography Exhibition, Carlotta
-                    Gallery</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >Horizons, Allora Gallery, London, UK</span
-                >
-            </li>
+            {
+                [
+                    ["2026", "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)"],
+                    ["2026", "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)"],
+                    ["2026", "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA (upcoming)"],
+                    ["2026", "City Lights, Virtual Photography Exhibition, Carlotta Gallery (upcoming)"],
+                    ["2026", "Horizons, Allora Gallery, London, UK"],
+                ].map(([year, text]) => {
+                    const href = exhibitionLinks[text];
+                    return (
+                        <li>
+                            <span class="cv_key">{year}</span>
+                            <span class="cv_val">
+                                {href ? <a href={href} target="_blank" rel="noopener noreferrer">{text}</a> : text}
+                            </span>
+                        </li>
+                    );
+                })
+            }
         </ul>
     </section>
 
     <section class="block">
         <h2>Awards &amp; Recognition</h2>
         <ul class="cv">
-            <li>
-                <span class="cv_key">2026</span><span class="cv_val"
-                    >Black &amp; White Art Competition, Merit Award, Art Room
-                    Gallery</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2025</span><span class="cv_val"
-                    >Winter Open Theme, Group Exhibition (Finalist), Art-Collide
-                    </span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2025</span><span class="cv_val"
-                    >Honorable Mention in Culture (Professional), Chromatic
-                    Awards</span
-                >
-            </li>
-            <li>
-                <span class="cv_key">2024</span><span class="cv_val"
-                    >2nd Bold Colors, Online Juried Exhibition (Finalist), Blue
-                    Koi Gallery</span
-                >
-            </li>
+            {
+                [
+                    ["2026", "Black & White Art Competition, Merit Award, Art Room Gallery"],
+                    ["2025", "Winter Open Theme, Group Exhibition (Finalist), Art-Collide"],
+                    ["2025", "Honorable Mention in Culture (Professional), Chromatic Awards"],
+                    ["2024", "2nd Bold Colors, Online Juried Exhibition (Finalist), Blue Koi Gallery"],
+                ].map(([year, text]) => {
+                    const href = awardLinks[text];
+                    return (
+                        <li>
+                            <span class="cv_key">{year}</span>
+                            <span class="cv_val">
+                                {href ? <a href={href} target="_blank" rel="noopener noreferrer">{text}</a> : text}
+                            </span>
+                        </li>
+                    );
+                })
+            }
         </ul>
     </section>
 
     <section class="block">
-        <h2>Contact</h2>
-        <ul class="cv">
-            <li>
-                <span class="cv_key">Work</span><span class="cv_val"
-                    ><a href={`mailto:${email_work}`}>{email_work}</a></span
-                >
-            </li>
-            <li>
-                <span class="cv_key">Personal</span><span class="cv_val"
-                    ><a href={`mailto:${email_personal}`}>{email_personal}</a
-                    ></span
-                >
-            </li>
-            <li>
-                <span class="cv_key">GitHub</span><span class="cv_val"
-                    ><a href={github} target="_blank" rel="noopener noreferrer"
-                        >dpan538</a
-                    ></span
-                >
-            </li>
-        </ul>
+        <p class="about_contact_link"><a href="/contact">See Contact →</a></p>
     </section>
+
+    <!-- 展览与奖项结构化数据，便于搜索引擎与 AI 关联你的履历与官方页面 -->
+    <script type="application/ld+json" set:html={JSON.stringify(exhibitionSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(awardSchema)} />
 
     <style>
         .block {
@@ -202,6 +207,28 @@ const github = "https://github.com/dpan538";
 
         .cv_val {
             font-size: 15px;
+        }
+
+        .cv_val a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .cv_val a:hover {
+            color: var(--muted);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .about_contact_link {
+            margin: 20px 0 0;
+            font-size: 15px;
+        }
+
+        .about_contact_link a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         @media (max-width: 800px) {

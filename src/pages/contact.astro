@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+
+const email_work = "dpan53853@gmail.com";
+const instagram = "https://www.instagram.com/jumpingchick666";
+const phone_cn = "+86 152 6275 3021";
+const phone_au = "+61 0404 535 745";
+const wechat = "pd62753021";
+---
+
+<BaseLayout
+    title="Contact — Dai Pan"
+    description="Contact Dai Pan — email, phone, WeChat, Instagram, and location. Based in Brisbane; available internationally."
+    canonical="https://daipan.art/contact"
+    active="contact"
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Contact", url: "https://daipan.art/contact" }]}>
+    <div class="contact_wrap">
+        <p class="contact_lead">
+            For collaborations, exhibitions, or general inquiries.
+        </p>
+        <div class="contact_divider" aria-hidden="true"></div>
+        <ul class="contact_list">
+            <li>
+                <span class="contact_key">Email</span>
+                <span class="contact_val"><a href={`mailto:${email_work}`}>{email_work}</a></span>
+            </li>
+            <li>
+                <span class="contact_key">Phone</span>
+                <span class="contact_val">
+                    <a href="tel:+8615262753021">{phone_cn}</a> / <a href="tel:+61404535745">{phone_au}</a>
+                </span>
+            </li>
+            <li>
+                <span class="contact_key">WeChat</span>
+                <span class="contact_val">{wechat}</span>
+            </li>
+            <li class="contact_list_gap">
+                <span class="contact_key">Instagram</span>
+                <span class="contact_val">
+                    <a href={instagram} target="_blank" rel="noopener noreferrer">@jumpingchick666</a>
+                </span>
+            </li>
+            <li>
+                <span class="contact_key">Location</span>
+                <span class="contact_val contact_val--nowrap">Brisbane, Australia · International</span>
+            </li>
+        </ul>
+    </div>
+
+    <style>
+        .contact_wrap {
+            max-width: 420px;
+            margin-inline: auto;
+            padding-top: clamp(80px, 12vw, 140px);
+            padding-inline: clamp(24px, 5vw, 40px);
+            padding-bottom: clamp(32px, 5vw, 48px);
+        }
+
+        .contact_lead {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--muted);
+            margin: 0 0 24px;
+        }
+
+        .contact_divider {
+            width: 180px;
+            height: 1px;
+            background: var(--line);
+            margin-bottom: 24px;
+        }
+
+        .contact_list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 14px;
+        }
+
+        .contact_list_gap {
+            margin-top: 22px;
+        }
+
+        .contact_list li {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+
+        .contact_key {
+            font-size: 13px;
+            color: var(--muted);
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+        }
+
+        .contact_val {
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .contact_val--nowrap {
+            white-space: nowrap;
+        }
+
+        .contact_val a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .contact_val a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    </style>
+</BaseLayout>

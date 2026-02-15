@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+---
+
+<BaseLayout title="Page not found — Dai Pan" active="">
+    <section class="not-found">
+        <p class="not-found__title">404</p>
+        <p class="not-found__text">This page is not here.</p>
+        <a href="/" class="not-found__link">Back to home</a>
+    </section>
+</BaseLayout>
+
+<style>
+    .not-found { padding: clamp(48px, 8vw, 96px) 24px; text-align: center; }
+    .not-found__title { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; color: var(--muted); }
+    .not-found__text { margin: 0 0 24px; color: var(--muted); }
+    .not-found__link { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+</style>

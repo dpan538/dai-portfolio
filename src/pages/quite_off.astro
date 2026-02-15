@@ -27,25 +27,11 @@ const imageSemanticMap: Record<number, string[]> = {
 const seoTitle = "Quite Off — Dai Pan";
 const seoDescription =
     "Quite Off is an unfinished film fragment shot on Kodak Vision3 5203, 5207, and 5219. A cinema and image study of gaze, motherhood and friendship, separation, and red/green motif. We wrote a script and storyboards; filming became a path toward separation. A film that cannot be finished becomes a way of looking.";
-const canonicalUrl = "https://daiportfolio.com/quite_off";
 const ogImagePath = "/projects/quite_off/quite_01.jpg";
+const SITE_URL = "https://daipan.art";
 ---
 
-<BaseLayout title="Quite Off" active="quite_off">
-    <Fragment slot="head">
-        <meta
-            name="description"
-            content="Quite Off is a fragment of an unfinished film—shot on Kodak Vision3 5203, 5207, and 5219—where mother-love and friendship drift in and out of reach. Red insists, green endures; the gaze lingers, departure repeats, and what leaves still remains as afterimage."
-        />
-        <meta property="og:title" content="Quite Off — Dai Pan" />
-        <meta
-            property="og:description"
-            content="A fragment of an unfinished film—mother-love, friendship, gaze, distance. Red insists, green endures; departure repeats, and what leaves still remains."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/projects/quite_off/quite_01.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-    </Fragment>
+<BaseLayout title="Quite Off — Dai Pan" description={seoDescription} canonical={`${SITE_URL}/quite_off`} ogImage={ogImagePath} ogType="article" active="quite_off" breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
 
     <div class="qo_page" id="qo_page">
         <div class="qo_grid">

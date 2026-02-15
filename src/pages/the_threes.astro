@@ -18,13 +18,7 @@ const pageDescription =
     "The Threes — a quiet book-object of poetry, image, and story, sequenced as a single continuous experience.";
 ---
 
-<BaseLayout title={pageTitle} active="the_threes">
-    <Fragment slot="head">
-        <meta name="description" content={pageDescription} />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={pageDescription} />
-        <meta property="og:image" content={coverImg} />
-    </Fragment>
+<BaseLayout title={pageTitle} description={pageDescription} canonical="https://daipan.art/the_threes" ogImage={coverImg} ogType="article" active="the_threes" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "The Threes", url: "https://daipan.art/the_threes" }]}>
 
     <!-- 1) HERO FIRST（单列，首屏即 hero 图） -->
     <section class="threes threes__intro" id="top">

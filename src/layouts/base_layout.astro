@@ -1,11 +1,78 @@
 ---
+const SITE_URL = "https://daipan.art";
+
 const {
     title = "Dai Pan",
     description = "Dai Pan — image-based work across photography, printmaking, and conceptual design.",
-    canonical = "https://daiportfolio.com",
-    active = "", // "works" | "about"
+    canonical = SITE_URL,
+    active = "", // "works" | "about" | "contact"
     homePage = false,
+    ogImage = undefined as string | undefined,
+    ogType = "website" as "website" | "article",
+    breadcrumbs = undefined as { name: string; url: string }[] | undefined,
 } = Astro.props;
+
+const absoluteOgImage = ogImage ? (ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`) : undefined;
+
+const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Dai Pan",
+    alternateName: [
+        "Pan Dai",
+        "潘岱",
+        "daipan",
+        "pan dai",
+        "dai pan",
+    ],
+    url: SITE_URL,
+    jobTitle: "Artist / Designer",
+    knowsAbout: [
+        "photography",
+        "printmaking",
+        "conceptual design",
+        "visual art",
+        "web development",
+        "writing",
+        "摄影",
+        "版画",
+        "概念设计",
+        "视觉艺术",
+        "网页开发",
+        "写作",
+    ],
+    sameAs: [
+        "https://www.instagram.com/jumpingchick666",
+        "https://sva.design/students/dai-pan",
+        "https://www.daiportfolio.com/",
+        "https://www.linkedin.com/in/daipanportfolio/",
+        "https://www.instagram.com/p/DT2UEHQCJiD/",
+    ],
+};
+
+const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Dai Pan",
+    alternateName: ["潘岱", "Pan Dai", "daipan.art"],
+    url: SITE_URL,
+    description: "Dai Pan — image-based work across photography, printmaking, and conceptual design. Artist and designer, Brisbane.",
+    author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
+    inLanguage: ["en"],
+};
+
+const breadcrumbSchema = breadcrumbs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: breadcrumbs.map((item, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: item.name,
+            item: item.url,
+        })),
+    }
+    : null;
 
 const nav = [
     { href: "/quite_off", label: "Quite Off", key: "quite_off"},
@@ -15,7 +82,30 @@ const nav = [
     { href: "/closing_time", label: "Closing Time", key: "closing_time"},
     { href: "/masks", label: "Masks", key: "masks"},
     { href: "/about", label: "About", key: "about" },
+    { href: "/contact", label: "Contact", key: "contact" },
 ];
+
+const projectKeys = ["quite_off", "the_threes", "gallery_design", "reframed_still", "closing_time", "masks"];
+const portfolioSchema = homePage
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Dai Pan — Works",
+        description: "Image-based work across photography, printmaking, and conceptual design.",
+        itemListElement: nav
+            .filter((n) => projectKeys.includes(n.key))
+            .map((n, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                item: {
+                    "@type": "CreativeWork",
+                    name: n.label,
+                    url: `${SITE_URL}${n.href}`,
+                    author: { "@type": "Person", name: "Dai Pan" },
+                },
+            })),
+    }
+    : null;
 ---
 
 <!doctype html>
@@ -26,22 +116,46 @@ const nav = [
         <title>{title}</title>
 
         <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Dai Pan" />
+        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, pan dai, dai pan, artist, designer, photographer, printmaker, writer, web developer, conceptual designer, visual artist, 艺术家, 设计师, 摄影师, 版画, 作家, 网页开发, 概念设计, 视觉艺术, 摄影, Brisbane, Australia, 布里斯班, 澳大利亚, portfolio, photography, printmaking, conceptual design, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
         <link rel="canonical" href={canonical} />
+        <!-- 百度/360 站长验证：在各自站长平台获取验证码后，取消注释并填入 content -->
+        <!-- <meta name="baidu-site-verification" content="YOUR_BAIDU_CODE" /> -->
+        <!-- <meta name="360-site-verification" content="YOUR_360_CODE" /> -->
 
+        <!-- Open Graph -->
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonical} />
+        {absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content={absoluteOgImage ? "summary_large_image" : "summary"} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        {absoluteOgImage && <meta name="twitter:image" content={absoluteOgImage} />}
+
+        <!-- GEO -->
+        <meta name="geo.region" content="AU" />
+        <meta name="geo.placename" content="Brisbane" />
+
+        <!-- Preconnect for fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
             href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Coustard:wght@400;900&family=Oldenburg&display=swap"
             rel="stylesheet"
         />
+
+        <!-- Structured Data: Person, WebSite, BreadcrumbList -->
+        <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+        <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
+        {portfolioSchema && <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />}
+
+        <slot name="head" />
     </head>
 
     <body>
@@ -55,7 +169,7 @@ const nav = [
                     {
                         nav.map((item) => (
                             <a
-                                class={`menu_link ${active === item.key ? "is_active" : ""}`}
+                                class={`menu_link ${active === item.key ? "is_active" : ""} ${item.key === "about" ? "menu_link--after_projects" : ""}`}
                                 href={item.href}
                                 data-project={item.key}>
                                 {item.label}
@@ -192,6 +306,10 @@ const nav = [
                 color: var(--text);
                 text-decoration: underline;
                 text-underline-offset: 3px;
+            }
+
+            .menu_link--after_projects {
+                margin-top: 1.5em;
             }
 
             .social {
