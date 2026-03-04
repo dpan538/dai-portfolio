@@ -90,6 +90,9 @@ const nav = [
     { href: "/contact", label: "Contact", key: "contact" },
 ];
 
+// Mobile overlay: 7 items, no Contact, extra spacing before About
+const mobileNavItems = nav.filter((n) => n.key !== "contact");
+
 const projectKeys = ["quite_off", "the_threes", "gallery_design", "reframed_still", "closing_time", "masks"];
 const portfolioSchema = homePage
     ? {
@@ -164,6 +167,40 @@ const portfolioSchema = homePage
     </head>
 
     <body>
+        <!-- Mobile menu toggle: fixed top-right, only visible at <=768px -->
+        <button
+            type="button"
+            class="mobile_menu_btn"
+            id="mobile_menu_btn"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile_overlay">
+            <span class="mobile_menu_icon mobile_menu_icon--hamburger" aria-hidden="true">☰</span>
+            <span class="mobile_menu_icon mobile_menu_icon--close" aria-hidden="true">✕</span>
+        </button>
+
+        <!-- Mobile overlay: full-screen, backdrop + menu content -->
+        <div
+            id="mobile_overlay"
+            class="mobile_overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
+            hidden>
+            <div class="mobile_overlay_backdrop" id="mobile_overlay_backdrop"></div>
+            <nav class="mobile_overlay_menu" id="mobile_overlay_menu">
+                {
+                    mobileNavItems.map((item) => (
+                            <a
+                                class={`mobile_overlay_link ${active === item.key ? "is_active" : ""} ${item.key === "about" ? "mobile_overlay_link--before_about" : ""}`}
+                                href={item.href}>
+                                {item.label}
+                            </a>
+                    ))
+                }
+            </nav>
+        </div>
+
         <div class="shell">
             <aside class="sidebar">
                 <div class="brand">
@@ -407,6 +444,210 @@ const portfolioSchema = homePage
                 display: flex;
                 flex-direction: column;
             }
+
+            /* ========== Mobile overlay nav (<=768px only) ========== */
+            .mobile_menu_btn {
+                display: none;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1850;
+                isolation: isolate;
+                width: 44px;
+                height: 44px;
+                padding: 0;
+                border: none;
+                background: transparent;
+                color: var(--text);
+                font-size: 24px;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .mobile_menu_icon--close {
+                display: none;
+            }
+
+            .mobile_menu_btn[aria-expanded="true"] .mobile_menu_icon--hamburger {
+                display: none;
+            }
+
+            .mobile_menu_btn[aria-expanded="true"] .mobile_menu_icon--close {
+                display: inline;
+            }
+
+            .mobile_overlay {
+                position: fixed;
+                inset: 0;
+                z-index: 1400;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mobile_overlay[hidden] {
+                display: none !important;
+            }
+
+            .mobile_overlay:not([data-open="true"]) {
+                pointer-events: none;
+            }
+
+            .mobile_overlay_backdrop {
+                position: absolute;
+                inset: 0;
+                background: rgba(255, 255, 255, 0.96);
+                backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
+                opacity: 0;
+                transition: opacity 180ms ease-out;
+            }
+
+            .mobile_overlay[data-open="true"] .mobile_overlay_backdrop {
+                opacity: 1;
+            }
+
+            .mobile_overlay_menu {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                padding: 32px 40px;
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                opacity: 0;
+                transform: translateY(8px);
+                transition: opacity 180ms ease-out, transform 180ms ease-out;
+            }
+
+            .mobile_overlay[data-open="true"] .mobile_overlay_menu {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .mobile_overlay_link {
+                font-size: 20px;
+                color: var(--text);
+                text-decoration: none;
+            }
+
+            .mobile_overlay_link:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            .mobile_overlay_link.is_active {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            .mobile_overlay_link--before_about {
+                margin-top: 24px;
+            }
+
+            /* Hide idle-arrow when mobile overlay is open */
+            body.mobile-overlay-open :global(#idle-arrow) {
+                visibility: hidden !important;
+                pointer-events: none !important;
+                opacity: 0 !important;
+            }
+
+            @media (max-width: 768px) {
+                .mobile_menu_btn {
+                    display: flex;
+                }
+
+                .sidebar {
+                    display: none !important;
+                }
+
+                .shell {
+                    grid-template-columns: 1fr;
+                }
+
+                .content {
+                    width: 100%;
+                    /* 与右上角汉堡菜单保持间距，避免内容与图标重叠 */
+                    padding-top: 72px;
+                    padding-right: 72px;
+                }
+            }
         </style>
+
+        <script is:inline>
+            (function () {
+                const btn = document.getElementById("mobile_menu_btn");
+                const overlay = document.getElementById("mobile_overlay");
+                const backdrop = document.getElementById("mobile_overlay_backdrop");
+                const menu = document.getElementById("mobile_overlay_menu");
+
+                if (!btn || !overlay || !backdrop || !menu) return;
+
+                let scrollLockY = 0;
+
+                function openOverlay() {
+                    overlay.removeAttribute("hidden");
+                    overlay.setAttribute("data-open", "true");
+                    btn.setAttribute("aria-expanded", "true");
+                    btn.setAttribute("aria-label", "Close menu");
+                    document.body.classList.add("mobile-overlay-open");
+                    scrollLockY = window.scrollY;
+                    document.documentElement.style.overflow = "hidden";
+                    document.body.style.overflow = "hidden";
+                    document.body.style.position = "fixed";
+                    document.body.style.top = `-${scrollLockY}px`;
+                    document.body.style.left = "0";
+                    document.body.style.right = "0";
+                    document.body.style.width = "100%";
+                }
+
+                function closeOverlay() {
+                    overlay.setAttribute("data-open", "false");
+                    btn.setAttribute("aria-expanded", "false");
+                    btn.setAttribute("aria-label", "Open menu");
+                    document.body.classList.remove("mobile-overlay-open");
+                    document.documentElement.style.overflow = "";
+                    document.body.style.overflow = "";
+                    document.body.style.position = "";
+                    document.body.style.top = "";
+                    document.body.style.left = "";
+                    document.body.style.right = "";
+                    document.body.style.width = "";
+                    window.scrollTo(0, scrollLockY);
+                    setTimeout(function () {
+                        overlay.setAttribute("hidden", "");
+                    }, 200);
+                }
+
+                btn.addEventListener("click", function () {
+                    if (overlay.getAttribute("data-open") === "true") {
+                        closeOverlay();
+                    } else {
+                        openOverlay();
+                    }
+                });
+
+                backdrop.addEventListener("click", closeOverlay);
+
+                menu.addEventListener("click", function (e) {
+                    e.stopPropagation();
+                });
+
+                document.addEventListener("keydown", function (e) {
+                    if (e.key === "Escape" && overlay.getAttribute("data-open") === "true") {
+                        closeOverlay();
+                    }
+                });
+
+                overlay.addEventListener("click", function (e) {
+                    if (e.target === overlay) closeOverlay();
+                });
+            })();
+        </script>
     </body>
 </html>

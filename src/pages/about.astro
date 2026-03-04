@@ -145,8 +145,15 @@ const awardSchema = {
         </ul>
     </section>
 
+    <section class="block about_contact_block">
+        <h2>Contact</h2>
+        <ul class="about_contact_list">
+            <li><a href="mailto:dpan53853@gmail.com">dpan53853@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/jumpingchick666" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        </ul>
+    </section>
+
     <section class="block">
-        <p class="about_contact_link"><a href="/contact">See Contact →</a></p>
         <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a Brisbane-based artist and designer. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
     </section>
 
@@ -221,15 +228,29 @@ const awardSchema = {
             text-underline-offset: 3px;
         }
 
-        .about_contact_link {
-            margin: 20px 0 0;
-            font-size: 15px;
+        .about_contact_block {
+            margin-top: 28px;
         }
 
-        .about_contact_link a {
+        .about_contact_list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .about_contact_list a {
+            font-size: 15px;
             color: var(--text);
+            text-decoration: none;
+        }
+
+        .about_contact_list a:hover {
             text-decoration: underline;
             text-underline-offset: 3px;
+            color: var(--muted);
         }
 
         .about_disclaimer {
