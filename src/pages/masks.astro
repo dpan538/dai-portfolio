@@ -1,6 +1,16 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
 
+function wrapKeywords(text: string, keywords: string[]): string {
+    const sorted = [...keywords].sort((a, b) => b.length - a.length);
+    let result = text;
+    for (const kw of sorted) {
+        const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        result = result.replace(new RegExp(escaped, "g"), `<span class="desc-keyword">${kw}</span>`);
+    }
+    return result;
+}
+
 const works = [
     {
         id: "01",
@@ -8,8 +18,9 @@ const works = [
         medium: "Limestone Lithography",
         size: "14x18 inches",
         year: "2025",
-        align: "center", // 01 居中展示（但仍是左图右文结构）
+        align: "center",
         text: `Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958). Rather than depicting recognizable identities, the works approach the face as a fluid structure — something that forms and dissolves within social relationships. Gesture replaces representation; surfaces fold into one another, suggesting expressions that never fully stabilize.`,
+        keywords: ["Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958).", "fluid structure", "social relationships"],
     },
     {
         id: "02",
@@ -19,6 +30,7 @@ const works = [
         year: "2024",
         align: "left",
         text: `The mask here is not a disguise but a condition. It exists in the tension between concealment and revelation, between the desire to remain unseen and the urge to be understood. Eyes emerge and disappear, fragments gather and disperse, and abstraction becomes a language for something inherently ungraspable.`,
+        keywords: ["condition", "remain unseen", "Eyes"],
     },
     {
         id: "03",
@@ -28,6 +40,7 @@ const works = [
         year: "2024",
         align: "left",
         text: `Curiosity here becomes a form of pressure — an invisible force that bends perception and reshapes the self. The desire to look and the resistance to being seen collide, compressing the interior until something formless escapes. What emerges is neither body nor gesture but a drifting presence, slipping through dense structures of relation like vapor through sealed surfaces. Twisted, enclosed, and endlessly folding back onto itself, the form recalls a fragile Möbius continuity — an unstable infinity sustained by tension rather than stability.`,
+        keywords: ["invisible force", "formless", "tension rather than stability"],
     },
     {
         id: "04",
@@ -35,14 +48,14 @@ const works = [
         medium: "Limestone Lithography",
         size: "7x9 inches",
         year: "2025",
-        align: "right", // 04 图片在右侧，文字在左侧
+        align: "right",
         text: `Repetition becomes a process of reduction. Language loses weight as actions remain, stripped of narrative and left nearly bare. Attraction, obsession, and projection dissolve into a single directional movement toward inevitability. Like a solitary structure placed in open terrain, detached from the surrounding city yet still governed by its internal logic, the work persists through function rather than explanation, allowing meaning to arise through sustained encounter rather than declaration.`,
+        keywords: ["Language loses weight", "obsession"],
     },
 ];
 ---
 
 <style>
-    /* 关键：把 BaseLayout 默认的 content 容器限制干掉，否则内容永远“缩”在中间 */
     :global(main.content) {
         padding: 0 !important;
         max-width: none !important;
@@ -94,9 +107,10 @@ const works = [
     }
 
     .meta {
-        font-size: 14px;
+        font-size: 17px;
         line-height: 1.6;
         margin: 0 0 16px;
+        font-weight: 500;
     }
 
     .desc {
@@ -177,17 +191,47 @@ const works = [
         right: 30px;
     }
 
-    /* 默认隐藏文字 */
-    .text {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 180ms ease;
+    /* 关键词：hover 图片时加粗（:global 因 desc-keyword 来自 set:html 无 scoped 属性） */
+    .desc-keyword {
+        font-weight: 400;
+        transition: font-weight 0.2s ease;
     }
 
-    /* 触发显示（由 JS 控制） */
-    :global(body.show-text) .text {
+    .row.is-image-hovered :global(.desc-keyword) {
+        font-weight: 600;
+        color: var(--text, #111);
+    }
+
+    /* 右下角闲置箭头（:global 因由 JS 动态注入到 body） */
+    :global(#idle-arrow) {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 9999;
+        opacity: 0;
+        pointer-events: none;
+        color: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.4s ease;
+        padding: 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    :global(#idle-arrow.visible) {
+        opacity: 0.8;
+        pointer-events: auto;
+        animation: idle-bounce 1.2s ease-in-out infinite;
+    }
+
+    :global(#idle-arrow:hover) {
         opacity: 1;
-        visibility: visible;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    @keyframes idle-bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(6px); }
     }
 
     /* 小屏降级 */
@@ -231,7 +275,7 @@ const works = [
                             <br />
                             Year: {work.year}
                         </p>
-                        <p class="desc">{work.text}</p>
+                        <p class="desc" set:html={wrapKeywords(work.text, work.keywords)} />
                     </div>
                 </div>
             ))
@@ -243,6 +287,8 @@ const works = [
         <img id="lightbox-image" />
         <button class="next">→</button>
     </div>
+
+    <!-- idle-arrow 由脚本注入到 body 底部，避免 main 内 stacking context 影响 fixed -->
 
     <script>
         const images = [...document.querySelectorAll(".image")];
@@ -266,6 +312,8 @@ const works = [
 
         images.forEach((el, index) => {
             el.addEventListener("click", () => openLightbox(index));
+            el.addEventListener("mouseenter", () => el.closest(".row")?.classList.add("is-image-hovered"));
+            el.addEventListener("mouseleave", () => el.closest(".row")?.classList.remove("is-image-hovered"));
         });
 
         prevBtn.addEventListener("click", () => {
@@ -286,55 +334,55 @@ const works = [
     </script>
 
     <script type="module">
-        const body = document.body;
-        const content = document.querySelector("main.content");
-        const sidebar = document.querySelector("aside.sidebar");
+        (function () {
+            const IDLE_MS = 3500;
+            const WARMUP_MS = 1200;
+            let lastActivity = Date.now();
+            let warmupDone = false;
 
-        function isInside(el, x, y) {
-            if (!el) return false;
-            const r = el.getBoundingClientRect();
-            return x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
-        }
+            const arrow = document.createElement("div");
+            arrow.id = "idle-arrow";
+            arrow.className = "idle-arrow";
+            arrow.setAttribute("aria-hidden", "true");
+            arrow.title = "Scroll down";
+            arrow.innerHTML = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>';
+            document.body.appendChild(arrow);
 
-        function isOnAny(selector, x, y) {
-            const els = document.querySelectorAll(selector);
-            for (const el of els) {
-                const r = el.getBoundingClientRect();
-                if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom)
-                    return true;
-            }
-            return false;
-        }
+            setTimeout(() => {
+                warmupDone = true;
+                lastActivity = Date.now();
+            }, WARMUP_MS);
 
-        function update(e) {
-            const x = e.clientX;
-            const y = e.clientY;
-
-            // 只在 content 区域内才可能显示
-            if (!isInside(content, x, y)) {
-                body.classList.remove("show-text");
-                return;
+            function showArrow() {
+                arrow.classList.add("visible");
             }
 
-            // 在 sidebar 上不显示
-            if (isInside(sidebar, x, y)) {
-                body.classList.remove("show-text");
-                return;
+            function hideArrow() {
+                arrow.classList.remove("visible");
             }
 
-            // 在任意图片区域上不显示
-            if (isOnAny(".row .image", x, y)) {
-                body.classList.remove("show-text");
-                return;
+            function onActivity() {
+                if (warmupDone) lastActivity = Date.now();
+                hideArrow();
             }
 
-            // 其它（空白区域）显示
-            body.classList.add("show-text");
-        }
+            function checkIdle() {
+                if (warmupDone && Date.now() - lastActivity >= IDLE_MS) {
+                    showArrow();
+                }
+                setTimeout(checkIdle, 400);
+            }
 
-        window.addEventListener("mousemove", update, { passive: true });
-        window.addEventListener("mouseleave", () =>
-            body.classList.remove("show-text"),
-        );
+            ["mousemove", "mousedown", "scroll", "keydown", "touchstart"].forEach((ev) => {
+                document.addEventListener(ev, onActivity, { passive: true });
+            });
+
+            arrow.addEventListener("click", () => {
+                onActivity();
+                window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+            });
+
+            setTimeout(checkIdle, WARMUP_MS + IDLE_MS);
+        })();
     </script>
 </BaseLayout>

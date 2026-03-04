@@ -42,7 +42,7 @@ const awardSchema = {
 
 <BaseLayout
     title="About — Dai Pan"
-    description="About Dai Pan — image-based work across photography, printmaking, and conceptual design."
+    description="About Dai Pan (潘岱) — Brisbane-based artist and designer. Photography, printmaking, conceptual design."
     canonical="https://daipan.art/about"
     active="about"
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "About", url: "https://daipan.art/about" }]}>
@@ -147,6 +147,7 @@ const awardSchema = {
 
     <section class="block">
         <p class="about_contact_link"><a href="/contact">See Contact →</a></p>
+        <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a Brisbane-based artist and designer. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
     </section>
 
     <!-- 展览与奖项结构化数据，便于搜索引擎与 AI 关联你的履历与官方页面 -->
@@ -229,6 +230,13 @@ const awardSchema = {
             color: var(--text);
             text-decoration: underline;
             text-underline-offset: 3px;
+        }
+
+        .about_disclaimer {
+            margin: 24px 0 0;
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.5;
         }
 
         @media (max-width: 800px) {

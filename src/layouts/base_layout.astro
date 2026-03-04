@@ -3,7 +3,7 @@ const SITE_URL = "https://daipan.art";
 
 const {
     title = "Dai Pan",
-    description = "Dai Pan — image-based work across photography, printmaking, and conceptual design.",
+    description = "Dai Pan (潘岱) — Brisbane-based artist and designer. Image-based work: photography, printmaking, conceptual design.",
     canonical = SITE_URL,
     active = "", // "works" | "about" | "contact"
     homePage = false,
@@ -48,15 +48,20 @@ const personSchema = {
         "https://www.linkedin.com/in/daipanportfolio/",
         "https://www.instagram.com/p/DT2UEHQCJiD/",
     ],
+    homeLocation: {
+        "@type": "Place",
+        name: "Brisbane",
+        address: { "@type": "PostalAddress", "addressLocality": "Brisbane", "addressRegion": "QLD", "addressCountry": "AU" },
+    },
 };
 
 const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Dai Pan",
-    alternateName: ["潘岱", "Pan Dai", "daipan.art"],
+    alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
     url: SITE_URL,
-    description: "Dai Pan — image-based work across photography, printmaking, and conceptual design. Artist and designer, Brisbane.",
+    description: "Personal portfolio of Dai Pan (潘岱), artist and designer based in Brisbane, Australia. Photography, printmaking, conceptual design. Not affiliated with DAIPAN Butoh Collective.",
     author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
     inLanguage: ["en"],
 };
@@ -65,7 +70,7 @@ const breadcrumbSchema = breadcrumbs?.length
     ? {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        itemListElement: breadcrumbs.map((item, i) => ({
+        itemListElement: breadcrumbs.map((item: { name: string; url: string }, i: number) => ({
             "@type": "ListItem",
             position: i + 1,
             name: item.name,
