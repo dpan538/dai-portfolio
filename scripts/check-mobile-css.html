@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile CSS Diagnostic</title>
+    <style>
+        body { font-family: monospace; padding: 16px; }
+        .result { margin: 8px 0; padding: 8px; background: #f0f0f0; }
+        .pass { background: #cfc; }
+        .fail { background: #fcc; }
+    </style>
+</head>
+<body>
+    <h1>Mobile Home CSS Diagnostic (run in browser at 390px width)</h1>
+    <div id="output"></div>
+    <script>
+        const out = document.getElementById('output');
+        function add(msg, pass) {
+            const d = document.createElement('div');
+            d.className = 'result ' + (pass ? 'pass' : 'fail');
+            d.textContent = (pass ? '✓ ' : '✗ ') + msg;
+            out.appendChild(d);
+        }
+        const main = document.querySelector('main.mobile_main') || document.querySelector('.content.content--home.mobile_main');
+        const header = document.querySelector('.mobile_header');
+        const homeContent = document.querySelector('.home_content');
+        const footer = document.querySelector('.site_footer');
+        if (!main) add('main.mobile_main not found - check DOM', false);
+        else {
+            const mainStyle = getComputedStyle(main);
+            const pt = mainStyle.paddingTop;
+            const pl = mainStyle.paddingLeft;
+            add('main padding-top: ' + pt + ' (expect ~158px)', pt.includes('158') || parseInt(pt) >= 150);
+            add('main padding-inline: ' + pl + ' (expect 26px)', pl.includes('26'));
+        }
+        if (homeContent) {
+            const s = getComputedStyle(homeContent);
+            add('home_content max-width: ' + s.maxWidth + ' (expect ~36ch)', s.maxWidth.includes('ch'));
+            add('home_content padding: ' + s.paddingLeft + ' (expect 0)', s.paddingLeft === '0px');
+        }
+        if (footer) add('site_footer found, margin-top: ' + getComputedStyle(footer).marginTop, true);
+        add('Viewport: ' + window.innerWidth + 'px (mobile breakpoint: 768)', window.innerWidth <= 768);
+    </script>
+</body>
+</html>
