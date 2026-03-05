@@ -167,39 +167,22 @@ const portfolioSchema = homePage
     </head>
 
     <body>
-        <!-- Mobile menu toggle: fixed top-right, only visible at <=768px -->
-        <button
-            type="button"
-            class="mobile_menu_btn"
-            id="mobile_menu_btn"
-            aria-label="Open menu"
-            aria-expanded="false"
-            aria-controls="mobile_overlay">
-            <span class="mobile_menu_icon mobile_menu_icon--hamburger" aria-hidden="true">☰</span>
-            <span class="mobile_menu_icon mobile_menu_icon--close" aria-hidden="true">✕</span>
-        </button>
-
-        <!-- Mobile overlay: full-screen, backdrop + menu content -->
-        <div
-            id="mobile_overlay"
-            class="mobile_overlay"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Navigation menu"
-            hidden>
-            <div class="mobile_overlay_backdrop" id="mobile_overlay_backdrop"></div>
-            <nav class="mobile_overlay_menu" id="mobile_overlay_menu">
-                {
-                    mobileNavItems.map((item) => (
-                            <a
-                                class={`mobile_overlay_link ${active === item.key ? "is_active" : ""} ${item.key === "about" ? "mobile_overlay_link--before_about" : ""}`}
-                                href={item.href}>
-                                {item.label}
-                            </a>
-                    ))
-                }
-            </nav>
-        </div>
+        <!-- Mobile header: fixed row with brand + menu button (<=768px only) -->
+        <header class="mobile_header" id="mobile_header">
+            <a href="/" class="mobile_brand" id="mobile_brand" aria-label="Dai Pan – Home">
+                Dai Pan
+            </a>
+            <button
+                type="button"
+                class="mobile_menu_btn"
+                id="mobile_menu_btn"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile_overlay">
+                <span class="mobile_menu_icon mobile_menu_icon--hamburger" aria-hidden="true">☰</span>
+                <span class="mobile_menu_icon mobile_menu_icon--close" aria-hidden="true">✕</span>
+            </button>
+        </header>
 
         <div class="shell">
             <aside class="sidebar">
@@ -262,9 +245,31 @@ const portfolioSchema = homePage
                 </div>
             </aside>
 
-            <main class:list={["content", { "content--home": homePage }]}>
+            <main class:list={["content", { "content--home": homePage }, { "mobile_main": homePage }]}>
                 <slot />
             </main>
+        </div>
+
+        <!-- Mobile overlay: full-screen menu (<=768px) -->
+        <div
+            id="mobile_overlay"
+            class="mobile_overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation menu"
+            hidden>
+            <div class="mobile_overlay_backdrop" id="mobile_overlay_backdrop"></div>
+            <nav class="mobile_overlay_menu" id="mobile_overlay_menu">
+                {
+                    mobileNavItems.map((item) => (
+                            <a
+                                class={`mobile_overlay_link ${active === item.key ? "is_active" : ""} ${item.key === "about" ? "mobile_overlay_link--before_about" : ""}`}
+                                href={item.href}>
+                                {item.label}
+                            </a>
+                    ))
+                }
+            </nav>
         </div>
 
         <style>
@@ -307,6 +312,8 @@ const portfolioSchema = homePage
             }
 
             .shell {
+                position: relative;
+                z-index: 0;
                 min-height: 100vh;
                 display: grid;
                 grid-template-columns: 280px 1fr;
@@ -446,21 +453,48 @@ const portfolioSchema = homePage
             }
 
             /* ========== Mobile overlay nav (<=768px only) ========== */
-            .mobile_menu_btn {
+            .mobile_header {
                 display: none;
                 position: fixed;
-                top: 20px;
-                right: 20px;
-                z-index: 1850;
+                top: 26px;
+                left: 0;
+                right: 0;
+                height: 52px;
+                padding-inline: 26px;
+                box-sizing: border-box;
+                z-index: 1500;
                 isolation: isolate;
-                width: 44px;
-                height: 44px;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .mobile_brand {
+                font-family: var(--display);
+                font-weight: 400;
+                font-size: 19px;
+                line-height: 1;
+                letter-spacing: 0.06em;
+                color: var(--text);
+                text-decoration: none;
+            }
+
+            .mobile_brand:hover {
+                text-decoration: underline;
+                text-underline-offset: 3px;
+            }
+
+            .mobile_menu_btn {
+                width: 48px;
+                height: 48px;
                 padding: 0;
                 border: none;
                 background: transparent;
                 color: var(--text);
-                font-size: 24px;
+                font-size: 28px;
                 cursor: pointer;
+                display: flex;
                 align-items: center;
                 justify-content: center;
                 -webkit-tap-highlight-color: transparent;
@@ -558,7 +592,7 @@ const portfolioSchema = homePage
             }
 
             @media (max-width: 768px) {
-                .mobile_menu_btn {
+                .mobile_header {
                     display: flex;
                 }
 
@@ -572,9 +606,31 @@ const portfolioSchema = homePage
 
                 .content {
                     width: 100%;
-                    /* 与右上角汉堡菜单保持间距，避免内容与图标重叠 */
-                    padding-top: 72px;
-                    padding-right: 72px;
+                    padding-top: 142px;
+                    padding-left: 26px;
+                    padding-right: 26px;
+                }
+
+                /* Home page on mobile: override .content--home to allow scroll + show footer */
+                .content--home.mobile_main {
+                    overflow-y: auto !important;
+                    overflow-x: hidden;
+                    height: auto !important;
+                    min-height: 100vh;
+                    align-items: center;
+                }
+
+                /* Override .content > * { max-width: var(--max) } so home_content can be narrow */
+                .content--home.mobile_main > :global(*) {
+                    max-width: 18ch !important;
+                }
+
+                .mobile_main {
+                    --mobile-gap: 80px;
+                    padding-top: calc(26px + 52px + var(--mobile-gap)) !important;
+                    padding-left: 26px !important;
+                    padding-right: 26px !important;
+                    padding-inline: 26px !important;
                 }
             }
         </style>

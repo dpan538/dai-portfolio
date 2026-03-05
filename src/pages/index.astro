@@ -4,58 +4,61 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
 ---
 
 <BaseLayout title="Dai Pan" active="" homePage={true}>
-    <div class="home">
-        <div class="home-inner">
-            <p class="home-para">
-                I am <span
-                    class="id-tag id-tag--name"
-                    data-tag="dai_pan"
-                    style={`--tag-accent: ${TAG_ACCENTS.dai_pan}`}>Dai Pan</span
-                >, born in China and currently living in Brisbane, Australia. I
-                build quiet interfaces for image-based, object-oriented systems
-                that perceive minimal sense, and projects that treat experience
-                and aesthetics as part of the content. I work as a{" "}
-                <span
-                    class="id-tag"
-                    data-tag="web_developer"
-                    style={`--tag-accent: ${TAG_ACCENTS.web_developer}`}
-                    >Web Developer</span
-                >,{" "}
-                <span
-                    class="id-tag"
-                    data-tag="conceptual_designer"
-                    style={`--tag-accent: ${TAG_ACCENTS.conceptual_designer}`}
-                    >Conceptual Designer</span
-                >,{" "}
-                <span
-                    class="id-tag"
-                    data-tag="visual_artist"
-                    style={`--tag-accent: ${TAG_ACCENTS.visual_artist}`}
-                    >Visual Artist</span
-                >,{" "}
-                <span
-                    class="id-tag"
-                    data-tag="printmaker"
-                    style={`--tag-accent: ${TAG_ACCENTS.printmaker}`}
-                    >Printmaker</span
-                >,{" "}
-                <span
-                    class="id-tag"
-                    data-tag="photographer"
-                    style={`--tag-accent: ${TAG_ACCENTS.photographer}`}
-                    >Photographer</span
-                >, and{" "}
-                <span
-                    class="id-tag"
-                    data-tag="writer"
-                    style={`--tag-accent: ${TAG_ACCENTS.writer}`}>Writer</span
-                >. This site is a record of what I've made so far.
-            </p>
-            <p class="home-hint" id="home-hint" aria-live="polite">
-                Read or click the projects in the left sidebar to view.
-            </p>
-        </div>
+    <div class="home_content">
+        <p class="home_para">
+            I am <span
+                class="id-tag id-tag--name"
+                data-tag="dai_pan"
+                style={`--tag-accent: ${TAG_ACCENTS.dai_pan}`}>Dai Pan</span
+            >, born in China and currently living in Brisbane, Australia. I
+            build quiet interfaces for image-based, object-oriented systems
+            that perceive minimal sense, and projects that treat experience
+            and aesthetics as part of the content. I work as a{" "}
+            <span
+                class="id-tag"
+                data-tag="web_developer"
+                style={`--tag-accent: ${TAG_ACCENTS.web_developer}`}
+                >Web Developer</span
+            >,{" "}
+            <span
+                class="id-tag"
+                data-tag="conceptual_designer"
+                style={`--tag-accent: ${TAG_ACCENTS.conceptual_designer}`}
+                >Conceptual Designer</span
+            >,{" "}
+            <span
+                class="id-tag"
+                data-tag="visual_artist"
+                style={`--tag-accent: ${TAG_ACCENTS.visual_artist}`}
+                >Visual Artist</span
+            >,{" "}
+            <span
+                class="id-tag"
+                data-tag="printmaker"
+                style={`--tag-accent: ${TAG_ACCENTS.printmaker}`}
+                >Printmaker</span
+            >,{" "}
+            <span
+                class="id-tag"
+                data-tag="photographer"
+                style={`--tag-accent: ${TAG_ACCENTS.photographer}`}
+                >Photographer</span
+            >, and{" "}
+            <span
+                class="id-tag"
+                data-tag="writer"
+                style={`--tag-accent: ${TAG_ACCENTS.writer}`}>Writer</span
+            >. This site is a record of what I've made so far.
+        </p>
+        <p class="home_hint" id="home_hint" aria-live="polite">
+            <span class="home_hint-desktop">Read or click the projects in the left sidebar to view.</span>
+            <span class="home_hint-mobile">Tap the menu to view works.</span>
+        </p>
     </div>
+
+    <footer class="site_footer">
+        <p class="copyright">© {new Date().getFullYear()} Dai Pan.</p>
+    </footer>
 </BaseLayout>
 
 <script>
@@ -63,35 +66,33 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const hint = document.getElementById("home-hint");
+        const hint = document.getElementById("home_hint");
         if (hint) setTimeout(() => hint.classList.add("is-visible"), 3600);
     });
 </script>
 
 <style>
-    /* 与侧栏垂直对齐：段落首行与 "Closing Time" 同高（sidebar 48px + brand + 18px gap + 3×(link+12px) ≈ 220px，减去 content 的 padding-block 得 .home padding-top） */
-    .home {
-        flex: 1;
-        min-height: 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: clamp(140px, 14vw, 200px);
-        padding-inline: clamp(32px, 5vw, 64px);
-        padding-bottom: clamp(32px, 5vw, 64px);
-        box-sizing: border-box;
+    /* Desktop only (>768px): .content--home layout */
+    @media (min-width: 769px) {
+        :global(.content--home) .home_content {
+            flex: 1;
+            min-height: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-width: 720px;
+            padding-top: clamp(140px, 14vw, 200px);
+            padding-inline: clamp(32px, 5vw, 64px);
+            padding-bottom: clamp(32px, 5vw, 64px);
+            box-sizing: border-box;
+        }
+
+        :global(.content--home) .site_footer {
+            display: none;
+        }
     }
 
-    .home-inner {
-        max-width: 720px;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .home-para {
+    .home_para {
         margin: 0;
         font-family: var(--display);
         font-size: clamp(13px, 1.8vw, 22px);
@@ -102,7 +103,7 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
         overflow: visible;
     }
 
-    .home-hint {
+    .home_hint {
         margin: 0;
         margin-top: 1.5rem;
         font-family: var(--body, system-ui, sans-serif);
@@ -113,8 +114,67 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
         transition: opacity 0.4s ease;
     }
 
-    .home-hint.is-visible {
+    .home_hint.is-visible {
         opacity: 1;
+    }
+
+    @media (min-width: 769px) {
+        .home_hint-mobile {
+            display: none;
+        }
+
+        .home_hint-desktop {
+            display: inline;
+        }
+    }
+
+    /* Mobile (<=768px): mobile_main layout - MUST override desktop */
+    @media (max-width: 768px) {
+        :global(.mobile_main) {
+            display: flex !important;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        :global(.mobile_main) .home_content {
+            max-width: 18ch !important;
+            width: min(100%, 18ch);
+            min-width: 0;
+            align-self: center;
+            margin-inline: auto;
+            padding: 0 !important;
+        }
+
+        :global(.mobile_main) .home_hint {
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        :global(.mobile_main) .home_hint.is-visible {
+            opacity: 0.55;
+        }
+
+        :global(.mobile_main) .home_hint-mobile {
+            display: inline;
+        }
+
+        :global(.mobile_main) .home_hint-desktop {
+            display: none;
+        }
+
+        :global(.mobile_main) .site_footer {
+            display: block !important;
+            margin: 0;
+            margin-top: 80px;
+        }
+
+        .copyright {
+            margin: 0;
+            font-size: 11px;
+            color: var(--text, #111);
+            opacity: 0.5;
+            padding-bottom: 26px;
+        }
     }
 
     .id-tag {
