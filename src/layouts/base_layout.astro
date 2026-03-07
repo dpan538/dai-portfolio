@@ -257,7 +257,8 @@ const portfolioSchema = homePage
             role="dialog"
             aria-modal="true"
             aria-label="Navigation menu"
-            hidden>
+            aria-hidden="true"
+            data-open="false">
             <div class="mobile_overlay_backdrop" id="mobile_overlay_backdrop"></div>
             <nav class="mobile_overlay_menu" id="mobile_overlay_menu">
                 {
@@ -288,6 +289,7 @@ const portfolioSchema = homePage
                 --line: #ececec;
                 --max: 900px;
                 --top_align: 64px;
+                --mobile-padding-x: 26px;
             }
 
             :global(body) {
@@ -460,7 +462,8 @@ const portfolioSchema = homePage
                 left: 0;
                 right: 0;
                 height: 52px;
-                padding-inline: 26px;
+                padding-left: 26px;
+                padding-right: 26px;
                 box-sizing: border-box;
                 z-index: 1500;
                 isolation: isolate;
@@ -492,7 +495,7 @@ const portfolioSchema = homePage
                 border: none;
                 background: transparent;
                 color: var(--text);
-                font-size: 28px;
+                font-size: 32px;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
@@ -502,6 +505,7 @@ const portfolioSchema = homePage
 
             .mobile_menu_icon--close {
                 display: none;
+                font-size: 20px;
             }
 
             .mobile_menu_btn[aria-expanded="true"] .mobile_menu_icon--hamburger {
@@ -519,14 +523,17 @@ const portfolioSchema = homePage
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
-
-            .mobile_overlay[hidden] {
-                display: none !important;
-            }
-
-            .mobile_overlay:not([data-open="true"]) {
+                visibility: hidden;
+                opacity: 0;
                 pointer-events: none;
+                transition: opacity 460ms ease-out, visibility 0s linear 460ms;
+            }
+
+            .mobile_overlay[data-open="true"] {
+                visibility: visible;
+                opacity: 1;
+                pointer-events: auto;
+                transition: opacity 320ms ease-out, visibility 0s;
             }
 
             .mobile_overlay_backdrop {
@@ -535,11 +542,6 @@ const portfolioSchema = homePage
                 background: rgba(255, 255, 255, 0.96);
                 backdrop-filter: blur(8px);
                 -webkit-backdrop-filter: blur(8px);
-                opacity: 0;
-                transition: opacity 180ms ease-out;
-            }
-
-            .mobile_overlay[data-open="true"] .mobile_overlay_backdrop {
                 opacity: 1;
             }
 
@@ -555,8 +557,8 @@ const portfolioSchema = homePage
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 opacity: 0;
-                transform: translateY(8px);
-                transition: opacity 180ms ease-out, transform 180ms ease-out;
+                transform: translateY(4px);
+                transition: opacity 300ms ease-out 50ms, transform 300ms ease-out 50ms;
             }
 
             .mobile_overlay[data-open="true"] .mobile_overlay_menu {
@@ -565,7 +567,7 @@ const portfolioSchema = homePage
             }
 
             .mobile_overlay_link {
-                font-size: 20px;
+                font-size: 19px;
                 color: var(--text);
                 text-decoration: none;
             }
@@ -584,13 +586,6 @@ const portfolioSchema = homePage
                 margin-top: 24px;
             }
 
-            /* Hide idle-arrow when mobile overlay is open */
-            body.mobile-overlay-open :global(#idle-arrow) {
-                visibility: hidden !important;
-                pointer-events: none !important;
-                opacity: 0 !important;
-            }
-
             @media (max-width: 768px) {
                 .mobile_header {
                     display: flex;
@@ -604,11 +599,23 @@ const portfolioSchema = homePage
                     grid-template-columns: 1fr;
                 }
 
+                /* 移动端：隐藏所有滚动条 */
+                :global(html)::-webkit-scrollbar,
+                :global(body)::-webkit-scrollbar {
+                    display: none;
+                    width: 0;
+                }
+                :global(html),
+                :global(body) {
+                    scrollbar-width: none;
+                    -ms-overflow-style: none;
+                }
+
                 .content {
                     width: 100%;
                     padding-top: 142px;
-                    padding-left: 26px;
-                    padding-right: 26px;
+                    padding-inline: var(--mobile-padding-x);
+                    padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
                 }
 
                 /* Home page on mobile: override .content--home to allow scroll + show footer */
@@ -628,9 +635,7 @@ const portfolioSchema = homePage
                 .mobile_main {
                     --mobile-gap: 80px;
                     padding-top: calc(26px + 52px + var(--mobile-gap)) !important;
-                    padding-left: 26px !important;
-                    padding-right: 26px !important;
-                    padding-inline: 26px !important;
+                    padding-inline: var(--mobile-padding-x) !important;
                 }
             }
         </style>
@@ -647,37 +652,43 @@ const portfolioSchema = homePage
                 let scrollLockY = 0;
 
                 function openOverlay() {
-                    overlay.removeAttribute("hidden");
+                    window.dispatchEvent(new Event("lenis:pause"));
+                    overlay.setAttribute("aria-hidden", "false");
                     overlay.setAttribute("data-open", "true");
                     btn.setAttribute("aria-expanded", "true");
                     btn.setAttribute("aria-label", "Close menu");
                     document.body.classList.add("mobile-overlay-open");
                     scrollLockY = window.scrollY;
-                    document.documentElement.style.overflow = "hidden";
-                    document.body.style.overflow = "hidden";
-                    document.body.style.position = "fixed";
-                    document.body.style.top = `-${scrollLockY}px`;
-                    document.body.style.left = "0";
-                    document.body.style.right = "0";
-                    document.body.style.width = "100%";
+                    requestAnimationFrame(function () {
+                        document.documentElement.style.overflow = "hidden";
+                        document.body.style.overflow = "hidden";
+                        document.body.style.position = "fixed";
+                        document.body.style.top = "-" + scrollLockY + "px";
+                        document.body.style.left = "0";
+                        document.body.style.right = "0";
+                        document.body.style.width = "100%";
+                    });
                 }
 
                 function closeOverlay() {
                     overlay.setAttribute("data-open", "false");
+                    overlay.setAttribute("aria-hidden", "true");
                     btn.setAttribute("aria-expanded", "false");
                     btn.setAttribute("aria-label", "Open menu");
-                    document.body.classList.remove("mobile-overlay-open");
-                    document.documentElement.style.overflow = "";
-                    document.body.style.overflow = "";
-                    document.body.style.position = "";
-                    document.body.style.top = "";
-                    document.body.style.left = "";
-                    document.body.style.right = "";
-                    document.body.style.width = "";
-                    window.scrollTo(0, scrollLockY);
-                    setTimeout(function () {
-                        overlay.setAttribute("hidden", "");
-                    }, 200);
+                    overlay.addEventListener("transitionend", function onClosed(e) {
+                        if (e.target !== overlay || e.propertyName !== "opacity") return;
+                        overlay.removeEventListener("transitionend", onClosed);
+                        document.body.classList.remove("mobile-overlay-open");
+                        document.documentElement.style.overflow = "";
+                        document.body.style.overflow = "";
+                        document.body.style.position = "";
+                        document.body.style.top = "";
+                        document.body.style.left = "";
+                        document.body.style.right = "";
+                        document.body.style.width = "";
+                        window.scrollTo(0, scrollLockY);
+                        window.dispatchEvent(new Event("lenis:resume"));
+                    }, { once: true });
                 }
 
                 btn.addEventListener("click", function () {
@@ -705,5 +716,8 @@ const portfolioSchema = homePage
                 });
             })();
         </script>
+
+        <!-- Lenis smooth scroll (mobile only, experiment) -->
+        <script type="module" src="../scripts/lenis-mobile.js"></script>
     </body>
 </html>

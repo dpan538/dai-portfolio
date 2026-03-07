@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../layouts/base_layout.astro";
+import ProjectMobileLayout from "../layouts/project_mobile.astro";
+import QuiteOffMobile from "../components/projects/QuiteOffMobile.astro";
+
+const images = [
+    "/projects/quite_off/quite_01.jpg",
+    "/projects/quite_off/quite_02.jpg",
+    "/projects/quite_off/quite_03.jpg",
+    "/projects/quite_off/quite_04.jpg",
+    "/projects/quite_off/quite_05.jpg",
+    "/projects/quite_off/quite_06.jpg",
+    "/projects/quite_off/quite_07.jpg",
+    "/projects/quite_off/quite_08.jpg",
+];
+
+const paragraphs = [
+    "Quite Off unfolds as a film that never reaches completion. Every image holds a suspended beginning, where the gaze lingers before meaning forms. The eyes remain within the act of watching, tracing a fragile presence.",
+    "We wrote a script and storyboards; filming became a path toward separation. A quiet distance - where touch becomes uncertain and silence carries weight. The mother as proximity without merging, a fragile closeness shaped by restraint.",
+    "Red insists; green persists. It enters like gravity, blooms without apology.",
+    "Movement fractures continuity - motion, crossings, departure. What remains is not absence but an afterimage; memory circulates beneath every frame.",
+];
+
+const seoDescription =
+    "Quite Off is an unfinished film fragment shot on Kodak Vision3 5203, 5207, and 5219. A cinema and image study of gaze, motherhood and friendship, separation, and red/green motif.";
+const SITE_URL = "https://daipan.art";
+---
+
+<BaseLayout title="Quite Off — Dai Pan" description={seoDescription} canonical={`${SITE_URL}/quite_off`} ogImage="/projects/quite_off/quite_01.jpg" ogType="article" active="quite_off" breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
+
+    <ProjectMobileLayout>
+        <QuiteOffMobile images={images} paragraphs={paragraphs} />
+    </ProjectMobileLayout>
+
+    <script is:inline>
+        if (window.innerWidth > 768) window.location.replace("/quite_off");
+    </script>
+</BaseLayout>
+
+<style is:global>
+    main.content:has(.project-mobile) {
+        padding: 0 !important;
+        max-width: none !important;
+    }
+</style>

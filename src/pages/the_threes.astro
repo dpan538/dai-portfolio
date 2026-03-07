@@ -43,18 +43,14 @@ const pageDescription =
     <section class="threes threes__text" id="description">
         <div class="threes__text-wrap">
             <p>
-                The Threes is a curated collection of literary and visual works, presented in three interconnected
-                sections: Poetry, Image, and Story. This selection brings together a range of creative explorations,
-                showcasing fluid narratives and thoughtful imagery crafted throughout 2025. Designed as an experience
-                rather than a statement, each section offers its own perspective, inviting viewers to explore multiple
-                ways of seeing and feeling the subtle connections between words, visuals, and personal reflection.
+                The Threes is a curated collection of literary and visual works in three sections: Poetry, Image,
+                and Story. Designed as an experience rather than a statement, each section offers its own perspective
+                on the connections between words, visuals, and personal reflection.
             </p>
 
-            <p>
-                The collection features 18 poems and a short narrative story, each piece drawing inspiration from
-                personal introspection, philosophical inquiry, and fragmented memories. Rooted in reflections on
-                identity, emotional resonance, and subtle encounters in everyday life, these works capture fleeting
-                moments of clarity within an ever-changing reality.
+            <p class="threes__text-collection">
+                The collection features 18 poems and a short narrative, each drawing from personal introspection and
+                fragmented memories. These works capture fleeting moments of clarity within an ever-changing reality.
             </p>
 
             <p>
@@ -117,6 +113,11 @@ const pageDescription =
                 what was seen, what was said, what remained.
             </p>
         </div>
+
+        <p class="threes__outro-collection">
+            The collection features 18 poems and a short narrative, each drawing from personal introspection and
+            fragmented memories. These works capture fleeting moments of clarity within an ever-changing reality.
+        </p>
     </section>
 
     <style>
@@ -178,7 +179,7 @@ const pageDescription =
             max-width: 70ch;
             color: var(--muted);
             line-height: 1.65;
-            font-size: 0.95rem;
+            font-size: 0.875rem;
         }
 
         .threes__hint {
@@ -192,7 +193,7 @@ const pageDescription =
         .threes__text-wrap {
             max-width: 70ch;
             line-height: 1.78;
-            font-size: 0.95rem;
+            font-size: 0.875rem;
             color: rgba(0, 0, 0, 0.78);
         }
 
@@ -213,7 +214,9 @@ const pageDescription =
 
         .threes__flow-title {
             margin: 0 0 6px;
+            font-family: var(--heading);
             font-size: 1rem;
+            font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
@@ -334,11 +337,17 @@ const pageDescription =
 
         .lightbox button {
             position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             background: none;
             border: none;
             color: white;
             font-size: 28px;
             cursor: pointer;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .lightbox .prev {
@@ -374,10 +383,13 @@ const pageDescription =
         }
 
         .threes__outro-line {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: var(--muted);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .threes__outro-collection {
+            display: none;
         }
 
         @media (max-width: 860px) {
@@ -389,6 +401,71 @@ const pageDescription =
                 height: 440px;
             }
         }
+
+        /* Mobile (≤768px): header clear, touch-friendly flow, tighter spacing to align with Quite Off */
+        @media (max-width: 768px) {
+            .threes + .threes {
+                margin-top: 20px;
+            }
+            .threes__hero {
+                margin-bottom: 12px;
+            }
+            .threes__intro {
+                padding-top: 0;
+            }
+            .threes__lead {
+                display: none;
+            }
+            .threes__hint {
+                display: none;
+            }
+            .threes__text-wrap p:last-child {
+                display: none;
+            }
+            .threes__text-collection {
+                display: none;
+            }
+            .threes__outro {
+                margin-top: 20px;
+                padding-bottom: 0;
+            }
+            .threes__outro-text {
+                margin-top: 12px;
+            }
+            .threes__outro-collection {
+                display: block;
+                margin-top: 12px;
+                font-size: 0.95rem;
+                color: var(--text);
+                line-height: 1.55;
+            }
+            .threes__flow-header {
+                margin-bottom: 12px;
+            }
+            .threes__flow-sub {
+                display: none;
+            }
+            .threes__flow-stage {
+                height: 280px;
+                touch-action: pan-y;
+            }
+            .threes__flow-back {
+                right: 16px;
+                bottom: 16px;
+            }
+            .lightbox .prev {
+                left: 12px;
+                min-width: 48px;
+                min-height: 48px;
+                font-size: 24px;
+            }
+            .lightbox .next {
+                right: 12px;
+                min-width: 48px;
+                min-height: 48px;
+                font-size: 24px;
+            }
+        }
     </style>
 
     <script type="module">
@@ -398,13 +475,24 @@ const pageDescription =
             "(prefers-reduced-motion: reduce)",
         )?.matches;
 
-        const FLOW_CONFIG = {
-            spacing: 230,
-            rotationStep: 16,
-            scaleDecay: 0.12,
-            visibleRange: 5,
-            depthStep: 110,
-        };
+        const isMobile = () => window.matchMedia?.("(max-width: 768px)")?.matches ?? false;
+        const getFlowConfig = () =>
+            isMobile()
+                ? {
+                      spacing: 150,
+                      rotationStep: 14,
+                      scaleDecay: 0.1,
+                      visibleRange: 5,
+                      depthStep: 90,
+                  }
+                : {
+                      spacing: 230,
+                      rotationStep: 16,
+                      scaleDecay: 0.12,
+                      visibleRange: 5,
+                      depthStep: 110,
+                  };
+        let FLOW_CONFIG = getFlowConfig();
 
         // --- smooth scroll from CTA / cover ---
         $$("[data-scroll-to]").forEach((el) => {
@@ -423,13 +511,9 @@ const pageDescription =
 
         // --- cover flow ---
         const stage = document.querySelector("[data-flow-stage]");
-        if (!stage) {
-            console.warn("[the_threes] missing flow stage");
-        } else {
+        if (stage) {
             const cards = $$("[data-index]", stage);
-            if (!cards.length) {
-                console.warn("[the_threes] no cards found");
-            } else {
+            if (cards.length) {
                 let position = 0; // 可以是小数，表示“当前中心索引”
                 let velocity = 0;
                 let animating = false;
@@ -478,6 +562,8 @@ const pageDescription =
                     }
                 }
 
+                const velocityDecay = () => (isMobile() ? 0.92 : 0.9);
+
                 function ensureAnimating() {
                     if (animating) return;
                     animating = true;
@@ -492,7 +578,7 @@ const pageDescription =
                         const snap = target - position;
 
                         position += velocity;
-                        velocity *= 0.9; // 惯性衰减
+                        velocity *= velocityDecay();
                         position += snap * 0.08; // 轻微弹性收束到最近索引
 
                         if (
@@ -515,42 +601,64 @@ const pageDescription =
                 // 初始布局
                 applyLayout();
 
+                window.addEventListener("resize", () => {
+                    FLOW_CONFIG = getFlowConfig();
+                    applyLayout();
+                });
+
                 // --- pointer drag with inertia ---
                 let dragging = false;
                 let lastX = 0;
                 let lastTime = 0;
                 let dragMoved = 0;
+                let startX = 0;
+                let startY = 0;
+                let axisLocked = null; // null | 'x' | 'y'
 
                 stage.addEventListener("pointerdown", (e) => {
                     dragging = true;
                     dragMoved = 0;
-                    lastX = e.clientX;
+                    axisLocked = null;
+                    lastX = startX = e.clientX;
+                    startY = e.clientY;
                     lastTime = performance.now();
                     stage.setPointerCapture?.(e.pointerId);
                     velocity = 0;
                 });
 
-                stage.addEventListener("pointermove", (e) => {
-                    if (!dragging) return;
-                    const now = performance.now();
-                    const dx = e.clientX - lastX;
-                    const dt = now - lastTime || 16;
+                stage.addEventListener(
+                    "pointermove",
+                    (e) => {
+                        if (!dragging) return;
+                        const now = performance.now();
+                        const dx = e.clientX - lastX;
+                        const dy = e.clientY - lastY;
+                        const dt = now - lastTime || 16;
 
-                    dragMoved += Math.abs(dx);
+                        if (axisLocked === null && (Math.abs(dx) > 12 || Math.abs(dy) > 12)) {
+                            axisLocked = Math.abs(dx) >= Math.abs(dy) ? "x" : "y";
+                        }
+                        if (axisLocked === "x" && isMobile()) {
+                            e.preventDefault();
+                        }
 
-                    // 根据拖动距离更新 position（向右拖 = 看前一页）
-                    position -= dx / FLOW_CONFIG.spacing;
-                    position = clamp(position, 0, maxIndex);
+                        dragMoved += Math.abs(dx);
 
-                    // 记录速度（索引/帧）
-                    const vPxPerMs = dx / dt;
-                    velocity = -vPxPerMs * 16 * (1 / FLOW_CONFIG.spacing);
+                        if (axisLocked !== "y") {
+                            position -= dx / FLOW_CONFIG.spacing;
+                            position = clamp(position, 0, maxIndex);
 
-                    lastX = e.clientX;
-                    lastTime = now;
+                            const vPxPerMs = dx / dt;
+                            velocity = -vPxPerMs * 16 * (1 / FLOW_CONFIG.spacing);
+                        }
 
-                    applyLayout();
-                });
+                        lastX = e.clientX;
+                        lastTime = now;
+
+                        applyLayout();
+                    },
+                    { passive: false },
+                );
 
                 function endDrag(e) {
                     if (!dragging) return;
@@ -649,6 +757,32 @@ const pageDescription =
                 lightbox?.addEventListener("click", (e) => {
                     if (e.target === lightbox) closeLightbox();
                 });
+
+                // --- Lightbox touch swipe for mobile ---
+                let touchStartX = 0;
+                lightbox?.addEventListener(
+                    "touchstart",
+                    (e) => {
+                        if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
+                    },
+                    { passive: true },
+                );
+                lightbox?.addEventListener(
+                    "touchend",
+                    (e) => {
+                        if (e.changedTouches.length !== 1 || lightbox?.classList.contains("hidden")) return;
+                        const dx = e.changedTouches[0].clientX - touchStartX;
+                        const threshold = 60;
+                        if (dx > threshold) {
+                            current = (current - 1 + sources.length) % sources.length;
+                            lightboxImage.src = sources[current];
+                        } else if (dx < -threshold) {
+                            current = (current + 1) % sources.length;
+                            lightboxImage.src = sources[current];
+                        }
+                    },
+                    { passive: true },
+                );
 
                 window.addEventListener("keydown", (e) => {
                     const isOpen = lightbox && !lightbox.classList.contains("hidden");

@@ -1,0 +1,20 @@
+---
+---
+<div class="project-mobile">
+    <slot />
+</div>
+
+<style>
+    .project-mobile {
+        display: flex;
+        flex-direction: column;
+        padding-top: 142px;
+        padding-inline: var(--mobile-padding-x, 26px);
+        padding-bottom: 48px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    @media (min-width: 769px) {
+        .project-mobile { display: none !important; }
+    }
+</style>

@@ -5,7 +5,8 @@ import BaseLayout from "../layouts/base_layout.astro";
 const exhibitionLinks: Record<string, string> = {
     "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)": "https://www.glasgowgalleryofphotography.com/",
     "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)": "https://www.blankwallgallery.com/",
-    "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA (upcoming)": "https://www.praxisphotocenter.org/",
+    "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA": "https://www.praxisphotocenter.org/",
+    "City Lights, Virtual Photography Exhibition, Carlotta Gallery": "",
     "Horizons, Allora Gallery, London, UK": "https://alloragallery.com/horizons",
 };
 const awardLinks: Record<string, string> = {
@@ -56,23 +57,35 @@ const awardSchema = {
         </figure>
 
         <div class="about_text">
-            <p>
-                Dai Pan is a visual artist and designer working across
-                photography, printmaking, and conceptual design. His
-                practice explores how images construct spatial perception through
-                framing, repetition, and visual structure, treating photography and
-                design as interconnected systems of visual thinking.
-            </p>
-
-            <p>
-                His work focuses on translating everyday environments into visual
-                sequences where clarity and distortion coexist. Images are
-                approached as structures rather than documents — shaped by invisible rhythm,
-                colour, and compositional constraints that guide attention and
-                emotional response. Dai Pan develops visual systems that invite slow
-                looking and open interpretation, inviting meaning to emerge
-                gradually through form and perception.
-            </p>
+            <div class="about_text--desktop">
+                <p>
+                    Dai Pan is a visual artist and designer working across
+                    photography, printmaking, and conceptual design. His
+                    practice explores how images construct spatial perception through
+                    framing, repetition, and visual structure, treating photography and
+                    design as interconnected systems of visual thinking.
+                </p>
+                <p>
+                    His work focuses on translating everyday environments into visual
+                    sequences where clarity and distortion coexist. Images are
+                    approached as structures rather than documents — shaped by invisible rhythm,
+                    colour, and compositional constraints that guide attention and
+                    emotional response. Dai Pan develops visual systems that invite slow
+                    looking and open interpretation, inviting meaning to emerge
+                    gradually through form and perception.
+                </p>
+            </div>
+            <div class="about_text--mobile">
+                <p>
+                    Dai Pan is a visual artist and designer working across photography,
+                    printmaking, and conceptual design. His practice explores how images
+                    construct spatial perception through framing, repetition, and visual
+                    structure. He treats photography and design as interconnected systems
+                    of visual thinking, translating everyday environments into sequences
+                    where clarity and distortion coexist. His work invites slow looking
+                    and open interpretation.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -103,8 +116,8 @@ const awardSchema = {
                 [
                     ["2026", "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)"],
                     ["2026", "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)"],
-                    ["2026", "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA (upcoming)"],
-                    ["2026", "City Lights, Virtual Photography Exhibition, Carlotta Gallery (upcoming)"],
+                    ["2026", "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA"],
+                    ["2026", "City Lights, Virtual Photography Exhibition, Carlotta Gallery"],
                     ["2026", "Horizons, Allora Gallery, London, UK"],
                 ].map(([year, text]) => {
                     const href = exhibitionLinks[text];
@@ -149,7 +162,12 @@ const awardSchema = {
         <h2>Contact</h2>
         <ul class="about_contact_list">
             <li><a href="mailto:dpan53853@gmail.com">dpan53853@gmail.com</a></li>
-            <li><a href="https://www.instagram.com/jumpingchick666" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            <li>
+                <a href="https://www.instagram.com/jumpingchick666" target="_blank" rel="noopener noreferrer">
+                    <span class="contact_ig--desktop">Instagram</span>
+                    <span class="contact_ig--mobile">Instagram @jumpingchick666</span>
+                </a>
+            </li>
         </ul>
     </section>
 
@@ -265,6 +283,30 @@ const awardSchema = {
                 grid-template-columns: 1fr;
                 row-gap: 20px;
             }
+        }
+
+        /* 移动端：隐藏滚动条 */
+        @media (max-width: 768px) {
+            :global(html:has(.about_intro))::-webkit-scrollbar,
+            :global(body:has(.about_intro))::-webkit-scrollbar {
+                display: none;
+                width: 0;
+            }
+            :global(html:has(.about_intro)),
+            :global(body:has(.about_intro)) {
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+        }
+
+        /* 移动端 only：精简介绍、Instagram @ */
+        @media (min-width: 769px) {
+            .about_text--mobile { display: none; }
+            .contact_ig--mobile { display: none; }
+        }
+        @media (max-width: 768px) {
+            .about_text--desktop { display: none; }
+            .contact_ig--desktop { display: none; }
         }
 
     </style>

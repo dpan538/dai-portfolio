@@ -11,66 +11,116 @@ function wrapKeywords(text: string, keywords: string[]): string {
     return result;
 }
 
+// cspell:ignore Onnamen
+const worksDesktop = [
+    { id: "01", image: "/projects/masks/masks01.jpg", medium: "Limestone Lithography", size: "14x18 inches", year: "2025", align: "center", text: `Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958). Rather than depicting recognizable identities, the works approach the face as a fluid structure — something that forms and dissolves within social relationships. Gesture replaces representation; surfaces fold into one another, suggesting expressions that never fully stabilize.`, keywords: ["Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958).", "fluid structure", "social relationships"] },
+    { id: "02", image: "/projects/masks/masks02.jpg", medium: "Limestone Lithography", size: "7x10 inches", year: "2024", align: "left", text: `The mask here is not a disguise but a condition. It exists in the tension between concealment and revelation, between the desire to remain unseen and the urge to be understood. Eyes emerge and disappear, fragments gather and disperse, and abstraction becomes a language for something inherently ungraspable.`, keywords: ["condition", "remain unseen", "Eyes"] },
+    { id: "03", image: "/projects/masks/masks03.jpg", medium: "Limestone Lithography", size: "8.5x13.5 inches", year: "2024", align: "left", text: `Curiosity here becomes a form of pressure — an invisible force that bends perception and reshapes the self. The desire to look and the resistance to being seen collide, compressing the interior until something formless escapes. What emerges is neither body nor gesture but a drifting presence, slipping through dense structures of relation like vapor through sealed surfaces. Twisted, enclosed, and endlessly folding back onto itself, the form recalls a fragile Möbius continuity — an unstable infinity sustained by tension rather than stability.`, keywords: ["invisible force", "formless", "tension rather than stability"] },
+    { id: "04", image: "/projects/masks/masks04.jpg", medium: "Limestone Lithography", size: "7x9 inches", year: "2025", align: "right", text: `Repetition becomes a process of reduction. Language loses weight as actions remain, stripped of narrative and left nearly bare. Attraction, obsession, and projection dissolve into a single directional movement toward inevitability. Like a solitary structure placed in open terrain, detached from the surrounding city yet still governed by its internal logic, the work persists through function rather than explanation, allowing meaning to arise through sustained encounter rather than declaration.`, keywords: ["Language loses weight", "obsession"] },
+];
+
 const works = [
-    {
-        id: "01",
-        image: "/projects/masks/masks01.jpg",
-        medium: "Limestone Lithography",
-        size: "14x18 inches",
-        year: "2025",
-        align: "center",
-        text: `Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958). Rather than depicting recognizable identities, the works approach the face as a fluid structure — something that forms and dissolves within social relationships. Gesture replaces representation; surfaces fold into one another, suggesting expressions that never fully stabilize.`,
-        keywords: ["Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958).", "fluid structure", "social relationships"],
-    },
-    {
-        id: "02",
-        image: "/projects/masks/masks02.jpg",
-        medium: "Limestone Lithography",
-        size: "7x10 inches",
-        year: "2024",
-        align: "left",
-        text: `The mask here is not a disguise but a condition. It exists in the tension between concealment and revelation, between the desire to remain unseen and the urge to be understood. Eyes emerge and disappear, fragments gather and disperse, and abstraction becomes a language for something inherently ungraspable.`,
-        keywords: ["condition", "remain unseen", "Eyes"],
-    },
-    {
-        id: "03",
-        image: "/projects/masks/masks03.jpg",
-        medium: "Limestone Lithography",
-        size: "8.5x13.5 inches",
-        year: "2024",
-        align: "left",
-        text: `Curiosity here becomes a form of pressure — an invisible force that bends perception and reshapes the self. The desire to look and the resistance to being seen collide, compressing the interior until something formless escapes. What emerges is neither body nor gesture but a drifting presence, slipping through dense structures of relation like vapor through sealed surfaces. Twisted, enclosed, and endlessly folding back onto itself, the form recalls a fragile Möbius continuity — an unstable infinity sustained by tension rather than stability.`,
-        keywords: ["invisible force", "formless", "tension rather than stability"],
-    },
-    {
-        id: "04",
-        image: "/projects/masks/masks04.jpg",
-        medium: "Limestone Lithography",
-        size: "7x9 inches",
-        year: "2025",
-        align: "right",
-        text: `Repetition becomes a process of reduction. Language loses weight as actions remain, stripped of narrative and left nearly bare. Attraction, obsession, and projection dissolve into a single directional movement toward inevitability. Like a solitary structure placed in open terrain, detached from the surrounding city yet still governed by its internal logic, the work persists through function rather than explanation, allowing meaning to arise through sustained encounter rather than declaration.`,
-        keywords: ["Language loses weight", "obsession"],
-    },
+    { id: "01", image: "/projects/masks/masks01.jpg", medium: "Limestone Lithography", size: "14x18 inches", year: "2025", align: "center", text: `Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958). The face as fluid structure — forming and dissolving within social relationships. Gesture replaces representation; surfaces fold into one another.`, keywords: ["Inspired by Masks (女面, Onnamen) by Fumiko Enchi (1958).", "fluid structure", "social relationships"] },
+    { id: "02", image: "/projects/masks/masks02.jpg", medium: "Limestone Lithography", size: "7x10 inches", year: "2024", align: "left", text: `The mask is not disguise but condition — tension between concealment and revelation, between remaining unseen and being understood. Eyes emerge and disappear; abstraction becomes a language for the ungraspable.`, keywords: ["condition", "remain unseen", "Eyes"] },
+    { id: "03", image: "/projects/masks/masks03.jpg", medium: "Limestone Lithography", size: "8.5x13.5 inches", year: "2024", align: "left", text: `Curiosity as pressure — an invisible force bending perception. The desire to look and the resistance to being seen collide; what emerges is a drifting presence, folding back like a fragile Möbius continuity.`, keywords: ["invisible force", "formless", "tension rather than stability"] },
+    { id: "04", image: "/projects/masks/masks04.jpg", medium: "Limestone Lithography", size: "7x9 inches", year: "2025", align: "right", text: `Repetition as reduction. Language loses weight; attraction, obsession, and projection dissolve into a single movement. The work persists through encounter rather than declaration.`, keywords: ["Language loses weight", "obsession"] },
 ];
 ---
 
+<style is:global>
+    @media (max-width: 768px) {
+        main.content:has(.masks-project) {
+            padding: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding-top: 120px !important;
+            padding-inline: 26px !important;
+            padding-bottom: max(48px, env(safe-area-inset-bottom, 0px)) !important;
+        }
+        main.content:has(.masks-project) > * {
+            max-width: none !important;
+        }
+    }
+</style>
+
+<BaseLayout title="Masks" description="Masks — limestone lithography works inspired by Fumiko Enchi. The face as fluid structure; gesture replaces representation." canonical="https://daipan.art/masks" ogImage="/projects/masks/masks01.jpg" ogType="article" active="masks" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Masks", url: "https://daipan.art/masks" }]}>
+
+    <!-- Desktop: backup 7a49036 的 project/row 结构 -->
+    <section class="masks-desktop">
+        <div class="project">
+            {worksDesktop.map((work, index) => (
+                <div class={`row row--${work.align}`}>
+                    <div class="image" data-index={index}>
+                        <img src={work.image} alt={`Masks ${work.id}`} />
+                    </div>
+                    <div class="text">
+                        <p class="meta">
+                            Medium: {work.medium}<br />
+                            Size: {work.size}<br />
+                            Year: {work.year}
+                        </p>
+                        <p class="desc" set:html={wrapKeywords(work.text, work.keywords)} />
+                    </div>
+                </div>
+            ))}
+        </div>
+        <div id="lightbox-desktop" class="lightbox lightbox-desktop hidden">
+            <button class="prev">←</button>
+            <img id="lightbox-image-desktop" alt="Masks" />
+            <button class="next">→</button>
+        </div>
+    </section>
+
+    <!-- Mobile: 当前满意的布局 -->
+    <section class="masks-mobile masks-project">
+        {works.map((work, index) => (
+            <article class="masks-work" data-align={work.align}>
+                <div class="masks-image" data-index={index}>
+                    <img src={work.image} alt={`Masks ${work.id}`} />
+                </div>
+                <div class="masks-text">
+                    <p class="masks-meta"><span class="masks-meta-line">{work.medium}</span><br /><span class="masks-meta-line">{work.size}, {work.year}</span></p>
+                    <p class="masks-desc" set:html={wrapKeywords(work.text, work.keywords)} />
+                </div>
+            </article>
+        ))}
+        <div id="lightbox" class="masks-lightbox hidden">
+            <div class="masks-lightbox__inner">
+                <img id="lightbox-image" class="masks-lightbox__img" alt="Masks" />
+                <div class="masks-lightbox__controls">
+                    <button class="masks-lightbox__nav prev" aria-label="Previous">←</button>
+                    <button class="masks-lightbox__close" aria-label="Close">✕</button>
+                    <button class="masks-lightbox__nav next" aria-label="Next">→</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
+
 <style>
-    :global(main.content) {
-        padding: 0 !important;
-        max-width: none !important;
-        margin: 0 !important;
+    /* ========== Desktop (≥769px)：backup 7a49036 样式 ========== */
+    .masks-desktop { display: none; }
+    .masks-mobile { display: block; }
+    @media (min-width: 769px) {
+        .masks-desktop { display: block; }
+        .masks-mobile { display: none; }
+    }
+
+    @media (min-width: 769px) {
+        :global(main.content:has(.masks-desktop)) {
+            padding: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
+        }
     }
 
     :global(main.content > *) {
         max-width: none !important;
     }
 
-    .project {
-        width: 100%;
-    }
+    .project { width: 100%; }
 
-    /* 一屏一页 */
     .row {
         min-height: auto;
         display: grid;
@@ -78,25 +128,22 @@ const works = [
         margin: 72px 0;
         --img-h: min(92vh, 980px);
         box-sizing: border-box;
-
-        /* 用 12 栅格控制“偏向视觉中心”，而不是贴边 */
         grid-template-columns: repeat(12, minmax(0, 1fr));
         column-gap: clamp(24px, 4vw, 56px);
     }
 
-    /* 图片通用：大、可控、不裁切 */
     .image {
         height: var(--img-h);
         cursor: zoom-in;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
     .image img {
         height: 100%;
         width: auto;
-        cursor: zoom-in;
         max-width: 100%;
         object-fit: contain;
     }
@@ -120,62 +167,34 @@ const works = [
         color: rgba(0, 0, 0, 0.62);
     }
 
-    /* ——对齐策略——
-     left/right 都不是贴边，而是“靠近视觉中心的左/右”：
-     通过栅格列起止控制位置。
-  */
+    .row--left .image { grid-column: 2 / 8; }
+    .row--left .text { grid-column: 8 / 12; }
+    .row--right .image { grid-column: 6 / 12 !important; grid-row: 1; }
+    .row--right .text { grid-column: 2 / 6 !important; grid-row: 1; }
+    .row--center .image { grid-column: 3 / 9; }
+    .row--center .text { grid-column: 9 / 12; }
 
-    /* 02/03：图片在左，靠近视觉中心（从第2列开始到第8列） */
-    .row--left .image {
-        grid-column: 2 / 8;
-    }
-    .row--left .text {
-        grid-column: 8 / 12;
-    }
+    .desc-keyword { font-weight: 400; transition: font-weight 0.2s ease; }
+    .row.is-image-hovered :global(.desc-keyword) { font-weight: 600; color: var(--text, #111); }
 
-    /* 04：图片在右（从第6列到第12列），文字在左（第2到第6列） */
-    .row--right .image {
-        grid-column: 6 / 12 !important;
-        grid-row: 1;
-    }
-    .row--right .text {
-        grid-column: 2 / 6 !important;
-        grid-row: 1;
-    }
-
-    /* 01：居中展示（图片更居中一些：第3到第9列），文字仍在右侧（第9到第12列） */
-    .row--center .image {
-        grid-column: 3 / 9;
-    }
-    .row--center .text {
-        grid-column: 9 / 12;
-    }
-
-    .image {
-        position: relative;
-        cursor: pointer;
-    }
-
-    .lightbox {
+    .lightbox-desktop {
         position: fixed;
         inset: 0;
         background: rgba(0, 0, 0, 0.92);
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 2000;
+        z-index: 999;
     }
 
-    .lightbox img {
+    .lightbox-desktop img {
         max-height: 90vh;
         max-width: 90vw;
     }
 
-    .lightbox.hidden {
-        display: none;
-    }
+    .lightbox-desktop.hidden { display: none; }
 
-    .lightbox button {
+    .lightbox-desktop button {
         position: absolute;
         background: none;
         border: none;
@@ -184,205 +203,249 @@ const works = [
         cursor: pointer;
     }
 
-    .prev {
-        left: 30px;
-    }
-    .next {
-        right: 30px;
-    }
+    .lightbox-desktop .prev { left: 30px; }
+    .lightbox-desktop .next { right: 30px; }
 
-    /* 关键词：hover 图片时加粗（:global 因 desc-keyword 来自 set:html 无 scoped 属性） */
-    .desc-keyword {
-        font-weight: 400;
-        transition: font-weight 0.2s ease;
-    }
-
-    .row.is-image-hovered :global(.desc-keyword) {
-        font-weight: 600;
-        color: var(--text, #111);
-    }
-
-    /* 右下角闲置箭头（:global 因由 JS 动态注入到 body） */
-    :global(#idle-arrow) {
-        position: fixed;
-        bottom: 28px;
-        right: 28px;
-        z-index: 1300;
-        opacity: 0;
-        pointer-events: none;
-        color: rgba(0, 0, 0, 0.5);
-        transition: opacity 0.4s ease;
-        padding: 10px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.9);
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-    }
-
-    :global(#idle-arrow.visible) {
-        opacity: 0.8;
-        pointer-events: auto;
-        animation: idle-bounce 1.2s ease-in-out infinite;
-    }
-
-    :global(#idle-arrow:hover) {
-        opacity: 1;
-        color: rgba(0, 0, 0, 0.7);
-    }
-
-    @keyframes idle-bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(6px); }
-    }
-
-    /* 小屏降级 */
-    @media (max-width: 900px) {
+    @media (min-width: 769px) and (max-width: 900px) {
         .row {
             grid-template-columns: 1fr;
             padding: 96px 24px;
             row-gap: 28px;
         }
-        .row--left .image,
-        .row--left .text,
-        .row--right .image,
-        .row--right .text,
-        .row--center .image,
-        .row--center .text {
+        .row--left .image, .row--left .text,
+        .row--right .image, .row--right .text,
+        .row--center .image, .row--center .text {
             grid-column: auto;
         }
-        .image {
-            height: 70vh;
-        }
-        .text {
-            padding-top: 0;
-        }
+        .image { height: 70vh; }
+        .text { padding-top: 0; }
     }
+
+    /* ========== Mobile (≤768px)：当前样式 ========== */
+    .masks-project { width: 100%; max-width: min(900px, 100%); margin: 0 auto; padding: 0 26px; box-sizing: border-box; }
+
+    .masks-work {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-bottom: 28px;
+    }
+    .masks-work:first-child { margin-top: 0; }
+    .masks-work:last-child { margin-bottom: 0; }
+
+    .masks-image {
+        width: 100%;
+        height: min(48vh, 320px);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+    }
+    .masks-image img {
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        cursor: zoom-in;
+    }
+
+    .masks-text { max-width: 70ch; }
+
+    .masks-meta {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0 0 8px;
+        font-weight: 500;
+    }
+    .masks-meta-line { white-space: nowrap; }
+    .masks-desc {
+        font-size: 0.85rem;
+        line-height: 1.8;
+        margin: 0;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .masks-work.is-hovered :global(.desc-keyword) { font-weight: 600; color: #111; }
+
+    .masks-lightbox {
+        position: fixed !important;
+        inset: 0 !important;
+        background: #000 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2000;
+        cursor: zoom-out;
+        overflow: hidden;
+        touch-action: pan-y;
+    }
+    .masks-lightbox.hidden { display: none !important; }
+    .masks-lightbox__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 100vw;
+        max-height: 90vh;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        min-width: 0;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .masks-lightbox__inner::-webkit-scrollbar { display: none; }
+    .masks-lightbox__img {
+        max-height: calc(90vh - 80px);
+        max-width: 90vw;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        border: 1px solid rgba(255,255,255,0.2);
+        flex-shrink: 0;
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+    .masks-lightbox__controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        flex-shrink: 0;
+    }
+    .masks-lightbox__close,
+    .masks-lightbox__nav {
+        min-width: 48px;
+        min-height: 48px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: opacity 0.2s;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .masks-lightbox__close:hover,
+    .masks-lightbox__nav:hover { opacity: 0.8; }
+
+    :global(main.content:has(.masks-project) > #lightbox) { max-width: none !important; }
 </style>
 
-<BaseLayout title="Masks" description="Masks — limestone lithography works inspired by Fumiko Enchi. The face as fluid structure; gesture replaces representation." canonical="https://daipan.art/masks" ogImage="/projects/masks/masks01.jpg" ogType="article" active="masks" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Masks", url: "https://daipan.art/masks" }]}>
-    <section class="project">
-        {
-            works.map((work, index) => (
-                <div class={`row row--${work.align}`}>
-                    <div class="image" data-index={index}>
-                        <img src={work.image} />
-                    </div>
+<script>
+    // @ts-nocheck
+    (function() {
+        function initDesktop() {
+            const images = [...document.querySelectorAll(".masks-desktop .image")];
+            const lightbox = document.getElementById("lightbox-desktop");
+            const lightboxImage = document.getElementById("lightbox-image-desktop");
+            if (!images.length || !lightbox || !lightboxImage) return;
 
-                    <div class="text">
-                        <p class="meta">
-                            Medium: {work.medium}
-                            <br />
-                            Size: {work.size}
-                            <br />
-                            Year: {work.year}
-                        </p>
-                        <p class="desc" set:html={wrapKeywords(work.text, work.keywords)} />
-                    </div>
-                </div>
-            ))
-        }
-    </section>
+            const prevBtn = lightbox.querySelector(".prev");
+            const nextBtn = lightbox.querySelector(".next");
+            const sources = images.map(el => el.querySelector("img")?.src).filter(Boolean);
+            let current = 0;
 
-    <div id="lightbox" class="lightbox hidden">
-        <button class="prev">←</button>
-        <img id="lightbox-image" />
-        <button class="next">→</button>
-    </div>
+            /** @param {number} i */
+            function open(i) {
+                current = i;
+                lightboxImage.setAttribute("src", sources[current] || "");
+                lightbox.classList.remove("hidden");
+            }
 
-    <!-- idle-arrow 由脚本注入到 body 底部，避免 main 内 stacking context 影响 fixed -->
+            images.forEach((el, i) => {
+                el.addEventListener("click", () => open(i));
+                el.addEventListener("mouseenter", () => el.closest(".row")?.classList.add("is-image-hovered"));
+                el.addEventListener("mouseleave", () => el.closest(".row")?.classList.remove("is-image-hovered"));
+            });
 
-    <script>
-        const images = [...document.querySelectorAll(".image")];
-        const lightbox = document.getElementById("lightbox")!;
-        const lightboxImage = document.getElementById(
-            "lightbox-image",
-        ) as HTMLImageElement;
-
-        const prevBtn = lightbox.querySelector(".prev")!;
-        const nextBtn = lightbox.querySelector(".next")!;
-
-        const sources = images.map((el) => el.querySelector("img")!.src);
-
-        let current = 0;
-
-        function openLightbox(index: number) {
-            current = index;
-            lightboxImage.src = sources[current];
-            lightbox.classList.remove("hidden");
+            prevBtn?.addEventListener("click", () => { current = (current - 1 + sources.length) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); });
+            nextBtn?.addEventListener("click", () => { current = (current + 1) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); });
+            lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.classList.add("hidden"); });
         }
 
-        images.forEach((el, index) => {
-            el.addEventListener("click", () => openLightbox(index));
-            el.addEventListener("mouseenter", () => el.closest(".row")?.classList.add("is-image-hovered"));
-            el.addEventListener("mouseleave", () => el.closest(".row")?.classList.remove("is-image-hovered"));
-        });
+        function initMobile() {
+            const images = [...document.querySelectorAll(".masks-image")];
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightbox-image");
+            if (!lightbox || !lightboxImage) return;
+            const prevBtn = lightbox.querySelector(".prev");
+            const nextBtn = lightbox.querySelector(".next");
+            const closeBtn = lightbox.querySelector(".masks-lightbox__close");
+            const sources = images.map(el => el.querySelector("img")?.src).filter(Boolean);
+            let current = 0;
 
-        prevBtn.addEventListener("click", () => {
-            current = (current - 1 + sources.length) % sources.length;
-            lightboxImage.src = sources[current];
-        });
-
-        nextBtn.addEventListener("click", () => {
-            current = (current + 1) % sources.length;
-            lightboxImage.src = sources[current];
-        });
-
-        lightbox.addEventListener("click", (e) => {
-            if (e.target === lightbox) {
+            /** @param {number} i */
+            function openLightbox(i) {
+                current = i;
+                lightboxImage.setAttribute("src", sources[current] || "");
+                lightbox.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+                window.dispatchEvent(new Event("lenis:pause"));
+            }
+            function closeLightbox() {
                 lightbox.classList.add("hidden");
-            }
-        });
-    </script>
-
-    <script type="module">
-        (function () {
-            const IDLE_MS = 3500;
-            const WARMUP_MS = 1200;
-            let lastActivity = Date.now();
-            let warmupDone = false;
-
-            const arrow = document.createElement("div");
-            arrow.id = "idle-arrow";
-            arrow.className = "idle-arrow";
-            arrow.setAttribute("aria-hidden", "true");
-            arrow.title = "Scroll down";
-            arrow.innerHTML = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>';
-            document.body.appendChild(arrow);
-
-            setTimeout(() => {
-                warmupDone = true;
-                lastActivity = Date.now();
-            }, WARMUP_MS);
-
-            function showArrow() {
-                arrow.classList.add("visible");
+                document.body.style.overflow = "";
+                window.dispatchEvent(new Event("lenis:resume"));
             }
 
-            function hideArrow() {
-                arrow.classList.remove("visible");
-            }
-
-            function onActivity() {
-                if (warmupDone) lastActivity = Date.now();
-                hideArrow();
-            }
-
-            function checkIdle() {
-                if (warmupDone && Date.now() - lastActivity >= IDLE_MS) {
-                    showArrow();
+            images.forEach((el, i) => {
+                el.addEventListener("click", () => openLightbox(i));
+                el.addEventListener("mouseenter", () => el.closest(".masks-work")?.classList.add("is-hovered"));
+                el.addEventListener("mouseleave", () => el.closest(".masks-work")?.classList.remove("is-hovered"));
+            });
+            prevBtn?.addEventListener("click", (e) => { e.stopPropagation(); current = (current - 1 + sources.length) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); });
+            nextBtn?.addEventListener("click", (e) => { e.stopPropagation(); current = (current + 1) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); });
+            closeBtn?.addEventListener("click", (e) => { e.stopPropagation(); closeLightbox(); });
+            lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && !lightbox.classList.contains("hidden")) closeLightbox();
+                if (!lightbox.classList.contains("hidden")) {
+                    if (e.key === "ArrowLeft") { e.preventDefault(); current = (current - 1 + sources.length) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); }
+                    if (e.key === "ArrowRight") { e.preventDefault(); current = (current + 1) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); }
                 }
-                setTimeout(checkIdle, 400);
-            }
-
-            ["mousemove", "mousedown", "scroll", "keydown", "touchstart"].forEach((ev) => {
-                document.addEventListener(ev, onActivity, { passive: true });
             });
+            let tx = 0;
+            lightbox.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
+            lightbox.addEventListener("touchend", (e) => {
+                const d = e.changedTouches[0].clientX - tx;
+                if (Math.abs(d) > 50) { current = d > 0 ? (current - 1 + sources.length) % sources.length : (current + 1) % sources.length; lightboxImage.setAttribute("src", sources[current] || ""); }
+            }, { passive: true });
+        }
 
-            arrow.addEventListener("click", () => {
-                onActivity();
-                window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
-            });
+        initDesktop();
+        initMobile();
+    })();
+</script>
 
-            setTimeout(checkIdle, WARMUP_MS + IDLE_MS);
-        })();
-    </script>
-</BaseLayout>
+<script type="module">
+    (function() {
+        if (window.innerWidth < 769) return;
+        const IDLE_MS = 3500, WARMUP_MS = 1200;
+        let lastActivity = Date.now(), warmupDone = false;
+        const arrow = document.createElement("div");
+        arrow.id = "idle-arrow";
+        arrow.className = "idle-arrow";
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.title = "Scroll down";
+        arrow.innerHTML = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>';
+        document.body.appendChild(arrow);
+
+        setTimeout(() => { warmupDone = true; lastActivity = Date.now(); }, WARMUP_MS);
+        function showArrow() { arrow.classList.add("visible"); }
+        function hideArrow() { arrow.classList.remove("visible"); }
+        function onActivity() { if (warmupDone) lastActivity = Date.now(); hideArrow(); }
+        function checkIdle() {
+            if (warmupDone && Date.now() - lastActivity >= IDLE_MS) showArrow();
+            setTimeout(checkIdle, 400);
+        }
+        ["mousemove", "mousedown", "scroll", "keydown", "touchstart"].forEach(ev => document.addEventListener(ev, onActivity, { passive: true }));
+        arrow.addEventListener("click", () => { onActivity(); window.scrollBy({ top: window.innerHeight, behavior: "smooth" }); });
+        setTimeout(checkIdle, WARMUP_MS + IDLE_MS);
+    })();
+</script>

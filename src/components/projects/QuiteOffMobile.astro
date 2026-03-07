@@ -1,0 +1,65 @@
+---
+const { images, paragraphs } = Astro.props;
+// Interleave: img0, p1, img1, img2, p2, img3, img4, [divider], img5..img7, p3
+---
+<p class="qom_intro">Kodak Vision3 5203 / 5207 / 5219</p>
+<figure class="qom_figure">
+    <img src={images[0]} alt="Quite Off still 01" loading="eager" />
+</figure>
+<div class="qom_text"><p>{paragraphs[0]}</p></div>
+
+<figure class="qom_figure">
+    <img src={images[1]} alt="Quite Off still 02" loading="eager" />
+</figure>
+<figure class="qom_figure">
+    <img src={images[2]} alt="Quite Off still 03" loading="lazy" />
+</figure>
+<div class="qom_text"><p>{paragraphs[1]}</p></div>
+
+<figure class="qom_figure">
+    <img src={images[3]} alt="Quite Off still 04" loading="lazy" />
+</figure>
+<figure class="qom_figure">
+    <img src={images[4]} alt="Quite Off still 05" loading="lazy" />
+</figure>
+<div class="qom_text qom_divider"><p>{paragraphs[2]}</p></div>
+<figure class="qom_figure">
+    <img src={images[5]} alt="Quite Off still 06" loading="lazy" />
+</figure>
+<figure class="qom_figure">
+    <img src={images[6]} alt="Quite Off still 07" loading="lazy" />
+</figure>
+<figure class="qom_figure">
+    <img src={images[7]} alt="Quite Off still 08" loading="lazy" />
+</figure>
+<div class="qom_text"><p>{paragraphs[3]}</p></div>
+
+<style>
+    .qom_intro {
+        margin: 0 0 20px;
+        font-size: 0.8rem;
+        color: var(--muted, #6a6a6a);
+        text-align: center;
+    }
+    .qom_figure {
+        margin: 0 0 12px;
+    }
+    .qom_figure img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    .qom_text {
+        margin: 12px 0;
+        font-size: 13px;
+        line-height: 1.7;
+        color: rgba(0, 0, 0, 0.84);
+    }
+    .qom_text p {
+        margin: 0;
+    }
+    .qom_divider {
+        margin: 12px 0;
+    }
+</style>

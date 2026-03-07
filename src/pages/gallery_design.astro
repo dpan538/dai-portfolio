@@ -20,25 +20,17 @@ const title = "Monolith for Light";
                 <p>
                     Monolith for Light is a study of mass and restraint in an open, barren field.
                     The building is held as one dense body—concrete and limestone. No glass, so daylight arrives only through cuts.
-                    Light is not added. It becomes measure: a line, a depth, a duration.
-                    What seems like darkness is simply the space waiting to be read.
+                    Light becomes measure: a line, a depth, a duration.
                 </p>
                 <p>
-                    Inspired by <em>In Praise of Shadows</em>, the project explores
-                    how atmosphere can be built through restraint. Shadows are treated as structure. The design
-                    studies light as structure—how it frames movement, sets tempo,
-                    and produces "rooms" that are defined by time rather than by
-                    decoration.
+                    Inspired by <em>In Praise of Shadows</em>, the project explores how atmosphere
+                    is built through restraint. Shadows are treated as structure; light frames movement,
+                    sets tempo, and produces "rooms" defined by time rather than decoration.
                 </p>
             </div>
         </section>
 
         <section class="gallery__section">
-            <p class="gallery__text">
-                Plan, elevation, and section establish the controlled cuts and
-                the internal sequence as a spatial narrative rather than a
-                transparent container.
-            </p>
             <figure class="gallery__figure gallery__figure--compact">
                 <img
                     src={`${base}/gallery_02.jpg`}
@@ -53,19 +45,19 @@ const title = "Monolith for Light";
                     loading="lazy"
                 />
             </figure>
-        </section>
-
-        <section class="gallery__section">
+            <p class="gallery__text">
+                Plan, elevation, and section establish the controlled cuts and
+                the internal sequence as a spatial narrative rather than a
+                transparent container.
+            </p>
             <p class="gallery__text">
                 The project frames the landscape as part of the gallery
                 experience—orientation, horizon lines, and the way wind and
                 sun set up a "reading" of the building before entry.
             </p>
-            <p class="gallery__text">
-                At night, concealed lighting returns the same cuts and edges
-                as a new structure. The mass remains unchanged, but its
-                hierarchy is rewritten by illumination.
-            </p>
+        </section>
+
+        <section class="gallery__section">
             <figure class="gallery__figure gallery__figure--compact">
                 <img
                     src={`${base}/gallery_05.jpg`}
@@ -80,6 +72,11 @@ const title = "Monolith for Light";
                     loading="lazy"
                 />
             </figure>
+            <p class="gallery__text">
+                At night, concealed lighting returns the same cuts and edges
+                as a new structure. The mass remains unchanged, but its
+                hierarchy is rewritten by illumination.
+            </p>
             <figure class="gallery__figure">
                 <img
                     src={`${base}/gallery_09.jpg`}
@@ -116,22 +113,20 @@ const title = "Monolith for Light";
             <p class="gallery__text">
                 A sectional view clarifies how the interior voids are carved
                 and how the building holds darkness as a deliberate spatial
-                condition. The final diagram summarizes circulation and
-                service logic, separating visitor movement from staff access
-                and maintenance routes.
+                condition.
             </p>
             <div class="gallery__grid2">
                 <figure class="gallery__tile">
                     <img
-                        src={`${base}/gallery_11.jpg`}
-                        alt="Section perspective (11)"
+                        src={`${base}/gallery_10.jpg`}
+                        alt="Material / detail study (10)"
                         loading="lazy"
                     />
                 </figure>
                 <figure class="gallery__tile">
                     <img
-                        src={`${base}/gallery_10.jpg`}
-                        alt="Material / detail study (09)"
+                        src={`${base}/gallery_11.jpg`}
+                        alt="Section perspective (11)"
                         loading="lazy"
                     />
                 </figure>
@@ -143,6 +138,11 @@ const title = "Monolith for Light";
                     loading="lazy"
                 />
             </figure>
+            <p class="gallery__text">
+                The final diagram summarizes circulation and service logic,
+                separating visitor movement from staff access and maintenance
+                routes.
+            </p>
         </section>
     </article>
 </BaseLayout>
@@ -160,11 +160,11 @@ const title = "Monolith for Light";
 
     /* section 底部分割线，空档更自然 */
     .gallery__section:not(:last-child) {
-        padding-bottom: 40px;
+        padding-bottom: 32px;
     }
 
     .gallery__section > * + * {
-        margin-top: 18px;
+        margin-top: 12px;
     }
 
     /* 首段：图左文右。调大 gallery_01：改 grid 比例；让文字更贴图：改小 gap */
@@ -195,7 +195,11 @@ const title = "Monolith for Light";
     @media (max-width: 700px) {
         .gallery__intro-row {
             grid-template-columns: 1fr;
-            gap: 18px;
+            gap: 12px;
+        }
+        .gallery__intro-row .gallery__intro-text {
+            padding-top: 0;
+            margin-left: 0;
         }
     }
 
@@ -203,13 +207,13 @@ const title = "Monolith for Light";
     .gallery__text {
         margin: 0;
         max-width: 70ch;
-        font-size: 0.95rem;
+        font-size: 0.875rem;
         line-height: 1.78;
         color: rgba(0, 0, 0, 0.78);
     }
 
     .gallery__text p {
-        margin: 0 0 18px;
+        margin: 0 0 12px;
     }
 
     .gallery__text p:last-child {
@@ -272,6 +276,19 @@ const title = "Monolith for Light";
     @media (max-width: 900px) {
         .gallery__grid2 {
             grid-template-columns: 1fr;
+        }
+    }
+
+    /* Mobile (≤768px): compact spacing, align with other project pages */
+    @media (max-width: 768px) {
+        .gallery__section:not(:last-child) {
+            padding-bottom: 24px;
+        }
+        .gallery__section > * + * {
+            margin-top: 12px;
+        }
+        .gallery__figure--compact img {
+            max-width: 100%;
         }
     }
 

@@ -28,33 +28,27 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             <header class="ct__title-block">
                 <h1>Closing Time</h1>
                 <p class="ct__meta">
-                    5-Color Photo Lithography — CMYK + Opaque White · Film
-                    Photograph · Hand-Printed
+                5-Color Photo Lithography — CMYK + Opaque White · Film
+                Photograph · Hand-Printed
                 </p>
             </header>
-
             <div class="ct__description">
                 <p>
-                    A single-piece work exploring the boundary between
-                    photographic clarity and painterly dissolution. Produced
-                    through layered lithographic registration to simulate the
-                    softness and translucency of watercolor.
-                </p>
-
-                <p>
-                    Shot on film in Manhattan shortly before closing hour, the
-                    image captures a suspended atmosphere where artificial
-                    light, reflection, and surface texture merge into a quiet
-                    field.
+                    A single-piece work exploring photographic clarity and
+                    painterly dissolution. Shot on film in Manhattan before
+                    closing hour, it uses layered lithographic registration to
+                    simulate watercolor softness—artificial light, reflection,
+                    and surface texture merge into a quiet field.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Lightbox（与 masks 一致：lightbox 自身为 backdrop，hidden 控制显示） -->
+    <!-- Lightbox（lightbox 自身为 backdrop，关闭按钮在图片下方居中） -->
     <div id="lightbox" class="lightbox hidden">
-        <img id="lightbox-image" class="lightbox__img" src={imagePath} alt="Closing Time - Full View" />
-        <button class="lightbox__close" aria-label="Close lightbox">
+        <div class="lightbox__inner">
+            <img id="lightbox-image" class="lightbox__img" src={imagePath} alt="Closing Time - Full View" />
+            <button class="lightbox__close" aria-label="Close lightbox">
             <svg
                 width="32"
                 height="32"
@@ -65,6 +59,7 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
                 <path d="M18 6L6 18M6 6l12 12"></path>
             </svg>
         </button>
+        </div>
     </div>
 
     <style>
@@ -78,15 +73,10 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             width: 100%;
         }
 
-        /* Hero：占满首屏并突破 BaseLayout 的 padding */
+        /* Hero：占满首屏并突破 BaseLayout 的 padding（桌面端原始样式） */
         .ct__hero {
-            /* 用负 margin 抵消 BaseLayout 的 padding (64px top, 64px sides, 72px bottom) */
             margin: -72px -88px 0 -88px;
-
-            /* 首屏高度 */
             height: 100dvh;
-
-            /* 现在添加一致的内边距（使用 72px 与底部对齐） */
             padding: 72px;
             box-sizing: border-box;
 
@@ -122,19 +112,18 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             opacity: 0.9;
         }
 
-        /* 下滑后的正文 */
+        /* 下滑后的正文（桌面端） */
         .ct__content {
-            max-width: 72ch; /* 控制阅读宽度 */
+            max-width: 72ch;
             margin: 0 auto;
-            padding-top: 40px; /* 和 hero 拉开 */
+            padding-top: 40px;
             padding-bottom: 96px;
         }
 
-        /* 标题区：做成明确的 block */
         .ct__title-block {
-            margin-bottom: 28px; /* 让标题区和正文分开 */
+            margin-bottom: 28px;
             padding-bottom: 18px;
-            border-bottom: 1px solid var(--line); /* 用你现有的线色变量 */
+            border-bottom: 1px solid var(--line);
         }
 
         .ct__title-block h1 {
@@ -142,9 +131,10 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             font-weight: 600;
             letter-spacing: 0.04em;
             line-height: 1.3;
+            margin: 0;
         }
 
-        .ct__meta {
+        .ct__title-block .ct__meta {
             margin: 6px 0 0 0;
             font-size: 0.9rem;
             opacity: 0.7;
@@ -153,13 +143,14 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
         .ct__description {
             max-width: 70ch;
             margin-top: 14px;
+            font-size: 0.875rem;
         }
 
         .ct__description p {
             margin: 0 0 12px 0;
         }
 
-        /* 响应式调整：在小屏幕上减少 padding */
+        /* 820px：小屏幕/平板减少 padding（保留原逻辑） */
         @media (max-width: 820px) {
             .ct__hero {
                 margin: -32px -28px 0 -28px;
@@ -167,7 +158,33 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             }
         }
 
-        /* ===== Lightbox（与 masks 一致：fixed + inset:0 覆盖全视口，hidden 控制显示）===== */
+        /* Mobile only (≤768px)：移动端布局 */
+        @media (max-width: 768px) {
+            .ct__hero {
+                margin: 0 -26px 0 -26px;
+                padding: 0 26px 16px;
+                min-height: auto;
+                height: auto;
+            }
+            .ct__content {
+                padding-inline: 0;
+                padding-top: 12px;
+                padding-bottom: 24px;
+            }
+            .ct__title-block h1 {
+                display: none;
+            }
+            .ct__title-block {
+                margin-bottom: 0;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+            .ct__title-block .ct__meta {
+                margin-top: 0;
+            }
+        }
+
+        /* ===== Lightbox：关闭按钮在图片下方居中，图片固定不左右移动 ===== */
         .lightbox {
             position: fixed;
             inset: 0;
@@ -177,14 +194,35 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             justify-content: center;
             z-index: 999;
             cursor: zoom-out;
+            overflow: hidden;
+            touch-action: pan-y;
         }
 
         .lightbox.hidden {
             display: none;
         }
 
-        .lightbox__img {
+        .lightbox__inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            max-width: 100vw;
             max-height: 90vh;
+            padding: 24px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            min-width: 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .lightbox__inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .lightbox__img {
+            max-height: calc(90vh - 80px);
             max-width: 90vw;
             width: auto;
             height: auto;
@@ -192,12 +230,17 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             border: 1px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             cursor: default;
+            flex-shrink: 0;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
 
         .lightbox__close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
+            flex-shrink: 0;
+            min-width: 48px;
+            min-height: 48px;
+            padding: 0;
             background: rgba(255, 255, 255, 0.1);
             border: none;
             color: white;
@@ -208,9 +251,12 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             justify-content: center;
             transition: background 0.2s ease;
         }
-
         .lightbox__close:hover {
             background: rgba(255, 255, 255, 0.2);
+        }
+        @media (min-width: 769px) {
+            .lightbox__inner { position: relative; }
+            .lightbox__close { position: absolute; top: 24px; right: 24px; }
         }
 
         .lightbox__close svg {
@@ -227,6 +273,7 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
         const closeBtn = lightbox?.querySelector('.lightbox__close');
 
         function openLightbox() {
+            window.dispatchEvent(new Event('lenis:pause'));
             lightbox?.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
@@ -234,6 +281,7 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
         function closeLightbox() {
             lightbox?.classList.add('hidden');
             document.body.style.overflow = '';
+            window.dispatchEvent(new Event('lenis:resume'));
         }
 
         img?.addEventListener('click', openLightbox);
