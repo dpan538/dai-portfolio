@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
+import OptimizedImage from "../components/OptimizedImage.astro";
 
 const base = "/projects/monolith_for_light";
 const title = "Monolith for Light";
@@ -10,10 +11,10 @@ const title = "Monolith for Light";
         <!-- 首段：图左文右 -->
         <section class="gallery__section gallery__intro-row">
             <figure class="gallery__figure gallery__intro-figure">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_01.jpg`}
                     alt="Monolith for Light — atmosphere and massing (01)"
-                    loading="eager"
+                    priority
                 />
             </figure>
             <div class="gallery__text gallery__intro-text">
@@ -32,17 +33,15 @@ const title = "Monolith for Light";
 
         <section class="gallery__section">
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_02.jpg`}
                     alt="Plan / elevation / section (02)"
-                    loading="lazy"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_03.jpg`}
                     alt="Sectional study (03)"
-                    loading="lazy"
                 />
             </figure>
             <p class="gallery__text">
@@ -59,17 +58,15 @@ const title = "Monolith for Light";
 
         <section class="gallery__section">
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_05.jpg`}
                     alt="Site / horizon study (05)"
-                    loading="lazy"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_06.jpg`}
                     alt="Night exterior (06)"
-                    loading="lazy"
                 />
             </figure>
             <p class="gallery__text">
@@ -78,10 +75,9 @@ const title = "Monolith for Light";
                 hierarchy is rewritten by illumination.
             </p>
             <figure class="gallery__figure">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_09.jpg`}
                     alt="Exploded axonometric (07)"
-                    loading="lazy"
                 />
             </figure>
         </section>
@@ -94,17 +90,15 @@ const title = "Monolith for Light";
                 becomes visible.
             </p>
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_07.jpg`}
                     alt="Interior gallery (07)"
-                    loading="lazy"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_08.jpg`}
                     alt="Interior corridor (08)"
-                    loading="lazy"
                 />
             </figure>
         </section>
@@ -117,25 +111,22 @@ const title = "Monolith for Light";
             </p>
             <div class="gallery__grid2">
                 <figure class="gallery__tile">
-                    <img
+                    <OptimizedImage
                         src={`${base}/gallery_10.jpg`}
                         alt="Material / detail study (10)"
-                        loading="lazy"
                     />
                 </figure>
                 <figure class="gallery__tile">
-                    <img
+                    <OptimizedImage
                         src={`${base}/gallery_11.jpg`}
                         alt="Section perspective (11)"
-                        loading="lazy"
                     />
                 </figure>
             </div>
             <figure class="gallery__figure">
-                <img
+                <OptimizedImage
                     src={`${base}/gallery_04.jpg`}
                     alt="Flow / access diagram (04)"
-                    loading="lazy"
                 />
             </figure>
             <p class="gallery__text">

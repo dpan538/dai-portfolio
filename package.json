@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/get-image-dimensions.mjs && astro build",
+    "img:gen": "node scripts/get-image-dimensions.mjs",
     "preview": "astro preview",
     "test": "node scripts/test-push.cjs",
     "predeploy": "npm run build && npm run test",
@@ -14,5 +15,9 @@
     "@astrojs/sitemap": "^3.7.0",
     "astro": "^5.17.1",
     "lenis": "^1.3.18"
+  },
+  "devDependencies": {
+    "image-size": "^2.0.2",
+    "sharp": "^0.34.5"
   }
 }

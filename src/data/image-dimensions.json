@@ -1,0 +1,1984 @@
+{
+  "/projects/about/about.jpg": {
+    "width": 960,
+    "height": 1440,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/about/about_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/about/about_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/about/about_800w.jpg",
+        "w": 800
+      }
+    ]
+  },
+  "/projects/closing_time/closing_time.jpg": {
+    "width": 2400,
+    "height": 1848,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/closing_time/closing_time_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/masks/masks01.jpg": {
+    "width": 1840,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/masks/masks01_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/masks/masks01_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/masks/masks01_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/masks/masks01_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/masks/masks01_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/masks/masks01_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/masks/masks02.jpg": {
+    "width": 1827,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/masks/masks02_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/masks/masks02_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/masks/masks02_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/masks/masks02_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/masks/masks02_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/masks/masks02_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/masks/masks03.jpg": {
+    "width": 1460,
+    "height": 2048,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/masks/masks03_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/masks/masks03_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/masks/masks03_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/masks/masks03_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/masks/masks03_1280w.jpg",
+        "w": 1280
+      }
+    ]
+  },
+  "/projects/masks/masks04.jpg": {
+    "width": 1560,
+    "height": 2048,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/masks/masks04_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/masks/masks04_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/masks/masks04_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/masks/masks04_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/masks/masks04_1280w.jpg",
+        "w": 1280
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_01.jpg": {
+    "width": 1600,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_01_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_02.jpg": {
+    "width": 2400,
+    "height": 1538,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_02_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_03.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_03_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_04.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_04_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_05.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_05_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_06.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_06_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_07.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_07_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_08.jpg": {
+    "width": 2400,
+    "height": 1272,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_08_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_09.jpg": {
+    "width": 2400,
+    "height": 1145,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_09_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_10.jpg": {
+    "width": 2400,
+    "height": 1367,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_10_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_11.jpg": {
+    "width": 2400,
+    "height": 1469,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_11_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_12.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_12_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/monolith_for_light/gallery_night.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/monolith_for_light/gallery_night_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_01.jpg": {
+    "width": 2912,
+    "height": 1980,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_02.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_03.jpg": {
+    "width": 2400,
+    "height": 1606,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_04.jpg": {
+    "width": 2400,
+    "height": 1616,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_05.jpg": {
+    "width": 2400,
+    "height": 1626,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_06.jpg": {
+    "width": 2725,
+    "height": 1886,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_07.jpg": {
+    "width": 2400,
+    "height": 1836,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/quite_off/quite_08.jpg": {
+    "width": 2400,
+    "height": 1620,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed01.jpg": {
+    "width": 1921,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed01_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed02.jpg": {
+    "width": 2400,
+    "height": 1956,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed02_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed03.jpg": {
+    "width": 1952,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed03_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed04.jpg": {
+    "width": 2400,
+    "height": 1838,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed04_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed05.jpg": {
+    "width": 1917,
+    "height": 2400,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed05_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed06.jpg": {
+    "width": 2400,
+    "height": 2005,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed06_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed07.jpg": {
+    "width": 2400,
+    "height": 1917,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed07_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/reframed_still/reframed08.jpg": {
+    "width": 2400,
+    "height": 1785,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/reframed_still/reframed08_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_01.png": {
+    "width": 2725,
+    "height": 1973,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_01_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_02.png": {
+    "width": 2450,
+    "height": 1850,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_02_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_03.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_03_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_04.png": {
+    "width": 2450,
+    "height": 1850,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_04_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_05.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_05_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_06.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_06_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_07.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_07_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_08.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_08_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_09.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_09_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_10.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_10_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_11.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_11_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_12.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_12_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_13.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_13_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_14.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_14_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_15.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_15_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_16.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_16_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_17.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_17_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_18.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_18_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_19.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_19_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_20.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_20_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_21.png": {
+    "width": 3675,
+    "height": 2775,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_1024w.png",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_1280w.png",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_21_1600w.png",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_22.png": {
+    "width": 1225,
+    "height": 1850,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_22_400w.png",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_22_640w.png",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_22_800w.png",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_22_1024w.png",
+        "w": 1024
+      }
+    ]
+  },
+  "/projects/the_threes/threes_23.jpg": {
+    "width": 3000,
+    "height": 2250,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_23_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/projects/the_threes/threes_24.jpg": {
+    "width": 3000,
+    "height": 2250,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/the_threes/threes_24_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_01.jpg": {
+    "width": 2912,
+    "height": 1980,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_01_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_02.jpg": {
+    "width": 2400,
+    "height": 1600,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_02_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_03.jpg": {
+    "width": 2400,
+    "height": 1606,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_03_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_04.jpg": {
+    "width": 2400,
+    "height": 1616,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_04_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_05.jpg": {
+    "width": 2400,
+    "height": 1626,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_05_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_06.jpg": {
+    "width": 2725,
+    "height": 1886,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_06_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_07.jpg": {
+    "width": 2400,
+    "height": 1836,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_07_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  },
+  "/quite_off/quite_08.jpg": {
+    "width": 2400,
+    "height": 1620,
+    "srcset": [
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_400w.jpg",
+        "w": 400
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_640w.jpg",
+        "w": 640
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_800w.jpg",
+        "w": 800
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1024w.jpg",
+        "w": 1024
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1280w.jpg",
+        "w": 1280
+      },
+      {
+        "url": "/_optimized/projects/quite_off/quite_08_1600w.jpg",
+        "w": 1600
+      }
+    ]
+  }
+}

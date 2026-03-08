@@ -423,29 +423,3 @@ const works = [
     })();
 </script>
 
-<script type="module">
-    (function() {
-        if (window.innerWidth < 769) return;
-        const IDLE_MS = 3500, WARMUP_MS = 1200;
-        let lastActivity = Date.now(), warmupDone = false;
-        const arrow = document.createElement("div");
-        arrow.id = "idle-arrow";
-        arrow.className = "idle-arrow";
-        arrow.setAttribute("aria-hidden", "true");
-        arrow.title = "Scroll down";
-        arrow.innerHTML = '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>';
-        document.body.appendChild(arrow);
-
-        setTimeout(() => { warmupDone = true; lastActivity = Date.now(); }, WARMUP_MS);
-        function showArrow() { arrow.classList.add("visible"); }
-        function hideArrow() { arrow.classList.remove("visible"); }
-        function onActivity() { if (warmupDone) lastActivity = Date.now(); hideArrow(); }
-        function checkIdle() {
-            if (warmupDone && Date.now() - lastActivity >= IDLE_MS) showArrow();
-            setTimeout(checkIdle, 400);
-        }
-        ["mousemove", "mousedown", "scroll", "keydown", "touchstart"].forEach(ev => document.addEventListener(ev, onActivity, { passive: true }));
-        arrow.addEventListener("click", () => { onActivity(); window.scrollBy({ top: window.innerHeight, behavior: "smooth" }); });
-        setTimeout(checkIdle, WARMUP_MS + IDLE_MS);
-    })();
-</script>

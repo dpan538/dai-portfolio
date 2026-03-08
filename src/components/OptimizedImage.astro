@@ -1,0 +1,38 @@
+---
+/**
+ * OptimizedImage：自动响应式图片组件
+ * - 使用 get-image-dimensions 脚本生成的 srcset（构建时自动生成多尺寸）
+ * - 仅 resize 不加重压缩，quality 95，格式与原图一致
+ */
+import dimensions from "../data/image-dimensions.json";
+
+const { src, alt, loading = "lazy", priority = false, class: className, ...rest } = Astro.props;
+
+const data = dimensions[src as keyof typeof dimensions];
+const sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px";
+---
+
+{data?.srcset ? (
+    <img
+        src={data.srcset[data.srcset.length - 1]?.url ?? src}
+        srcset={data.srcset.map(({ url, w }) => `${url} ${w}w`).join(", ")}
+        sizes={sizes}
+        alt={alt}
+        width={data.width}
+        height={data.height}
+        loading={priority ? "eager" : loading}
+        fetchpriority={priority ? "high" : "auto"}
+        decoding="async"
+        class={className}
+        {...rest}
+    />
+) : (
+    <img
+        src={src}
+        alt={alt}
+        loading={loading}
+        decoding="async"
+        class={className}
+        {...rest}
+    />
+)}
