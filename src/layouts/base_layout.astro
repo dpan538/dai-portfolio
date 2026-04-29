@@ -406,9 +406,14 @@ const portfolioSchema = homePage
                 display: inline-flex;
                 align-items: center;
                 justify-content: center;
-                width: 30px;
-                height: 30px;
+                width: 36px;
+                height: 36px;
                 border-radius: 999px;
+            }
+
+            .icon_link svg {
+                width: 32px;
+                height: 32px;
             }
 
             .icon_link:hover {
@@ -521,13 +526,13 @@ const portfolioSchema = homePage
             }
 
             .mobile_menu_btn {
-                width: 48px;
-                height: 48px;
+                width: 52px;
+                height: 52px;
                 padding: 0;
                 border: none;
                 background: transparent;
                 color: var(--text);
-                font-size: 32px;
+                font-size: 34px;
                 cursor: pointer;
                 display: flex;
                 align-items: center;
@@ -537,7 +542,7 @@ const portfolioSchema = homePage
 
             .mobile_menu_icon--close {
                 display: none;
-                font-size: 20px;
+                font-size: 23px;
             }
 
             .mobile_menu_btn[aria-expanded="true"] .mobile_menu_icon--hamburger {
@@ -661,11 +666,11 @@ const portfolioSchema = homePage
 
                 /* Override .content > * { max-width: var(--max) } so home_content can be narrow */
                 .content--home.mobile_main > :global(*) {
-                    max-width: 18ch !important;
+                    max-width: none !important;
                 }
 
                 .mobile_main {
-                    --mobile-gap: 80px;
+                    --mobile-gap: 56px;
                     padding-top: calc(26px + 52px + var(--mobile-gap)) !important;
                     padding-inline: var(--mobile-padding-x) !important;
                 }

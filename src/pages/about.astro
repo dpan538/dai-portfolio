@@ -61,27 +61,27 @@ const awardSchema = {
         <div class="about_text">
             <div class="about_text--desktop">
                 <p>
-                    Dai Pan is a fine artist and designer working across photography,
+                    Dai Pan is a fine artist and designer working through photography,
                     printmaking, writing, visual art, and design research. His practice
                     examines how images shape spatial perception through framing,
-                    repetition, sequence, and material process. He approaches photographs,
-                    prints, books, and designed forms as systems for looking.
+                    sequence, repetition, and material process. He approaches photographs,
+                    prints, books, and designed forms as systems for looking and reading.
                 </p>
                 <p>
-                    His projects translate everyday environments into visual sequences
-                    where clarity and distortion coexist. Rather than treating images as
-                    direct documents, he works with them as constructed fields shaped by
-                    colour, surface, timing, and compositional constraint. Across still
-                    images, print-based works, and writing, Dai Pan develops slow visual
-                    systems that invite open interpretation.
+                    His projects translate everyday environments into sequences where
+                    clarity and distortion coexist. Rather than treating images as direct
+                    documents, he works with them as constructed fields shaped by colour,
+                    surface, time, and compositional constraint. Across still images,
+                    print-based works, and writing, Dai Pan develops slow visual systems
+                    that invite open interpretation.
                 </p>
             </div>
             <div class="about_text--mobile">
                 <p>
-                    Dai Pan is a fine artist and designer working across photography,
+                    Dai Pan is a fine artist and designer working through photography,
                     printmaking, writing, visual art, and design research. His practice
                     examines how images shape spatial perception through framing,
-                    repetition, sequence, and material process. He treats images as
+                    sequence, repetition, and material process. He treats images as
                     constructed fields for perception, memory, and slow looking.
                 </p>
             </div>
@@ -314,6 +314,10 @@ const awardSchema = {
 
         /* 移动端：隐藏滚动条 */
         @media (max-width: 768px) {
+            :global(main.content:has(.about_intro)) {
+                padding-top: 114px;
+            }
+
             :global(html:has(.about_intro))::-webkit-scrollbar,
             :global(body:has(.about_intro))::-webkit-scrollbar {
                 display: none;
@@ -323,6 +327,56 @@ const awardSchema = {
             :global(body:has(.about_intro)) {
                 scrollbar-width: none;
                 -ms-overflow-style: none;
+            }
+
+            .block {
+                margin-top: 0;
+            }
+
+            .block + .block {
+                margin-top: 18px;
+            }
+
+            .about_intro {
+                row-gap: 14px;
+            }
+
+            .about_photo {
+                width: min(58vw, 190px);
+                margin-inline: auto;
+            }
+
+            .about_text {
+                font-size: 15.5px;
+                line-height: 1.66;
+            }
+
+            .cv {
+                gap: 8px;
+            }
+
+            .cv li {
+                grid-template-columns: 64px 1fr;
+                gap: 12px;
+            }
+
+            .cv_key {
+                font-size: 13.5px;
+            }
+
+            .cv_val,
+            .about_writing,
+            .about_contact_list a {
+                font-size: 15.5px;
+            }
+
+            .about_writing_block,
+            .about_contact_block {
+                margin-top: 18px;
+            }
+
+            .about_disclaimer {
+                margin-top: 18px;
             }
         }
 
