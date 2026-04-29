@@ -45,7 +45,7 @@ const awardSchema = {
 
 <BaseLayout
     title="About — Dai Pan"
-    description="About Dai Pan (潘岱) — fine artist. Photography, printmaking, writing, visual art, and design research."
+    description="About Dai Pan (潘岱) — fine artist and designer working across photography, printmaking, writing, visual art, and design research. Writing collection at daipan.ink."
     canonical="https://daipan.art/about"
     active="about"
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "About", url: "https://daipan.art/about" }]}>
@@ -61,31 +61,28 @@ const awardSchema = {
         <div class="about_text">
             <div class="about_text--desktop">
                 <p>
-                    Dai Pan is a fine artist whose practice moves across
-                    photography, printmaking, writing, visual art, and design research. His
-                    practice explores how images construct spatial perception through
-                    framing, repetition, and visual structure, treating photography and
-                    research as interconnected forms of visual thinking.
+                    Dai Pan is a fine artist and designer working across photography,
+                    printmaking, writing, visual art, and design research. His practice
+                    examines how images shape spatial perception through framing,
+                    repetition, sequence, and material process. He approaches photographs,
+                    prints, books, and designed forms as systems for looking.
                 </p>
                 <p>
-                    His work focuses on translating everyday environments into visual
-                    sequences where clarity and distortion coexist. Images are
-                    approached as structures rather than documents — shaped by invisible rhythm,
-                    colour, and compositional constraints that guide attention and
-                    emotional response. Dai Pan develops visual systems that invite slow
-                    looking and open interpretation, inviting meaning to emerge
-                    gradually through form and perception.
+                    His projects translate everyday environments into visual sequences
+                    where clarity and distortion coexist. Rather than treating images as
+                    direct documents, he works with them as constructed fields shaped by
+                    colour, surface, timing, and compositional constraint. Across still
+                    images, print-based works, and writing, Dai Pan develops slow visual
+                    systems that invite open interpretation.
                 </p>
             </div>
             <div class="about_text--mobile">
                 <p>
-                    Dai Pan is a fine artist whose practice moves across photography,
-                    printmaking, writing, visual art, and design research. His practice explores how images
-                    construct spatial perception through framing, repetition, and visual
-                    structure. He treats photography and research as interconnected forms
-                    of visual thinking, translating everyday environments into sequences
-                    where clarity and distortion coexist. His work invites slow looking
-                    and open interpretation.
+                    Dai Pan is a fine artist and designer working across photography,
+                    printmaking, writing, visual art, and design research. His practice
+                    examines how images shape spatial perception through framing,
+                    repetition, sequence, and material process. He treats images as
+                    constructed fields for perception, memory, and slow looking.
                 </p>
             </div>
         </div>
@@ -161,6 +158,15 @@ const awardSchema = {
         </ul>
     </section>
 
+    <section class="block about_writing_block">
+        <h2>Writing</h2>
+        <p class="about_writing">
+            Selected writing and literary work are collected at
+            <a href="https://www.daipan.ink/" target="_blank" rel="me noopener noreferrer">daipan.ink</a>,
+            Dai Pan's writing collection.
+        </p>
+    </section>
+
     <section class="block about_contact_block">
         <h2>Contact</h2>
         <ul class="about_contact_list">
@@ -175,7 +181,7 @@ const awardSchema = {
     </section>
 
     <section class="block">
-        <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a fine artist. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
+        <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a fine artist and designer. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
     </section>
 
     <!-- 展览与奖项结构化数据，便于搜索引擎与 AI 关联你的履历与官方页面 -->
@@ -251,6 +257,24 @@ const awardSchema = {
 
         .about_contact_block {
             margin-top: 28px;
+        }
+
+        .about_writing_block {
+            margin-top: 28px;
+        }
+
+        .about_writing {
+            max-width: 70ch;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(0, 0, 0, 0.78);
+        }
+
+        .about_writing a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         .about_contact_list {
