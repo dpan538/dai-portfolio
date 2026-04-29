@@ -20,9 +20,6 @@ import BaseLayout from "../layouts/base_layout.astro";
             <span class="home_hint-desktop">Read or click the projects in the left sidebar to view.</span>
             <span class="home_hint-mobile">Tap the menu to view works.</span>
         </p>
-    </div>
-
-    <footer class="site_footer">
         <nav class="home_social" aria-label="Dai Pan social links">
             <a class="home_social_link" href="mailto:dpan53853@gmail.com" aria-label="Email Dai Pan">
                 <svg
@@ -51,15 +48,15 @@ import BaseLayout from "../layouts/base_layout.astro";
                     stroke="currentColor"
                     stroke-width="1.6"
                     aria-hidden="true">
-                    <rect x="6" y="6" width="12" height="12" rx="3"
-                    ></rect>
-                    <path
-                        d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"
-                    ></path>
-                    <path d="M16.2 7.8h.01"></path>
+                    <rect x="5.5" y="5.5" width="13" height="13" rx="4"></rect>
+                    <circle cx="12" cy="12" r="3.2"></circle>
+                    <circle cx="15.9" cy="8.1" r="0.65" fill="currentColor" stroke="none"></circle>
                 </svg>
             </a>
         </nav>
+    </div>
+
+    <footer class="site_footer">
         <p class="copyright">© {new Date().getFullYear()} Dai Pan.</p>
     </footer>
 </BaseLayout>
@@ -158,9 +155,13 @@ import BaseLayout from "../layouts/base_layout.astro";
             padding: 0 !important;
         }
 
+        :global(.mobile_main) .home_para {
+            transform: translateY(-85px);
+        }
+
         :global(.mobile_main) .home_hint {
             font-size: 14px;
-            margin-top: 14px;
+            margin-top: -71px;
         }
 
         :global(.mobile_main) .home_hint.is-visible {
@@ -189,18 +190,18 @@ import BaseLayout from "../layouts/base_layout.astro";
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 18px;
-            margin: 0 0 18px;
+            gap: 16px;
+            margin: 37px 0 0;
         }
 
         .home_social_link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             color: var(--text, #111);
-            opacity: 0.52;
+            opacity: 0.46;
             transition: opacity 180ms ease, transform 180ms ease;
             -webkit-tap-highlight-color: transparent;
         }
@@ -216,8 +217,8 @@ import BaseLayout from "../layouts/base_layout.astro";
         }
 
         .home_social_link svg {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
