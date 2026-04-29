@@ -48,9 +48,12 @@ import BaseLayout from "../layouts/base_layout.astro";
                     stroke="currentColor"
                     stroke-width="1.6"
                     aria-hidden="true">
-                    <rect x="5.5" y="5.5" width="13" height="13" rx="4"></rect>
-                    <circle cx="12" cy="12" r="3.2"></circle>
-                    <circle cx="15.9" cy="8.1" r="0.65" fill="currentColor" stroke="none"></circle>
+                    <rect x="6" y="6" width="12" height="12" rx="3"
+                    ></rect>
+                    <path
+                        d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4z"
+                    ></path>
+                    <path d="M16.2 7.8h.01"></path>
                 </svg>
             </a>
         </nav>
@@ -156,12 +159,12 @@ import BaseLayout from "../layouts/base_layout.astro";
         }
 
         :global(.mobile_main) .home_para {
-            transform: translateY(-85px);
+            transform: translateY(-25px);
         }
 
         :global(.mobile_main) .home_hint {
             font-size: 14px;
-            margin-top: -71px;
+            margin-top: -11px;
         }
 
         :global(.mobile_main) .home_hint.is-visible {
@@ -191,7 +194,7 @@ import BaseLayout from "../layouts/base_layout.astro";
             align-items: center;
             justify-content: center;
             gap: 16px;
-            margin: 37px 0 0;
+            margin: 127px 0 0;
         }
 
         .home_social_link {
@@ -217,8 +220,6 @@ import BaseLayout from "../layouts/base_layout.astro";
         }
 
         .home_social_link svg {
-            width: 28px;
-            height: 28px;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
