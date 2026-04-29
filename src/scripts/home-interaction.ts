@@ -6,17 +6,15 @@ export const tagToProjects: Record<string, string[]> = {
   dai_pan: ["about"],
   printmaker: ["masks", "closing_time"],
   photographer: ["reframed_still", "closing_time", "quite_off"],
-  conceptual_designer: ["gallery_design", "the_threes"],
-  web_developer: ["quite_off", "the_threes"],
-  visual_artist: ["masks", "reframed_still", "closing_time", "quite_off", "the_threes"],
+  design_research: ["gallery_design", "the_threes"],
+  fine_artist: ["masks", "reframed_still", "closing_time", "quite_off", "the_threes"],
   writer: ["the_threes", "quite_off"],
 };
 
 export const TAG_ACCENTS: Record<string, string> = {
   dai_pan: "#2d3748",
-  web_developer: "#4a6fa5",
-  conceptual_designer: "#6b5b8a",
-  visual_artist: "#8b6b5c",
+  design_research: "#6b5b8a",
+  fine_artist: "#8b6b5c",
   printmaker: "#4a7d6b",
   photographer: "#9a7b4a",
   writer: "#5c6b8a",

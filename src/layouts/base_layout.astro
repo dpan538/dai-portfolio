@@ -3,7 +3,7 @@ const SITE_URL = "https://daipan.art";
 
 const {
     title = "Dai Pan",
-    description = "Dai Pan (潘岱) — Brisbane-based artist and designer. Image-based work: photography, printmaking, conceptual design.",
+    description = "Dai Pan (潘岱) — fine artist. Image-based work across photography, printmaking, writing, visual art, and design research.",
     canonical = SITE_URL,
     active = "", // "works" | "about" | "contact"
     homePage = false,
@@ -12,7 +12,10 @@ const {
     breadcrumbs = undefined as { name: string; url: string }[] | undefined,
 } = Astro.props;
 
-const absoluteOgImage = ogImage ? (ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`) : undefined;
+// 首页默认使用代表作品图，便于搜索引擎展示
+const defaultOgImage = homePage ? "/projects/quite_off/quite_01.jpg" : undefined;
+const resolvedOgImage = ogImage ?? defaultOgImage;
+const absoluteOgImage = resolvedOgImage ? (resolvedOgImage.startsWith("http") ? resolvedOgImage : `${SITE_URL}${resolvedOgImage}`) : undefined;
 
 const personSchema = {
     "@context": "https://schema.org",
@@ -26,33 +29,30 @@ const personSchema = {
         "dai pan",
     ],
     url: SITE_URL,
-    jobTitle: "Artist / Designer",
+    jobTitle: "Fine Artist",
     knowsAbout: [
+        "fine art",
         "photography",
         "printmaking",
-        "conceptual design",
+        "design research",
         "visual art",
-        "web development",
         "writing",
+        "纯艺术",
         "摄影",
         "版画",
-        "概念设计",
+        "设计研究",
         "视觉艺术",
-        "网页开发",
         "写作",
     ],
     sameAs: [
         "https://www.instagram.com/jumpingchick666",
         "https://sva.design/students/dai-pan",
-        "https://www.daiportfolio.com/",
         "https://www.linkedin.com/in/daipanportfolio/",
         "https://www.instagram.com/p/DT2UEHQCJiD/",
     ],
-    homeLocation: {
-        "@type": "Place",
-        name: "Brisbane",
-        address: { "@type": "PostalAddress", "addressLocality": "Brisbane", "addressRegion": "QLD", "addressCountry": "AU" },
-    },
+    nationality: { "@type": "Country", "name": "China" },
+    alumniOf: { "@type": "CollegeOrUniversity", "name": "School of Visual Arts", "url": "https://sva.edu", "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressCountry": "US" } },
+    image: `${SITE_URL}/projects/about/about.jpg`,
 };
 
 const websiteSchema = {
@@ -61,7 +61,8 @@ const websiteSchema = {
     name: "Dai Pan",
     alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
     url: SITE_URL,
-    description: "Personal portfolio of Dai Pan (潘岱), artist and designer based in Brisbane, Australia. Photography, printmaking, conceptual design. Not affiliated with DAIPAN Butoh Collective.",
+    description: "Personal portfolio of Dai Pan (潘岱), fine artist. Photography, printmaking, writing, visual art, and design research. Not affiliated with DAIPAN Butoh Collective.",
+    image: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg`,
     author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
     inLanguage: ["en"],
 };
@@ -94,12 +95,20 @@ const nav = [
 const mobileNavItems = nav.filter((n) => n.key !== "contact");
 
 const projectKeys = ["quite_off", "the_threes", "gallery_design", "reframed_still", "closing_time", "masks"];
+const projectImages: Record<string, string> = {
+    quite_off: "/projects/quite_off/quite_01.jpg",
+    the_threes: "/projects/the_threes/threes_23.jpg",
+    gallery_design: "/projects/monolith_for_light/gallery_01.jpg",
+    reframed_still: "/projects/reframed_still/reframed01.jpg",
+    closing_time: "/projects/closing_time/closing_time.jpg",
+    masks: "/projects/masks/masks01.jpg",
+};
 const portfolioSchema = homePage
     ? {
         "@context": "https://schema.org",
         "@type": "ItemList",
         name: "Dai Pan — Works",
-        description: "Image-based work across photography, printmaking, and conceptual design.",
+        description: "Image-based work across photography, printmaking, writing, visual art, and design research.",
         itemListElement: nav
             .filter((n) => projectKeys.includes(n.key))
             .map((n, i) => ({
@@ -109,6 +118,7 @@ const portfolioSchema = homePage
                     "@type": "CreativeWork",
                     name: n.label,
                     url: `${SITE_URL}${n.href}`,
+                    ...(projectImages[n.key] && { image: `${SITE_URL}${projectImages[n.key]}` }),
                     author: { "@type": "Person", name: "Dai Pan" },
                 },
             })),
@@ -126,7 +136,7 @@ const portfolioSchema = homePage
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dai Pan" />
-        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, pan dai, dai pan, artist, designer, photographer, printmaker, writer, web developer, conceptual designer, visual artist, 艺术家, 设计师, 摄影师, 版画, 作家, 网页开发, 概念设计, 视觉艺术, 摄影, Brisbane, Australia, 布里斯班, 澳大利亚, portfolio, photography, printmaking, conceptual design, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
+        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, fine artist, Chinese artist, photographer, printmaker, writer, design research, visual art, fine art, 艺术家, 纯艺术, 视觉艺术, 摄影师, 版画, 写作, 设计研究, portfolio, photography, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
         <link rel="canonical" href={canonical} />
         <!-- 百度/360 站长验证：在各自站长平台获取验证码后，取消注释并填入 content -->
         <!-- <meta name="baidu-site-verification" content="YOUR_BAIDU_CODE" /> -->
@@ -137,17 +147,18 @@ const portfolioSchema = homePage
         <meta property="og:description" content={description} />
         <meta property="og:type" content={ogType} />
         <meta property="og:url" content={canonical} />
-        {absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
+        {absoluteOgImage && (
+            <>
+                <meta property="og:image" content={absoluteOgImage} />
+                <meta property="og:image:alt" content="Dai Pan — Fine artist portfolio" />
+            </>
+        )}
 
         <!-- Twitter Card -->
         <meta name="twitter:card" content={absoluteOgImage ? "summary_large_image" : "summary"} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         {absoluteOgImage && <meta name="twitter:image" content={absoluteOgImage} />}
-
-        <!-- GEO -->
-        <meta name="geo.region" content="AU" />
-        <meta name="geo.placename" content="Brisbane" />
 
         <!-- Preconnect for fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -3,9 +3,10 @@ import BaseLayout from "../layouts/base_layout.astro";
 
 // 展览与奖项的官方链接（用于 SEO 与结构化数据）
 const exhibitionLinks: Record<string, string> = {
-    "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)": "https://www.glasgowgalleryofphotography.com/",
-    "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)": "https://www.blankwallgallery.com/",
+    "Colour, The Glasgow Gallery of Photography, Glasgow, UK": "https://www.glasgowgalleryofphotography.com/",
+    "Cityscapes, Blank Wall Gallery, Athens, Greece": "https://www.blankwallgallery.com/",
     "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA": "https://www.praxisphotocenter.org/",
+    "POP - Popular Participation, Getxophoto Festival, Algorta, Spain; May 28-June 21; image display and printed publication": "",
     "City Lights, Virtual Photography Exhibition, Carlotta Gallery": "",
     "Horizons, Allora Gallery, London, UK": "https://alloragallery.com/horizons",
 };
@@ -24,6 +25,7 @@ const exhibitionSchema = {
         { "@type": "Event", "name": "Colour", "organizer": { "@type": "Organization", "name": "The Glasgow Gallery of Photography", "url": "https://www.glasgowgalleryofphotography.com/" }, "url": "https://www.glasgowgalleryofphotography.com/", "startDate": "2026-05" },
         { "@type": "Event", "name": "Cityscapes", "organizer": { "@type": "Organization", "name": "Blank Wall Gallery", "url": "https://www.blankwallgallery.com/" }, "url": "https://www.blankwallgallery.com/", "startDate": "2026" },
         { "@type": "Event", "name": "POLAROID: The Instant Image", "organizer": { "@type": "Organization", "name": "Praxis Gallery", "url": "https://www.praxisphotocenter.org/" }, "url": "https://www.praxisphotocenter.org/", "startDate": "2026" },
+        { "@type": "Event", "name": "POP - Popular Participation", "description": "Image display in Algorta with inclusion in a printed publication.", "organizer": { "@type": "Organization", "name": "Getxophoto Festival" }, "location": { "@type": "Place", "name": "Algorta, Spain" }, "startDate": "2026-05-28", "endDate": "2026-06-21" },
         { "@type": "Event", "name": "City Lights, Virtual Photography Exhibition", "organizer": { "@type": "Organization", "name": "Carlotta Gallery" } },
         { "@type": "Event", "name": "Horizons", "organizer": { "@type": "Organization", "name": "Allora Gallery", "url": "https://alloragallery.com/" }, "url": "https://alloragallery.com/horizons", "startDate": "2026-02" },
     ],
@@ -43,7 +45,7 @@ const awardSchema = {
 
 <BaseLayout
     title="About — Dai Pan"
-    description="About Dai Pan (潘岱) — Brisbane-based artist and designer. Photography, printmaking, conceptual design."
+    description="About Dai Pan (潘岱) — fine artist. Photography, printmaking, writing, visual art, and design research."
     canonical="https://daipan.art/about"
     active="about"
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "About", url: "https://daipan.art/about" }]}>
@@ -59,11 +61,11 @@ const awardSchema = {
         <div class="about_text">
             <div class="about_text--desktop">
                 <p>
-                    Dai Pan is a visual artist and designer working across
-                    photography, printmaking, and conceptual design. His
+                    Dai Pan is a fine artist whose practice moves across
+                    photography, printmaking, writing, visual art, and design research. His
                     practice explores how images construct spatial perception through
                     framing, repetition, and visual structure, treating photography and
-                    design as interconnected systems of visual thinking.
+                    research as interconnected forms of visual thinking.
                 </p>
                 <p>
                     His work focuses on translating everyday environments into visual
@@ -77,10 +79,10 @@ const awardSchema = {
             </div>
             <div class="about_text--mobile">
                 <p>
-                    Dai Pan is a visual artist and designer working across photography,
-                    printmaking, and conceptual design. His practice explores how images
+                    Dai Pan is a fine artist whose practice moves across photography,
+                    printmaking, writing, visual art, and design research. His practice explores how images
                     construct spatial perception through framing, repetition, and visual
-                    structure. He treats photography and design as interconnected systems
+                    structure. He treats photography and research as interconnected forms
                     of visual thinking, translating everyday environments into sequences
                     where clarity and distortion coexist. His work invites slow looking
                     and open interpretation.
@@ -114,9 +116,10 @@ const awardSchema = {
         <ul class="cv">
             {
                 [
-                    ["2026", "Colour, The Glasgow Gallery of Photography, Glasgow, UK (upcoming)"],
-                    ["2026", "Cityscapes, Blank Wall Gallery, Athens, Greece (upcoming)"],
+                    ["2026", "Colour, The Glasgow Gallery of Photography, Glasgow, UK"],
+                    ["2026", "Cityscapes, Blank Wall Gallery, Athens, Greece"],
                     ["2026", "POLAROID: The Instant Image, Praxis Gallery, Minneapolis, MN, USA"],
+                    ["2026", "POP - Popular Participation, Getxophoto Festival, Algorta, Spain; May 28-June 21; image display and printed publication"],
                     ["2026", "City Lights, Virtual Photography Exhibition, Carlotta Gallery"],
                     ["2026", "Horizons, Allora Gallery, London, UK"],
                 ].map(([year, text]) => {
@@ -172,7 +175,7 @@ const awardSchema = {
     </section>
 
     <section class="block">
-        <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a Brisbane-based artist and designer. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
+        <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a fine artist. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
     </section>
 
     <!-- 展览与奖项结构化数据，便于搜索引擎与 AI 关联你的履历与官方页面 -->

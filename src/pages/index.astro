@@ -3,34 +3,27 @@ import BaseLayout from "../layouts/base_layout.astro";
 import { TAG_ACCENTS } from "../scripts/home-interaction";
 ---
 
-<BaseLayout title="Dai Pan" active="" homePage={true}>
+<BaseLayout
+    title="Dai Pan"
+    description="Dai Pan (潘岱) — fine artist. Portfolio of photography, printmaking, writing, visual art, and design research. Works include Quite Off, Masks, Monolith for Light, The Threes, Reframed Still."
+    active=""
+    homePage={true}
+>
     <div class="home_content">
         <p class="home_para">
             I am <span
                 class="id-tag id-tag--name"
                 data-tag="dai_pan"
                 style={`--tag-accent: ${TAG_ACCENTS.dai_pan}`}>Dai Pan</span
-            >, born in China and currently living in Brisbane, Australia. I
-            build quiet interfaces for image-based, object-oriented systems
-            that perceive minimal sense, and projects that treat experience
-            and aesthetics as part of the content. I work as a{" "}
+            >, a fine artist working with photography, printmaking, writing,
+            visual art, and design research. My practice moves through
+            image-based projects that treat perception, memory, material, and
+            visual structure as part of the work. I work as a{" "}
             <span
                 class="id-tag"
-                data-tag="web_developer"
-                style={`--tag-accent: ${TAG_ACCENTS.web_developer}`}
-                >Web Developer</span
-            >,{" "}
-            <span
-                class="id-tag"
-                data-tag="conceptual_designer"
-                style={`--tag-accent: ${TAG_ACCENTS.conceptual_designer}`}
-                >Conceptual Designer</span
-            >,{" "}
-            <span
-                class="id-tag"
-                data-tag="visual_artist"
-                style={`--tag-accent: ${TAG_ACCENTS.visual_artist}`}
-                >Visual Artist</span
+                data-tag="fine_artist"
+                style={`--tag-accent: ${TAG_ACCENTS.fine_artist}`}
+                >Fine Artist</span
             >,{" "}
             <span
                 class="id-tag"
@@ -43,6 +36,12 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
                 data-tag="photographer"
                 style={`--tag-accent: ${TAG_ACCENTS.photographer}`}
                 >Photographer</span
+            >,{" "}
+            <span
+                class="id-tag"
+                data-tag="design_research"
+                style={`--tag-accent: ${TAG_ACCENTS.design_research}`}
+                >Design Researcher</span
             >, and{" "}
             <span
                 class="id-tag"
