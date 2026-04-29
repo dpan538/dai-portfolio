@@ -37,8 +37,8 @@ const { images, paragraphs } = Astro.props;
 <style>
     .qom_intro {
         margin: 0 0 20px;
-        font-size: 0.8rem;
-        color: var(--muted, #6a6a6a);
+        font-size: var(--text-small, 14px);
+        color: var(--muted, #555);
         text-align: center;
     }
     .qom_figure {
@@ -52,7 +52,7 @@ const { images, paragraphs } = Astro.props;
     }
     .qom_text {
         margin: 12px 0;
-        font-size: 13px;
+        font-size: 15px;
         line-height: 1.7;
         color: rgba(0, 0, 0, 0.84);
     }

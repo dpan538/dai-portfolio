@@ -308,11 +308,14 @@ const portfolioSchema = homePage
 
                 --bg: #ffffff;
                 --text: #111111;
-                --muted: #6a6a6a;
+                --muted: #555555;
                 --line: #ececec;
                 --max: 900px;
                 --top_align: 64px;
                 --mobile-padding-x: 26px;
+                --text-body: 16px;
+                --text-small: 14px;
+                --text-meta: 13.5px;
             }
 
             :global(body) {
@@ -334,6 +337,12 @@ const portfolioSchema = homePage
             :global(a:hover) {
                 text-decoration: underline;
                 text-underline-offset: 3px;
+            }
+
+            :global(a:focus-visible),
+            :global(button:focus-visible) {
+                outline: 2px solid currentColor;
+                outline-offset: 3px;
             }
 
             .shell {
@@ -360,7 +369,7 @@ const portfolioSchema = homePage
                 font-family: var(--display);
                 font-weight: 400;
                 letter-spacing: 0.06em;
-                font-size: 30px;
+                font-size: 34px;
             }
 
             .menu {
@@ -370,7 +379,7 @@ const portfolioSchema = homePage
             }
 
             .menu_link {
-                font-size: 18px;
+                font-size: 20px;
                 color: var(--muted);
                 width: fit-content;
                 transition: color 0.44s cubic-bezier(0.25, 0.1, 0.25, 1), font-weight 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -420,7 +429,7 @@ const portfolioSchema = homePage
             :global(h1) {
                 font-family: var(--display);
                 margin: 0 0 16px;
-                font-size: 30px;
+                font-size: 32px;
                 font-weight: 600;
                 letter-spacing: 0.2px;
             }
@@ -428,7 +437,7 @@ const portfolioSchema = homePage
             :global(h2) {
                 font-family: var(--heading);
                 margin: 30px 0 10px;
-                font-size: 15px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: 0.05em;
                 text-transform: uppercase;
@@ -499,7 +508,7 @@ const portfolioSchema = homePage
             .mobile_brand {
                 font-family: var(--display);
                 font-weight: 400;
-                font-size: 19px;
+                font-size: 20px;
                 line-height: 1;
                 letter-spacing: 0.06em;
                 color: var(--text);
@@ -590,7 +599,7 @@ const portfolioSchema = homePage
             }
 
             .mobile_overlay_link {
-                font-size: 19px;
+                font-size: 20px;
                 color: var(--text);
                 text-decoration: none;
             }
