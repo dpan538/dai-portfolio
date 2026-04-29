@@ -1,53 +1,20 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
-import { TAG_ACCENTS } from "../scripts/home-interaction";
 ---
 
 <BaseLayout
     title="Dai Pan"
-    description="Dai Pan (潘岱) — fine artist. Portfolio of photography, printmaking, writing, visual art, and design research. Works include Quite Off, Masks, Monolith for Light, The Threes, Reframed Still."
+    description="Dai Pan (潘岱) — fine artist and designer working across photography, printmaking, writing, visual art, and design research. Portfolio includes Quite Off, Masks, Monolith for Light, The Threes, and Reframed Still."
     active=""
     homePage={true}
 >
     <div class="home_content">
         <p class="home_para">
-            I am <span
-                class="id-tag id-tag--name"
-                data-tag="dai_pan"
-                style={`--tag-accent: ${TAG_ACCENTS.dai_pan}`}>Dai Pan</span
-            >, a fine artist working with photography, printmaking, writing,
-            visual art, and design research. My practice moves through
-            image-based projects that treat perception, memory, material, and
-            visual structure as part of the work. I work as a{" "}
-            <span
-                class="id-tag"
-                data-tag="fine_artist"
-                style={`--tag-accent: ${TAG_ACCENTS.fine_artist}`}
-                >Fine Artist</span
-            >,{" "}
-            <span
-                class="id-tag"
-                data-tag="printmaker"
-                style={`--tag-accent: ${TAG_ACCENTS.printmaker}`}
-                >Printmaker</span
-            >,{" "}
-            <span
-                class="id-tag"
-                data-tag="photographer"
-                style={`--tag-accent: ${TAG_ACCENTS.photographer}`}
-                >Photographer</span
-            >,{" "}
-            <span
-                class="id-tag"
-                data-tag="design_research"
-                style={`--tag-accent: ${TAG_ACCENTS.design_research}`}
-                >Design Researcher</span
-            >, and{" "}
-            <span
-                class="id-tag"
-                data-tag="writer"
-                style={`--tag-accent: ${TAG_ACCENTS.writer}`}>Writer</span
-            >. This site is a record of what I've made so far.
+            I am Dai Pan, a fine artist and designer working through
+            photography, printmaking, writing, and design research. My work
+            treats images as structures of perception, memory, material, and
+            attention. This site gathers selected visual art projects,
+            photographs, prints, books, and research-led works made so far.
         </p>
         <p class="home_hint" id="home_hint" aria-live="polite">
             <span class="home_hint-desktop">Read or click the projects in the left sidebar to view.</span>
@@ -60,9 +27,6 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
     </footer>
 </BaseLayout>
 
-<script>
-    import "../scripts/home-interaction";
-</script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const hint = document.getElementById("home_hint");
@@ -177,54 +141,4 @@ import { TAG_ACCENTS } from "../scripts/home-interaction";
         }
     }
 
-    .id-tag {
-        display: inline-block;
-        font-family: var(--display);
-        background: none;
-        padding: 0;
-        border-radius: 0.15em;
-        cursor: default;
-        color: inherit;
-        font-weight: inherit;
-        user-select: none;
-        white-space: nowrap;
-        /* 进入 .is-active 时使用：更慢、ease-out，避免出现时太冲 */
-        transition:
-            background-color 0.56s cubic-bezier(0, 0, 0.2, 1),
-            color 0.56s cubic-bezier(0, 0, 0.2, 1),
-            padding 0.56s cubic-bezier(0, 0, 0.2, 1),
-            font-weight 0.5s cubic-bezier(0, 0, 0.1, 1),
-            clip-path 0.56s cubic-bezier(0, 0, 0.2, 1),
-            border-radius 0.56s cubic-bezier(0, 0, 0.2, 1);
-        clip-path: inset(0 round 0);
-    }
-
-    .id-tag.is-active {
-        background: var(--tag-accent);
-        color: #fff;
-        font-weight: 700;
-        padding: 0.22em 0.56em;
-        border-radius: 0.35em;
-        clip-path: inset(0 round 0.35em);
-        /* 离开 .is-active 时使用：稍短，保持 ease-out */
-        transition:
-            background-color 0.38s cubic-bezier(0, 0, 0.2, 1),
-            color 0.38s cubic-bezier(0, 0, 0.2, 1),
-            padding 0.38s cubic-bezier(0, 0, 0.2, 1),
-            font-weight 0.34s cubic-bezier(0, 0, 0.2, 1),
-            clip-path 0.38s cubic-bezier(0, 0, 0.2, 1),
-            border-radius 0.38s cubic-bezier(0, 0, 0.2, 1);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        .id-tag,
-        .id-tag.is-active {
-            transition: none;
-        }
-    }
-
-    :global(.menu_link.is-highlight) {
-        color: var(--text, #111) !important;
-        font-weight: 600;
-    }
 </style>

@@ -3,7 +3,7 @@ const SITE_URL = "https://daipan.art";
 
 const {
     title = "Dai Pan",
-    description = "Dai Pan (潘岱) — fine artist. Image-based work across photography, printmaking, writing, visual art, and design research.",
+    description = "Dai Pan (潘岱) — fine artist and designer working across photography, printmaking, writing, visual art, and design research.",
     canonical = SITE_URL,
     active = "", // "works" | "about" | "contact"
     homePage = false,
@@ -29,7 +29,7 @@ const personSchema = {
         "dai pan",
     ],
     url: SITE_URL,
-    jobTitle: "Fine Artist",
+    jobTitle: "Fine Artist / Designer",
     knowsAbout: [
         "fine art",
         "photography",
@@ -48,7 +48,17 @@ const personSchema = {
         "https://www.instagram.com/jumpingchick666",
         "https://sva.design/students/dai-pan",
         "https://www.linkedin.com/in/daipanportfolio/",
+        "https://www.daipan.ink/",
         "https://www.instagram.com/p/DT2UEHQCJiD/",
+    ],
+    subjectOf: [
+        {
+            "@type": "CreativeWorkSeries",
+            name: "Three Worlds — Dai Pan",
+            url: "https://www.daipan.ink/",
+            genre: ["writing", "poetry", "literary writing"],
+            author: { "@type": "Person", name: "Dai Pan", url: SITE_URL },
+        },
     ],
     nationality: { "@type": "Country", "name": "China" },
     alumniOf: { "@type": "CollegeOrUniversity", "name": "School of Visual Arts", "url": "https://sva.edu", "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressCountry": "US" } },
@@ -61,10 +71,11 @@ const websiteSchema = {
     name: "Dai Pan",
     alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
     url: SITE_URL,
-    description: "Personal portfolio of Dai Pan (潘岱), fine artist. Photography, printmaking, writing, visual art, and design research. Not affiliated with DAIPAN Butoh Collective.",
+    description: "Personal portfolio of Dai Pan (潘岱), fine artist and designer. Photography, printmaking, writing, visual art, and design research, with writing collected at daipan.ink. Not affiliated with DAIPAN Butoh Collective.",
     image: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg`,
     author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
     inLanguage: ["en"],
+    relatedLink: ["https://www.daipan.ink/"],
 };
 
 const breadcrumbSchema = breadcrumbs?.length
@@ -136,8 +147,9 @@ const portfolioSchema = homePage
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dai Pan" />
-        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, fine artist, Chinese artist, photographer, printmaker, writer, design research, visual art, fine art, 艺术家, 纯艺术, 视觉艺术, 摄影师, 版画, 写作, 设计研究, portfolio, photography, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
+        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, fine artist, designer, Chinese artist, photographer, printmaker, writer, design research, visual art, fine art, 艺术家, 设计师, 纯艺术, 视觉艺术, 摄影师, 版画, 写作, 设计研究, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
         <link rel="canonical" href={canonical} />
+        <link rel="me" href="https://www.daipan.ink/" />
         <!-- 百度/360 站长验证：在各自站长平台获取验证码后，取消注释并填入 content -->
         <!-- <meta name="baidu-site-verification" content="YOUR_BAIDU_CODE" /> -->
         <!-- <meta name="360-site-verification" content="YOUR_360_CODE" /> -->
