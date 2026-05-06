@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
 
-// 展览与奖项的官方链接（用于 SEO 与结构化数据）
+// 展览与奖项的官方链接（用于页面中的可验证出处）
 const exhibitionLinks: Record<string, string> = {
     "Colour, The Glasgow Gallery of Photography, Glasgow, UK": "https://www.glasgowgalleryofphotography.com/",
     "Cityscapes, Blank Wall Gallery, Athens, Greece": "https://www.blankwallgallery.com/",
@@ -17,30 +17,6 @@ const awardLinks: Record<string, string> = {
     "2nd Bold Colors, Online Juried Exhibition (Finalist), Blue Koi Gallery": "https://koisartistaward.com/2nd-bold-colors-art-exhibition/",
 };
 
-const exhibitionSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Dai Pan — Group Exhibitions",
-    "itemListElement": [
-        { "@type": "Event", "name": "Colour", "organizer": { "@type": "Organization", "name": "The Glasgow Gallery of Photography", "url": "https://www.glasgowgalleryofphotography.com/" }, "url": "https://www.glasgowgalleryofphotography.com/", "startDate": "2026-05" },
-        { "@type": "Event", "name": "Cityscapes", "organizer": { "@type": "Organization", "name": "Blank Wall Gallery", "url": "https://www.blankwallgallery.com/" }, "url": "https://www.blankwallgallery.com/", "startDate": "2026" },
-        { "@type": "Event", "name": "POLAROID: The Instant Image", "organizer": { "@type": "Organization", "name": "Praxis Gallery", "url": "https://www.praxisphotocenter.org/" }, "url": "https://www.praxisphotocenter.org/", "startDate": "2026" },
-        { "@type": "Event", "name": "POP - Popular Participation", "description": "Image display in Algorta with inclusion in a printed publication.", "organizer": { "@type": "Organization", "name": "Getxophoto Festival" }, "location": { "@type": "Place", "name": "Algorta, Spain" }, "startDate": "2026-05-28", "endDate": "2026-06-21" },
-        { "@type": "Event", "name": "City Lights, Virtual Photography Exhibition", "organizer": { "@type": "Organization", "name": "Carlotta Gallery" } },
-        { "@type": "Event", "name": "Horizons", "organizer": { "@type": "Organization", "name": "Allora Gallery", "url": "https://alloragallery.com/" }, "url": "https://alloragallery.com/horizons", "startDate": "2026-02" },
-    ],
-};
-const awardSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Dai Pan — Awards & Recognition",
-    "itemListElement": [
-        { "@type": "Award", "name": "Black & White Art Competition, Merit Award", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2026", "url": "https://www.artroomgalleryonline.com/" },
-        { "@type": "Award", "name": "Winter Open Theme, Finalist", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2025", "url": "https://art-collide.com/open-theme-winter-2024-2025" },
-        { "@type": "Award", "name": "Honorable Mention in Culture (Professional), Chromatic Awards", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2025", "url": "https://chromaticawards.com/" },
-        { "@type": "Award", "name": "2nd Bold Colors, Finalist", "awardee": { "@type": "Person", "name": "Dai Pan" }, "dateReceived": "2024", "url": "https://koisartistaward.com/2nd-bold-colors-art-exhibition/" },
-    ],
-};
 ---
 
 <BaseLayout
@@ -183,10 +159,6 @@ const awardSchema = {
     <section class="block">
         <p class="about_disclaimer" aria-label="Disambiguation">Dai Pan (潘岱) is a fine artist and designer. This site is not affiliated with DAIPAN Butoh Collective (Seattle).</p>
     </section>
-
-    <!-- 展览与奖项结构化数据，便于搜索引擎与 AI 关联你的履历与官方页面 -->
-    <script type="application/ld+json" set:html={JSON.stringify(exhibitionSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(awardSchema)} />
 
     <style>
         .block {
