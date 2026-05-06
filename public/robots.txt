@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://daipan.art/sitemap.xml
 Sitemap: https://daipan.art/sitemap-index.xml
