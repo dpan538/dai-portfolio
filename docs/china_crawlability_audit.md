@@ -315,4 +315,28 @@ curl -A Baiduspider -I -L https://daipan.art
 curl -A Bytespider -I -L https://daipan.art
 ```
 
-Important deployment note: online `https://daipan.art/sitemap.xml` still returned `404` during this audit because these local changes were not deployed yet.
+Pre-deployment note: online `https://daipan.art/sitemap.xml` returned `404` during the initial audit before the crawlability changes were deployed.
+
+## Post-deployment Verification
+
+Verification date: 2026-05-06  
+Deployment target observed: Vercel (`server: Vercel` response header)  
+Git state before verification: `main` was clean and up to date with `origin/main`; latest visible commit was `7ade4da 中国网站抓取适配`.
+
+| Test | URL / Command | Expected | Actual | Status |
+|---|---|---|---|---|
+| Homepage status | `curl -I https://daipan.art` | `200` | `HTTP/2 200`, `content-type: text/html; charset=utf-8`, `server: Vercel` | Pass |
+| www redirect | `curl -I -L https://www.daipan.art` | Redirect to `https://daipan.art/`, final `200` | `308` to `https://daipan.art/`, final `HTTP/2 200` | Pass |
+| HTTP to HTTPS redirect | `curl -I -L http://daipan.art` | Redirect to HTTPS canonical | `308` to `https://daipan.art/` | Pass |
+| HTTP www redirect | `curl -I -L http://www.daipan.art` | Redirect to HTTPS non-www canonical | `308` to `https://www.daipan.art/`, then `308` to `https://daipan.art/`, final `200` | Pass |
+| robots.txt | `curl -L https://daipan.art/robots.txt` | `200`, allows crawlers, includes sitemap | Returned crawler allow rules and `Sitemap: https://daipan.art/sitemap.xml` | Pass |
+| sitemap.xml | `curl -I -L https://daipan.art/sitemap.xml` | `200`, XML response | `HTTP/2 200`, `content-type: application/xml`, `content-length: 960` | Pass |
+| sitemap URL status check | `curl -L -o /dev/null -w "%{http_code}"` for all sitemap URLs | Every listed URL returns `200` | `/`, `/about`, `/contact`, `/quite_off`, `/the_threes`, `/gallery_design`, `/reframed_still`, `/closing_time`, `/masks` all returned `200` | Pass |
+| sitemap exclusions | `rg "localhost|daipan\.ink|quite_off_mobile" /tmp/daipan-online-sitemap.xml` | No matches | No matches found | Pass |
+| Homepage metadata | `curl -L https://daipan.art \| head -n 120` | Title, description, canonical, OG, Twitter, Chinese machine-readable description | Found `Dai Pan | Artist & Designer Portfolio`, meta description, `dc.description`, canonical `https://daipan.art`, OG/Twitter tags | Pass |
+| JSON-LD | `rg "application/ld\+json|Artist and Designer|Official portfolio" /tmp/daipan-online-home.html` | JSON-LD present and identity clear | `Person`, `WebSite`, and `ItemList` JSON-LD present with official portfolio wording | Pass |
+| canonical | HTML inspection | Canonical uses `https://daipan.art` | Homepage canonical `https://daipan.art`; About/Contact canonical use `https://daipan.art/about` and `/contact` | Pass |
+| no-JS content | `curl -L https://daipan.art/about`; `curl -L https://daipan.art/contact` | Readable body text in initial HTML | About contains bio/education/contact; Contact contains email, phone, WeChat, writing link | Pass |
+| 404 behavior | `curl -I -L https://daipan.art/not-real-post-deploy-check` | `404` | `HTTP/2 404`, serves `404.html` | Pass |
+
+Post-deployment conclusion: the root sitemap issue is fixed online. `https://daipan.art/sitemap.xml` now returns `200` instead of `404`, `robots.txt` references it, all sitemap URLs return `200`, and the deployed HTML exposes metadata, JSON-LD, canonical tags, and no-JS readable content.
