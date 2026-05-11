@@ -11,7 +11,9 @@
         padding-top: 142px;
         padding-inline: var(--mobile-padding-x, 26px);
         padding-bottom: 48px;
+        padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
         min-height: 100vh;
+        min-height: var(--app-vh, 100vh);
         box-sizing: border-box;
     }
     @media (min-width: 769px) {

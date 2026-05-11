@@ -189,6 +189,7 @@ const works = [
 
     .lightbox-desktop img {
         max-height: 90vh;
+        max-height: min(90vh, calc(var(--app-dvh, 100vh) - 40px));
         max-width: 90vw;
     }
 
@@ -287,6 +288,7 @@ const works = [
         gap: 20px;
         max-width: 100vw;
         max-height: 90vh;
+        max-height: min(90vh, calc(var(--app-dvh, 100vh) - 40px));
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto;
@@ -298,6 +300,7 @@ const works = [
     .masks-lightbox__inner::-webkit-scrollbar { display: none; }
     .masks-lightbox__img {
         max-height: calc(90vh - 80px);
+        max-height: calc(var(--app-dvh, 100vh) - 80px);
         max-width: 90vw;
         width: auto;
         height: auto;

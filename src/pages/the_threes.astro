@@ -139,6 +139,7 @@ const pageDescription =
             top: 0;
             width: 320px;
             height: 100vh;
+            height: var(--app-vh, 100vh);
             z-index: 20;
         }
         /* 主内容显式放在第二列，避免被 fixed 的侧栏挤出布局 */
@@ -323,6 +324,7 @@ const pageDescription =
             width: 100vw;
             max-width: none !important;
             height: 100vh;
+            height: var(--app-dvh, 100vh);
             background: rgba(0, 0, 0, 0.92);
             display: flex;
             align-items: center;
@@ -332,6 +334,7 @@ const pageDescription =
 
         .lightbox img {
             max-height: 90vh;
+            max-height: min(90vh, calc(var(--app-dvh, 100vh) - 40px));
             max-width: 90vw;
             display: block;
         }

@@ -327,6 +327,25 @@ const portfolioSchema = homePage
                 --text-body: 16px;
                 --text-small: 14px;
                 --text-meta: 13.5px;
+                --app-vh: 100vh;
+                --app-dvh: 100vh;
+            }
+
+            @supports (height: 100svh) {
+                :global(:root) {
+                    --app-vh: 100svh;
+                }
+            }
+
+            @supports (height: 100dvh) {
+                :global(:root) {
+                    --app-dvh: 100dvh;
+                }
+            }
+
+            :global(html) {
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
             }
 
             :global(body) {
@@ -337,6 +356,8 @@ const portfolioSchema = homePage
                 line-height: 1.6;
                 font-size: 18px;
                 letter-spacing: 0.1px;
+                -webkit-font-smoothing: antialiased;
+                text-rendering: optimizeLegibility;
             }
 
             :global(a) {
@@ -360,6 +381,7 @@ const portfolioSchema = homePage
                 position: relative;
                 z-index: 0;
                 min-height: 100vh;
+                min-height: var(--app-vh);
                 display: grid;
                 grid-template-columns: 280px 1fr;
             }
@@ -480,6 +502,7 @@ const portfolioSchema = homePage
                 display: grid;
                 grid-template-columns: 320px 1fr;
                 min-height: 100vh;
+                min-height: var(--app-vh);
             }
 
             .main {
@@ -498,6 +521,7 @@ const portfolioSchema = homePage
                 overflow: hidden;
                 max-width: none;
                 height: 100vh;
+                height: var(--app-vh);
                 display: flex;
                 flex-direction: column;
             }
@@ -507,6 +531,7 @@ const portfolioSchema = homePage
                 display: none;
                 position: fixed;
                 top: 26px;
+                top: max(26px, env(safe-area-inset-top, 0px));
                 left: 0;
                 right: 0;
                 height: 52px;
@@ -602,6 +627,7 @@ const portfolioSchema = homePage
                 gap: 16px;
                 padding: 32px 40px;
                 max-height: calc(100vh - 80px);
+                max-height: calc(var(--app-dvh) - 80px);
                 overflow-y: auto;
                 -webkit-overflow-scrolling: touch;
                 opacity: 0;
@@ -663,6 +689,7 @@ const portfolioSchema = homePage
                     width: 100%;
                     padding-top: 142px;
                     padding-inline: var(--mobile-padding-x);
+                    padding-bottom: 48px;
                     padding-bottom: max(48px, env(safe-area-inset-bottom, 0px));
                 }
 
@@ -672,6 +699,7 @@ const portfolioSchema = homePage
                     overflow-x: hidden;
                     height: auto !important;
                     min-height: 100vh;
+                    min-height: var(--app-vh);
                     align-items: center;
                 }
 
@@ -683,6 +711,7 @@ const portfolioSchema = homePage
                 .mobile_main {
                     --mobile-gap: 56px;
                     padding-top: calc(26px + 52px + var(--mobile-gap)) !important;
+                    padding-top: calc(max(26px, env(safe-area-inset-top, 0px)) + 52px + var(--mobile-gap)) !important;
                     padding-inline: var(--mobile-padding-x) !important;
                 }
             }
