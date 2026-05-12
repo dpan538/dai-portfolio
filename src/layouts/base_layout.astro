@@ -1,4 +1,6 @@
 ---
+import imageDimensions from "../data/image-dimensions.json";
+
 const SITE_URL = "https://daipan.art";
 
 const {
@@ -9,6 +11,7 @@ const {
     active = "", // "works" | "about" | "contact"
     homePage = false,
     ogImage = undefined as string | undefined,
+    ogImageAlt = undefined as string | undefined,
     ogType = "website" as "website" | "article",
     breadcrumbs = undefined as { name: string; url: string }[] | undefined,
 } = Astro.props;
@@ -18,6 +21,18 @@ const seoTitle = title.includes("Dai Pan") ? title : `${title} — Dai Pan`;
 const defaultOgImage = "/projects/quite_off/quite_01.jpg";
 const resolvedOgImage = ogImage ?? defaultOgImage;
 const absoluteOgImage = resolvedOgImage ? (resolvedOgImage.startsWith("http") ? resolvedOgImage : `${SITE_URL}${resolvedOgImage}`) : undefined;
+const localOgImagePath = resolvedOgImage?.startsWith(SITE_URL)
+    ? resolvedOgImage.slice(SITE_URL.length)
+    : resolvedOgImage?.startsWith("/")
+        ? resolvedOgImage
+        : undefined;
+const ogImageMeta = localOgImagePath ? imageDimensions[localOgImagePath as keyof typeof imageDimensions] : undefined;
+const resolvedOgImageAlt = ogImageAlt ?? `Social preview image for ${seoTitle}`;
+const resolvedOgImageType = resolvedOgImage?.toLowerCase().endsWith(".png")
+    ? "image/png"
+    : resolvedOgImage
+        ? "image/jpeg"
+        : undefined;
 
 const personSchema = {
     "@context": "https://schema.org",
@@ -173,7 +188,11 @@ const portfolioSchema = homePage
         {absoluteOgImage && (
             <>
                 <meta property="og:image" content={absoluteOgImage} />
-                <meta property="og:image:alt" content="Dai Pan — Fine artist portfolio" />
+                <meta property="og:image:secure_url" content={absoluteOgImage} />
+                {resolvedOgImageType && <meta property="og:image:type" content={resolvedOgImageType} />}
+                {ogImageMeta && <meta property="og:image:width" content={String(ogImageMeta.width)} />}
+                {ogImageMeta && <meta property="og:image:height" content={String(ogImageMeta.height)} />}
+                <meta property="og:image:alt" content={resolvedOgImageAlt} />
             </>
         )}
 
@@ -182,6 +201,7 @@ const portfolioSchema = homePage
         <meta name="twitter:title" content={seoTitle} />
         <meta name="twitter:description" content={description} />
         {absoluteOgImage && <meta name="twitter:image" content={absoluteOgImage} />}
+        {absoluteOgImage && <meta name="twitter:image:alt" content={resolvedOgImageAlt} />}
 
         <!-- Preconnect for fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
