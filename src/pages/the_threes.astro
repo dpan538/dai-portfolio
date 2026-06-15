@@ -15,10 +15,31 @@ const endImg = `/projects/the_threes/threes_24.jpg`;
 
 const pageTitle = "The Threes";
 const pageDescription =
-    "The Threes by Dai Pan is a handmade book-object and writing-based visual art project, bringing poetry, image, story, and design research into a single sequence.";
+    "The Threes by Dai Pan is a handmade book-object, book design, and writing-based visual art project, bringing poetry, image, story, and design research into a single sequence.";
+const projectMeta = {
+    name: "The Threes",
+    schemaType: ["Book", "CreativeWork"],
+    year: "2025",
+    medium: "Handmade book-object, poetry, image, short narrative, and book design",
+    artform: "Book design and writing-based visual art",
+    location: "New York",
+    description: pageDescription,
+    images: [coverImg, endImg, ...spreads],
+    imageAlt: "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
+    keywords: ["The Threes", "Dai Pan book design", "handmade book-object", "poetry", "image", "story", "writing", "visual art", "design research", "artist book"],
+};
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} canonical="https://daipan.art/the_threes" ogImage={coverImg} ogType="article" active="the_threes" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "The Threes", url: "https://daipan.art/the_threes" }]}>
+<BaseLayout
+    title="The Threes — Book Design & Writing by Dai Pan"
+    description={pageDescription}
+    canonical="https://daipan.art/the_threes"
+    ogImage={coverImg}
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="the_threes"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "The Threes", url: "https://daipan.art/the_threes" }]}>
 
     <!-- 1) HERO FIRST（单列，首屏即 hero 图） -->
     <section class="threes threes__intro" id="top">
@@ -28,7 +49,7 @@ const pageDescription =
             data-scroll-to="#flow">
             <img
                 src={coverImg}
-                alt="The Threes cover"
+                alt="The Threes by Dai Pan, handmade book-object cover"
                 loading="eager"
             />
         </figure>
@@ -85,7 +106,7 @@ const pageDescription =
                     aria-label={`Open spread ${i + 1}`}>
                     <img
                         src={src}
-                        alt={`The Threes spread ${i + 1}`}
+                        alt={`The Threes by Dai Pan, handmade book-object spread ${i + 1}`}
                         loading={i < 3 ? "eager" : "lazy"}
                     />
                 </button>
@@ -99,7 +120,7 @@ const pageDescription =
     <!-- Lightbox（与 masks.astro 一致：点击背景关闭、ESC、左右键切换） -->
     <div id="lightbox" class="lightbox hidden">
         <button class="prev" type="button">←</button>
-        <img id="lightbox-image" alt="Spread" />
+        <img id="lightbox-image" alt="The Threes by Dai Pan, handmade book-object spread preview" />
         <button class="next" type="button">→</button>
     </div>
 
@@ -108,7 +129,7 @@ const pageDescription =
         <figure class="threes__outro-media" aria-label="The Threes ending mockup">
             <img
                 src={endImg}
-                alt="The Threes ending mockup"
+                alt="The Threes by Dai Pan, ending mockup of the handmade book-object"
                 loading="lazy"
             />
         </figure>
@@ -726,11 +747,16 @@ const pageDescription =
                 );
                 let current = 0;
                 const originalOverflow = document.documentElement.style.overflow;
+                function setLightboxImage() {
+                    if (!lightboxImage) return;
+                    lightboxImage.src = sources[current];
+                    lightboxImage.alt = `The Threes by Dai Pan, handmade book-object spread ${current + 1}`;
+                }
 
                 function openLightbox(i) {
                     if (!lightbox || !lightboxImage) return;
                     current = clamp(i, 0, maxIndex);
-                    lightboxImage.src = sources[current];
+                    setLightboxImage();
                     lightbox.classList.remove("hidden");
                     document.documentElement.style.overflow = "hidden";
                 }
@@ -754,12 +780,12 @@ const pageDescription =
                 lightbox?.querySelector(".prev")?.addEventListener("click", (e) => {
                     e.stopPropagation();
                     current = (current - 1 + sources.length) % sources.length;
-                    lightboxImage.src = sources[current];
+                    setLightboxImage();
                 });
                 lightbox?.querySelector(".next")?.addEventListener("click", (e) => {
                     e.stopPropagation();
                     current = (current + 1) % sources.length;
-                    lightboxImage.src = sources[current];
+                    setLightboxImage();
                 });
 
                 lightbox?.addEventListener("click", (e) => {
@@ -783,10 +809,10 @@ const pageDescription =
                         const threshold = 60;
                         if (dx > threshold) {
                             current = (current - 1 + sources.length) % sources.length;
-                            lightboxImage.src = sources[current];
+                            setLightboxImage();
                         } else if (dx < -threshold) {
                             current = (current + 1) % sources.length;
-                            lightboxImage.src = sources[current];
+                            setLightboxImage();
                         }
                     },
                     { passive: true },
@@ -800,12 +826,12 @@ const pageDescription =
                         if (e.key === "ArrowLeft") {
                             e.preventDefault();
                             current = (current - 1 + sources.length) % sources.length;
-                            lightboxImage.src = sources[current];
+                            setLightboxImage();
                         }
                         if (e.key === "ArrowRight") {
                             e.preventDefault();
                             current = (current + 1) % sources.length;
-                            lightboxImage.src = sources[current];
+                            setLightboxImage();
                         }
                         return;
                     }

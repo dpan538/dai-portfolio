@@ -4,9 +4,9 @@ import imageDimensions from "../data/image-dimensions.json";
 const SITE_URL = "https://daipan.art";
 
 const {
-    title = "Dai Pan | Artist & Designer Portfolio",
-    description = "Dai Pan (潘岱) — fine artist and designer working across photography, printmaking, writing, visual art, and design research.",
-    zhDescription = "Dai Pan / Pan Dai 的个人作品集网站，展示视觉传达、摄影、交互设计、版画与实验媒体项目。",
+    title = "Dai Pan (潘岱) — Artist, Designer & Portfolio",
+    description = "Official portfolio of Dai Pan / Pan Dai (潘岱), a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
+    zhDescription = "Dai Pan / Pan Dai（潘岱）的个人作品集网站，展示视觉艺术、概念设计、摄影、建筑、版画、图像制作与写作项目。",
     canonical = SITE_URL,
     active = "", // "works" | "about" | "contact"
     homePage = false,
@@ -14,13 +14,32 @@ const {
     ogImageAlt = undefined as string | undefined,
     ogType = "website" as "website" | "article",
     breadcrumbs = undefined as { name: string; url: string }[] | undefined,
+    keywords = [] as string[],
+    project = undefined as {
+            name?: string;
+            schemaType?: string | string[];
+            description?: string;
+            year?: string;
+            dateCreated?: string;
+            medium?: string;
+            artform?: string;
+            location?: string | string[];
+            keywords?: string[];
+            images?: string[];
+            imageAlt?: string;
+        }
+        | undefined,
 } = Astro.props;
 
 const seoTitle = title.includes("Dai Pan") ? title : `${title} — Dai Pan`;
+const toAbsoluteUrl = (value: string) => value.startsWith("http") ? value : `${SITE_URL}${value}`;
+const toPlaceSchema = (location: string | string[]) => Array.isArray(location)
+    ? location.map((name) => ({ "@type": "Place", name }))
+    : { "@type": "Place", name: location };
 // 默认使用代表作品图，便于搜索引擎、社交平台和 AI 工具展示
 const defaultOgImage = "/projects/quite_off/quite_01.jpg";
 const resolvedOgImage = ogImage ?? defaultOgImage;
-const absoluteOgImage = resolvedOgImage ? (resolvedOgImage.startsWith("http") ? resolvedOgImage : `${SITE_URL}${resolvedOgImage}`) : undefined;
+const absoluteOgImage = resolvedOgImage ? toAbsoluteUrl(resolvedOgImage) : undefined;
 const localOgImagePath = resolvedOgImage?.startsWith(SITE_URL)
     ? resolvedOgImage.slice(SITE_URL.length)
     : resolvedOgImage?.startsWith("/")
@@ -33,6 +52,48 @@ const resolvedOgImageType = resolvedOgImage?.toLowerCase().endsWith(".png")
     : resolvedOgImage
         ? "image/jpeg"
         : undefined;
+const baseKeywords = [
+    "Dai Pan",
+    "Pan Dai",
+    "潘岱",
+    "daipan",
+    "daipan.art",
+    "daipan.ink",
+    "Three Worlds Dai Pan",
+    "visual artist",
+    "fine artist",
+    "artist portfolio",
+    "designer",
+    "Chinese artist",
+    "Brisbane artist",
+    "photographer",
+    "printmaker",
+    "writer",
+    "conceptual design",
+    "architecture",
+    "design research",
+    "visual art",
+    "image-making",
+    "fine art",
+    "艺术家",
+    "设计师",
+    "纯艺术",
+    "视觉艺术",
+    "摄影师",
+    "版画",
+    "写作",
+    "设计研究",
+    "portfolio",
+    "photography",
+    "writing collection",
+    "Monolith for Light",
+    "Quite Off",
+    "The Threes",
+    "Reframed Still",
+    "Closing Time",
+    "Masks",
+];
+const allKeywords = Array.from(new Set([...baseKeywords, ...keywords, ...(project?.keywords ?? [])]));
 
 const personSchema = {
     "@context": "https://schema.org",
@@ -46,20 +107,26 @@ const personSchema = {
         "dai pan",
     ],
     url: SITE_URL,
-    jobTitle: "Artist and Designer",
-    description: "Official portfolio of Dai Pan / Pan Dai (潘岱), an artist and designer working across visual communication, photography, printmaking, interaction, and experimental media.",
+    jobTitle: "Visual Artist, Designer, Photographer, Printmaker, and Writer",
+    description: "Official portfolio of Dai Pan / Pan Dai (潘岱), a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
     knowsAbout: [
         "fine art",
+        "visual art",
+        "conceptual design",
+        "architecture",
         "photography",
         "printmaking",
         "design research",
-        "visual art",
+        "image-making",
         "writing",
         "纯艺术",
+        "视觉艺术",
+        "概念设计",
+        "建筑",
         "摄影",
         "版画",
         "设计研究",
-        "视觉艺术",
+        "图像制作",
         "写作",
     ],
     sameAs: [
@@ -79,6 +146,7 @@ const personSchema = {
         },
     ],
     nationality: { "@type": "Country", "name": "China" },
+    homeLocation: { "@type": "Place", "name": "Brisbane, Australia" },
     alumniOf: { "@type": "CollegeOrUniversity", "name": "School of Visual Arts", "url": "https://sva.edu", "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressCountry": "US" } },
     image: `${SITE_URL}/projects/about/about.jpg`,
 };
@@ -86,15 +154,28 @@ const personSchema = {
 const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "Dai Pan | Artist & Designer Portfolio",
+    name: "Dai Pan (潘岱) — Artist, Designer & Portfolio",
     alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
     url: SITE_URL,
-    description: "Official portfolio of Dai Pan / Pan Dai (潘岱), an artist and designer working across visual communication, photography, printmaking, interaction, and experimental media. Not affiliated with DAIPAN Butoh Collective.",
+    description: "Official portfolio of Dai Pan / Pan Dai (潘岱), a visual artist, designer, photographer, printmaker, and writer based in Brisbane. Not affiliated with DAIPAN Butoh Collective.",
     image: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg`,
     author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
     inLanguage: ["en", "zh-Hans"],
     relatedLink: ["https://www.daipan.ink/"],
 };
+
+const profilePageSchema = homePage
+    ? {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        name: "Dai Pan (潘岱) — Artist, Designer & Portfolio",
+        url: SITE_URL,
+        description,
+        about: personSchema,
+        primaryImageOfPage: { "@type": "ImageObject", url: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg` },
+        inLanguage: ["en", "zh-Hans"],
+    }
+    : null;
 
 const breadcrumbSchema = breadcrumbs?.length
     ? {
@@ -153,6 +234,35 @@ const portfolioSchema = homePage
             })),
     }
     : null;
+
+const creativeWorkSchema = ogType === "article"
+    ? {
+        "@context": "https://schema.org",
+        "@type": project?.schemaType ?? "CreativeWork",
+        name: project?.name ?? seoTitle,
+        headline: seoTitle,
+        description: project?.description ?? description,
+        url: canonical,
+        mainEntityOfPage: canonical,
+        ...(project?.images?.length
+            ? { image: project.images.map(toAbsoluteUrl), thumbnailUrl: toAbsoluteUrl(project.images[0]) }
+            : absoluteOgImage && { image: absoluteOgImage, thumbnailUrl: absoluteOgImage }),
+        ...(project?.imageAlt && { caption: project.imageAlt }),
+        ...(project?.dateCreated && { dateCreated: project.dateCreated }),
+        ...(project?.year && { temporalCoverage: project.year }),
+        ...(project?.medium && { artMedium: project.medium, material: project.medium }),
+        ...(project?.artform && { artform: project.artform, genre: project.artform }),
+        ...(project?.location && { locationCreated: toPlaceSchema(project.location), contentLocation: toPlaceSchema(project.location) }),
+        ...(project?.keywords?.length && {
+            keywords: project.keywords.join(", "),
+            about: project.keywords.map((name) => ({ "@type": "Thing", name })),
+        }),
+        creator: { "@type": "Person", name: "Dai Pan", alternateName: ["Pan Dai", "潘岱"], url: SITE_URL },
+        author: { "@type": "Person", name: "Dai Pan", alternateName: ["Pan Dai", "潘岱"], url: SITE_URL },
+        isPartOf: { "@type": "WebSite", name: "Dai Pan (潘岱) — Artist, Designer & Portfolio", url: SITE_URL },
+        inLanguage: "en",
+    }
+    : null;
 ---
 
 <!doctype html>
@@ -166,7 +276,7 @@ const portfolioSchema = homePage
         <meta name="dc.description" lang="zh-Hans" content={zhDescription} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Dai Pan" />
-        <meta name="keywords" content="Dai Pan, Pan Dai, 潘岱, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, fine artist, designer, Chinese artist, photographer, printmaker, writer, design research, visual art, fine art, 艺术家, 设计师, 纯艺术, 视觉艺术, 摄影师, 版画, 写作, 设计研究, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks" />
+        <meta name="keywords" content={allKeywords.join(", ")} />
         <link rel="canonical" href={canonical} />
         <link rel="me" href="https://www.daipan.ink/" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -214,8 +324,10 @@ const portfolioSchema = homePage
         <!-- Structured Data: Person, WebSite, BreadcrumbList -->
         <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
         <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+        {profilePageSchema && <script type="application/ld+json" set:html={JSON.stringify(profilePageSchema)} />}
         {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
         {portfolioSchema && <script type="application/ld+json" set:html={JSON.stringify(portfolioSchema)} />}
+        {creativeWorkSchema && <script type="application/ld+json" set:html={JSON.stringify(creativeWorkSchema)} />}
 
         <slot name="head" />
     </head>

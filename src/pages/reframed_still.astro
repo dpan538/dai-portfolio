@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/base_layout.astro";
 
 const page_title = "Reframed Still";
 const page_description =
-    "Reframed Still by Dai Pan is a photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.";
+    "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.";
 
 const images = Array.from({ length: 8 }, (_, i) => {
     const n = String(i + 1).padStart(2, "0");
@@ -26,6 +26,18 @@ const project = {
     years: "2021 — 2025",
     note: "A sequence that reframes stillness through a curated strip of images, slowing the gaze across cities and time. Moments of quiet and pause within the flow of urban life; light, shadow, and composition unfold gradually as one moves through the strip.",
 };
+const projectMeta = {
+    name: project.title,
+    schemaType: "VisualArtwork",
+    year: project.years,
+    medium: project.medium,
+    artform: "Black-and-white photography and gelatin silver print sequence",
+    location: project.locations,
+    description: page_description,
+    images,
+    imageAlt: "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
+    keywords: ["Reframed Still", "Dai Pan photography", "gelatin silver print", "black-and-white photography", "photographic sequence", "New York photography", "Guangzhou photography", "Shanghai photography", "Nantong photography", "urban stillness"],
+};
 
 const frameHints = [
     "A pause in the flow.",
@@ -40,12 +52,14 @@ const frameHints = [
 ---
 
 <BaseLayout
-    title={page_title}
+    title="Reframed Still — Gelatin Silver Photography by Dai Pan"
     description={page_description}
     canonical={meta.canonical}
     ogImage={meta.og_image}
+    ogImageAlt={projectMeta.imageAlt}
     ogType="article"
     active="reframed_still"
+    project={projectMeta}
     breadcrumbs={breadcrumbs}>
 
     <!-- Desktop: backup 7a49036 的 strip/desc_panel 结构 -->
@@ -60,7 +74,7 @@ const frameHints = [
                                 class="lb_img"
                                 src={src}
                                 data-index={idx}
-                                alt={`Reframed Still — frame ${idx + 1}`}
+                                alt={`Reframed Still by Dai Pan, black-and-white gelatin silver print frame ${idx + 1}`}
                                 loading={idx < 2 ? "eager" : "lazy"}
                                 decoding="async"
                             />
@@ -107,7 +121,7 @@ const frameHints = [
                                 class="lb_img"
                                 src={src}
                                 data-index={idx}
-                                alt={`Reframed Still — frame ${idx + 1}`}
+                                alt={`Reframed Still by Dai Pan, black-and-white gelatin silver print frame ${idx + 1}`}
                                 loading={idx < 2 ? "eager" : "lazy"}
                                 decoding="async"
                             />
@@ -496,7 +510,7 @@ const frameHints = [
         function openAt(i) {
             index = (i + sources.length) % sources.length;
             view.src = sources[index];
-            view.alt = "Reframed Still — frame " + String(index + 1).padStart(2, "0");
+            view.alt = "Reframed Still by Dai Pan, black-and-white gelatin silver print frame " + String(index + 1).padStart(2, "0");
             lb.classList.add("is_open");
             lb.setAttribute("aria-hidden", "false");
             document.documentElement.style.overflow = "hidden";
@@ -546,7 +560,7 @@ const frameHints = [
         function openAt(i) {
             index = (i + sources.length) % sources.length;
             view.src = sources[index];
-            view.alt = "Reframed Still — frame " + String(index + 1).padStart(2, "0");
+            view.alt = "Reframed Still by Dai Pan, black-and-white gelatin silver print frame " + String(index + 1).padStart(2, "0");
             lb.classList.add("is_open");
             lb.setAttribute("aria-hidden", "false");
             document.documentElement.style.overflow = "hidden";

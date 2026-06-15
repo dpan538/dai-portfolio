@@ -10,7 +10,7 @@ export default defineConfig({
             filter: (page) => !page.includes("/quite_off_mobile/"),
             serialize: (item) => ({
                 ...item,
-                lastmod: new Date("2026-05-06"),
+                lastmod: new Date("2026-06-15"),
             }),
         }),
     ],

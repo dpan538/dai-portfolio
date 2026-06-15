@@ -4,16 +4,39 @@ import OptimizedImage from "../components/OptimizedImage.astro";
 
 const base = "/projects/monolith_for_light";
 const title = "Monolith for Light";
+const description = "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.";
+const projectImages = Array.from({ length: 11 }, (_, i) => `${base}/gallery_${String(i + 1).padStart(2, "0")}.jpg`);
+const projectMeta = {
+    name: title,
+    schemaType: "CreativeWork",
+    year: "2025",
+    medium: "Conceptual architecture, gallery design, rendering, plan, elevation, section, and design research",
+    artform: "Conceptual architectural design",
+    location: "New York",
+    description,
+    images: projectImages,
+    imageAlt: "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies.",
+    keywords: ["Monolith for Light", "Dai Pan architecture", "conceptual architecture", "gallery design", "design research", "spatial design", "daylight", "shadow", "architectural rendering", "plan elevation section"],
+};
 ---
 
-<BaseLayout title={`${title} — Dai Pan`} description="Monolith for Light by Dai Pan is a design research and visual art project studying mass, restraint, shadow, and daylight as spatial structure." canonical="https://daipan.art/gallery_design" ogImage={`${base}/gallery_01.jpg`} ogType="article" active="gallery_design" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Monolith for Light", url: "https://daipan.art/gallery_design" }]}>
+<BaseLayout
+    title="Monolith for Light — Conceptual Architecture Design by Dai Pan"
+    description={description}
+    canonical="https://daipan.art/gallery_design"
+    ogImage={`${base}/gallery_01.jpg`}
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="gallery_design"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Monolith for Light", url: "https://daipan.art/gallery_design" }]}>
     <article class="gallery">
         <!-- 首段：图左文右 -->
         <section class="gallery__section gallery__intro-row">
             <figure class="gallery__figure gallery__intro-figure">
                 <OptimizedImage
                     src={`${base}/gallery_01.jpg`}
-                    alt="Monolith for Light — atmosphere and massing (01)"
+                    alt="Monolith for Light by Dai Pan, 2025 conceptual architecture and gallery design project in New York, atmosphere and massing rendering"
                     priority
                 />
             </figure>
@@ -35,13 +58,13 @@ const title = "Monolith for Light";
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_02.jpg`}
-                    alt="Plan / elevation / section (02)"
+                    alt="Monolith for Light by Dai Pan, architectural plan elevation and section drawing"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_03.jpg`}
-                    alt="Sectional study (03)"
+                    alt="Monolith for Light by Dai Pan, sectional study of light and interior voids"
                 />
             </figure>
             <p class="gallery__text">
@@ -60,13 +83,13 @@ const title = "Monolith for Light";
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_05.jpg`}
-                    alt="Site / horizon study (05)"
+                    alt="Monolith for Light by Dai Pan, site and horizon study for conceptual gallery design"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_06.jpg`}
-                    alt="Night exterior (06)"
+                    alt="Monolith for Light by Dai Pan, night exterior rendering of gallery mass and light cuts"
                 />
             </figure>
             <p class="gallery__text">
@@ -77,7 +100,7 @@ const title = "Monolith for Light";
             <figure class="gallery__figure">
                 <OptimizedImage
                     src={`${base}/gallery_09.jpg`}
-                    alt="Exploded axonometric (07)"
+                    alt="Monolith for Light by Dai Pan, exploded axonometric architectural diagram"
                 />
             </figure>
         </section>
@@ -92,13 +115,13 @@ const title = "Monolith for Light";
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_07.jpg`}
-                    alt="Interior gallery (07)"
+                    alt="Monolith for Light by Dai Pan, interior gallery rendering with controlled daylight"
                 />
             </figure>
             <figure class="gallery__figure gallery__figure--compact">
                 <OptimizedImage
                     src={`${base}/gallery_08.jpg`}
-                    alt="Interior corridor (08)"
+                    alt="Monolith for Light by Dai Pan, interior corridor rendering with slit light"
                 />
             </figure>
         </section>
@@ -113,20 +136,20 @@ const title = "Monolith for Light";
                 <figure class="gallery__tile">
                     <OptimizedImage
                         src={`${base}/gallery_10.jpg`}
-                        alt="Material / detail study (10)"
+                        alt="Monolith for Light by Dai Pan, material and architectural detail study"
                     />
                 </figure>
                 <figure class="gallery__tile">
                     <OptimizedImage
                         src={`${base}/gallery_11.jpg`}
-                        alt="Section perspective (11)"
+                        alt="Monolith for Light by Dai Pan, section perspective of gallery interior"
                     />
                 </figure>
             </div>
             <figure class="gallery__figure">
                 <OptimizedImage
                     src={`${base}/gallery_04.jpg`}
-                    alt="Flow / access diagram (04)"
+                    alt="Monolith for Light by Dai Pan, flow and access diagram for gallery circulation"
                 />
             </figure>
             <p class="gallery__text">

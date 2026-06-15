@@ -25,6 +25,19 @@ const works = [
     { id: "03", image: "/projects/masks/masks03.jpg", medium: "Limestone Lithography", size: "8.5x13.5 inches", year: "2024", align: "left", text: `Curiosity as pressure — an invisible force bending perception. The desire to look and the resistance to being seen collide; what emerges is a drifting presence, folding back like a fragile Möbius continuity.`, keywords: ["invisible force", "formless", "tension rather than stability"] },
     { id: "04", image: "/projects/masks/masks04.jpg", medium: "Limestone Lithography", size: "7x9 inches", year: "2025", align: "right", text: `Repetition as reduction. Language loses weight; attraction, obsession, and projection dissolve into a single movement. The work persists through encounter rather than declaration.`, keywords: ["Language loses weight", "obsession"] },
 ];
+const projectDescription = "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.";
+const projectMeta = {
+    name: "Masks",
+    schemaType: "VisualArtwork",
+    year: "2024-2025",
+    medium: "Limestone lithography printmaking series",
+    artform: "Printmaking and visual art",
+    location: "New York",
+    description: projectDescription,
+    images: worksDesktop.map((work) => work.image),
+    imageAlt: "Masks by Dai Pan, limestone lithography printmaking series.",
+    keywords: ["Masks", "Dai Pan printmaking", "limestone lithography", "lithography series", "Fumiko Enchi", "Onnamen", "face", "concealment", "abstraction", "visual art"],
+};
 ---
 
 <style is:global>
@@ -43,7 +56,16 @@ const works = [
     }
 </style>
 
-<BaseLayout title="Masks" description="Masks by Dai Pan is a limestone lithography series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction through printmaking." canonical="https://daipan.art/masks" ogImage="/projects/masks/masks01.jpg" ogType="article" active="masks" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Masks", url: "https://daipan.art/masks" }]}>
+<BaseLayout
+    title="Masks — Lithography Printmaking Series by Dai Pan"
+    description={projectDescription}
+    canonical="https://daipan.art/masks"
+    ogImage="/projects/masks/masks01.jpg"
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="masks"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Masks", url: "https://daipan.art/masks" }]}>
 
     <!-- Desktop: backup 7a49036 的 project/row 结构 -->
     <section class="masks-desktop">
@@ -51,7 +73,7 @@ const works = [
             {worksDesktop.map((work, index) => (
                 <div class={`row row--${work.align}`}>
                     <div class="image" data-index={index}>
-                        <img src={work.image} alt={`Masks ${work.id}`} />
+                        <img src={work.image} alt={`Masks by Dai Pan, limestone lithography print ${work.id}, ${work.year}`} />
                     </div>
                     <div class="text">
                         <p class="meta">
@@ -66,7 +88,7 @@ const works = [
         </div>
         <div id="lightbox-desktop" class="lightbox lightbox-desktop hidden">
             <button class="prev">←</button>
-            <img id="lightbox-image-desktop" alt="Masks" />
+            <img id="lightbox-image-desktop" alt="Masks by Dai Pan, limestone lithography print preview" />
             <button class="next">→</button>
         </div>
     </section>
@@ -76,7 +98,7 @@ const works = [
         {works.map((work, index) => (
             <article class="masks-work" data-align={work.align}>
                 <div class="masks-image" data-index={index}>
-                    <img src={work.image} alt={`Masks ${work.id}`} />
+                    <img src={work.image} alt={`Masks by Dai Pan, limestone lithography print ${work.id}, ${work.year}`} />
                 </div>
                 <div class="masks-text">
                     <p class="masks-meta"><span class="masks-meta-line">{work.medium}</span><br /><span class="masks-meta-line">{work.size}, {work.year}</span></p>
@@ -86,7 +108,7 @@ const works = [
         ))}
         <div id="lightbox" class="masks-lightbox hidden">
             <div class="masks-lightbox__inner">
-                <img id="lightbox-image" class="masks-lightbox__img" alt="Masks" />
+                <img id="lightbox-image" class="masks-lightbox__img" alt="Masks by Dai Pan, limestone lithography print preview" />
                 <div class="masks-lightbox__controls">
                     <button class="masks-lightbox__nav prev" aria-label="Previous">←</button>
                     <button class="masks-lightbox__close" aria-label="Close">✕</button>

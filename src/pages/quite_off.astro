@@ -27,9 +27,30 @@ const seoDescription =
     "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.";
 const ogImagePath = "/projects/quite_off/quite_01.jpg";
 const SITE_URL = "https://daipan.art";
+const projectMeta = {
+    name: "Quite Off",
+    schemaType: "VisualArtwork",
+    year: "2025",
+    medium: "Kodak Vision3 film photography, writing, and unfinished film fragment",
+    artform: "Film photography and image-based visual art",
+    location: "New York / China",
+    description: seoDescription,
+    images,
+    imageAlt: "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+    keywords: ["Quite Off", "Dai Pan film photography", "Kodak Vision3", "unfinished film", "image-based work", "visual art", "photography", "writing", "motherhood", "red-green motif"],
+};
 ---
 
-<BaseLayout title="Quite Off — Dai Pan" description={seoDescription} canonical={`${SITE_URL}/quite_off`} ogImage={ogImagePath} ogType="article" active="quite_off" breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
+<BaseLayout
+    title="Quite Off — Film Photography & Visual Art by Dai Pan"
+    description={seoDescription}
+    canonical={`${SITE_URL}/quite_off`}
+    ogImage={ogImagePath}
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="quite_off"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
 
     <div class="qo-viewport qo-viewport--desktop">
         <div class="qo_page" id="qo_page">
@@ -38,7 +59,7 @@ const SITE_URL = "https://daipan.art";
                     <p class="qo_stock_above">Kodak Vision3 5203 / 5207 / 5219</p>
                     <div class="qo_stage" aria-live="polite">
                         <div class="qo_frame">
-                            <img class="qo_image" id="qo-image" src={images[0]} alt="Quite Off still 01" loading="eager" decoding="async" />
+                            <img class="qo_image" id="qo-image" src={images[0]} alt="Quite Off by Dai Pan, Kodak Vision3 film still 01" loading="eager" decoding="async" />
                         </div>
                     </div>
                     <div class="qo_controls">
@@ -149,7 +170,7 @@ const SITE_URL = "https://daipan.art";
                 semanticSpans.forEach(s => s.classList.remove("semantic-active"));
                 getKeys(index).forEach(key => { semanticSpans.forEach(s => { if (s.getAttribute("data-key") === key) s.classList.add("semantic-active"); }); });
             }
-            function setImage(src) { if (imageEl) { imageEl.src = src; imageEl.alt = "Quite Off still " + pad(index + 1); } }
+            function setImage(src) { if (imageEl) { imageEl.src = src; imageEl.alt = "Quite Off by Dai Pan, Kodak Vision3 film still " + pad(index + 1); } }
             function fadeSwap(next) {
                 if (!imageEl || isTransitioning) return;
                 isTransitioning = true;

@@ -24,9 +24,30 @@ const paragraphs = [
 const seoDescription =
     "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.";
 const SITE_URL = "https://daipan.art";
+const projectMeta = {
+    name: "Quite Off",
+    schemaType: "VisualArtwork",
+    year: "2025",
+    medium: "Kodak Vision3 film photography, writing, and unfinished film fragment",
+    artform: "Film photography and image-based visual art",
+    location: "New York / China",
+    description: seoDescription,
+    images,
+    imageAlt: "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+    keywords: ["Quite Off", "Dai Pan film photography", "Kodak Vision3", "unfinished film", "image-based work", "visual art", "photography", "writing", "motherhood", "red-green motif"],
+};
 ---
 
-<BaseLayout title="Quite Off — Dai Pan" description={seoDescription} canonical={`${SITE_URL}/quite_off`} ogImage="/projects/quite_off/quite_01.jpg" ogType="article" active="quite_off" breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
+<BaseLayout
+    title="Quite Off — Film Photography & Visual Art by Dai Pan"
+    description={seoDescription}
+    canonical={`${SITE_URL}/quite_off`}
+    ogImage="/projects/quite_off/quite_01.jpg"
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="quite_off"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
 
     <ProjectMobileLayout>
         <QuiteOffMobile images={images} paragraphs={paragraphs} />

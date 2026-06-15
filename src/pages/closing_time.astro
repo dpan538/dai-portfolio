@@ -3,12 +3,33 @@ import BaseLayout from "../layouts/base_layout.astro";
 
 const title = "Closing Time";
 const description =
-    "Closing Time by Dai Pan is a single-piece 5-color photo lithography work, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.";
+    "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.";
 
 const imagePath = "/projects/closing_time/closing_time.jpg";
+const projectMeta = {
+    name: title,
+    schemaType: "VisualArtwork",
+    year: "2025",
+    medium: "5-color photo lithography, CMYK, opaque white, film photograph, hand-printed",
+    artform: "Photo lithography and printmaking",
+    location: "Manhattan, New York",
+    description,
+    images: [imagePath],
+    imageAlt: "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph.",
+    keywords: ["Closing Time", "Dai Pan lithography", "photo lithography", "5-color lithography", "CMYK printmaking", "opaque white", "film photograph", "Manhattan", "printmaking", "visual art"],
+};
 ---
 
-<BaseLayout title={title} description={description} canonical="https://daipan.art/closing_time" ogImage={imagePath} ogType="article" active="closing_time" breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Closing Time", url: "https://daipan.art/closing_time" }]}>
+<BaseLayout
+    title="Closing Time — Photo Lithography Print by Dai Pan"
+    description={description}
+    canonical="https://daipan.art/closing_time"
+    ogImage={imagePath}
+    ogImageAlt={projectMeta.imageAlt}
+    ogType="article"
+    active="closing_time"
+    project={projectMeta}
+    breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Closing Time", url: "https://daipan.art/closing_time" }]}>
 
     <!-- ===== 页面主体（右侧内容区）===== -->
     <section class="ct">
@@ -18,7 +39,7 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
                 <img
                     class="ct__img"
                     src={imagePath}
-                    alt="Closing Time lithography artwork"
+                    alt="Closing Time by Dai Pan, 5-color photo lithography print from a Manhattan film photograph"
                 />
             </figure>
         </div>
@@ -28,8 +49,8 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
             <header class="ct__title-block">
                 <h1>Closing Time</h1>
                 <p class="ct__meta">
-                5-Color Photo Lithography — CMYK + Opaque White · Film
-                Photograph · Hand-Printed
+                2025 · 5-Color Photo Lithography — CMYK + Opaque White · Film
+                Photograph · Hand-Printed · Manhattan, New York
                 </p>
             </header>
             <div class="ct__description">
@@ -47,7 +68,7 @@ const imagePath = "/projects/closing_time/closing_time.jpg";
     <!-- Lightbox（lightbox 自身为 backdrop，关闭按钮在图片下方居中） -->
     <div id="lightbox" class="lightbox hidden">
         <div class="lightbox__inner">
-            <img id="lightbox-image" class="lightbox__img" src={imagePath} alt="Closing Time - Full View" />
+            <img id="lightbox-image" class="lightbox__img" src={imagePath} alt="Closing Time by Dai Pan, full view of the 5-color photo lithography print" />
             <button class="lightbox__close" aria-label="Close lightbox">
             <svg
                 width="32"
