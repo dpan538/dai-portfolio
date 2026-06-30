@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
+import ProjectSemanticInfo from "../components/ProjectSemanticInfo.astro";
 
 function wrapKeywords(text: string, keywords: string[]): string {
     const sorted = [...keywords].sort((a, b) => b.length - a.length);
@@ -37,6 +38,8 @@ const projectMeta = {
     images: worksDesktop.map((work) => work.image),
     imageAlt: "Masks by Dai Pan, limestone lithography printmaking series.",
     keywords: ["Masks", "Dai Pan printmaking", "limestone lithography", "lithography series", "Fumiko Enchi", "Onnamen", "face", "concealment", "abstraction", "visual art"],
+    sameAs: ["https://sva.design/projects/19180/masks/"],
+    archiveLinks: [{ name: "Masks by Dai Pan", url: "https://sva.design/projects/19180/masks/", publisher: "SVA Design" }],
 };
 ---
 
@@ -66,6 +69,16 @@ const projectMeta = {
     active="masks"
     project={projectMeta}
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Masks", url: "https://daipan.art/masks" }]}>
+
+    <ProjectSemanticInfo
+        title={projectMeta.name}
+        year={projectMeta.year}
+        medium={projectMeta.medium}
+        artform={projectMeta.artform}
+        location={projectMeta.location}
+        description={projectMeta.description}
+        archiveLinks={projectMeta.archiveLinks}
+    />
 
     <!-- Desktop: backup 7a49036 的 project/row 结构 -->
     <section class="masks-desktop">

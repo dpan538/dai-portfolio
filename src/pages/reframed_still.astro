@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
+import ProjectSemanticInfo from "../components/ProjectSemanticInfo.astro";
 
 const page_title = "Reframed Still";
 const page_description =
@@ -37,6 +38,8 @@ const projectMeta = {
     images,
     imageAlt: "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
     keywords: ["Reframed Still", "Dai Pan photography", "gelatin silver print", "black-and-white photography", "photographic sequence", "New York photography", "Guangzhou photography", "Shanghai photography", "Nantong photography", "urban stillness"],
+    sameAs: ["https://sva.design/projects/19409/reframed-still/"],
+    archiveLinks: [{ name: "Reframed Still by Dai Pan", url: "https://sva.design/projects/19409/reframed-still/", publisher: "SVA Design" }],
 };
 
 const frameHints = [
@@ -61,6 +64,16 @@ const frameHints = [
     active="reframed_still"
     project={projectMeta}
     breadcrumbs={breadcrumbs}>
+
+    <ProjectSemanticInfo
+        title={projectMeta.name}
+        year={projectMeta.year}
+        medium={projectMeta.medium}
+        artform={projectMeta.artform}
+        location={projectMeta.location}
+        description={projectMeta.description}
+        archiveLinks={projectMeta.archiveLinks}
+    />
 
     <!-- Desktop: backup 7a49036 的 strip/desc_panel 结构 -->
     <div class="reframed-desktop">

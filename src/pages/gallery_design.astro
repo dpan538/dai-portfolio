@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
 import OptimizedImage from "../components/OptimizedImage.astro";
+import ProjectSemanticInfo from "../components/ProjectSemanticInfo.astro";
 
 const base = "/projects/monolith_for_light";
 const title = "Monolith for Light";
@@ -30,6 +31,15 @@ const projectMeta = {
     active="gallery_design"
     project={projectMeta}
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "Monolith for Light", url: "https://daipan.art/gallery_design" }]}>
+    <ProjectSemanticInfo
+        title={projectMeta.name}
+        year={projectMeta.year}
+        medium={projectMeta.medium}
+        artform={projectMeta.artform}
+        location={projectMeta.location}
+        description={projectMeta.description}
+    />
+
     <article class="gallery">
         <!-- 首段：图左文右 -->
         <section class="gallery__section gallery__intro-row">

@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/base_layout.astro";
 import ProjectMobileLayout from "../layouts/project_mobile.astro";
 import QuiteOffMobile from "../components/projects/QuiteOffMobile.astro";
+import ProjectSemanticInfo from "../components/ProjectSemanticInfo.astro";
 
 const images = [
     "/projects/quite_off/quite_01.jpg",
@@ -48,6 +49,15 @@ const projectMeta = {
     active="quite_off"
     project={projectMeta}
     breadcrumbs={[{ name: "Home", url: SITE_URL }, { name: "Quite Off", url: `${SITE_URL}/quite_off` }]}>
+
+    <ProjectSemanticInfo
+        title={projectMeta.name}
+        year={projectMeta.year}
+        medium={projectMeta.medium}
+        artform={projectMeta.artform}
+        location={projectMeta.location}
+        description={projectMeta.description}
+    />
 
     <ProjectMobileLayout>
         <QuiteOffMobile images={images} paragraphs={paragraphs} />

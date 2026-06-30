@@ -1,0 +1,82 @@
+---
+type ArchiveLink = {
+    name: string;
+    url: string;
+    publisher?: string;
+};
+
+const {
+    title,
+    year,
+    medium,
+    artform,
+    location,
+    description,
+    archiveLinks = [] as ArchiveLink[],
+} = Astro.props;
+
+const locations = Array.isArray(location) ? location.join(", ") : location;
+const headingId = `semantic-${String(title).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "work"}`;
+---
+
+<section class="project-semantic-info" aria-labelledby={headingId}>
+    <h1 id={headingId}>{title} by Dai Pan</h1>
+    <p>{description}</p>
+    <dl>
+        {year && (
+            <>
+                <dt>Year</dt>
+                <dd>{year}</dd>
+            </>
+        )}
+        {medium && (
+            <>
+                <dt>Medium</dt>
+                <dd>{medium}</dd>
+            </>
+        )}
+        {artform && (
+            <>
+                <dt>Art form</dt>
+                <dd>{artform}</dd>
+            </>
+        )}
+        {locations && (
+            <>
+                <dt>Location</dt>
+                <dd>{locations}</dd>
+            </>
+        )}
+    </dl>
+    {archiveLinks.length > 0 && (
+        <p>
+            Related archive:
+            {archiveLinks.map((link: ArchiveLink, index: number) => (
+                <>
+                    {index > 0 ? ", " : " "}
+                    <a href={link.url}>{link.name}</a>
+                    {link.publisher ? `, ${link.publisher}` : ""}
+                </>
+            ))}
+        </p>
+    )}
+</section>
+
+<style>
+    .project-semantic-info {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        clip-path: inset(50%);
+        border: 0;
+        white-space: nowrap;
+    }
+
+    .project-semantic-info * {
+        white-space: normal;
+    }
+</style>

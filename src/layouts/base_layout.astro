@@ -27,6 +27,8 @@ const {
             keywords?: string[];
             images?: string[];
             imageAlt?: string;
+            sameAs?: string[];
+            archiveLinks?: { name: string; url: string; publisher?: string }[];
         }
         | undefined,
 } = Astro.props;
@@ -157,7 +159,7 @@ const websiteSchema = {
     name: "Dai Pan (潘岱) — Artist, Designer & Portfolio",
     alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
     url: SITE_URL,
-    description: "Official portfolio of Dai Pan / Pan Dai (潘岱), a visual artist, designer, photographer, printmaker, and writer based in Brisbane. Not affiliated with DAIPAN Butoh Collective.",
+    description: "Official visual art and design portfolio of Dai Pan / Pan Dai (潘岱), a visual artist, designer, photographer, printmaker, and writer based in Brisbane. Poetry and the Three Worlds writing collection are published separately at daipan.ink. Not affiliated with DAIPAN Butoh Collective.",
     image: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg`,
     author: { "@type": "Person", "name": "Dai Pan", "url": SITE_URL },
     inLanguage: ["en", "zh-Hans"],
@@ -256,6 +258,15 @@ const creativeWorkSchema = ogType === "article"
         ...(project?.keywords?.length && {
             keywords: project.keywords.join(", "),
             about: project.keywords.map((name) => ({ "@type": "Thing", name })),
+        }),
+        ...(project?.sameAs?.length && { sameAs: project.sameAs }),
+        ...(project?.archiveLinks?.length && {
+            subjectOf: project.archiveLinks.map((link) => ({
+                "@type": "WebPage",
+                name: link.name,
+                url: link.url,
+                ...(link.publisher && { publisher: { "@type": "Organization", name: link.publisher } }),
+            })),
         }),
         creator: { "@type": "Person", name: "Dai Pan", alternateName: ["Pan Dai", "潘岱"], url: SITE_URL },
         author: { "@type": "Person", name: "Dai Pan", alternateName: ["Pan Dai", "潘岱"], url: SITE_URL },
@@ -412,6 +423,7 @@ const creativeWorkSchema = ogType === "article"
             </aside>
 
             <main class:list={["content", { "content--home": homePage }, { "mobile_main": homePage }]}>
+                {homePage && <h1 class="visually-hidden">Dai Pan (潘岱) - Visual Artist, Designer & Portfolio</h1>}
                 <slot />
             </main>
         </div>
@@ -507,6 +519,19 @@ const creativeWorkSchema = ogType === "article"
             :global(button:focus-visible) {
                 outline: 2px solid currentColor;
                 outline-offset: 3px;
+            }
+
+            .visually-hidden {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                padding: 0;
+                margin: -1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+                clip-path: inset(50%);
+                border: 0;
+                white-space: nowrap;
             }
 
             .shell {

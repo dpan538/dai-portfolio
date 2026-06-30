@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/base_layout.astro";
+import ProjectSemanticInfo from "../components/ProjectSemanticInfo.astro";
 
 const total = 22;
 
@@ -27,6 +28,8 @@ const projectMeta = {
     images: [coverImg, endImg, ...spreads],
     imageAlt: "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
     keywords: ["The Threes", "Dai Pan book design", "handmade book-object", "poetry", "image", "story", "writing", "visual art", "design research", "artist book"],
+    sameAs: ["https://sva.design/projects/19172/the-threes/"],
+    archiveLinks: [{ name: "The Threes by Dai Pan", url: "https://sva.design/projects/19172/the-threes/", publisher: "SVA Design" }],
 };
 ---
 
@@ -40,6 +43,16 @@ const projectMeta = {
     active="the_threes"
     project={projectMeta}
     breadcrumbs={[{ name: "Home", url: "https://daipan.art" }, { name: "The Threes", url: "https://daipan.art/the_threes" }]}>
+
+    <ProjectSemanticInfo
+        title={projectMeta.name}
+        year={projectMeta.year}
+        medium={projectMeta.medium}
+        artform={projectMeta.artform}
+        location={projectMeta.location}
+        description={projectMeta.description}
+        archiveLinks={projectMeta.archiveLinks}
+    />
 
     <!-- 1) HERO FIRST（单列，首屏即 hero 图） -->
     <section class="threes threes__intro" id="top">
