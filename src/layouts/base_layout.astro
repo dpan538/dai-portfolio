@@ -99,6 +99,7 @@ const allKeywords = Array.from(new Set([...baseKeywords, ...keywords, ...(projec
 
 const personSchema = {
     "@context": "https://schema.org",
+    "@id": `${SITE_URL}/#person`,
     "@type": "Person",
     name: "Dai Pan",
     alternateName: [
@@ -152,9 +153,11 @@ const personSchema = {
     alumniOf: { "@type": "CollegeOrUniversity", "name": "School of Visual Arts", "url": "https://sva.edu", "address": { "@type": "PostalAddress", "addressLocality": "New York", "addressCountry": "US" } },
     image: `${SITE_URL}/projects/about/about.jpg`,
 };
+const { "@context": _personSchemaContext, ...personEntitySchema } = personSchema;
 
 const websiteSchema = {
     "@context": "https://schema.org",
+    "@id": `${SITE_URL}/#website`,
     "@type": "WebSite",
     name: "Dai Pan (潘岱) — Artist, Designer & Portfolio",
     alternateName: ["潘岱", "Pan Dai", "daipan.art", "Dai Pan portfolio"],
@@ -169,11 +172,14 @@ const websiteSchema = {
 const profilePageSchema = homePage
     ? {
         "@context": "https://schema.org",
+        "@id": `${SITE_URL}/#profilepage`,
         "@type": "ProfilePage",
         name: "Dai Pan (潘岱) — Artist, Designer & Portfolio",
         url: SITE_URL,
         description,
-        about: personSchema,
+        mainEntity: personEntitySchema,
+        about: { "@id": `${SITE_URL}/#person` },
+        isPartOf: { "@id": `${SITE_URL}/#website` },
         primaryImageOfPage: { "@type": "ImageObject", url: absoluteOgImage || `${SITE_URL}/projects/quite_off/quite_01.jpg` },
         inLanguage: ["en", "zh-Hans"],
     }

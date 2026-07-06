@@ -13,7 +13,7 @@ export default defineConfig({
             serialize: (item) => ({
                 ...item,
                 url: withoutTrailingSlash(item.url),
-                lastmod: new Date("2026-06-30"),
+                lastmod: new Date("2026-07-06"),
             }),
         }),
     ],
