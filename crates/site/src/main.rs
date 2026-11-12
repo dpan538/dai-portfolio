@@ -120,7 +120,7 @@ fn render(root: &Path, out: &Path, local: bool) -> Result<usize> {
             escape(&page.canonical)
         );
         for (name, value) in &page.meta {
-            if name == "viewport" {
+            if matches!(name.as_str(), "viewport" | "theme-color") {
                 continue;
             }
             let value = if name == "robots" && (local || page.key == "404") {

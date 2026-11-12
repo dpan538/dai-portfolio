@@ -15,6 +15,7 @@ pub struct Gallery {
     navigate: bool,
     opener: RefCell<Option<Element>>,
     old_overflow: RefCell<String>,
+    scroll_y: Cell<Option<f64>>,
 }
 impl Gallery {
     pub fn new(images: Vec<Element>, container: Element, view: Element) -> Option<Rc<Self>> {
@@ -53,6 +54,7 @@ impl Gallery {
             navigate,
             opener: RefCell::new(None),
             old_overflow: RefCell::new(String::new()),
+            scroll_y: Cell::new(None),
         });
         for (sel, step) in [(".prev,.lb_prev", -1), (".next,.lb_next", 1)] {
             for el in within(&gallery.container, sel) {
@@ -136,10 +138,25 @@ impl Gallery {
                 }
             }
         });
+        let width = Cell::new(
+            window()
+                .inner_width()
+                .ok()
+                .and_then(|v| v.as_f64())
+                .unwrap_or(0.),
+        );
         on(&window(), "resize", {
             let g = gallery.clone();
             move |_| {
-                if g.open.get() {
+                let next = window()
+                    .inner_width()
+                    .ok()
+                    .and_then(|v| v.as_f64())
+                    .unwrap_or(0.);
+                let changed = width.replace(next) != next;
+                // Safari's browser chrome changes viewport height during a tap or scroll.
+                // Only a width/breakpoint change invalidates the photographic layout.
+                if changed && g.open.get() {
                     g.close();
                 }
             }
@@ -174,16 +191,26 @@ impl Gallery {
         }
     }
     pub fn show(&self, i: usize) {
-        if let Some(body) = doc().body() {
-            class(body.as_ref(), "image-preview-open", true);
-        }
         if !self.open.replace(true) {
+            if one("body[data-view='mobile']").is_some() {
+                let y = window().scroll_y().unwrap_or(0.);
+                self.scroll_y.set(Some(y));
+                if let Some(body) = doc().body() {
+                    style(body.as_ref(), "top", &format!("-{y}px"));
+                }
+            }
             *self.opener.borrow_mut() = doc().active_element();
             *self.old_overflow.borrow_mut() = doc()
                 .document_element()
                 .and_then(|e| e.dyn_into::<web_sys::HtmlElement>().ok())
                 .map(|e| e.style().get_property_value("overflow").unwrap_or_default())
                 .unwrap_or_default();
+        }
+        if let Some(body) = doc().body() {
+            class(body.as_ref(), "image-preview-open", true);
+        }
+        if let Some(theme) = one("meta[name='theme-color']") {
+            attr(&theme, "content", "#000000");
         }
         self.index.set(i.min(self.sources.len() - 1));
         self.update();
@@ -194,6 +221,7 @@ impl Gallery {
         class(&self.container, "is_open", true);
         attr(&self.container, "aria-hidden", "false");
         if let Some(html) = doc().document_element() {
+            class(&html, "image-preview-open", true);
             style(&html, "overflow", "hidden");
         }
         let target = self
@@ -224,11 +252,21 @@ impl Gallery {
         if let Some(body) = doc().body() {
             class(body.as_ref(), "image-preview-open", false);
         }
+        if let Some(theme) = one("meta[name='theme-color']") {
+            attr(&theme, "content", "#ffffff");
+        }
         class(&self.container, "hidden", true);
         class(&self.container, "is_open", false);
         attr(&self.container, "aria-hidden", "true");
         if let Some(html) = doc().document_element() {
+            class(&html, "image-preview-open", false);
             style(&html, "overflow", &self.old_overflow.borrow());
+        }
+        if let Some(y) = self.scroll_y.take() {
+            if let Some(body) = doc().body() {
+                style(body.as_ref(), "top", "");
+            }
+            window().scroll_to_with_x_and_y(0., y);
         }
         for panel in all("#review-panel,.project-info") {
             style(&panel, "display", "");

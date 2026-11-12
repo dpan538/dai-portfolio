@@ -48,3 +48,5 @@ The existing Vercel project imports GitHub `main`: framework **Other**, build `s
 ![Measured performance comparison](reports/performance/summary.png)
 
 The report compares the previous production commit with the Rust build, including slower cold image processing and larger first-visit control payloads alongside faster cached rebuilds. It does not claim measured Core Web Vitals improvements.
+
+The favicon uses the [official Rust logo](https://github.com/rust-lang/rust-artwork/tree/main/logo), licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The SVG is unchanged; raster icons are resized with white padding. Rust is a trademark of the Rust Foundation; this independent portfolio is not endorsed by the Rust project.

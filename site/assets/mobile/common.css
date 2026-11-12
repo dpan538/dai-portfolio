@@ -1,9 +1,11 @@
 /* The mobile views load this system instead of desktop presentation.css. */
-body[data-view='mobile'] { --mobile-nav-top:max(26px,env(safe-area-inset-top,0px)); font-size:15px; line-height:1.8; overflow-x:clip; }
+body[data-view='mobile'] { --mobile-nav-top:calc(26px + env(safe-area-inset-top,0px)); font-size:15px; line-height:1.8; overflow-x:clip; }
 body[data-view='mobile'] .shell { display:block; min-width:0; }
-body[data-view='mobile'] .mobile_header { display:flex; top:0; height:calc(var(--mobile-nav-top) + 78px); padding-top:var(--mobile-nav-top); padding-bottom:26px; background:#fff; }
+body[data-view='mobile'] .mobile_header { display:flex; top:0; height:calc(var(--mobile-nav-top) + 78px); padding-top:var(--mobile-nav-top); padding-bottom:26px; padding-left:max(26px,env(safe-area-inset-left,0px)); padding-right:max(26px,env(safe-area-inset-right,0px)); background:#fff; }
 body[data-view='mobile'] .mobile_menu_icon svg { display:block; width:24px; height:24px; }
-body[data-view='mobile'] .content { width:100%; max-width:768px; margin-inline:auto; padding:calc(var(--mobile-nav-top) + 100px) 26px max(56px,env(safe-area-inset-bottom)); overflow:visible; }
+body[data-view='mobile'] .content { width:100%; max-width:768px; margin-inline:auto; padding:calc(var(--mobile-nav-top) + 100px) max(26px,env(safe-area-inset-right,0px)) calc(56px + env(safe-area-inset-bottom,0px)) max(26px,env(safe-area-inset-left,0px)); overflow:visible; }
+body[data-view='mobile'] .mobile_overlay { box-sizing:border-box; padding:calc(env(safe-area-inset-top,0px) + 60px) 0 calc(env(safe-area-inset-bottom,0px) + 20px); }
+body[data-view='mobile'] .mobile_overlay_menu { max-height:100%; box-sizing:border-box; flex-shrink:1; }
 body[data-view='mobile'] .content>* { max-width:none; }
 body[data-view='mobile'] h1 { font:400 18px/1.5 var(--body); letter-spacing:normal; margin:0 0 16px; }
 body[data-view='mobile'] h2 { font:400 16px/1.6 var(--body); text-transform:none; letter-spacing:normal; margin:0 0 18px; }
@@ -27,10 +29,13 @@ body[data-view='mobile'] .m-section { margin-top:36px; }
 .mobile-lightbox { position:fixed; inset:0; z-index:2200; display:none; background:#000; color:#fff; }
 .mobile-lightbox.is_open { display:flex; }
 .mobile-lightbox .lb_backdrop { position:absolute; inset:0; }
-.mobile-lightbox-stage { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; padding:64px 14px 40px; box-sizing:border-box; }
-.mobile-lightbox .lb_view { display:block; width:auto; height:auto; max-width:100%; max-height:calc(100dvh - 150px); object-fit:contain; }
+.mobile-lightbox-stage { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; padding:calc(64px + env(safe-area-inset-top,0px)) max(14px,env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px)); box-sizing:border-box; }
+.mobile-lightbox .lb_view { display:block; width:auto; height:auto; min-height:0; max-width:100%; max-height:calc(100dvh - 170px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px)); object-fit:contain; }
 .mobile-lightbox button { border:0; background:transparent; color:#fff; font:28px/1 system-ui,sans-serif; min-width:48px; min-height:48px; padding:0; cursor:pointer; }
-.mobile-lightbox-close { position:absolute; right:10px; top:max(12px,env(safe-area-inset-top)); }
+.mobile-lightbox-close { position:absolute; right:max(10px,env(safe-area-inset-right,0px)); top:calc(12px + env(safe-area-inset-top,0px)); }
 .mobile-lightbox-nav { display:flex; justify-content:center; align-items:center; gap:24px; width:100%; margin-top:18px; }
 body.image-preview-open .mobile_header { visibility:hidden!important; pointer-events:none!important; }
+html.image-preview-open,body[data-view='mobile'].image-preview-open { background:#000; overscroll-behavior:none; }
+html.image-preview-open { color-scheme:dark; }
+body[data-view='mobile'].image-preview-open { position:fixed; width:100%; }
 @media(prefers-reduced-motion:reduce){ .m-carousel { scroll-behavior:auto; } }
