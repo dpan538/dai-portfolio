@@ -1,0 +1,15 @@
+.not-found[data-scope-not-found] {
+  padding:clamp(48px,8vw,96px) 24px;
+  text-align:center}
+.not-found__title[data-scope-not-found] {
+  font-family:var(--display);
+  font-size:clamp(2rem,4vw,3rem);
+  margin:0 0 12px;
+  color:var(--muted)}
+.not-found__text[data-scope-not-found] {
+  margin:0 0 24px;
+  color:var(--muted)}
+.not-found__link[data-scope-not-found] {
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:3px}

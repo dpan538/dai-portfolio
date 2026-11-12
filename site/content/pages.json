@@ -1,0 +1,3390 @@
+[
+  {
+    "key": "404",
+    "path": "/404.html",
+    "title": "Page not found — Dai Pan",
+    "description": "Official portfolio of Dai Pan / Pan Dai, a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
+    "canonical": "https://daipan.art",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Official portfolio of Dai Pan / Pan Dai, a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks",
+      "theme-color": "#ffffff",
+      "og:title": "Page not found — Dai Pan",
+      "og:description": "Official portfolio of Dai Pan / Pan Dai, a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
+      "og:type": "website",
+      "og:url": "https://daipan.art",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Social preview image for Page not found — Dai Pan",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Page not found — Dai Pan",
+      "twitter:description": "Official portfolio of Dai Pan / Pan Dai, a visual artist, designer, photographer, printmaker, and writer based in Brisbane.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Social preview image for Page not found — Dai Pan"
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      }
+    ],
+    "css": [
+      "/assets/css/404-page.css",
+      "/assets/css/base.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "about",
+    "path": "/about",
+    "title": "About Dai Pan — Visual Artist",
+    "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+    "canonical": "https://daipan.art/about",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan biography, Pan Dai artist, Chinese visual artist, School of Visual Arts Dai Pan, photographer printmaker writer",
+      "theme-color": "#ffffff",
+      "og:title": "About Dai Pan — Visual Artist",
+      "og:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "og:type": "website",
+      "og:url": "https://daipan.art/about",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/about/about.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/about/about.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:alt": "Portrait of Dai Pan outdoors.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "About Dai Pan — Visual Artist",
+      "twitter:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "twitter:image": "https://daipan.art/projects/about/about.jpg",
+      "twitter:image:alt": "Portrait of Dai Pan outdoors."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://daipan.art/about"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://daipan.art/about#webpage",
+        "url": "https://daipan.art/about",
+        "name": "About Dai Pan — Visual Artist",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "inLanguage": "en"
+      }
+    ],
+    "css": [
+      "/assets/css/about-page.css",
+      "/assets/css/base.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "closing_time",
+    "path": "/closing_time",
+    "title": "Closing Time — Photo Lithography Print by Dai Pan",
+    "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+    "canonical": "https://daipan.art/closing_time",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan lithography, photo lithography, 5-color lithography, CMYK printmaking, opaque white, film photograph, Manhattan, printmaking",
+      "theme-color": "#ffffff",
+      "og:title": "Closing Time — Photo Lithography Print by Dai Pan",
+      "og:description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/closing_time",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2400",
+      "og:image:height": "1848",
+      "og:image:alt": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Closing Time — Photo Lithography Print by Dai Pan",
+      "twitter:description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "twitter:image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "twitter:image:alt": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Closing Time",
+            "item": "https://daipan.art/closing_time"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Closing Time",
+        "headline": "Closing Time — Photo Lithography Print by Dai Pan",
+        "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+        "url": "https://daipan.art/closing_time",
+        "mainEntityOfPage": "https://daipan.art/closing_time",
+        "image": [
+          "https://daipan.art/projects/closing_time/closing_time.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/closing_time/closing_time.jpg",
+        "caption": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph.",
+        "temporalCoverage": "2025",
+        "artMedium": "5-color photo lithography, CMYK, opaque white, film photograph, hand-printed",
+        "material": "5-color photo lithography, CMYK, opaque white, film photograph, hand-printed",
+        "artform": "Photo lithography and printmaking",
+        "genre": "Photo lithography and printmaking",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "Manhattan, New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "Manhattan, New York"
+        },
+        "keywords": "Closing Time, Dai Pan lithography, photo lithography, 5-color lithography, CMYK printmaking, opaque white, film photograph, Manhattan, printmaking, visual art",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Closing Time"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "photo lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "5-color lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "CMYK printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "opaque white"
+          },
+          {
+            "@type": "Thing",
+            "name": "film photograph"
+          },
+          {
+            "@type": "Thing",
+            "name": "Manhattan"
+          },
+          {
+            "@type": "Thing",
+            "name": "printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/closing_time#work"
+      }
+    ],
+    "css": [
+      "/assets/css/closing_time-page.css",
+      "/assets/css/base.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "contact",
+    "path": "/contact",
+    "title": "Contact Dai Pan",
+    "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+    "canonical": "https://daipan.art/contact",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, contact Dai Pan, Dai Pan artist contact, Brisbane artist contact, visual artist designer contact",
+      "theme-color": "#ffffff",
+      "og:title": "Contact Dai Pan",
+      "og:description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "og:type": "website",
+      "og:url": "https://daipan.art/contact",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Social preview image for Contact Dai Pan — Artist & Designer",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Contact Dai Pan",
+      "twitter:description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Social preview image for Contact Dai Pan — Artist & Designer"
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://daipan.art/contact"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": "https://daipan.art/contact#webpage",
+        "url": "https://daipan.art/contact",
+        "name": "Contact Dai Pan",
+        "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "inLanguage": "en"
+      }
+    ],
+    "css": [
+      "/assets/css/contact-page.css",
+      "/assets/css/base.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "gallery_design",
+    "path": "/gallery_design",
+    "title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+    "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+    "canonical": "https://daipan.art/gallery_design",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan architecture, conceptual architecture, gallery design, spatial design, daylight, shadow, architectural rendering, plan elevation section",
+      "theme-color": "#ffffff",
+      "og:title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+      "og:description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/gallery_design",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1024",
+      "og:image:height": "1536",
+      "og:image:alt": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+      "twitter:description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "twitter:image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "twitter:image:alt": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Monolith for Light",
+            "item": "https://daipan.art/gallery_design"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Monolith for Light",
+        "headline": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+        "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+        "url": "https://daipan.art/gallery_design",
+        "mainEntityOfPage": "https://daipan.art/gallery_design",
+        "image": [
+          "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_01.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-drawings-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_03.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_04.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-night-v4.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_06.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-interior-v3.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-daylight-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-material-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_10.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_11.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+        "caption": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies.",
+        "temporalCoverage": "2021",
+        "artMedium": "Conceptual architecture, gallery design, rendering, plan, elevation, section, and design research",
+        "material": "Conceptual architecture, gallery design, rendering, plan, elevation, section, and design research",
+        "artform": "Conceptual architectural design",
+        "genre": "Conceptual architectural design",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "Monolith for Light, Dai Pan architecture, conceptual architecture, gallery design, design research, spatial design, daylight, shadow, architectural rendering, plan elevation section",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Monolith for Light"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan architecture"
+          },
+          {
+            "@type": "Thing",
+            "name": "conceptual architecture"
+          },
+          {
+            "@type": "Thing",
+            "name": "gallery design"
+          },
+          {
+            "@type": "Thing",
+            "name": "design research"
+          },
+          {
+            "@type": "Thing",
+            "name": "spatial design"
+          },
+          {
+            "@type": "Thing",
+            "name": "daylight"
+          },
+          {
+            "@type": "Thing",
+            "name": "shadow"
+          },
+          {
+            "@type": "Thing",
+            "name": "architectural rendering"
+          },
+          {
+            "@type": "Thing",
+            "name": "plan elevation section"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/gallery_design#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/css/gallery_design-page.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "home",
+    "path": "/",
+    "title": "Dai Pan — Visual Art & Text",
+    "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+    "canonical": "https://daipan.art",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan artist, Brisbane visual artist, artist designer portfolio, conceptual design portfolio, architecture design, photography portfolio, printmaking portfolio",
+      "theme-color": "#ffffff",
+      "og:title": "Dai Pan — Visual Art & Text",
+      "og:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "og:type": "website",
+      "og:url": "https://daipan.art",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Social preview image for Dai Pan — Artist, Designer & Portfolio",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Dai Pan — Visual Art & Text",
+      "twitter:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Social preview image for Dai Pan — Artist, Designer & Portfolio"
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#profilepage",
+        "@type": "ProfilePage",
+        "name": "Dai Pan — Visual Art & Text",
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "about": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://daipan.art/projects/quite_off/quite_01.jpg"
+        },
+        "inLanguage": [
+          "en"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Dai Pan — Works",
+        "description": "Image-based work across photography, printmaking, writing, visual art, and design research.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Quite Off",
+              "url": "https://daipan.art/quite_off",
+              "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/quite_off#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "The Threes",
+              "url": "https://daipan.art/the_threes",
+              "image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/the_threes#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Monolith for Light",
+              "url": "https://daipan.art/gallery_design",
+              "image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/gallery_design#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "In Praise of Time",
+              "url": "https://daipan.art/in_praise_of_time",
+              "image": "https://daipan.art/_optimized/projects/in_praise_of_time/_K336876_1600w.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/in_praise_of_time#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Reframed Still",
+              "url": "https://daipan.art/reframed_still",
+              "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/reframed_still#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Closing Time",
+              "url": "https://daipan.art/closing_time",
+              "image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/closing_time#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Masks",
+              "url": "https://daipan.art/masks",
+              "image": "https://daipan.art/projects/masks/masks01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/masks#work"
+            }
+          }
+        ]
+      }
+    ],
+    "css": [
+      "/assets/css/home-page.css",
+      "/assets/css/base.css"
+    ],
+    "main_class": [
+      "content",
+      "content--home",
+      "mobile_main"
+    ]
+  },
+  {
+    "key": "masks",
+    "path": "/masks",
+    "title": "Masks — Lithography Printmaking Series by Dai Pan",
+    "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+    "canonical": "https://daipan.art/masks",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan printmaking, limestone lithography, lithography series, Fumiko Enchi, Onnamen, face, concealment, abstraction",
+      "theme-color": "#ffffff",
+      "og:title": "Masks — Lithography Printmaking Series by Dai Pan",
+      "og:description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/masks",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/masks/masks01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/masks/masks01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1840",
+      "og:image:height": "2400",
+      "og:image:alt": "Masks by Dai Pan, limestone lithography printmaking series.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Masks — Lithography Printmaking Series by Dai Pan",
+      "twitter:description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "twitter:image": "https://daipan.art/projects/masks/masks01.jpg",
+      "twitter:image:alt": "Masks by Dai Pan, limestone lithography printmaking series."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/masks/masks01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Masks",
+            "item": "https://daipan.art/masks"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Masks",
+        "headline": "Masks — Lithography Printmaking Series by Dai Pan",
+        "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+        "url": "https://daipan.art/masks",
+        "mainEntityOfPage": "https://daipan.art/masks",
+        "image": [
+          "https://daipan.art/projects/masks/masks01.jpg",
+          "https://daipan.art/projects/masks/masks02.jpg",
+          "https://daipan.art/projects/masks/masks03.jpg",
+          "https://daipan.art/projects/masks/masks04.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/masks/masks01.jpg",
+        "caption": "Masks by Dai Pan, limestone lithography printmaking series.",
+        "temporalCoverage": "2024-2025",
+        "artMedium": "Limestone lithography printmaking series",
+        "material": "Limestone lithography printmaking series",
+        "artform": "Printmaking and visual art",
+        "genre": "Printmaking and visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "Masks, Dai Pan printmaking, limestone lithography, lithography series, Fumiko Enchi, Onnamen, face, concealment, abstraction, visual art",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Masks"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "limestone lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "lithography series"
+          },
+          {
+            "@type": "Thing",
+            "name": "Fumiko Enchi"
+          },
+          {
+            "@type": "Thing",
+            "name": "Onnamen"
+          },
+          {
+            "@type": "Thing",
+            "name": "face"
+          },
+          {
+            "@type": "Thing",
+            "name": "concealment"
+          },
+          {
+            "@type": "Thing",
+            "name": "abstraction"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19180/masks/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "Masks by Dai Pan",
+            "url": "https://sva.design/projects/19180/masks/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/masks#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/css/masks-page.css",
+      "/assets/css/masks.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "quite_off",
+    "path": "/quite_off",
+    "title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+    "description": "Quite Off by Dai Pan (2025) is an unfinished film project presented through eight Kodak Vision3 photographs and writing, exploring closeness, separation and memory through everyday scenes.",
+    "canonical": "https://daipan.art/quite_off",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Quite Off by Dai Pan (2025) is an unfinished film project presented through eight Kodak Vision3 photographs and writing, exploring closeness, separation and memory through everyday scenes.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan film photography, Kodak Vision3, unfinished film, image-based work, writing, motherhood, red-green motif",
+      "theme-color": "#ffffff",
+      "og:title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+      "og:description": "Quite Off by Dai Pan (2025) is an unfinished film project presented through eight Kodak Vision3 photographs and writing, exploring closeness, separation and memory through everyday scenes.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/quite_off",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+      "twitter:description": "Quite Off by Dai Pan (2025) is an unfinished film project presented through eight Kodak Vision3 photographs and writing, exploring closeness, separation and memory through everyday scenes.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Quite Off",
+            "item": "https://daipan.art/quite_off"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Quite Off",
+        "headline": "Quite Off — Film Photography & Visual Art by Dai Pan",
+        "description": "Quite Off by Dai Pan (2025) is an unfinished film project presented through eight Kodak Vision3 photographs and writing, exploring closeness, separation and memory through everyday scenes.",
+        "url": "https://daipan.art/quite_off",
+        "mainEntityOfPage": "https://daipan.art/quite_off",
+        "image": [
+          "https://daipan.art/projects/quite_off/quite_01.jpg",
+          "https://daipan.art/projects/quite_off/quite_02.jpg",
+          "https://daipan.art/projects/quite_off/quite_03.jpg",
+          "https://daipan.art/projects/quite_off/quite_04.jpg",
+          "https://daipan.art/projects/quite_off/quite_05.jpg",
+          "https://daipan.art/projects/quite_off/quite_06.jpg",
+          "https://daipan.art/projects/quite_off/quite_07.jpg",
+          "https://daipan.art/projects/quite_off/quite_08.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "caption": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+        "temporalCoverage": "2025",
+        "artMedium": "Kodak Vision3 film photography, writing, and unfinished film fragment",
+        "material": "Kodak Vision3 film photography, writing, and unfinished film fragment",
+        "artform": "Film photography and image-based visual art",
+        "genre": "Film photography and image-based visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York / China"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York / China"
+        },
+        "keywords": "Quite Off, Dai Pan film photography, Kodak Vision3, unfinished film, image-based work, visual art, photography, writing, motherhood, red-green motif",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Quite Off"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan film photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Kodak Vision3"
+          },
+          {
+            "@type": "Thing",
+            "name": "unfinished film"
+          },
+          {
+            "@type": "Thing",
+            "name": "image-based work"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          },
+          {
+            "@type": "Thing",
+            "name": "photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "writing"
+          },
+          {
+            "@type": "Thing",
+            "name": "motherhood"
+          },
+          {
+            "@type": "Thing",
+            "name": "red-green motif"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/quite_off#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/css/quite_off-page.css",
+      "/assets/css/quite_off.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "quite_off_mobile",
+    "path": "/quite_off_mobile",
+    "title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+    "description": "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.",
+    "canonical": "https://daipan.art/quite_off",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan film photography, Kodak Vision3, unfinished film, image-based work, writing, motherhood, red-green motif",
+      "theme-color": "#ffffff",
+      "og:title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+      "og:description": "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/quite_off",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Quite Off — Film Photography & Visual Art by Dai Pan",
+      "twitter:description": "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Quite Off",
+            "item": "https://daipan.art/quite_off"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Quite Off",
+        "headline": "Quite Off — Film Photography & Visual Art by Dai Pan",
+        "description": "Quite Off by Dai Pan is an unfinished film fragment and image-based work shot on Kodak Vision3 5203, 5207, and 5219. The project studies gaze, separation, motherhood, friendship, and the red-green motif through photography, writing, and visual art.",
+        "url": "https://daipan.art/quite_off",
+        "mainEntityOfPage": "https://daipan.art/quite_off",
+        "image": [
+          "https://daipan.art/projects/quite_off/quite_01.jpg",
+          "https://daipan.art/projects/quite_off/quite_02.jpg",
+          "https://daipan.art/projects/quite_off/quite_03.jpg",
+          "https://daipan.art/projects/quite_off/quite_04.jpg",
+          "https://daipan.art/projects/quite_off/quite_05.jpg",
+          "https://daipan.art/projects/quite_off/quite_06.jpg",
+          "https://daipan.art/projects/quite_off/quite_07.jpg",
+          "https://daipan.art/projects/quite_off/quite_08.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "caption": "Quite Off by Dai Pan, a Kodak Vision3 film still from an unfinished image-based work.",
+        "temporalCoverage": "2025",
+        "artMedium": "Kodak Vision3 film photography, writing, and unfinished film fragment",
+        "material": "Kodak Vision3 film photography, writing, and unfinished film fragment",
+        "artform": "Film photography and image-based visual art",
+        "genre": "Film photography and image-based visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York / China"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York / China"
+        },
+        "keywords": "Quite Off, Dai Pan film photography, Kodak Vision3, unfinished film, image-based work, visual art, photography, writing, motherhood, red-green motif",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Quite Off"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan film photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Kodak Vision3"
+          },
+          {
+            "@type": "Thing",
+            "name": "unfinished film"
+          },
+          {
+            "@type": "Thing",
+            "name": "image-based work"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          },
+          {
+            "@type": "Thing",
+            "name": "photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "writing"
+          },
+          {
+            "@type": "Thing",
+            "name": "motherhood"
+          },
+          {
+            "@type": "Thing",
+            "name": "red-green motif"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/quite_off#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/quite_off.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "in_praise_of_time",
+    "path": "/in_praise_of_time",
+    "title": "In Praise of Time — Monochrome Photography by Dai Pan",
+    "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+    "canonical": "https://daipan.art/in_praise_of_time",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, In Praise of Time, black-and-white photography, monochrome photography, Pentax K-3 Mark III Monochrome, 2026",
+      "theme-color": "#ffffff",
+      "og:title": "In Praise of Time — Monochrome Photography by Dai Pan",
+      "og:description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/in_praise_of_time",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "og:image:secure_url": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "6192",
+      "og:image:height": "4128",
+      "og:image:alt": "In Praise of Time by Dai Pan, 2026. A close view of a face and lips.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "In Praise of Time — Monochrome Photography by Dai Pan",
+      "twitter:description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "twitter:image": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "twitter:image:alt": "In Praise of Time by Dai Pan, 2026. A close view of a face and lips."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "In Praise of Time",
+            "item": "https://daipan.art/in_praise_of_time"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "In Praise of Time",
+        "url": "https://daipan.art/in_praise_of_time",
+        "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+        "temporalCoverage": "2026",
+        "artMedium": "Black-and-white digital photography",
+        "artform": "Photography",
+        "image": [
+          "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-104.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K339077.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-97.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-27.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336976.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K337101.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K339085.jpg",
+          "https://daipan.art/projects/in_praise_of_time/km-88.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-74.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-66.jpg",
+          "https://daipan.art/projects/in_praise_of_time/_K337129.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336877.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336884.JPG"
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "@id": "https://daipan.art/in_praise_of_time#work",
+        "thumbnailUrl": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+        "mainEntityOfPage": "https://daipan.art/in_praise_of_time"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/time-gallery.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "reframed_still",
+    "path": "/reframed_still",
+    "title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+    "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+    "canonical": "https://daipan.art/reframed_still",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan photography, gelatin silver print, black-and-white photography, photographic sequence, New York photography, Guangzhou photography, Shanghai photography, Nantong photography, urban stillness",
+      "theme-color": "#ffffff",
+      "og:title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+      "og:description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/reframed_still",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1921",
+      "og:image:height": "2400",
+      "og:image:alt": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+      "twitter:description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "twitter:image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "twitter:image:alt": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Reframed Still",
+            "item": "https://daipan.art/reframed_still"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Reframed Still",
+        "headline": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+        "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+        "url": "https://daipan.art/reframed_still",
+        "mainEntityOfPage": "https://daipan.art/reframed_still",
+        "image": [
+          "https://daipan.art/projects/reframed_still/reframed01.jpg",
+          "https://daipan.art/projects/reframed_still/reframed02.jpg",
+          "https://daipan.art/projects/reframed_still/reframed03.jpg",
+          "https://daipan.art/projects/reframed_still/reframed04.jpg",
+          "https://daipan.art/projects/reframed_still/reframed05.jpg",
+          "https://daipan.art/projects/reframed_still/reframed06.jpg",
+          "https://daipan.art/projects/reframed_still/reframed07.jpg",
+          "https://daipan.art/projects/reframed_still/reframed08.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "caption": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
+        "temporalCoverage": "2021 — 2025",
+        "artMedium": "Gelatin Silver Print",
+        "material": "Gelatin Silver Print",
+        "artform": "Black-and-white photography and gelatin silver print sequence",
+        "genre": "Black-and-white photography and gelatin silver print sequence",
+        "locationCreated": [
+          {
+            "@type": "Place",
+            "name": "New York"
+          },
+          {
+            "@type": "Place",
+            "name": "Guangzhou"
+          },
+          {
+            "@type": "Place",
+            "name": "Shanghai"
+          },
+          {
+            "@type": "Place",
+            "name": "Nantong"
+          }
+        ],
+        "contentLocation": [
+          {
+            "@type": "Place",
+            "name": "New York"
+          },
+          {
+            "@type": "Place",
+            "name": "Guangzhou"
+          },
+          {
+            "@type": "Place",
+            "name": "Shanghai"
+          },
+          {
+            "@type": "Place",
+            "name": "Nantong"
+          }
+        ],
+        "keywords": "Reframed Still, Dai Pan photography, gelatin silver print, black-and-white photography, photographic sequence, New York photography, Guangzhou photography, Shanghai photography, Nantong photography, urban stillness",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Reframed Still"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "gelatin silver print"
+          },
+          {
+            "@type": "Thing",
+            "name": "black-and-white photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "photographic sequence"
+          },
+          {
+            "@type": "Thing",
+            "name": "New York photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Guangzhou photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Shanghai photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Nantong photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "urban stillness"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19409/reframed-still/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "Reframed Still by Dai Pan",
+            "url": "https://sva.design/projects/19409/reframed-still/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/reframed_still#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/css/reframed_still-page.css",
+      "/assets/css/reframed_still.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "the_threes",
+    "path": "/the_threes",
+    "title": "The Threes — Book Design & Writing by Dai Pan",
+    "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+    "canonical": "https://daipan.art/the_threes",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan book design, handmade book-object, poetry, image, story, writing, artist book",
+      "theme-color": "#ffffff",
+      "og:title": "The Threes — Book Design & Writing by Dai Pan",
+      "og:description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/the_threes",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "3000",
+      "og:image:height": "2250",
+      "og:image:alt": "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "The Threes — Book Design & Writing by Dai Pan",
+      "twitter:description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "twitter:image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "twitter:image:alt": "The Threes by Dai Pan, handmade book-object cover and spread sequence."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "The Threes",
+            "item": "https://daipan.art/the_threes"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": [
+          "Book",
+          "CreativeWork"
+        ],
+        "name": "The Threes",
+        "headline": "The Threes — Book Design & Writing by Dai Pan",
+        "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+        "url": "https://daipan.art/the_threes",
+        "mainEntityOfPage": "https://daipan.art/the_threes",
+        "image": [
+          "https://daipan.art/projects/the_threes/threes_23.jpg",
+          "https://daipan.art/projects/the_threes/threes_24.jpg",
+          "https://daipan.art/projects/the_threes/threes_01.png",
+          "https://daipan.art/projects/the_threes/threes_02.png",
+          "https://daipan.art/projects/the_threes/threes_03.png",
+          "https://daipan.art/projects/the_threes/threes_04.png",
+          "https://daipan.art/projects/the_threes/threes_05.png",
+          "https://daipan.art/projects/the_threes/threes_06.png",
+          "https://daipan.art/projects/the_threes/threes_07.png",
+          "https://daipan.art/projects/the_threes/threes_08.png",
+          "https://daipan.art/projects/the_threes/threes_09.png",
+          "https://daipan.art/projects/the_threes/threes_10.png",
+          "https://daipan.art/projects/the_threes/threes_11.png",
+          "https://daipan.art/projects/the_threes/threes_12.png",
+          "https://daipan.art/projects/the_threes/threes_13.png",
+          "https://daipan.art/projects/the_threes/threes_14.png",
+          "https://daipan.art/projects/the_threes/threes_15.png",
+          "https://daipan.art/projects/the_threes/threes_16.png",
+          "https://daipan.art/projects/the_threes/threes_17.png",
+          "https://daipan.art/projects/the_threes/threes_18.png",
+          "https://daipan.art/projects/the_threes/threes_19.png",
+          "https://daipan.art/projects/the_threes/threes_20.png",
+          "https://daipan.art/projects/the_threes/threes_21.png",
+          "https://daipan.art/projects/the_threes/threes_22.png"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/the_threes/threes_23.jpg",
+        "caption": "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
+        "temporalCoverage": "2025",
+        "artMedium": "Handmade book-object, poetry, image, short narrative, and book design",
+        "material": "Handmade book-object, poetry, image, short narrative, and book design",
+        "artform": "Book design and writing-based visual art",
+        "genre": "Book design and writing-based visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "The Threes, Dai Pan book design, handmade book-object, poetry, image, story, writing, visual art, design research, artist book",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "The Threes"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan book design"
+          },
+          {
+            "@type": "Thing",
+            "name": "handmade book-object"
+          },
+          {
+            "@type": "Thing",
+            "name": "poetry"
+          },
+          {
+            "@type": "Thing",
+            "name": "image"
+          },
+          {
+            "@type": "Thing",
+            "name": "story"
+          },
+          {
+            "@type": "Thing",
+            "name": "writing"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          },
+          {
+            "@type": "Thing",
+            "name": "design research"
+          },
+          {
+            "@type": "Thing",
+            "name": "artist book"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19172/the-threes/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "The Threes by Dai Pan",
+            "url": "https://sva.design/projects/19172/the-threes/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/the_threes#work",
+        "datePublished": "2025"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/css/the_threes-page.css",
+      "/assets/css/the_threes.css"
+    ],
+    "main_class": [
+      "content"
+    ]
+  },
+  {
+    "key": "about_mobile",
+    "path": "/about_mobile",
+    "title": "About Dai Pan — Visual Artist",
+    "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+    "canonical": "https://daipan.art/about",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan biography, Pan Dai artist, Chinese visual artist, School of Visual Arts Dai Pan, photographer printmaker writer",
+      "theme-color": "#ffffff",
+      "og:title": "About Dai Pan — Visual Artist",
+      "og:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "og:type": "website",
+      "og:url": "https://daipan.art/about",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/about/about.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/about/about.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:alt": "Portrait of Dai Pan outdoors.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "About Dai Pan — Visual Artist",
+      "twitter:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+      "twitter:image": "https://daipan.art/projects/about/about.jpg",
+      "twitter:image:alt": "Portrait of Dai Pan outdoors."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://daipan.art/about"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        "@id": "https://daipan.art/about#webpage",
+        "url": "https://daipan.art/about",
+        "name": "About Dai Pan — Visual Artist",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Biography, education and selected exhibitions.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "inLanguage": "en"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/about.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "closing_time_mobile",
+    "path": "/closing_time_mobile",
+    "title": "Closing Time — Photo Lithography Print by Dai Pan",
+    "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+    "canonical": "https://daipan.art/closing_time",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan lithography, photo lithography, 5-color lithography, CMYK printmaking, opaque white, film photograph, Manhattan, printmaking",
+      "theme-color": "#ffffff",
+      "og:title": "Closing Time — Photo Lithography Print by Dai Pan",
+      "og:description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/closing_time",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2400",
+      "og:image:height": "1848",
+      "og:image:alt": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Closing Time — Photo Lithography Print by Dai Pan",
+      "twitter:description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+      "twitter:image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+      "twitter:image:alt": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Closing Time",
+            "item": "https://daipan.art/closing_time"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Closing Time",
+        "headline": "Closing Time — Photo Lithography Print by Dai Pan",
+        "description": "Closing Time by Dai Pan is a single-piece 5-color photo lithography print, using CMYK and opaque white to translate a Manhattan film photograph into painterly softness.",
+        "url": "https://daipan.art/closing_time",
+        "mainEntityOfPage": "https://daipan.art/closing_time",
+        "image": [
+          "https://daipan.art/projects/closing_time/closing_time.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/closing_time/closing_time.jpg",
+        "caption": "Closing Time by Dai Pan, 5-color photo lithography print based on a Manhattan film photograph.",
+        "temporalCoverage": "2025",
+        "artMedium": "5-color photo lithography, CMYK, opaque white, film photograph, hand-printed",
+        "material": "5-color photo lithography, CMYK, opaque white, film photograph, hand-printed",
+        "artform": "Photo lithography and printmaking",
+        "genre": "Photo lithography and printmaking",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "Manhattan, New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "Manhattan, New York"
+        },
+        "keywords": "Closing Time, Dai Pan lithography, photo lithography, 5-color lithography, CMYK printmaking, opaque white, film photograph, Manhattan, printmaking, visual art",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Closing Time"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "photo lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "5-color lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "CMYK printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "opaque white"
+          },
+          {
+            "@type": "Thing",
+            "name": "film photograph"
+          },
+          {
+            "@type": "Thing",
+            "name": "Manhattan"
+          },
+          {
+            "@type": "Thing",
+            "name": "printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/closing_time#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/closing_time.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "contact_mobile",
+    "path": "/contact_mobile",
+    "title": "Contact Dai Pan",
+    "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+    "canonical": "https://daipan.art/contact",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, contact Dai Pan, Dai Pan artist contact, Brisbane artist contact, visual artist designer contact",
+      "theme-color": "#ffffff",
+      "og:title": "Contact Dai Pan",
+      "og:description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "og:type": "website",
+      "og:url": "https://daipan.art/contact",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Social preview image for Contact Dai Pan — Artist & Designer",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Contact Dai Pan",
+      "twitter:description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Social preview image for Contact Dai Pan — Artist & Designer"
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://daipan.art/contact"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": "https://daipan.art/contact#webpage",
+        "url": "https://daipan.art/contact",
+        "name": "Contact Dai Pan",
+        "description": "Dai Pan welcomes collaborations and exhibition opportunities, with contributions across visual design, photography and web development. Contact details and links.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "inLanguage": "en"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/contact.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "gallery_design_mobile",
+    "path": "/gallery_design_mobile",
+    "title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+    "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+    "canonical": "https://daipan.art/gallery_design",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan architecture, conceptual architecture, gallery design, spatial design, daylight, shadow, architectural rendering, plan elevation section",
+      "theme-color": "#ffffff",
+      "og:title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+      "og:description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/gallery_design",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1024",
+      "og:image:height": "1536",
+      "og:image:alt": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+      "twitter:description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+      "twitter:image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+      "twitter:image:alt": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Monolith for Light",
+            "item": "https://daipan.art/gallery_design"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "Monolith for Light",
+        "headline": "Monolith for Light — Conceptual Architecture Design by Dai Pan",
+        "description": "Monolith for Light by Dai Pan is a conceptual architecture, gallery design, and design research project studying mass, restraint, shadow, and daylight as spatial structure.",
+        "url": "https://daipan.art/gallery_design",
+        "mainEntityOfPage": "https://daipan.art/gallery_design",
+        "image": [
+          "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_01.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-drawings-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_03.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_04.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-night-v4.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_06.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-interior-v3.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-daylight-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/monolith-material-v2.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_10.jpg",
+          "https://daipan.art/projects/monolith_for_light/gallery_11.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+        "caption": "Monolith for Light by Dai Pan, conceptual gallery design rendering with mass, shadow, and daylight studies.",
+        "temporalCoverage": "2021",
+        "artMedium": "Conceptual architecture, gallery design, rendering, plan, elevation, section, and design research",
+        "material": "Conceptual architecture, gallery design, rendering, plan, elevation, section, and design research",
+        "artform": "Conceptual architectural design",
+        "genre": "Conceptual architectural design",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "Monolith for Light, Dai Pan architecture, conceptual architecture, gallery design, design research, spatial design, daylight, shadow, architectural rendering, plan elevation section",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Monolith for Light"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan architecture"
+          },
+          {
+            "@type": "Thing",
+            "name": "conceptual architecture"
+          },
+          {
+            "@type": "Thing",
+            "name": "gallery design"
+          },
+          {
+            "@type": "Thing",
+            "name": "design research"
+          },
+          {
+            "@type": "Thing",
+            "name": "spatial design"
+          },
+          {
+            "@type": "Thing",
+            "name": "daylight"
+          },
+          {
+            "@type": "Thing",
+            "name": "shadow"
+          },
+          {
+            "@type": "Thing",
+            "name": "architectural rendering"
+          },
+          {
+            "@type": "Thing",
+            "name": "plan elevation section"
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/gallery_design#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/gallery_design.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "home_mobile",
+    "path": "/home_mobile",
+    "title": "Dai Pan — Visual Art & Text",
+    "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+    "canonical": "https://daipan.art",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan artist, Brisbane visual artist, artist designer portfolio, conceptual design portfolio, architecture design, photography portfolio, printmaking portfolio",
+      "theme-color": "#ffffff",
+      "og:title": "Dai Pan — Visual Art & Text",
+      "og:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "og:type": "website",
+      "og:url": "https://daipan.art",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "2912",
+      "og:image:height": "1980",
+      "og:image:alt": "Social preview image for Dai Pan — Artist, Designer & Portfolio",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Dai Pan — Visual Art & Text",
+      "twitter:description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+      "twitter:image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+      "twitter:image:alt": "Social preview image for Dai Pan — Artist, Designer & Portfolio"
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#profilepage",
+        "@type": "ProfilePage",
+        "name": "Dai Pan — Visual Art & Text",
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. An independent fine art practice exploring light, material and time.",
+        "mainEntity": {
+          "@id": "https://daipan.art/#person"
+        },
+        "about": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://daipan.art/projects/quite_off/quite_01.jpg"
+        },
+        "inLanguage": [
+          "en"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Dai Pan — Works",
+        "description": "Image-based work across photography, printmaking, writing, visual art, and design research.",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Quite Off",
+              "url": "https://daipan.art/quite_off",
+              "image": "https://daipan.art/projects/quite_off/quite_01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/quite_off#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "The Threes",
+              "url": "https://daipan.art/the_threes",
+              "image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/the_threes#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Monolith for Light",
+              "url": "https://daipan.art/gallery_design",
+              "image": "https://daipan.art/projects/monolith_for_light/monolith-exterior-v3.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/gallery_design#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "In Praise of Time",
+              "url": "https://daipan.art/in_praise_of_time",
+              "image": "https://daipan.art/_optimized/projects/in_praise_of_time/_K336876_1600w.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/in_praise_of_time#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Reframed Still",
+              "url": "https://daipan.art/reframed_still",
+              "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/reframed_still#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Closing Time",
+              "url": "https://daipan.art/closing_time",
+              "image": "https://daipan.art/projects/closing_time/closing_time.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/closing_time#work"
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "CreativeWork",
+              "name": "Masks",
+              "url": "https://daipan.art/masks",
+              "image": "https://daipan.art/projects/masks/masks01.jpg",
+              "author": {
+                "@id": "https://daipan.art/#person"
+              },
+              "@id": "https://daipan.art/masks#work"
+            }
+          }
+        ]
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/home.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "masks_mobile",
+    "path": "/masks_mobile",
+    "title": "Masks — Lithography Printmaking Series by Dai Pan",
+    "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+    "canonical": "https://daipan.art/masks",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan printmaking, limestone lithography, lithography series, Fumiko Enchi, Onnamen, face, concealment, abstraction",
+      "theme-color": "#ffffff",
+      "og:title": "Masks — Lithography Printmaking Series by Dai Pan",
+      "og:description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/masks",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/masks/masks01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/masks/masks01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1840",
+      "og:image:height": "2400",
+      "og:image:alt": "Masks by Dai Pan, limestone lithography printmaking series.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Masks — Lithography Printmaking Series by Dai Pan",
+      "twitter:description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+      "twitter:image": "https://daipan.art/projects/masks/masks01.jpg",
+      "twitter:image:alt": "Masks by Dai Pan, limestone lithography printmaking series."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/masks/masks01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Masks",
+            "item": "https://daipan.art/masks"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Masks",
+        "headline": "Masks — Lithography Printmaking Series by Dai Pan",
+        "description": "Masks by Dai Pan is a limestone lithography printmaking series inspired by Fumiko Enchi, exploring the face, concealment, relation, and abstraction.",
+        "url": "https://daipan.art/masks",
+        "mainEntityOfPage": "https://daipan.art/masks",
+        "image": [
+          "https://daipan.art/projects/masks/masks01.jpg",
+          "https://daipan.art/projects/masks/masks02.jpg",
+          "https://daipan.art/projects/masks/masks03.jpg",
+          "https://daipan.art/projects/masks/masks04.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/masks/masks01.jpg",
+        "caption": "Masks by Dai Pan, limestone lithography printmaking series.",
+        "temporalCoverage": "2024-2025",
+        "artMedium": "Limestone lithography printmaking series",
+        "material": "Limestone lithography printmaking series",
+        "artform": "Printmaking and visual art",
+        "genre": "Printmaking and visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "Masks, Dai Pan printmaking, limestone lithography, lithography series, Fumiko Enchi, Onnamen, face, concealment, abstraction, visual art",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Masks"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan printmaking"
+          },
+          {
+            "@type": "Thing",
+            "name": "limestone lithography"
+          },
+          {
+            "@type": "Thing",
+            "name": "lithography series"
+          },
+          {
+            "@type": "Thing",
+            "name": "Fumiko Enchi"
+          },
+          {
+            "@type": "Thing",
+            "name": "Onnamen"
+          },
+          {
+            "@type": "Thing",
+            "name": "face"
+          },
+          {
+            "@type": "Thing",
+            "name": "concealment"
+          },
+          {
+            "@type": "Thing",
+            "name": "abstraction"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19180/masks/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "Masks by Dai Pan",
+            "url": "https://sva.design/projects/19180/masks/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/masks#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/masks.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "in_praise_of_time_mobile",
+    "path": "/in_praise_of_time_mobile",
+    "title": "In Praise of Time — Monochrome Photography by Dai Pan",
+    "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+    "canonical": "https://daipan.art/in_praise_of_time",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, In Praise of Time, black-and-white photography, monochrome photography, Pentax K-3 Mark III Monochrome, 2026",
+      "theme-color": "#ffffff",
+      "og:title": "In Praise of Time — Monochrome Photography by Dai Pan",
+      "og:description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/in_praise_of_time",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "og:image:secure_url": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "6192",
+      "og:image:height": "4128",
+      "og:image:alt": "In Praise of Time by Dai Pan, 2026. A close view of a face and lips.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "In Praise of Time — Monochrome Photography by Dai Pan",
+      "twitter:description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+      "twitter:image": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+      "twitter:image:alt": "In Praise of Time by Dai Pan, 2026. A close view of a face and lips."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "In Praise of Time",
+            "item": "https://daipan.art/in_praise_of_time"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "In Praise of Time",
+        "url": "https://daipan.art/in_praise_of_time",
+        "description": "In Praise of Time by Dai Pan (2026) considers photography as a crystallisation of duration through light, shadow and gesture. Made with the Pentax K-3 Mark III Monochrome.",
+        "temporalCoverage": "2026",
+        "artMedium": "Black-and-white digital photography",
+        "artform": "Photography",
+        "image": [
+          "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-104.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K339077.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-97.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-27.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336976.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K337101.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K339085.jpg",
+          "https://daipan.art/projects/in_praise_of_time/km-88.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-74.JPG",
+          "https://daipan.art/projects/in_praise_of_time/km-66.jpg",
+          "https://daipan.art/projects/in_praise_of_time/_K337129.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336877.JPG",
+          "https://daipan.art/projects/in_praise_of_time/_K336884.JPG"
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@id": "https://daipan.art/#website"
+        },
+        "@id": "https://daipan.art/in_praise_of_time#work",
+        "thumbnailUrl": "https://daipan.art/projects/in_praise_of_time/_K336876.JPG",
+        "mainEntityOfPage": "https://daipan.art/in_praise_of_time"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/in_praise_of_time.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "reframed_still_mobile",
+    "path": "/reframed_still_mobile",
+    "title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+    "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+    "canonical": "https://daipan.art/reframed_still",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan photography, gelatin silver print, black-and-white photography, photographic sequence, New York photography, Guangzhou photography, Shanghai photography, Nantong photography, urban stillness",
+      "theme-color": "#ffffff",
+      "og:title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+      "og:description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/reframed_still",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "1921",
+      "og:image:height": "2400",
+      "og:image:alt": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+      "twitter:description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+      "twitter:image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+      "twitter:image:alt": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Reframed Still",
+            "item": "https://daipan.art/reframed_still"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "VisualArtwork",
+        "name": "Reframed Still",
+        "headline": "Reframed Still — Gelatin Silver Photography by Dai Pan",
+        "description": "Reframed Still by Dai Pan is a black-and-white photographic sequence of gelatin silver prints that slows the gaze across cities, stillness, light, and time.",
+        "url": "https://daipan.art/reframed_still",
+        "mainEntityOfPage": "https://daipan.art/reframed_still",
+        "image": [
+          "https://daipan.art/projects/reframed_still/reframed01.jpg",
+          "https://daipan.art/projects/reframed_still/reframed02.jpg",
+          "https://daipan.art/projects/reframed_still/reframed03.jpg",
+          "https://daipan.art/projects/reframed_still/reframed04.jpg",
+          "https://daipan.art/projects/reframed_still/reframed05.jpg",
+          "https://daipan.art/projects/reframed_still/reframed06.jpg",
+          "https://daipan.art/projects/reframed_still/reframed07.jpg",
+          "https://daipan.art/projects/reframed_still/reframed08.jpg"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/reframed_still/reframed01.jpg",
+        "caption": "Reframed Still by Dai Pan, black-and-white gelatin silver photography sequence.",
+        "temporalCoverage": "2021 — 2025",
+        "artMedium": "Gelatin Silver Print",
+        "material": "Gelatin Silver Print",
+        "artform": "Black-and-white photography and gelatin silver print sequence",
+        "genre": "Black-and-white photography and gelatin silver print sequence",
+        "locationCreated": [
+          {
+            "@type": "Place",
+            "name": "New York"
+          },
+          {
+            "@type": "Place",
+            "name": "Guangzhou"
+          },
+          {
+            "@type": "Place",
+            "name": "Shanghai"
+          },
+          {
+            "@type": "Place",
+            "name": "Nantong"
+          }
+        ],
+        "contentLocation": [
+          {
+            "@type": "Place",
+            "name": "New York"
+          },
+          {
+            "@type": "Place",
+            "name": "Guangzhou"
+          },
+          {
+            "@type": "Place",
+            "name": "Shanghai"
+          },
+          {
+            "@type": "Place",
+            "name": "Nantong"
+          }
+        ],
+        "keywords": "Reframed Still, Dai Pan photography, gelatin silver print, black-and-white photography, photographic sequence, New York photography, Guangzhou photography, Shanghai photography, Nantong photography, urban stillness",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Reframed Still"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "gelatin silver print"
+          },
+          {
+            "@type": "Thing",
+            "name": "black-and-white photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "photographic sequence"
+          },
+          {
+            "@type": "Thing",
+            "name": "New York photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Guangzhou photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Shanghai photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "Nantong photography"
+          },
+          {
+            "@type": "Thing",
+            "name": "urban stillness"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19409/reframed-still/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "Reframed Still by Dai Pan",
+            "url": "https://sva.design/projects/19409/reframed-still/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/reframed_still#work"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/reframed_still.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  },
+  {
+    "key": "the_threes_mobile",
+    "path": "/the_threes_mobile",
+    "title": "The Threes — Book Design & Writing by Dai Pan",
+    "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+    "canonical": "https://daipan.art/the_threes",
+    "meta": {
+      "viewport": "width=device-width, initial-scale=1",
+      "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "robots": "index, follow",
+      "author": "Dai Pan",
+      "keywords": "Dai Pan, Pan Dai, daipan, daipan.art, daipan.ink, Three Worlds Dai Pan, visual artist, fine artist, artist portfolio, designer, Chinese artist, Brisbane artist, photographer, printmaker, writer, conceptual design, architecture, design research, visual art, image-making, fine art, portfolio, photography, writing collection, Monolith for Light, Quite Off, The Threes, Reframed Still, Closing Time, Masks, Dai Pan book design, handmade book-object, poetry, image, story, writing, artist book",
+      "theme-color": "#ffffff",
+      "og:title": "The Threes — Book Design & Writing by Dai Pan",
+      "og:description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "og:type": "article",
+      "og:url": "https://daipan.art/the_threes",
+      "og:site_name": "Dai Pan",
+      "og:locale": "en_US",
+      "og:locale:alternate": "zh_CN",
+      "og:image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "og:image:secure_url": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "og:image:type": "image/jpeg",
+      "og:image:width": "3000",
+      "og:image:height": "2250",
+      "og:image:alt": "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "The Threes — Book Design & Writing by Dai Pan",
+      "twitter:description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+      "twitter:image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+      "twitter:image:alt": "The Threes by Dai Pan, handmade book-object cover and spread sequence."
+    },
+    "schemas": [
+      {
+        "@context": "https://schema.org",
+        "@id": "https://daipan.art/#website",
+        "@type": "WebSite",
+        "name": "Dai Pan — Visual Art & Text",
+        "alternateName": [
+          "Pan Dai",
+          "daipan.art",
+          "Dai Pan portfolio"
+        ],
+        "url": "https://daipan.art",
+        "description": "Dai Pan is a visual artist based in Brisbane, working with images and text through photography, printmaking and artist books. Writing is published at daipan.ink.",
+        "image": "https://daipan.art/projects/the_threes/threes_23.jpg",
+        "author": {
+          "@type": "Person",
+          "name": "Dai Pan",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": [
+          "en"
+        ],
+        "relatedLink": [
+          "https://www.daipan.ink/"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://daipan.art"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "The Threes",
+            "item": "https://daipan.art/the_threes"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": [
+          "Book",
+          "CreativeWork"
+        ],
+        "name": "The Threes",
+        "headline": "The Threes — Book Design & Writing by Dai Pan",
+        "description": "The Threes by Dai Pan is a selected collection published in 2025, bringing poetry, images, and short narrative into a handmade book. Related writing is available at daipan.ink.",
+        "url": "https://daipan.art/the_threes",
+        "mainEntityOfPage": "https://daipan.art/the_threes",
+        "image": [
+          "https://daipan.art/projects/the_threes/threes_23.jpg",
+          "https://daipan.art/projects/the_threes/threes_24.jpg",
+          "https://daipan.art/projects/the_threes/threes_01.png",
+          "https://daipan.art/projects/the_threes/threes_02.png",
+          "https://daipan.art/projects/the_threes/threes_03.png",
+          "https://daipan.art/projects/the_threes/threes_04.png",
+          "https://daipan.art/projects/the_threes/threes_05.png",
+          "https://daipan.art/projects/the_threes/threes_06.png",
+          "https://daipan.art/projects/the_threes/threes_07.png",
+          "https://daipan.art/projects/the_threes/threes_08.png",
+          "https://daipan.art/projects/the_threes/threes_09.png",
+          "https://daipan.art/projects/the_threes/threes_10.png",
+          "https://daipan.art/projects/the_threes/threes_11.png",
+          "https://daipan.art/projects/the_threes/threes_12.png",
+          "https://daipan.art/projects/the_threes/threes_13.png",
+          "https://daipan.art/projects/the_threes/threes_14.png",
+          "https://daipan.art/projects/the_threes/threes_15.png",
+          "https://daipan.art/projects/the_threes/threes_16.png",
+          "https://daipan.art/projects/the_threes/threes_17.png",
+          "https://daipan.art/projects/the_threes/threes_18.png",
+          "https://daipan.art/projects/the_threes/threes_19.png",
+          "https://daipan.art/projects/the_threes/threes_20.png",
+          "https://daipan.art/projects/the_threes/threes_21.png",
+          "https://daipan.art/projects/the_threes/threes_22.png"
+        ],
+        "thumbnailUrl": "https://daipan.art/projects/the_threes/threes_23.jpg",
+        "caption": "The Threes by Dai Pan, handmade book-object cover and spread sequence.",
+        "temporalCoverage": "2025",
+        "artMedium": "Handmade book-object, poetry, image, short narrative, and book design",
+        "material": "Handmade book-object, poetry, image, short narrative, and book design",
+        "artform": "Book design and writing-based visual art",
+        "genre": "Book design and writing-based visual art",
+        "locationCreated": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "contentLocation": {
+          "@type": "Place",
+          "name": "New York"
+        },
+        "keywords": "The Threes, Dai Pan book design, handmade book-object, poetry, image, story, writing, visual art, design research, artist book",
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "The Threes"
+          },
+          {
+            "@type": "Thing",
+            "name": "Dai Pan book design"
+          },
+          {
+            "@type": "Thing",
+            "name": "handmade book-object"
+          },
+          {
+            "@type": "Thing",
+            "name": "poetry"
+          },
+          {
+            "@type": "Thing",
+            "name": "image"
+          },
+          {
+            "@type": "Thing",
+            "name": "story"
+          },
+          {
+            "@type": "Thing",
+            "name": "writing"
+          },
+          {
+            "@type": "Thing",
+            "name": "visual art"
+          },
+          {
+            "@type": "Thing",
+            "name": "design research"
+          },
+          {
+            "@type": "Thing",
+            "name": "artist book"
+          }
+        ],
+        "sameAs": [
+          "https://sva.design/projects/19172/the-threes/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "WebPage",
+            "name": "The Threes by Dai Pan",
+            "url": "https://sva.design/projects/19172/the-threes/",
+            "publisher": {
+              "@type": "Organization",
+              "name": "SVA Design"
+            }
+          }
+        ],
+        "creator": {
+          "@id": "https://daipan.art/#person"
+        },
+        "author": {
+          "@id": "https://daipan.art/#person"
+        },
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Dai Pan — Visual Art & Text",
+          "url": "https://daipan.art"
+        },
+        "inLanguage": "en",
+        "@id": "https://daipan.art/the_threes#work",
+        "datePublished": "2025"
+      }
+    ],
+    "css": [
+      "/assets/css/base.css",
+      "/assets/mobile/common.css",
+      "/assets/mobile/the_threes.css"
+    ],
+    "main_class": [
+      "content",
+      "mobile-content"
+    ]
+  }
+]
