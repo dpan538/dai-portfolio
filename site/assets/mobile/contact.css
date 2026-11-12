@@ -1,0 +1,10 @@
+.contact_intro,.contact_intro p { font-size:15px; line-height:1.85; max-width:34ch; }
+.contact_list { list-style:none; padding:0; margin:32px 0; display:grid; gap:20px; }
+.contact_list li { display:grid; grid-template-columns:68px minmax(0,1fr); gap:12px; font-size:14px; }
+.contact_key { color:#777; font-size:12px; }
+.contact_val { overflow-wrap:anywhere; }
+.contact_val--nowrap { white-space:normal; }
+.contact_phones { display:grid; gap:10px; }
+.contact_phones>span { display:grid; gap:2px; }
+.contact_region { font-size:11px; color:#777; }
+.contact_group { margin-top:36px; }

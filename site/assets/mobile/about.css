@@ -1,0 +1,14 @@
+.m-about>.m-figure { width:62%; max-width:210px; margin-inline:auto; }
+.m-about .cv { list-style:none; margin:0; padding:0; display:grid; gap:20px; font-size:14px; line-height:1.85; }
+.m-about .cv li { display:grid; grid-template-columns:52px minmax(0,1fr); gap:14px; }
+.m-about .cv_key { font-size:12px; color:#777; }
+.m-about .cv_val { min-width:0; overflow-wrap:anywhere; color:#444; }
+.m-cv-list { border-bottom:1px solid #ececec; padding:20px 0; }
+.m-cv-list summary { list-style:none; display:flex; align-items:baseline; justify-content:space-between; gap:16px; font-size:16px; cursor:pointer; }
+.m-cv-list summary::-webkit-details-marker { display:none; }
+.m-cv-list summary span { font-size:11px; color:#777; }
+.m-cv-list[open] summary { margin-bottom:24px; }
+.m-cv-list summary { min-height:44px; align-items:center; }
+.m-research-list { list-style:none; margin:0; padding:0; display:grid; gap:18px; }
+.m-research-list>li>a { display:inline-block; padding-block:4px; }
+body[data-view='mobile'] .m-research-list p { margin:2px 0 0; font-size:13px; color:#666; }
