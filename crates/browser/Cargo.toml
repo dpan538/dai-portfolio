@@ -20,5 +20,5 @@ web-sys = { version = "=0.3.107", features = [
   "HtmlElement", "HtmlSelectElement", "HtmlImageElement", "HtmlCollection", "CssStyleDeclaration", "DomTokenList",
   "KeyboardEvent", "PointerEvent", "WheelEvent", "MouseEvent", "Location", "MediaQueryList",
   "DomRect", "ScrollToOptions", "ScrollBehavior", "ScrollIntoViewOptions", "ScrollLogicalPosition",
-  "AddEventListenerOptions", "Performance", "console", "History"
+  "AddEventListenerOptions", "FocusOptions", "Performance", "console", "History"
 ] }

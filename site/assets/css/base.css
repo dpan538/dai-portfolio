@@ -45,6 +45,16 @@ a:hover {
 a:focus-visible,button:focus-visible {
   outline:2px solid currentColor;
   outline-offset:3px}
+/* Keep keyboard focus visible, without leaving rings or selections after a tap. */
+:is(a,button,summary,[role="button"],[tabindex],img,svg) {
+  -webkit-tap-highlight-color:transparent;
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  user-select:none}
+img { -webkit-user-drag:none }
+html:not([data-input="keyboard"]) :is(a,button,summary,[role="button"],[tabindex]):focus {
+  outline:none!important;
+  box-shadow:none!important}
 .visually-hidden[data-scope-layout] {
   position:absolute;
   width:1px;

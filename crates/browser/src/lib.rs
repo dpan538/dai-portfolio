@@ -16,6 +16,7 @@ pub fn start() {
     if routes::redirect() {
         return;
     }
+    init_input_modality();
     routes::init();
     #[cfg(feature = "review")]
     editorial::init();

@@ -36,7 +36,51 @@ pub fn class(el: &Element, name: &str, on: bool) {
 }
 pub fn focus(el: &Element) {
     if let Some(el) = el.dyn_ref::<HtmlElement>() {
-        let _ = el.focus();
+        let options = web_sys::FocusOptions::new();
+        options.set_prevent_scroll(true);
+        let _ = el.focus_with_options(&options);
+    }
+}
+// Safari can retain :focus-visible after a programmatic focus following a tap.
+// Track the initiating input before component handlers move focus into a dialog.
+pub fn init_input_modality() {
+    let Some(root) = doc().document_element() else {
+        return;
+    };
+    attr(&root, "data-input", "pointer");
+    for event in ["pointerdown", "keydown"] {
+        let root = root.clone();
+        let cb = Closure::wrap(Box::new(move |e: Event| {
+            if event == "keydown" {
+                let Some(key) = e.dyn_ref::<web_sys::KeyboardEvent>() else {
+                    return;
+                };
+                if key.meta_key()
+                    || key.ctrl_key()
+                    || key.alt_key()
+                    || matches!(key.key().as_str(), "Shift" | "Control" | "Alt" | "Meta")
+                {
+                    return;
+                }
+            }
+            attr(
+                &root,
+                "data-input",
+                if event == "keydown" {
+                    "keyboard"
+                } else {
+                    "pointer"
+                },
+            );
+        }) as Box<dyn FnMut(Event)>);
+        let options = web_sys::AddEventListenerOptions::new();
+        options.set_capture(true);
+        let _ = doc().add_event_listener_with_callback_and_add_event_listener_options(
+            event,
+            cb.as_ref().unchecked_ref(),
+            &options,
+        );
+        cb.forget();
     }
 }
 pub fn on<T: AsRef<EventTarget> + ?Sized>(el: &T, event: &str, f: impl FnMut(Event) + 'static) {
