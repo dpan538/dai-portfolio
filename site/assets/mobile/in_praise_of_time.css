@@ -10,6 +10,12 @@ body[data-view='mobile'] .m-time-passage p { margin:0; }
 .m-time-passage blockquote { margin:0; }
 .m-time-passage .m-time-reference { margin-top:12px!important; font-size:11px; color:#777; }
 .m-time-reference a { text-decoration:underline; text-underline-offset:3px; }
+.m-time-entry--return { display:grid; grid-template-columns:fit-content(100%) minmax(0,1fr); container-type:inline-size; }
+.m-time-entry--return .m-time-frame { grid-column:1; justify-self:end; }
+.m-time-entry--return .m-time-passage,.m-time-entry--return .m-time-passage p { display:contents; }
+.m-time-scale-line,.m-time-scale-rest { font-size:13px; line-height:1.8; }
+.m-time-scale-line { grid-column:1; }
+.m-time-scale-rest { grid-column:1/-1; margin-top:-14px; }
 .m-time-chapter { align-self:flex-start; margin:40px 0; font:400 16px/1.6 var(--body); color:#777; letter-spacing:.08em; }
 .m-time-closing { margin-top:32px; line-height:1.85; }
 body[data-view='mobile'] .m-time-closing p+p { margin-top:18px; }

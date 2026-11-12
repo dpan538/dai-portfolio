@@ -25,6 +25,7 @@ class PageParser(HTMLParser):
         self.images = []
         self.descriptions = []
         self.robots = []
+        self.themes = []
         self.links = []
         self.disclosures = 0
         self.content_order = []
@@ -48,6 +49,8 @@ class PageParser(HTMLParser):
             self.descriptions.append(a.get('content', ''))
         if tag == 'meta' and a.get('name') == 'robots':
             self.robots.append(a.get('content', ''))
+        if tag == 'meta' and a.get('name') == 'theme-color':
+            self.themes.append(a.get('content', ''))
         if tag == 'link' and a.get('rel') == 'canonical':
             self.canonicals.append(a.get('href'))
             self.assets = [u for u in self.assets if not u.startswith('https:')]
@@ -88,11 +91,13 @@ for path in pages:
     parser.feed(html)
     is_review = 'review' in path.relative_to(output).parts
     if not is_review:
+        check(parser.themes == ['#ffffff'], f'{path}: expected one shell-controlled browser theme color')
         check(not re.search(r'[\u3400-\u9fff]', ''.join(parser.public_text)), f'{path}: Chinese public copy found')
         key = '404' if path.name == '404.html' else 'home' if path.parent == output else path.parent.name
         check(parser.disclosures == int(key in {'reframed_still', 'closing_time', 'masks'}), f'{path}: incorrect project disclosure mode')
         if key.endswith('_mobile'):
             check('data-view="mobile"' in html, f'{path}: independent mobile shell missing')
+            check('width=device-width, initial-scale=1, viewport-fit=cover' in html, f'{path}: mobile Safari safe-area viewport missing')
             check('/assets/mobile/common.css' in parser.assets, f'{path}: mobile design system missing')
             check('/assets/presentation.css' not in parser.assets, f'{path}: desktop presentation loaded in mobile view')
             check('<aside' not in html, f'{path}: desktop sidebar present in mobile shell')
@@ -100,7 +105,7 @@ for path in pages:
             check(sum(bool(re.search(r'/threes_\d+(?:_\d+w)?\.(?:jpg|png)$', im.get('src',''))) for im in parser.images) == 10, f'{path}: curated mobile book must contain two mockups and eight selected spreads')
         if key == 'in_praise_of_time_mobile':
             check(sum(bool(im.get('src')) for im in parser.images) == 14, f'{path}: every photograph plus the empty preview must be retained')
-            check('Riding wings' in html and 'A flowing song' in html and 'https://daipan.ink/' in parser.links, f'{path}: short attributed poem excerpt missing')
+            check('Riding wings' in html and 'A flowing song' in html and 'https://daipan.ink/still-life/a-flowing-song' in parser.links, f'{path}: short attributed poem excerpt or direct poem link missing')
             check('Names are written on the map' not in html and 'time-vocabulary' not in html, f'{path}: full desktop poem or vocabulary leaked into mobile source')
         if key == 'quite_off':
             data = next((json.loads(block) for block in parser.json_blocks if isinstance(json.loads(block), dict) and 'semanticMap' in json.loads(block)), {})

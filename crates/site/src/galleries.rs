@@ -114,6 +114,8 @@ struct MobileFrame {
     copy_key: Option<String>,
     #[serde(default)]
     align_left_with: Option<String>,
+    #[serde(default)]
+    align_right_with_caption: bool,
 }
 fn galleries(root: &Path) -> Result<Vec<Gallery>> {
     read_json(&root.join("site/content/galleries.json"))
@@ -472,7 +474,15 @@ pub fn fill(root: &Path, out: &Path, key: &str, mut template: String) -> Result<
                     .max_width
                     .map(|w| format!("{w}px"))
                     .unwrap_or("100%".into());
-                let alignment = if let Some(file) = &scale.align_left_with {
+                let alignment = if scale.align_right_with_caption {
+                    ensure!(
+                        scale.align_left_with.is_none(),
+                        "Mobile alignment must use one anchor"
+                    );
+                    // Container units preserve the photographic scale while the grid's
+                    // first column follows the intrinsic width of the opening sentence.
+                    format!(";width:min({}cqw, {max})", scale.width_percent)
+                } else if let Some(file) = &scale.align_left_with {
                     let anchor = edit.iter().find(|f| &f.file == file).ok_or_else(|| {
                         anyhow::anyhow!("Unknown mobile alignment photograph: {file}")
                     })?;
@@ -515,8 +525,13 @@ pub fn fill(root: &Path, out: &Path, key: &str, mut template: String) -> Result<
                         )
                     })
                     .unwrap_or_default();
+                let entry_class = if scale.align_right_with_caption {
+                    "m-time-entry m-time-entry--return"
+                } else {
+                    "m-time-entry"
+                };
                 blocks.push(format!(
-                    r#"<div class="m-time-entry">{photo}{passage}</div>"#
+                    r#"<div class="{entry_class}">{photo}{passage}</div>"#
                 ));
             }
             template = template.replace("{{gallery:mobile-frames}}", &blocks.join("\n"));
