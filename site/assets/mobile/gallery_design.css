@@ -1,0 +1,7 @@
+.m-monolith header>.m-meta { font-size:11px; margin-bottom:12px; }
+.m-monolith header h1 { font-family:var(--heading); font-size:21px; }
+body[data-view='mobile'] .m-monolith .m-section { margin-top:28px; }
+.m-daylight-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; width:100%; }
+.m-daylight-panel { margin:0; min-width:0; }
+.m-daylight-panel img { display:block; width:100%; height:auto; aspect-ratio:1/2; object-fit:cover; }
+.m-daylight-panel figcaption { font-size:11px; color:#666; margin-top:6px; text-align:center; }
