@@ -1,0 +1,24 @@
+[package]
+name = "portfolio-browser"
+edition.workspace = true
+version.workspace = true
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["review"]
+review = []
+
+[dependencies]
+wasm-bindgen = "=0.2.130"
+js-sys = "=0.3.107"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+web-sys = { version = "=0.3.107", features = [
+  "Window", "Document", "Element", "Node", "NodeList", "Event", "EventTarget",
+  "HtmlElement", "HtmlSelectElement", "HtmlImageElement", "HtmlCollection", "CssStyleDeclaration", "DomTokenList",
+  "KeyboardEvent", "PointerEvent", "WheelEvent", "MouseEvent", "Location", "MediaQueryList",
+  "DomRect", "ScrollToOptions", "ScrollBehavior", "ScrollIntoViewOptions", "ScrollLogicalPosition",
+  "AddEventListenerOptions", "Performance", "console", "History"
+] }
