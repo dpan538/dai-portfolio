@@ -1,0 +1,3 @@
+reports/performance/*.png linguist-generated=true
+reports/performance/results.json linguist-generated=true
+reports/performance/metrics.csv linguist-generated=true

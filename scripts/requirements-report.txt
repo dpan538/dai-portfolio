@@ -1,0 +1,2 @@
+# Optional PNG report generation only; not used by the Rust/Vercel build.
+matplotlib==3.11.2

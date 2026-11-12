@@ -1,0 +1,328 @@
+{
+  "measured_at": "2026-11-12T12:57:19.189667+00:00",
+  "baseline_commit": "32b9627c096db65c37834800724005d85427aba9",
+  "candidate_source": "Rust migration working tree; final commit recorded in release audit",
+  "environment": {
+    "system": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "logical_cpus": 8,
+    "rust": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+    "node_for_baseline_only": "v22.21.0",
+    "python": "3.13.5"
+  },
+  "method": {
+    "warm_runs": 3,
+    "cold_runs": 1,
+    "shared_originals": 59,
+    "current_originals": 79,
+    "compile_and_dependency_download_excluded": true,
+    "compression": "gzip level 9, each resource independently; estimate, not HTTP trace",
+    "image_policy": "JPEG quality 95 / PNG; widths 400,640,800,1024,1280,1600; different encoders, not byte-identical derivatives",
+    "matched_routes": [
+      "",
+      "about",
+      "contact",
+      "quite_off",
+      "the_threes",
+      "gallery_design",
+      "reframed_still",
+      "closing_time",
+      "masks"
+    ],
+    "remote_fonts_excluded": true
+  },
+  "images": {
+    "legacy_cold_seconds": 29.1574,
+    "rust_cold_seconds": 214.6881,
+    "legacy_warm_seconds": {
+      "samples": [
+        32.5602,
+        28.9707,
+        31.288
+      ],
+      "median": 31.288,
+      "min": 28.9707,
+      "max": 32.5602
+    },
+    "rust_warm_seconds": {
+      "samples": [
+        0.6092,
+        0.5767,
+        1.1126
+      ],
+      "median": 0.6092,
+      "min": 0.5767,
+      "max": 1.1126
+    },
+    "legacy_variants_bytes": 70163868,
+    "rust_shared_variants_bytes": 86606116
+  },
+  "warm_build": {
+    "legacy_seconds": {
+      "samples": [
+        37.9692,
+        35.8783,
+        39.4683
+      ],
+      "median": 37.9692,
+      "min": 35.8783,
+      "max": 39.4683
+    },
+    "rust_seconds": {
+      "samples": [
+        1.9827,
+        1.3302,
+        1.5483
+      ],
+      "median": 1.5483,
+      "min": 1.3302,
+      "max": 1.9827
+    }
+  },
+  "output": {
+    "legacy_bytes": 101111773,
+    "rust_bytes": 259136072,
+    "legacy_pages": 11,
+    "rust_pages": 21,
+    "rust_wasm_bytes": 229307
+  },
+  "payload": {
+    "legacy": {
+      "routes": [
+        {
+          "route": "/",
+          "html_bytes": 22945,
+          "control_bytes": 30025,
+          "control_gzip_bytes": 7400,
+          "scripts": 3,
+          "images": 0,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 0
+        },
+        {
+          "route": "/about",
+          "html_bytes": 25966,
+          "control_bytes": 33046,
+          "control_gzip_bytes": 8334,
+          "scripts": 2,
+          "images": 1,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 0
+        },
+        {
+          "route": "/contact",
+          "html_bytes": 17412,
+          "control_bytes": 24492,
+          "control_gzip_bytes": 6646,
+          "scripts": 2,
+          "images": 0,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 0
+        },
+        {
+          "route": "/quite_off",
+          "html_bytes": 29174,
+          "control_bytes": 40988,
+          "control_gzip_bytes": 10213,
+          "scripts": 4,
+          "images": 1,
+          "images_with_srcset": 1,
+          "images_with_dimensions": 1,
+          "eager_images": 1
+        },
+        {
+          "route": "/the_threes",
+          "html_bytes": 43340,
+          "control_bytes": 56547,
+          "control_gzip_bytes": 12539,
+          "scripts": 3,
+          "images": 24,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 4
+        },
+        {
+          "route": "/gallery_design",
+          "html_bytes": 33660,
+          "control_bytes": 40740,
+          "control_gzip_bytes": 8959,
+          "scripts": 2,
+          "images": 11,
+          "images_with_srcset": 11,
+          "images_with_dimensions": 11,
+          "eager_images": 1
+        },
+        {
+          "route": "/reframed_still",
+          "html_bytes": 34733,
+          "control_bytes": 52097,
+          "control_gzip_bytes": 10758,
+          "scripts": 4,
+          "images": 16,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 4
+        },
+        {
+          "route": "/closing_time",
+          "html_bytes": 22440,
+          "control_bytes": 29520,
+          "control_gzip_bytes": 7921,
+          "scripts": 3,
+          "images": 2,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 2
+        },
+        {
+          "route": "/masks",
+          "html_bytes": 29200,
+          "control_bytes": 42576,
+          "control_gzip_bytes": 10394,
+          "scripts": 3,
+          "images": 8,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 8
+        }
+      ],
+      "median_control_gzip_bytes": 8959,
+      "shared_control_resources": [
+        "/_astro/about.ClSqozIz.css",
+        "/_astro/masks.CGgzSMMJ.css",
+        "/_astro/quite_off.Dt3w3AxZ.css",
+        "/_astro/reframed_still.DZbadx-F.css",
+        "/_astro/the_threes.CTL3-73D.css"
+      ]
+    },
+    "rust": {
+      "routes": [
+        {
+          "route": "/",
+          "html_bytes": 15687,
+          "control_bytes": 291517,
+          "control_gzip_bytes": 87756,
+          "scripts": 1,
+          "images": 0,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 0
+        },
+        {
+          "route": "/about",
+          "html_bytes": 18630,
+          "control_bytes": 295827,
+          "control_gzip_bytes": 88831,
+          "scripts": 1,
+          "images": 1,
+          "images_with_srcset": 1,
+          "images_with_dimensions": 1,
+          "eager_images": 1
+        },
+        {
+          "route": "/contact",
+          "html_bytes": 14132,
+          "control_bytes": 289457,
+          "control_gzip_bytes": 87432,
+          "scripts": 1,
+          "images": 0,
+          "images_with_srcset": 0,
+          "images_with_dimensions": 0,
+          "eager_images": 0
+        },
+        {
+          "route": "/quite_off",
+          "html_bytes": 25132,
+          "control_bytes": 303677,
+          "control_gzip_bytes": 90122,
+          "scripts": 1,
+          "images": 1,
+          "images_with_srcset": 1,
+          "images_with_dimensions": 1,
+          "eager_images": 1
+        },
+        {
+          "route": "/the_threes",
+          "html_bytes": 38421,
+          "control_bytes": 317910,
+          "control_gzip_bytes": 91026,
+          "scripts": 1,
+          "images": 24,
+          "images_with_srcset": 24,
+          "images_with_dimensions": 24,
+          "eager_images": 1
+        },
+        {
+          "route": "/gallery_design",
+          "html_bytes": 32658,
+          "control_bytes": 311761,
+          "control_gzip_bytes": 90376,
+          "scripts": 1,
+          "images": 15,
+          "images_with_srcset": 15,
+          "images_with_dimensions": 15,
+          "eager_images": 1
+        },
+        {
+          "route": "/reframed_still",
+          "html_bytes": 26032,
+          "control_bytes": 309683,
+          "control_gzip_bytes": 90512,
+          "scripts": 1,
+          "images": 8,
+          "images_with_srcset": 8,
+          "images_with_dimensions": 8,
+          "eager_images": 1
+        },
+        {
+          "route": "/closing_time",
+          "html_bytes": 17198,
+          "control_bytes": 293494,
+          "control_gzip_bytes": 88281,
+          "scripts": 1,
+          "images": 2,
+          "images_with_srcset": 2,
+          "images_with_dimensions": 2,
+          "eager_images": 1
+        },
+        {
+          "route": "/masks",
+          "html_bytes": 23494,
+          "control_bytes": 302760,
+          "control_gzip_bytes": 90155,
+          "scripts": 1,
+          "images": 4,
+          "images_with_srcset": 4,
+          "images_with_dimensions": 4,
+          "eager_images": 1
+        }
+      ],
+      "median_control_gzip_bytes": 90122,
+      "shared_control_resources": [
+        "/assets/browser.js",
+        "/assets/browser_bg.wasm",
+        "/assets/css/about-page.css",
+        "/assets/css/base.css",
+        "/assets/css/closing_time-page.css",
+        "/assets/css/contact-page.css",
+        "/assets/css/gallery_design-page.css",
+        "/assets/css/home-page.css",
+        "/assets/css/masks-page.css",
+        "/assets/css/masks.css",
+        "/assets/css/quite_off-page.css",
+        "/assets/css/quite_off.css",
+        "/assets/css/reframed_still-page.css",
+        "/assets/css/reframed_still.css",
+        "/assets/css/the_threes-page.css",
+        "/assets/css/the_threes.css",
+        "/assets/presentation.css",
+        "/assets/start.js"
+      ]
+    }
+  },
+  "candidate_source_sha256": "530d0463c88117cd0b7edb352208f5aeba41df3a5f129d8e6f5686a352bc7942",
+  "artifact_refresh": "Final payload/output counts re-read after whitespace-only source cleanup; timing algorithms unchanged."
+}

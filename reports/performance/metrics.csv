@@ -1,0 +1,6 @@
+metric,unit,astro,rust,change_percent
+Warm image pipeline,seconds,31.288,0.6092,-98.053
+Warm static build,seconds,37.9692,1.5483,-95.922
+Cold image pipeline,seconds,29.1574,214.6881,636.307
+Shared image derivatives,MiB,66.91347885131836,82.59402847290039,23.434
+Median control payload,KiB gzip,8.7490234375,88.009765625,905.938
