@@ -29,7 +29,7 @@ The + disclosure remains on desktop Reframed Still, Closing Time and Masks only.
 
 ## In Praise of Time scales
 
-`site/content/mobile-time.json` controls only the mobile edit, including optional `copy_key` slots for its independently written short passages. Rust checks its sequence against the fourteen authored photographs and requires the wall study to be the only full-width portrait. Percentage widths refer to the image column; photos remain uncropped. The sheep photograph uses `align_left_with` to share the left edge of the wider bed/elephant photograph. Other photographs remain centred. Responsive `sizes` follows each actual display width.
+`site/content/mobile-time.json` controls only the mobile edit, including optional `copy_key` slots for its independently written short passages. Rust checks its sequence against the fourteen authored photographs and requires the wall study to be the only full-width portrait. Percentage widths refer to the image column; photos remain uncropped. The sheep photograph uses `align_left_with` to share the sundae's left edge. The returning lips photograph uses `align_right_with_caption` to follow the first sentence's right edge, ending at “scale.” Other photographs remain centred. Responsive `sizes` follows each actual display width.
 
 | Photograph | Width | Maximum |
 | --- | --- | --- |
