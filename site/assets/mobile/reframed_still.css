@@ -1,0 +1,7 @@
+.reframed-mobile,.reframed-page,.strip-wrap { width:100%; min-width:0; }
+.reframed-mobile .m-carousel { align-items:center; }
+.reframed-mobile .frame img { display:block; width:100%; height:auto; }
+.reframed-mobile .strip-hint-bar { display:none; }
+.reframed-desc { margin-top:32px; font-size:14px; line-height:1.85; color:#555; }
+.reframed-desc .meta { font-size:12px; color:#777; margin-bottom:20px; }
+.reframed-desc .meta strong { font-weight:400; color:#444; }
