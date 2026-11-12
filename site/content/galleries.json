@@ -1,0 +1,264 @@
+[
+  {
+    "page": "in_praise_of_time",
+    "title": "In Praise of Time",
+    "source": "public/projects/in praise of time",
+    "expected": 14,
+    "images": [
+      {
+        "file": "_K336884.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. A seated figure looks directly toward the camera.",
+        "note": "A direct gaze",
+        "family": "body"
+      },
+      {
+        "file": "_K336876.JPG",
+        "alt": "A monochrome close-up of a face and closed lips, showing skin texture. From In Praise of Time by Dai Pan, 2026.",
+        "note": "At close range",
+        "family": "body"
+      },
+      {
+        "file": "_K337101.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. A figure at a table, with hands held in front of them.",
+        "note": "Hands at a table",
+        "family": "gesture",
+        "placement": [
+          1,
+          12
+        ]
+      },
+      {
+        "file": "_K337129.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. Glasses and objects gathered across a dining table.",
+        "note": "Around the table",
+        "family": "object",
+        "placement": [
+          1,
+          12
+        ]
+      },
+      {
+        "file": "_K339085.jpg",
+        "alt": "In Praise of Time by Dai Pan, 2026. A hand holds a clear bottle of hand sanitiser, with bubbles and reflected light.",
+        "note": "Held in the hand",
+        "family": "object",
+        "placement": [
+          1,
+          6
+        ]
+      },
+      {
+        "file": "_K336976.JPG",
+        "alt": "Bare feet beside a bed, a pillow and an elephant toy. From In Praise of Time by Dai Pan, 2026.",
+        "note": "A pause indoors",
+        "family": "body",
+        "placement": [
+          1,
+          9
+        ]
+      },
+      {
+        "file": "km-27.JPG",
+        "alt": "Two worn sheep toys viewed from above beside a wooden post. From In Praise of Time by Dai Pan, 2026.",
+        "note": "A familiar object",
+        "family": "object",
+        "placement": [
+          7,
+          5
+        ]
+      },
+      {
+        "file": "_K339077.JPG",
+        "alt": "A potted plant on a crowded table with cans, cups, bottles, a lamp and a knife. From In Praise of Time by Dai Pan, 2026.",
+        "note": "A plant beside the window",
+        "family": "space",
+        "placement": [
+          2,
+          5
+        ]
+      },
+      {
+        "file": "km-74.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. Soft shadows move across the panels of an exterior wall.",
+        "note": "Light across a wall",
+        "family": "space"
+      },
+      {
+        "file": "km-97.JPG",
+        "alt": "A hand lifts a spoonful of ice cream above a glass sundae dish. From In Praise of Time by Dai Pan, 2026.",
+        "note": "A small gesture",
+        "family": "gesture",
+        "placement": [
+          1,
+          8
+        ]
+      },
+      {
+        "file": "km-66.jpg",
+        "alt": "In Praise of Time by Dai Pan, 2026. A figure stands beneath leaves in dappled light.",
+        "note": "Under the leaves",
+        "family": "body"
+      },
+      {
+        "file": "km-104.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. Tree branches frame the facade of a building.",
+        "note": "Trees against a facade",
+        "family": "space"
+      },
+      {
+        "file": "km-88.JPG",
+        "alt": "In Praise of Time by Dai Pan, 2026. Figures, branches and a railing reflected in rippling water.",
+        "family": "reflection",
+        "placement": [
+          9,
+          4
+        ],
+        "inset_before": "km-74.JPG"
+      },
+      {
+        "file": "_K336877.JPG",
+        "alt": "A monochrome close-up of parted lips beneath the nose. From In Praise of Time by Dai Pan, 2026.",
+        "family": "body"
+      }
+    ],
+    "anchor": "_K336876.JPG",
+    "pairs": [
+      [
+        "km-74.JPG",
+        "km-66.jpg"
+      ]
+    ],
+    "hero": {
+      "files": [
+        "_K336876.JPG",
+        "km-104.JPG"
+      ],
+      "upper": [
+        "I photograph time through its effects on bodies, objects and the spaces they occupy."
+      ]
+    },
+    "annotations": [
+      {
+        "file": "_K339077.JPG",
+        "words": [],
+        "caption": "",
+        "kind": "vocabulary",
+        "reverse": true,
+        "spacious": true,
+        "columns": [
+          {
+            "label": "Objects",
+            "words": [
+              "plant",
+              "leaves",
+              "pot",
+              "soil",
+              "knife",
+              "forks",
+              "mug",
+              "cups",
+              "cans",
+              "bottle",
+              "jars",
+              "tubs",
+              "boxes",
+              "lamp",
+              "table",
+              "chair",
+              "cloth",
+              "wrappers"
+            ]
+          },
+          {
+            "label": "Atmosphere",
+            "words": [
+              "crowded",
+              "still",
+              "intimate",
+              "incidental",
+              "unsettled"
+            ]
+          }
+        ]
+      },
+      {
+        "file": "_K339085.jpg",
+        "kind": "prose",
+        "words": [],
+        "caption": "",
+        "text": "A shifting reflection makes the glass a temporary measure of the surrounding space.",
+        "reverse": true
+      },
+      {
+        "file": "km-97.JPG",
+        "words": [],
+        "caption": "",
+        "kind": "poem",
+        "text": "A sundae,\na scoop of ice cream,\nvanilla,\nwhite,\nlike the face of a sleeping sheep.",
+        "reverse": true,
+        "spacious": true
+      }
+    ],
+    "ending": "_K336884.JPG",
+    "chapter_breaks": [
+      [
+        "_K336976.JPG",
+        "_K337101.JPG"
+      ]
+    ],
+    "frame_quotes": [
+      {
+        "file": "km-27.JPG",
+        "quote": {
+          "text": "Keeping his hand upon his chest, he pictured warm, crimson blood passing slowly beneath the beat. This was life, he thought; his palm was holding down the life that flowed. Yet the clocklike pulse answering his hand seemed a warning bell, calling him toward death. If only he could live without hearing it—if the vessel that held his blood did not also have to hold time—how freely he might taste life.",
+          "title": "Sorekara",
+          "source": "https://www.aozora.gr.jp/cards/000148/files/1746_18325.html",
+          "reference": {
+            "author": "Natsume, S.",
+            "year": "2005",
+            "publisher": "Aozora Bunko",
+            "translated_title": "And then",
+            "original_year": 1909
+          },
+          "translation_note": "English rendering from the Japanese original.",
+          "locator": "(Natsume, 1909/2005, chap. 1, sec. 1, para. 3)"
+        },
+        "beside": true
+      },
+      {
+        "file": "_K337129.JPG",
+        "quote": {
+          "text": "Riding wings that beat with the light of night,\nalternating lamps flatten my sight,\nand I bear the weight of the earth, our mother.\nI stand in line inside a dream I made myself, and wake again and again,\nas if this were not the world I live in.\n\nNames are written on the map,\na point among points of a place once known,\nmade normal by the checking of the text wrap.\nSomeone wrote a name down, which means it will be forgotten.\nA branch is cut, so the root has already been forgotten,\nor who would be worthy, who would dare to look down on a giant,\nand keep cutting at its fingers?\n\nThose worlds that startled me wanted to catch the wild man and study him,\nto roast the beast and eat it.\nI watched them search one tree hollow after another.\nThe hollow broke off there.\nRain and people were both tangled in the moon.\nI don’t understand,\nfor whose sake do I accept this,\nletting a confusion that never basks in daylight\ncome to introduce the pain.",
+          "title": "A flowing song",
+          "source": "https://daipan.ink",
+          "reference": {
+            "author": "Pan, D.",
+            "year": "n.d.",
+            "publisher": "daipan.ink"
+          },
+          "locator": "(Pan, n.d.)"
+        },
+        "illustration": {
+          "file": "_K336877.JPG",
+          "align_to": "Someone wrote a name down, which means it will be forgotten."
+        }
+      }
+    ],
+    "sequence": [
+      "_K336876.JPG",
+      "km-104.JPG",
+      "_K339077.JPG",
+      "km-97.JPG",
+      "km-27.JPG",
+      "_K336976.JPG",
+      "_K337101.JPG",
+      "_K339085.jpg",
+      "km-88.JPG",
+      "km-74.JPG",
+      "km-66.jpg",
+      "_K337129.JPG",
+      "_K336877.JPG",
+      "_K336884.JPG"
+    ]
+  }
+]

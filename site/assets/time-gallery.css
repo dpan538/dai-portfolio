@@ -1,0 +1,122 @@
+/* Image scale, intervals and one readable text size carry the sequence. */
+body[data-page='in_praise_of_time'] main.content { display:block; width:100%; box-sizing:border-box; height:auto; overflow:visible; padding-top:72px; padding-bottom:120px; }
+body[data-page='in_praise_of_time'] main.content>* { max-width:none; }
+.time-project { --time-text-size:16px; --time-header-gap:clamp(36px,5vw,64px); --time-hero-offset:calc(72px + 29.6px + var(--time-header-gap)); --time-sequence-space:clamp(88px,13vw,180px); --time-frame-space:clamp(96px,12svh,160px); --time-hero-after-space:var(--time-sequence-space); container-type:inline-size; width:100%; max-width:1160px!important; margin:0 auto; font:400 var(--time-text-size)/1.85 var(--body,system-ui,sans-serif); color:#444; }
+.time-header { margin:0 0 var(--time-header-gap); display:flex; justify-content:space-between; align-items:baseline; gap:24px; }
+.time-header h1,.time-header p { margin:0; font:inherit; letter-spacing:normal; }
+.time-header h1 { color:#111; }
+.time-header p { color:#777; }
+.time-grid { display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; row-gap:var(--time-sequence-space); align-items:start; }
+.time-frame { grid-column:var(--column)/span var(--span); grid-row:var(--row); margin:0; min-width:0; }
+.time-photo { display:block; width:100%; height:auto; cursor:zoom-in; }
+.time-photo:focus-visible { outline:1px solid #888; outline-offset:8px; }
+/* The enlarged mouth opens the first chapter. Most branches remain below the fold. */
+.time-hero { width:100%; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; row-gap:max(120px,calc(100svh - var(--time-hero-offset) - 80cqw + 13.333px)); margin:0 0 var(--time-hero-after-space); }
+.time-hero-statement { grid-column:1/span 5; grid-row:2; align-self:center; }
+.time-hero .time-frame { width:100%; margin:0; }
+.time-hero .time-hero-mouth { width:95%; grid-column:1/-1; grid-row:1; }
+.time-hero-branches { grid-column:9/span 4; grid-row:2; }
+.time-hero-words { margin:0; font:inherit; letter-spacing:normal; }
+.time-hero-words span { display:block; }
+.time-frame--chapter-hero { grid-column:1/-1; }
+.time-annotated { grid-column:1/-1; grid-row:var(--row); display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; align-items:center; }
+.time-annotated--spacious { margin-block:var(--time-frame-space); }
+.time-annotated--vocabulary { margin-top:calc(var(--time-frame-space) * .8 - var(--time-hero-after-space) * .2); margin-bottom:calc(var(--time-frame-space) * .6 - var(--time-sequence-space) * .2); }
+.time-annotated--vocabulary .time-frame { width:105%; }
+.time-vocabulary { grid-column:8/span 5; grid-row:1; position:relative; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:32px; align-items:center; align-self:center; }
+.time-vocabulary:before { content:''; position:absolute; left:calc(50% - .5px); top:50%; transform:translateY(-50%); width:1px; height:28px; background:#aaa; }
+.time-vocabulary-column { min-width:0; }
+.time-vocabulary ul { margin:0; padding:0; list-style:none; }
+.time-vocabulary li { margin:0; padding:0; font:inherit; }
+.time-poem-image { display:none; }
+.time-word-column,.time-prose-column { grid-column:2/span 3; grid-row:1; align-self:center; font:inherit; }
+.time-word-column>p,.time-prose-column p { margin:0; font:inherit; letter-spacing:normal; }
+.time-word-column span { display:block; }
+.time-word-caption { margin:22px 0 0; max-width:18ch; color:#777; font:inherit; }
+.time-prose-column { max-width:28ch; }
+.time-annotated--reverse .time-word-column,.time-annotated--reverse .time-prose-column { grid-column:9/span 3; }
+.time-annotated--spacious.time-annotated--prose .time-prose-column { grid-column:9/span 4; }
+/* This juxtaposition is a separate movement from the glass above it. */
+.time-pair { grid-column:1/-1; grid-row:var(--row); display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; align-items:end; margin-top:clamp(112px,15svh,200px); }
+.time-pair-mark { grid-column:8/span 2; grid-row:1; align-self:center; justify-self:center; position:relative; display:grid; place-items:center; width:28px; height:48px; color:#999; }
+.time-pair-mark:before,.time-pair-mark:after { content:''; position:absolute; height:1px; background:currentColor; }
+.time-pair-mark:before { top:12px; left:0; width:28px; }
+.time-pair-mark:after { bottom:12px; right:0; width:16px; }
+.time-pair-mark>span { width:3px; height:3px; border-radius:50%; background:currentColor; }
+/* Quotations are pauses in the edit, not chapter titles. */
+.time-chapter-break { grid-column:3/span 8; grid-row:var(--row); min-height:160px; display:flex; flex-direction:column; justify-content:center; align-items:flex-start; gap:18px; margin:0; color:#555; font:inherit; }
+.time-chapter-number { display:none; }
+.time-chapter-break blockquote,.time-chaos-quote blockquote,.time-frame-quote blockquote { margin:0; padding:0; border:0; font:inherit; }
+.time-chapter-break blockquote p,.time-chaos-quote blockquote p,.time-frame-quote blockquote p { margin:0; font:inherit; }
+.time-chapter-break figcaption,.time-chaos-quote figcaption,.time-frame-quote figcaption { font:inherit; color:#777; }
+.time-chapter-break figcaption p,.time-chaos-quote figcaption p,.time-frame-quote figcaption p { margin:0; font:inherit; }
+.time-chapter-break figcaption p+p,.time-chaos-quote figcaption p+p,.time-frame-quote figcaption p+p { margin-top:12px; }
+.time-reference { padding-left:1.5em; text-indent:-1.5em; overflow-wrap:anywhere; }
+.time-chapter-break a,.time-chaos-quote a,.time-frame-quote a,.time-statement a { color:inherit; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.time-quoted-frame { grid-column:1/-1; grid-row:var(--row); display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; align-items:center; }
+.time-frame-quote { grid-column:1/span 5; grid-row:1; display:flex; flex-direction:column; gap:18px; margin:0; }
+.time-chaos { grid-column:1/-1; grid-row:var(--row); display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); column-gap:16px; }
+.time-chaos>.time-frame { grid-column:1/-1; grid-row:1; }
+.time-chaos-quote { grid-column:7/span 6; grid-row:2; display:flex; flex-direction:column; gap:18px; margin:32px 0 0; }
+/* Portrait and statement form one deliberately lowered closing spread. */
+.time-closing { grid-column:1/-1; grid-row:var(--row); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:28px; min-height:100svh; box-sizing:border-box; padding:clamp(64px,8svh,96px) 0; }
+.time-frame--ending { width:min(44%,240px); max-width:240px; align-self:center; }
+.time-closing-copy { width:min(100%,62ch); max-width:62ch; }
+.time-statement { margin:0; font:inherit; }
+.time-statement p { margin:0 0 18px; font:inherit; }
+.time-statement p:last-child { margin-bottom:0; }
+.time-colophon { margin:30px 0 0; font:inherit; color:#777; }
+.time-mobile-copy { display:none; }
+.time-lightbox { position:fixed; inset:0; z-index:2200; display:none; align-items:center; justify-content:center; background:#000; }
+.time-lightbox.is_open { display:flex; }
+.time-lightbox-backdrop { position:absolute; inset:0; }
+.time-lightbox-stage { position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; padding:48px; box-sizing:border-box; }
+.time-lightbox .lb_view { display:block; max-width:calc(100vw - 160px); max-height:88dvh; width:auto; height:auto; object-fit:contain; }
+.time-lightbox button { border:0; background:transparent; color:#fff; cursor:pointer; font:34px/1 system-ui,sans-serif; min-width:44px; min-height:44px; padding:0; }
+.time-lightbox-close { position:absolute; right:24px; top:20px; }
+.time-lightbox button:focus-visible { outline:1px solid #fff; outline-offset:4px; }
+@media(min-width:769px){
+  /* Word-frame reading edge: photo width, measured word span and the two gutters. */
+  .time-project { --time-reading-outset:calc((16lh + 1cap) * 2 / 3 + 29.4658em + 126px - 100cqw); }
+  /* The noun column acts as the left of a frame; wrappers sits beneath cloth. */
+  .time-annotated--vocabulary { --time-plant-extra-row:0px; grid-template-columns:max-content auto minmax(0,1fr); column-gap:78px; width:calc(100% + 60px); margin-inline:-30px; align-items:start; margin-top:calc(144px - var(--time-hero-after-space) - (1lh - 1cap) / 2); margin-bottom:calc(144px - var(--time-sequence-space) - var(--time-frame-space) - (3lh - 1cap) / 2 - var(--time-plant-extra-row)); }
+  .time-annotated--vocabulary .time-frame { grid-column:2; grid-row:1; width:calc((16lh + 1cap) * 2 / 3); margin-top:calc((1lh - 1cap) / 2); align-self:start; }
+  .time-vocabulary { display:contents; }
+  .time-vocabulary:before { content:none; }
+  .time-vocabulary-column:first-child { grid-column:1; grid-row:1; }
+  .time-vocabulary-column:last-child { grid-column:3; grid-row:1; align-self:start; margin-top:16lh; width:max-content; max-width:calc(100% + clamp(28px,4vw,64px) + max(0px,(100vw - 1300px) / 2) - 38px); }
+  .time-vocabulary-column:last-child ul { display:flex; flex-wrap:wrap; gap:0; }
+  .time-vocabulary-column:last-child li { white-space:nowrap; }
+  .time-vocabulary-column:last-child li+li:before { content:'·'; margin-inline:8px; }
+  @media(max-width:1300px){
+    .time-project { --time-reading-outset:30px; }
+    .time-annotated--vocabulary { --time-plant-extra-row:calc(32px + 1lh); row-gap:32px; }
+    .time-vocabulary-column:last-child { grid-column:1/-1; grid-row:2; justify-self:end; max-width:100%; margin-top:0; }
+  }
+  .time-chaos-quote { margin-top:64px; }
+  .time-chaos-quote--illustrated { grid-column:1/-1; display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:0 16px; }
+  .time-chaos-quote--illustrated>blockquote { display:contents; }
+  .time-verse-leading { grid-column:7/span 6; grid-row:1; }
+  .time-verse-anchor { grid-column:7/span 6; grid-row:2; }
+  .time-poem-image { display:block; grid-column:2/span 3; grid-row:2; width:min(100%,204px); align-self:start; margin:calc((1lh - 1cap) / 2) 0 0; }
+  .time-chaos-quote--illustrated>figcaption { grid-column:7/span 6; grid-row:3; margin-top:18px; }
+  /* Use the outer whitespace for the poem, and continue its right edge below. */
+  .time-project { --time-poem-outset:min(32px,4vw); --time-sequence-space:clamp(79.2px,11.7vw,162px); --time-frame-space:clamp(86.4px,10.8svh,144px); --time-hero-offset:calc(var(--desktop-reading-top) + 29.6px + var(--time-header-gap)); }
+  .time-hero { row-gap:max(108px,calc(100svh - var(--time-hero-offset) - 80cqw + 13.333px)); }
+  .time-annotated--poem .time-prose-column { width:max-content; max-width:calc(100% + var(--time-poem-outset) - 48px); justify-self:end; align-self:end; margin-right:calc(-1 * var(--time-reading-outset)); text-align:right; }
+  .time-quoted-frame { margin-top:calc(72px - var(--time-sequence-space) - var(--time-frame-space)); }
+  .time-quoted-frame .time-frame { grid-column:8/span 5; width:90%; justify-self:end; translate:var(--time-reading-outset) 0; align-self:start; }
+  .time-quoted-frame+.time-frame { margin-top:calc(72px - var(--time-sequence-space)); }
+  /* The restored chapter pause follows the tightened sequence spacing. */
+  .time-chapter-break { min-height:115.2px; margin-block:calc(var(--time-sequence-space) * -.2); }
+  .time-chapter-number { display:inline; }
+  /* A water reflection enters above the wall, sharing the annotation's left edge. */
+  .time-frame--inset { grid-column:9/span 4; width:calc((100% + var(--time-poem-outset)) * 1.1); max-width:calc(100% + clamp(28px,4vw,64px) + max(0px,(100vw - 1300px) / 2) - 8px); margin-top:calc(43.2px - var(--time-sequence-space)); align-self:start; z-index:1; }
+  .time-pair { margin-top:calc(115.2px - var(--time-sequence-space)); }
+  .time-pair-mark { display:none; }
+  /* A larger portrait has fifty more pixels of air above and below it. */
+  .time-closing { min-height:0; justify-content:flex-start; margin-top:calc(98px - var(--time-sequence-space)); gap:78px; padding:0; }
+  .time-frame--ending { width:264px; max-width:100%; }
+  /* At the page end, the credit and the sidebar's 36px mail icon share a centre. */
+  body[data-page='in_praise_of_time'] main.content { padding-top:var(--desktop-reading-top); padding-bottom:calc(48px + 18px - 14.8px); }
+}

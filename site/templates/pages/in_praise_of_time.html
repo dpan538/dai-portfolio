@@ -1,0 +1,24 @@
+<article class="time-project" aria-labelledby="time-title">
+  <header class="time-header">
+    <h1 id="time-title">In Praise of Time</h1>
+    <p>2026</p>
+  </header>
+  {{gallery:hero}}
+  <div class="time-grid" id="time-sequence" aria-label="In Praise of Time photographic sequence">
+    {{gallery:frames}}
+    <footer class="time-closing" style="--row:{{gallery:closing-row}}">
+      {{gallery:ending}}
+      <div class="time-closing-copy">
+        <div class="time-statement time-desktop-copy" data-copy="in_praise_of_time.01">{{copy:in_praise_of_time.01}}</div>
+        <p class="time-colophon"><span>2026</span><span class="time-colophon-separator"> · </span><span>Pentax K-3 Mark III Monochrome</span></p>
+      </div>
+    </footer>
+  </div>
+</article>
+<div id="time-lightbox" class="time-lightbox hidden" data-navigation="single" aria-hidden="true">
+  <div class="time-lightbox-backdrop" data-close="1"></div>
+  <div class="time-lightbox-stage">
+    <button type="button" class="time-lightbox-close" data-close="1" aria-label="Close">×</button>
+    <img class="lb_view" alt="In Praise of Time photograph preview">
+  </div>
+</div>
