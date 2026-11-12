@@ -1,0 +1,65 @@
+.contact_wrap[data-scope-contact] {
+  max-width:420px;
+  margin-inline:auto;
+  padding-top:clamp(80px,12vw,140px);
+  padding-inline:clamp(24px,5vw,40px);
+  padding-bottom:clamp(32px,5vw,48px)}
+.contact_lead[data-scope-contact] {
+  font-size:var(--text-body, 16px);
+  line-height:1.7;
+  color:var(--muted);
+  margin:0 0 24px}
+.contact_divider[data-scope-contact] {
+  width:180px;
+  height:1px;
+  background:var(--line);
+  margin-bottom:24px}
+.contact_list[data-scope-contact] {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:14px}
+.contact_list_gap[data-scope-contact] {
+  margin-top:22px}
+.contact_list[data-scope-contact] li[data-scope-contact] {
+  display:grid;
+  grid-template-columns:88px 1fr;
+  gap:16px;
+  align-items:start}
+.contact_key[data-scope-contact] {
+  font-size:var(--text-small, 14px);
+  color:var(--muted);
+  white-space:nowrap;
+  letter-spacing:.02em}
+.contact_val[data-scope-contact] {
+  font-size:var(--text-body, 16px);
+  line-height:1.55}
+.contact_val--nowrap[data-scope-contact] {
+  white-space:nowrap}
+.contact_val[data-scope-contact] a[data-scope-contact] {
+  color:var(--text);
+  text-decoration:none}
+.contact_val[data-scope-contact] a[data-scope-contact]:hover {
+  text-decoration:underline;
+  text-underline-offset:3px}
+
+.contact_phones[data-scope-contact] { display:grid; gap:8px }
+.contact_region[data-scope-contact] { margin-left:16px; font-size:13.5px; color:var(--muted) }
+.contact_location[data-scope-contact] { margin:40px 0 0; font-size:14px; color:var(--muted) }
+@media(min-width:769px) {
+  body[data-page='contact'] main.content { width:100%; padding-top:var(--desktop-reading-top); padding-bottom:72px }
+  .contact_wrap[data-scope-contact] { max-width:680px; margin-inline:0; padding:0 }
+  .contact_heading[data-scope-contact] { margin:0 0 32px; font:400 16px/1.85 var(--body); letter-spacing:normal }
+  .contact_lead[data-scope-contact] { max-width:56ch; margin:0 0 48px; line-height:1.85; text-wrap:balance; color:#444 }
+  .contact_group[data-scope-contact]+.contact_group[data-scope-contact] { margin-top:40px; padding-top:28px; border-top:1px solid var(--line) }
+  .contact_group[data-scope-contact] h2[data-scope-contact] { margin:0 0 22px; font:500 16px/1.85 var(--body); text-transform:none; letter-spacing:normal }
+  .contact_list[data-scope-contact] { gap:20px }
+  .contact_list[data-scope-contact] li[data-scope-contact] { grid-template-columns:88px minmax(0,1fr); gap:24px; line-height:1.85 }
+  .contact_key[data-scope-contact] { line-height:calc(16px * 1.85) }
+  .contact_val[data-scope-contact] { line-height:1.85 }
+}
+@media(max-width:768px) {
+  .contact_heading[data-scope-contact],.contact_group[data-scope-contact] h2 { display:none }
+  .contact_group[data-scope-contact]+.contact_group[data-scope-contact] { margin-top:36px }
+}

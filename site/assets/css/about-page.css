@@ -1,0 +1,136 @@
+.block[data-scope-about] {
+  margin-top:6px}
+.about_intro[data-scope-about] {
+  display:grid;
+  grid-template-columns:minmax(0,220px) minmax(0,1fr);
+  gap:32px;
+  align-items:start}
+.about_photo[data-scope-about] {
+  margin:0;
+  border:1px solid var(--line);
+  background:#f8f8f8}
+.about_photo[data-scope-about] img[data-scope-about] {
+  display:block;
+  width:100%;
+  height:auto}
+.about_text[data-scope-about] {
+  font-size:var(--text-body, 16px);
+  line-height:1.7;
+  align-self:end}
+.cv[data-scope-about] {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:grid;
+  gap:10px}
+.cv[data-scope-about] li[data-scope-about] {
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:18px;
+  align-items:start}
+.cv_key[data-scope-about] {
+  font-size:var(--text-small, 14px);
+  color:var(--muted);
+  white-space:nowrap;
+  letter-spacing:.02em}
+.cv_val[data-scope-about] {
+  font-size:var(--text-body, 16px)}
+.cv_val[data-scope-about] a[data-scope-about] {
+  color:var(--text);
+  text-decoration:none}
+.cv_val[data-scope-about] a[data-scope-about]:hover {
+  color:var(--muted);
+  text-decoration:underline;
+  text-underline-offset:3px}
+.about_contact_block[data-scope-about],.about_writing_block[data-scope-about] {
+  margin-top:28px}
+.about_writing[data-scope-about] {
+  max-width:70ch;
+  margin:0;
+  font-size:var(--text-body, 16px);
+  line-height:1.7;
+  color:#000000c7}
+.about_writing[data-scope-about] a[data-scope-about] {
+  color:var(--text);
+  text-decoration:underline;
+  text-underline-offset:3px}
+.about_contact_list[data-scope-about] {
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px}
+.about_contact_list[data-scope-about] a[data-scope-about] {
+  font-size:var(--text-body, 16px);
+  color:var(--text);
+  text-decoration:none}
+.about_contact_list[data-scope-about] a[data-scope-about]:hover {
+  text-decoration:underline;
+  text-underline-offset:3px;
+  color:var(--muted)}
+.about_disclaimer[data-scope-about] {
+  margin:24px 0 0;
+  font-size:var(--text-meta, 13.5px);
+  color:var(--muted);
+  line-height:1.5}
+@media(max-width:800px) {
+  .about_intro[data-scope-about] {
+  grid-template-columns:1fr;
+  row-gap:20px}
+}
+@media(max-width:768px) {
+  main.content:has(.about_intro) {
+  padding-top:114px}
+html:has(.about_intro)::-webkit-scrollbar,body:has(.about_intro)::-webkit-scrollbar {
+  display:none;
+  width:0}
+html:has(.about_intro),body:has(.about_intro) {
+  scrollbar-width:none;
+  -ms-overflow-style:none}
+.block[data-scope-about] {
+  margin-top:0}
+.block[data-scope-about]+.block[data-scope-about] {
+  margin-top:18px}
+.about_intro[data-scope-about] {
+  row-gap:14px}
+.about_photo[data-scope-about] {
+  width:min(58vw,190px);
+  margin-inline:auto}
+.about_text[data-scope-about] {
+  font-size:15.5px;
+  line-height:1.66}
+.cv[data-scope-about] {
+  gap:8px}
+.cv[data-scope-about] li[data-scope-about] {
+  grid-template-columns:64px 1fr;
+  gap:12px}
+.cv_key[data-scope-about] {
+  font-size:13.5px}
+.cv_val[data-scope-about],.about_writing[data-scope-about],.about_contact_list[data-scope-about] a[data-scope-about] {
+  font-size:15.5px}
+.about_writing_block[data-scope-about],.about_contact_block[data-scope-about],.about_disclaimer[data-scope-about] {
+  margin-top:18px}
+}
+@media(min-width:769px) {
+  body[data-page='about'] main.content { width:100%; padding-top:var(--desktop-reading-top); padding-bottom:72px }
+  .about_intro[data-scope-about] { grid-template-columns:clamp(220px,21vw,264px) minmax(0,1fr); column-gap:clamp(32px,4vw,56px); margin:0 }
+  .about_photo[data-scope-about] { border:0; background:transparent }
+  .about_text[data-scope-about] { align-self:center; line-height:1.85; color:#444 }
+  .about_text[data-scope-about] p { margin:0 0 24px }
+  .about_text[data-scope-about] p:last-child { margin-bottom:0 }
+  .block[data-scope-about]+.block[data-scope-about] { margin-top:56px; padding-top:32px; border-top:1px solid var(--line) }
+  .block[data-scope-about] h2[data-scope-about] { margin:0 0 24px; font:500 18px/1.65 var(--body); text-transform:none; letter-spacing:normal }
+  .cv[data-scope-about] { gap:20px }
+  .cv[data-scope-about] li[data-scope-about] { grid-template-columns:80px minmax(0,1fr); gap:24px; line-height:1.85 }
+  .cv_key[data-scope-about] { line-height:calc(16px * 1.85) }
+  .cv_val[data-scope-about] { color:#444 }
+  .about_writing[data-scope-about] { max-width:64ch; line-height:1.85; color:#444 }
+  .about_contact_list[data-scope-about] { gap:12px }
+  .about_text--mobile[data-scope-about],.contact_ig--mobile[data-scope-about] {
+  display:none}
+}
+@media(max-width:768px) {
+  .about_text--desktop[data-scope-about],.contact_ig--desktop[data-scope-about] {
+  display:none}
+}
