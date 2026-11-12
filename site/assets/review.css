@@ -1,0 +1,28 @@
+/* Local editorial tools. This sheet is loaded only in review mode or /review/. */
+.review-dashboard { margin:0; background:#f5f4ef; color:#202823; font:15px/1.8 system-ui,-apple-system,sans-serif; }
+.review-dashboard main { max-width:920px; margin:0 auto; padding:48px 24px 80px; }
+.review-dashboard h1 { font-size:34px; margin:10px 0 20px; }
+.review-dashboard a { color:#315a46; text-underline-offset:4px; }
+.review-eyebrow { margin-top:38px; font-size:12px; letter-spacing:.16em; color:#647265; }
+.review-intro { max-width:65ch; font-size:18px; }
+.review-shortcuts { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
+.review-shortcuts a { border:1px solid #b9c6bb; padding:8px 14px; border-radius:6px; text-decoration:none; }
+.review-card { background:#fff; border:1px solid #d8dfd5; border-radius:10px; margin-top:20px; padding:24px; }
+.review-card header { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:#617166; }
+.review-card h2 { font-size:20px; margin:16px 0 12px; }
+.review-card p { margin:10px 0; }
+.review-card strong { color:#315a46; margin-right:8px; }
+#review-panel { box-sizing:border-box; position:fixed; right:16px; bottom:16px; z-index:100000; width:min(370px,calc(100vw - 32px)); max-height:72dvh; overflow:auto; padding:18px; border:1px solid #bac8bb; border-radius:10px; background:#fffffff5; box-shadow:0 8px 40px #1c382522; color:#263b2b; font:13px/1.7 system-ui,sans-serif; text-align:left; }
+#review-panel h2 { font:600 16px/1.5 system-ui,sans-serif; margin:0 0 8px; }
+#review-panel p { margin:8px 0; }
+#review-panel a { color:#315a46; text-decoration:underline; }
+#review-panel nav { display:flex; gap:14px; margin:12px 0; }
+#review-panel details { border-top:1px solid #dbe3da; padding:10px 0; }
+#review-panel summary { cursor:pointer; font-weight:600; }
+#review-panel summary:focus-visible { outline:2px solid #315a46; outline-offset:2px; }
+#review-panel .review-actions { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+#review-panel button { background:#edf1eb; border:1px solid #c4d0c2; border-radius:4px; padding:4px 9px; cursor:pointer; color:#315a46; font:inherit; }
+#review-panel[data-collapsed='true'] { width:auto; }
+#review-panel[data-collapsed='true'] .review-body { display:none; }
+[data-review-highlight] { outline:2px dashed #6a8e6c !important; outline-offset:7px; }
+@media(max-width:768px){ #review-panel { max-height:50dvh; right:10px; bottom:10px; width:calc(100vw - 20px); } }

@@ -1,0 +1,54 @@
+/* Only Reframed Still, Closing Time and Masks use this disclosure. */
+.project-info { position:fixed; right:28px; bottom:22px; z-index:1200; font:13px/1.7 var(--body,system-ui,sans-serif); color:var(--text,#111); }
+.project-info>summary { list-style:none; cursor:pointer; padding:0; border:0; background:#fffffff2; user-select:none; width:48px; height:48px; display:grid; place-items:center; margin-left:auto; }
+.project-info>summary::-webkit-details-marker { display:none; }
+.project-info>summary span { display:block; font:300 29px/1 system-ui,sans-serif; }
+.project-info[open]>summary span { display:inline-block; transform:rotate(45deg); }
+.project-info-panel { position:absolute; bottom:calc(100% + 10px); right:0; width:min(410px,calc(100vw - 48px)); max-height:min(65dvh,640px); overflow:auto; box-sizing:border-box; padding:22px; border:1px solid #e2e2e2; background:#fffffff7; box-shadow:0 5px 25px #0000000d; overscroll-behavior:contain; }
+.project-info-panel header { display:flex; justify-content:space-between; gap:20px; align-items:center; }
+.project-info-panel h2 { font:400 19px/1.4 var(--heading,serif); margin:0; }
+.project-info-panel p { font:inherit; margin:16px 0 0; color:#444; }
+.project-info-panel .project-info-meta { color:#777; font-size:11px; }
+.project-info-close { border:0; padding:4px 8px; font:24px/1 system-ui,sans-serif; background:transparent; cursor:pointer; }
+.project-info-panel a { text-decoration:underline; text-underline-offset:3px; }
+.project-info-writing { display:inline-block; margin-top:12px; }
+.project-info summary:focus-visible,.project-info button:focus-visible { outline:1px solid currentColor; outline-offset:4px; }
+/* These projects keep their image-led information disclosure. */
+body[data-page='reframed_still'] .desc_panel,
+body[data-page='reframed_still'] .reframed-desc,
+body[data-page='in_praise_of_time'] .desc_panel,
+body[data-page='in_praise_of_time'] .reframed-desc,
+body[data-page='closing_time'] .ct__content,
+body[data-page='masks'] .masks-desktop .text,
+body[data-page='masks'] .masks-text { display:none!important; }
+@media(min-width:769px){
+  body[data-page='masks'] .row { display:flex; justify-content:center; padding-inline:40px; }
+  body[data-page='masks'] .row .image { max-width:100%; }
+  body[data-page='masks'] .row .image img { max-width:100%; object-fit:contain; }
+}
+@media(max-width:768px){
+  .project-info { right:16px; bottom:max(16px,env(safe-area-inset-bottom)); }
+  .project-info-panel { width:calc(100vw - 32px); max-height:65dvh; padding:20px; }
+  /* Stable vertical reading on touch devices. */
+  .reframed-mobile[data-scope-reframed] .strip[data-scope-reframed] { height:auto; display:flex; flex-direction:column; gap:18px; padding:0; overflow:visible; touch-action:pan-y; }
+  .reframed-mobile[data-scope-reframed] figure.frame[data-scope-reframed] { height:auto; width:100%; display:block; }
+  .reframed-mobile[data-scope-reframed] figure.frame[data-scope-reframed] img[data-scope-reframed] { width:100%; height:auto; max-height:none; }
+  .reframed-mobile[data-scope-reframed] .strip[data-scope-reframed]:after { display:none; }
+  .threes__flow-stage[data-scope-threes] { height:auto!important; display:flex; flex-direction:column; gap:18px; border:0; background:transparent; perspective:none; }
+  .threes__card[data-scope-threes] { position:static!important; width:100%!important; height:auto!important; transform:none!important; opacity:1!important; pointer-events:auto!important; display:block!important; padding:0; box-shadow:none; }
+  .threes__card[data-scope-threes] img[data-scope-threes] { width:100%!important; height:auto!important; max-height:none!important; object-fit:contain; }
+  .threes__card--hidden[data-scope-threes] { display:block!important; }
+  .threes__flow-back[data-scope-threes] { display:none!important; }
+  .threes__flow-sub[data-scope-threes] { font-size:0; }
+  .threes__flow-sub[data-scope-threes]:after { content:'Scroll through the spreads · Tap to enlarge'; font-size:12px; }
+  .contact_list li { grid-template-columns:68px minmax(0,1fr)!important; gap:12px!important; }
+  .contact_val { overflow-wrap:anywhere; }
+  .contact_val--nowrap { white-space:normal!important; }
+}
+@media(prefers-reduced-motion:reduce){ .threes__hero,.gallery__figure img { transition:none!important; transform:none!important; } }
+
+.threes__card[data-scope-threes] { will-change:auto; }
+@media(min-width:769px){.threes__card[data-scope-threes][aria-current='true'] { will-change:transform; }}
+
+/* Full-image viewing owns the screen; page navigation returns on close. */
+body.image-preview-open .mobile_header { visibility:hidden!important; pointer-events:none!important; }
