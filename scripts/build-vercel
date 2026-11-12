@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+
+if ! command -v rustup >/dev/null 2>&1; then
+    rust_installer=$(mktemp)
+    trap 'rm -f "$rust_installer"' EXIT
+    curl --fail --silent --show-error --location https://sh.rustup.rs -o "$rust_installer"
+    sh "$rust_installer" -y --profile minimal --default-toolchain none --no-modify-path
+    export PATH="${CARGO_HOME:-$HOME/.cargo}/bin:$PATH"
+fi
+
+rustup toolchain install --no-self-update
+sh scripts/site build dist --production
+python3 scripts/check-site.py dist
+python3 scripts/check-architecture.py dist
