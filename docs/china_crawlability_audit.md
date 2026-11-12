@@ -1,3 +1,5 @@
+> 历史记录：本文描述重构前的 Astro 版本。当前 Rust 运行方式及验收见 `README.md` 和 `docs/rust-refactor.md`。
+
 # daipan.art China Crawlability & AI Visibility Audit
 
 Audit date: 2026-05-06  

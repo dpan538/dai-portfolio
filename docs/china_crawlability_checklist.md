@@ -1,3 +1,5 @@
+> 历史记录：本文描述重构前的 Astro 版本。当前 Rust 运行方式及验收见 `README.md` 和 `docs/rust-refactor.md`。
+
 # China Crawlability Checklist
 
 Use this after each deployment that changes routing, metadata, DNS, or crawl-related files.
