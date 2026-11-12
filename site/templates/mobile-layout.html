@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+{{metadata}}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="me" href="https://www.daipan.ink/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Coustard:wght@400;900&family=Oldenburg&display=swap" rel="stylesheet">
+{{styles}}
+</head>
+<body data-page="{{key}}" data-project="{{base_key}}" data-view="mobile">
+<header class="mobile_header" data-scope-layout="" id="mobile_header"> <a aria-label="Dai Pan – Home" class="mobile_brand" data-scope-layout="" href="/home_mobile" id="mobile_brand">
+Dai Pan
+</a> <button aria-controls="mobile_overlay" aria-expanded="false" aria-label="Open menu" class="mobile_menu_btn" data-scope-layout="" id="mobile_menu_btn" type="button"> <span aria-hidden="true" class="mobile_menu_icon mobile_menu_icon--hamburger" data-scope-layout=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span> <span aria-hidden="true" class="mobile_menu_icon mobile_menu_icon--close" data-scope-layout=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></span> </button> </header> <div class="shell" data-scope-layout><main class="content mobile-content" data-scope-layout>{{body}}</main></div>
+<div aria-hidden="true" aria-label="Navigation menu" aria-modal="true" class="mobile_overlay" data-open="false" data-scope-layout="" id="mobile_overlay" role="dialog"> <div class="mobile_overlay_backdrop" data-scope-layout="" id="mobile_overlay_backdrop"></div> <nav class="mobile_overlay_menu" data-scope-layout="" id="mobile_overlay_menu">{{mobile_nav}}</nav> </div>    <script id="editorial-data" type="application/json">{{editorial}}</script>
+<script src="/assets/start.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* The mobile views load this system instead of desktop presentation.css. */
+body[data-view='mobile'] { --mobile-nav-top:max(26px,env(safe-area-inset-top,0px)); font-size:15px; line-height:1.8; overflow-x:clip; }
+body[data-view='mobile'] .shell { display:block; min-width:0; }
+body[data-view='mobile'] .mobile_header { display:flex; top:0; height:calc(var(--mobile-nav-top) + 78px); padding-top:var(--mobile-nav-top); padding-bottom:26px; background:#fff; }
+body[data-view='mobile'] .mobile_menu_icon svg { display:block; width:24px; height:24px; }
+body[data-view='mobile'] .content { width:100%; max-width:768px; margin-inline:auto; padding:calc(var(--mobile-nav-top) + 100px) 26px max(56px,env(safe-area-inset-bottom)); overflow:visible; }
+body[data-view='mobile'] .content>* { max-width:none; }
+body[data-view='mobile'] h1 { font:400 18px/1.5 var(--body); letter-spacing:normal; margin:0 0 16px; }
+body[data-view='mobile'] h2 { font:400 16px/1.6 var(--body); text-transform:none; letter-spacing:normal; margin:0 0 18px; }
+body[data-view='mobile'] p { margin:0 0 18px; text-wrap:pretty; }
+body[data-view='mobile'] .cv_val { text-wrap:pretty; }
+.m-project-header { display:flex; justify-content:space-between; gap:16px; align-items:baseline; }
+.m-project-header h1,.m-project-header p { font-size:16px!important; margin:0!important; }
+.m-project-header p,.m-meta { font-size:12px; color:#777; line-height:1.85; }
+body[data-view='mobile'] .m-section { margin-top:36px; }
+.m-prose,.m-introduction { font-size:14px; line-height:1.85; color:#444; }
+.m-prose a,.m-links a { text-decoration:underline; text-underline-offset:3px; }
+.m-figure { margin:0; min-width:0; }
+.m-figure img { display:block; width:100%; height:auto; }
+.m-two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; align-items:start; }
+.m-links { list-style:none; margin:0; padding:0; display:grid; gap:12px; font-size:14px; }
+.m-carousel { display:flex; gap:24px; width:100%; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; scroll-behavior:smooth; scrollbar-width:none; overscroll-behavior-x:contain; touch-action:pan-x pan-y pinch-zoom; }
+.m-carousel::-webkit-scrollbar { display:none; }
+.m-carousel>figure { margin:0; width:100%; flex:0 0 100%; scroll-snap-align:start; scroll-snap-stop:always; }
+.m-carousel img { width:100%; height:auto; display:block; user-select:none; -webkit-user-drag:none; }
+.m-carousel-hint { margin:14px 0 0!important; font-size:11px; line-height:1.7; color:#777; }
+.mobile-lightbox { position:fixed; inset:0; z-index:2200; display:none; background:#000; color:#fff; }
+.mobile-lightbox.is_open { display:flex; }
+.mobile-lightbox .lb_backdrop { position:absolute; inset:0; }
+.mobile-lightbox-stage { position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; width:100%; height:100%; padding:64px 14px 40px; box-sizing:border-box; }
+.mobile-lightbox .lb_view { display:block; width:auto; height:auto; max-width:100%; max-height:calc(100dvh - 150px); object-fit:contain; }
+.mobile-lightbox button { border:0; background:transparent; color:#fff; font:28px/1 system-ui,sans-serif; min-width:48px; min-height:48px; padding:0; cursor:pointer; }
+.mobile-lightbox-close { position:absolute; right:10px; top:max(12px,env(safe-area-inset-top)); }
+.mobile-lightbox-nav { display:flex; justify-content:center; align-items:center; gap:24px; width:100%; margin-top:18px; }
+body.image-preview-open .mobile_header { visibility:hidden!important; pointer-events:none!important; }
+@media(prefers-reduced-motion:reduce){ .m-carousel { scroll-behavior:auto; } }
