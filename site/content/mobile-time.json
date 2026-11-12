@@ -1,0 +1,75 @@
+[
+  {
+    "file": "_K336876.JPG",
+    "width_percent": 100
+  },
+  {
+    "file": "km-104.JPG",
+    "width_percent": 60,
+    "max_width": 280
+  },
+  {
+    "file": "_K339077.JPG",
+    "width_percent": 58,
+    "max_width": 270,
+    "copy_key": "in_praise_of_time_mobile.01"
+  },
+  {
+    "file": "km-97.JPG",
+    "width_percent": 90
+  },
+  {
+    "file": "km-27.JPG",
+    "width_percent": 54,
+    "max_width": 250,
+    "copy_key": "in_praise_of_time_mobile.04",
+    "align_left_with": "km-97.JPG"
+  },
+  {
+    "file": "_K336976.JPG",
+    "width_percent": 100,
+    "copy_key": "in_praise_of_time_mobile.06"
+  },
+  {
+    "file": "_K337101.JPG",
+    "width_percent": 100
+  },
+  {
+    "file": "_K339085.jpg",
+    "width_percent": 50.544,
+    "copy_key": "in_praise_of_time_mobile.07"
+  },
+  {
+    "file": "km-88.JPG",
+    "width_percent": 87.95,
+    "max_width": 352,
+    "align_left_with": "km-74.JPG"
+  },
+  {
+    "file": "km-74.JPG",
+    "width_percent": 100
+  },
+  {
+    "file": "km-66.jpg",
+    "width_percent": 54,
+    "max_width": 250,
+    "copy_key": "in_praise_of_time_mobile.02"
+  },
+  {
+    "file": "_K337129.JPG",
+    "width_percent": 100,
+    "copy_key": "in_praise_of_time_mobile.03"
+  },
+  {
+    "file": "_K336877.JPG",
+    "width_percent": 38,
+    "max_width": 168,
+    "copy_key": "in_praise_of_time_mobile.05",
+    "align_left_with": "_K336884.JPG"
+  },
+  {
+    "file": "_K336884.JPG",
+    "width_percent": 58.8,
+    "max_width": 231
+  }
+]

@@ -1,0 +1,16 @@
+.m-time { font-size:14px; color:#444; }
+.m-time .m-introduction { margin:24px 0 30px; }
+.m-time-sequence { display:flex; flex-direction:column; align-items:center; gap:24px; }
+.m-time-entry { display:flex; flex-direction:column; align-items:center; gap:14px; width:100%; }
+.m-time-entry:last-child { padding-top:32px; padding-bottom:24px; }
+.m-time-frame { margin:0; align-self:center; }
+.m-time-frame img { display:block; width:100%; height:auto; }
+.m-time-passage { width:100%; font-size:13px; line-height:1.8; }
+body[data-view='mobile'] .m-time-passage p { margin:0; }
+.m-time-passage blockquote { margin:0; }
+.m-time-passage .m-time-reference { margin-top:12px!important; font-size:11px; color:#777; }
+.m-time-reference a { text-decoration:underline; text-underline-offset:3px; }
+.m-time-chapter { align-self:flex-start; margin:40px 0; font:400 16px/1.6 var(--body); color:#777; letter-spacing:.08em; }
+.m-time-closing { margin-top:32px; line-height:1.85; }
+body[data-view='mobile'] .m-time-closing p+p { margin-top:18px; }
+.m-time-closing .m-meta { margin:24px 0 0; }
