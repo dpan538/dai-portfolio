@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+cd "$(dirname "$0")/.."
+if [ -d "$PWD/.cache/cargo" ] && [ -z "${CARGO_HOME:-}" ]; then
+    export CARGO_HOME="$PWD/.cache/cargo"
+fi
+export CARGO_TARGET_DIR="$PWD/target"
+case " $* " in
+    *" --production "*) cargo build --locked --release -p portfolio-browser --target wasm32-unknown-unknown --no-default-features ;;
+    *) cargo build --locked --release -p portfolio-browser --target wasm32-unknown-unknown ;;
+esac
+if [ "$#" -eq 0 ]; then set -- build; fi
+exec cargo run --locked --release -p portfolio-site -- "$@"

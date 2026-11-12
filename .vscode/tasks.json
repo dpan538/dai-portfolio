@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Rust: build preview",
+      "type": "shell",
+      "command": "sh scripts/site build target/preview",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": ["$rustc"]
+    },
+    {
+      "label": "Rust: serve preview",
+      "type": "shell",
+      "command": "sh scripts/site serve target/preview 4390",
+      "problemMatcher": ["$rustc"]
+    }
+  ]
+}
