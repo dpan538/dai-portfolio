@@ -16,7 +16,7 @@ Rust generates the static site and implements its browser interactions. Desktop 
 - `crates/gallery-core` — visual sequencing and layout constraints, evaluated during the build.
 - `site/` — maintained HTML/CSS and JSON content. `public/` — original artwork and static assets.
 
-`wasm-bindgen` emits the necessary JavaScript bridge and loader; there is no handwritten JavaScript application. Production is static files on Vercel's CDN, with no Rust or Node server running per request. Image derivatives are cached by source content and encoder policy.
+`wasm-bindgen` emits the necessary JavaScript bridge and loader; there is no handwritten JavaScript application. Production is static files on Vercel's CDN, with no Rust or Node server running per request. Image derivatives are cached by source content and encoder policy. Published images and browser assets use content-versioned URLs with one-year immutable caching; HTML and legacy asset aliases revalidate.
 
 ## Development
 
@@ -44,6 +44,8 @@ The last command builds `dist/` and checks all generated pages and the Rust arch
 The existing Vercel project imports GitHub `main`: framework **Other**, build `sh scripts/build-vercel`, output `dist`, empty install command. `vercel.json` records these settings. Production omits local review code, pages and data.
 
 [Migration audit](docs/rust-migration-audit.md) · [Mobile design](docs/mobile-design.md) · [Measured performance report](reports/performance/README.md) · [PNG charts](reports/performance/summary.png)
+
+[Routing, caching and image-format follow-up](docs/resource-audit.md)
 
 ![Measured performance comparison](reports/performance/summary.png)
 
