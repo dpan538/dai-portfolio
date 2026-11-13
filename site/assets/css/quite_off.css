@@ -1,3 +1,12 @@
+/* Keep direct phone visits readable while the Rust router is loading. */
+@media(max-width:768px) {
+  .qo_page[data-scope-quite-off],
+  .qo_grid[data-scope-quite-off],
+  .qo_viewer[data-scope-quite-off],
+  .qo_stage[data-scope-quite-off],
+  .qo_frame[data-scope-quite-off] { min-width:0; max-width:100% }
+  .qo_image[data-scope-quite-off] { display:block; max-width:100%; height:auto }
+}
 @media(min-width:769px) {
   html:has(body[data-page='quite_off']),body[data-page='quite_off'] {
     overflow-x:hidden;

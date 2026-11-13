@@ -95,12 +95,18 @@ pub fn delay(ms: i32, f: impl FnOnce() + 'static) {
     let _ = window().set_timeout_with_callback_and_timeout_and_arguments_0(cb.unchecked_ref(), ms);
 }
 pub fn mobile() -> bool {
+    // iOS can expand innerWidth to include overflowing intrinsic image widths.
+    // Use the same viewport as the CSS breakpoint, not the overflow area.
     window()
-        .inner_width()
+        .match_media("(max-width: 768px)")
         .ok()
-        .and_then(|v| v.as_f64())
-        .unwrap_or(1280.)
-        <= 768.
+        .flatten()
+        .map(|query| query.matches())
+        .unwrap_or_else(|| {
+            doc()
+                .document_element()
+                .is_some_and(|root| (1..=768).contains(&root.client_width()))
+        })
 }
 pub fn reduced() -> bool {
     window()
