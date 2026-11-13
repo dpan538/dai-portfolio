@@ -1,3 +1,4 @@
+mod cache;
 mod galleries;
 mod images;
 mod presentation;
@@ -312,6 +313,7 @@ fn build(root: &Path, output: &Path, local: bool) -> Result<()> {
             "import init from './browser.js';\nawait init({ module_or_path: new URL('./browser_bg.wasm', import.meta.url) });\n",
         )?;
         let n = render(root, &stage, local)?;
+        cache::publish(&stage)?;
         fs::write(
             stage.join(".portfolio-build"),
             if local { "local" } else { "static" },

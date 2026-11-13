@@ -29,6 +29,8 @@ check(config.get('framework') is None, 'Vercel framework must be Other (null)')
 check(config.get('installCommand') == '', 'Vercel must not run a Node install')
 check(config.get('buildCommand') == 'sh scripts/build-vercel', 'Vercel must use the Rust build entry point')
 check(config.get('outputDirectory') == 'dist', 'Vercel output must be dist')
+immutable_rules = {rule['source'] for rule in config['headers'] if any('immutable' in header['value'] for header in rule['headers'])}
+check(immutable_rules == {'/assets/immutable/(.*)', '/_optimized/immutable/(.*)'}, 'Only content-versioned resources may be immutable')
 marker = output / '.portfolio-build'
 check(marker.is_file() and marker.read_text().strip() == 'static', 'Expected a production Rust build')
 check(not (output / 'review').exists(), 'Local review pages published')

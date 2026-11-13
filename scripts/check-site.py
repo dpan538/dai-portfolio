@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check the actual static output without third-party Python or Node packages."""
 import json
+import hashlib
 import re
 import sys
 from html.parser import HTMLParser
@@ -79,6 +80,16 @@ expected = json.loads((root / 'site/content/pages.json').read_text())
 galleries = json.loads((root / 'site/content/galleries.json').read_text())
 person = json.loads((root / 'site/content/person.json').read_text())
 local = (output / '.portfolio-build').read_text().strip() == 'local'
+cache_manifest = json.loads((output / 'assets/cache-manifest.json').read_text())
+asset_prefix = cache_manifest['asset_prefix']
+check(bool(re.fullmatch(r'/assets/immutable/[0-9a-f]{64}', asset_prefix)), 'Assets need a content-derived version')
+for old_url, immutable_url in cache_manifest['images'].items():
+    data = (output / immutable_url.lstrip('/')).read_bytes()
+    digest = hashlib.sha256(data).hexdigest()
+    check(immutable_url.startswith(f'/_optimized/immutable/{digest}/'), f'Image URL does not match its bytes: {immutable_url}')
+    check(data == (output / old_url.lstrip('/')).read_bytes(), f'Legacy image alias changed pixels: {old_url}')
+for dependency in ['start.js', 'browser.js', 'browser_bg.wasm']:
+    check((output / asset_prefix.lstrip('/') / dependency).is_file(), f'Versioned loader dependency missing: {dependency}')
 check(len(pages) in (len(expected), len(expected) + 1 + len(galleries)), f'Unexpected page count: {len(pages)}')
 for page in expected:
     path = output / ('index.html' if page['key'] == 'home' else '404.html' if page['key'] == '404' else page['key'] + '/index.html')
@@ -98,8 +109,8 @@ for path in pages:
         if key.endswith('_mobile'):
             check('data-view="mobile"' in html, f'{path}: independent mobile shell missing')
             check('width=device-width, initial-scale=1, viewport-fit=cover' in html, f'{path}: mobile Safari safe-area viewport missing')
-            check('/assets/mobile/common.css' in parser.assets, f'{path}: mobile design system missing')
-            check('/assets/presentation.css' not in parser.assets, f'{path}: desktop presentation loaded in mobile view')
+            check(f'{asset_prefix}/mobile/common.css' in parser.assets, f'{path}: mobile design system missing')
+            check(f'{asset_prefix}/presentation.css' not in parser.assets, f'{path}: desktop presentation loaded in mobile view')
             check('<aside' not in html, f'{path}: desktop sidebar present in mobile shell')
         if key == 'the_threes_mobile':
             check(sum(bool(re.search(r'/threes_\d+(?:_\d+w)?\.(?:jpg|png)$', im.get('src',''))) for im in parser.images) == 10, f'{path}: curated mobile book must contain two mockups and eight selected spreads')
@@ -124,7 +135,8 @@ for path in pages:
                 check(None not in (last_spread, position, ending) and last_spread < position < ending, f'{path}: book statement must follow spreads and precede final photo')
         check(len(parser.canonicals) == 1, f'{path}: one canonical required')
         check(all(u.startswith('https://daipan.art') for u in parser.canonicals), f'{path}: incorrect canonical')
-        check('/assets/start.js' in parser.assets, f'{path}: WASM loader missing')
+        check(f'{asset_prefix}/start.js' in parser.assets, f'{path}: versioned WASM loader missing')
+        check(not re.search(r'/_optimized/projects/|/assets/(?!immutable/)', html), f'{path}: mutable runtime resource reference')
         check(len(parser.descriptions) == 1 and bool(parser.descriptions[0].strip()), f'{path}: one nonempty description required')
         check(('noindex' in ','.join(parser.robots)) == (local or path.name == '404.html'), f'{path}: incorrect indexing mode')
     check('{{' not in html, f'{path}: unfilled template')
@@ -142,6 +154,15 @@ for path in pages:
         try: data = json.loads(block)
         except json.JSONDecodeError as e: failures.append(f'{path}: invalid JSON: {e}')
         else:
+            def image_urls(value):
+                if isinstance(value, str) and value.startswith('/_optimized/'):
+                    yield from re.findall(r'/_optimized/[^\s,]+', value)
+                elif isinstance(value, dict):
+                    for item in value.values(): yield from image_urls(item)
+                elif isinstance(value, list):
+                    for item in value: yield from image_urls(item)
+            for image_url in image_urls(data):
+                check(image_url.startswith('/_optimized/immutable/') and (output / image_url.lstrip('/')).is_file(), f'{path}: unversioned or missing carousel image: {image_url}')
             if isinstance(data, dict) and data.get('@type') == 'Person':
                 check(data == person, f'{path}: author entity has drifted')
             if isinstance(data, dict) and 'artMedium' in data:
